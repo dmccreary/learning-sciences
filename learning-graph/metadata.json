@@ -1,0 +1,10 @@
+{
+  "title": "Learning Sciences for Intelligent Textbook Design",
+  "description": "A learning graph of 220 concepts covering the Seven Interlocking Domains of the Learning Sciences and their application to AI-generated intelligent textbooks, including Claude Agent Skills, MicroSims, pedagogical mascots with mascot admonitions, and short-form graphic novels.",
+  "creator": "Dan McCreary",
+  "date": "2026-04-19",
+  "version": "1.0",
+  "format": "Learning Graph JSON v1.0",
+  "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+  "license": "CC BY-NC-SA 4.0 DEED"
+}
