@@ -31,7 +31,7 @@ These concepts have no prerequisites:
 ### Longest Learning Path:
 
 1. **Learning Sciences** (ID: 1)
-2. **Seven Interlocking Domains** (ID: 16)
+2. **Seven Domains** (ID: 16)
 3. **Understanding Domain** (ID: 18)
 4. **Long-Term Memory** (ID: 50)
 5. **Semantic Memory** (ID: 51)
@@ -97,7 +97,7 @@ Top 10 concepts that are prerequisites for the most other concepts:
 | 2 | 170 | MicroSim | 14 |
 | 3 | 135 | Intelligent Textbook Design | 11 |
 | 4 | 50 | Long-Term Memory | 10 |
-| 5 | 16 | Seven Interlocking Domains | 8 |
+| 5 | 16 | Seven Domains | 8 |
 | 6 | 45 | Working Memory | 8 |
 | 7 | 67 | Retrieval Practice | 8 |
 | 8 | 15 | Markdown Authoring | 7 |

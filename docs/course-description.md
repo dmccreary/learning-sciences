@@ -6,7 +6,7 @@ quality_score: 95
 
 # Learning Sciences for Intelligent Textbook Design
 
-**Title:** Learning Sciences for Intelligent Textbook Design: Applying the Seven Interlocking Domains with AI and Agent Skills
+**Title:** Learning Sciences for Intelligent Textbook Design: Applying the Seven Domains with AI and Agent Skills
 
 **Target Audience:** Graduate students, adult continuing education learners, instructional designers, curriculum developers, educational technologists, and professional developers interested in authoring AI-augmented learning experiences
 
@@ -14,7 +14,7 @@ quality_score: 95
 
 ## Course Overview
 
-Learning Sciences is an emerging interdisciplinary field that synthesizes cognitive science, educational psychology, neuroscience, and instructional design to explain how people actually learn—and how we can design environments, content, and feedback loops that accelerate that learning. This course introduces learners to **The Seven Interlocking Domains of the Learning Sciences** (Learner Motivation and Engagement; Understanding New Knowledge and Ideas; Knowledge Retention; Knowledge Application; Building Expertise and Mastery; Measuring Learning and Optimizing Feedback; and Creating and Improving Learning Conditions) and shows how each domain translates directly into concrete design decisions for next-generation intelligent textbooks.
+Learning Sciences is an emerging interdisciplinary field that synthesizes cognitive science, educational psychology, neuroscience, and instructional design to explain how people actually learn—and how we can design environments, content, and feedback loops that accelerate that learning. This course introduces learners to **The Seven Domains of the Learning Sciences** (Learner Motivation and Engagement; Understanding New Knowledge and Ideas; Knowledge Retention; Knowledge Application; Building Expertise and Mastery; Measuring Learning and Optimizing Feedback; and Creating and Improving Learning Conditions) and shows how each domain translates directly into concrete design decisions for next-generation intelligent textbooks.
 
 What makes this course distinctive is its relentless focus on **application through AI**. We treat the learning sciences not as abstract theory but as a practical toolkit for authors building **interactive intelligent textbooks** with tools such as Claude Code, Claude Agent Skills, MkDocs Material, MicroSims, and learning-graph-driven content pipelines. Students will learn how motivation theory informs mascot design, how cognitive load theory shapes MicroSim complexity, how retrieval practice research drives quiz generation, how transfer research motivates scenario-based assessments, and how feedback-loop research drives learning analytics dashboards.
 
@@ -22,7 +22,7 @@ Finally, the course explores two emerging engagement techniques that are uniquel
 
 ## Main Topics Covered
 
-- The Seven Interlocking Domains of the Learning Sciences and their relationships
+- The Seven Domains of the Learning Sciences and their relationships
 - Motivation, attention, and engagement as the gateway to encoding and memory
 - Cognitive architecture: sensory memory, working memory, and long-term memory
 - Cognitive load theory and its implications for textbook and MicroSim design
@@ -58,7 +58,7 @@ After completing this course, students will be able to:
 ### Remember
 *Retrieving, recognizing, and recalling relevant knowledge from long-term memory.*
 
-- List and define the Seven Interlocking Domains of the Learning Sciences
+- List and define the Seven Domains of the Learning Sciences
 - Recall the three-stage model of memory (sensory, working, long-term) and the function of each stage
 - Identify the core principles of cognitive load theory (intrinsic, extraneous, and germane load)
 - Recognize the difference between massed practice, spaced practice, and interleaved practice
@@ -126,10 +126,14 @@ After completing this course, students will be able to:
 - Create an original 12-panel graphic novel about a scientist, engineer, or mathematician whose work relates to the course subject
 - Design a MicroSim that teaches a specific concept while respecting cognitive-load constraints
 - Build a complete intelligent-textbook chapter that integrates prose, diagrams, MicroSims, mascot admonitions, a quiz, and a glossary
-- **Capstone Project:** Author a publishable intelligent-textbook chapter on a subject of the learner's choosing that demonstrates all Seven Interlocking Domains, includes at least one original pedagogical mascot with four mascot admonitions, one 12-panel graphic novel, one MicroSim, and a Bloom-aligned quiz—deployed as a live MkDocs Material site
+- **Capstone Project:** Author a publishable intelligent-textbook chapter on a subject of the learner's choosing that demonstrates all Seven Domains, includes at least one original pedagogical mascot with four mascot admonitions, one 12-panel graphic novel, one MicroSim, and a Bloom-aligned quiz—deployed as a live MkDocs Material site
 
 ## Why This Course Matters
 
 The arrival of capable generative AI has made it possible for individual authors, small teams, and classroom teachers to produce interactive, personalized learning experiences that once required publishing-house budgets. But capability without principle produces noise: AI can just as easily generate shallow, motivation-free, cognitively overloaded content as it can generate excellent material. The learning sciences provide the principled frame that separates the two.
 
 This course equips the next generation of intelligent-textbook authors with both the *why* (the research base of the Seven Domains) and the *how* (concrete AI-assisted workflows, agent skills, mascot patterns, and graphic-novel techniques). Graduates leave with a working textbook artifact, a reusable mascot, and a repeatable production pipeline—ready to apply the learning sciences to any subject they care to teach.
+
+# Acknowledgement
+
+The Seven Domains framework that anchors this course is drawn from the work of **Olorunfemi (Odunayo) Omotayo**, whose LinkedIn post [*The Seven Interlocking Domains of The Learning Sciences*](https://www.linkedin.com/posts/olorunfemi-omotayo-759a54142_learning-teachersacademyafrica-learningsciences-share-7450725094554767360-A_nu?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAAD6N8BB1l53CprJPJ21thZQpRL_v53mK4) articulated the seven domains and the key principles that underlie each. We are grateful for this clear, practitioner-friendly synthesis of the learning sciences, which shaped the organizing structure of this course.

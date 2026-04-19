@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Learning Sciences for Intelligent Textbook Design",
-    "description": "A learning graph of 220 concepts covering the Seven Interlocking Domains of the Learning Sciences and their application to AI-generated intelligent textbooks, including Claude Agent Skills, MicroSims, pedagogical mascots with mascot admonitions, and short-form graphic novels.",
+    "description": "A learning graph of 220 concepts covering the Seven Domains of the Learning Sciences and their application to AI-generated intelligent textbooks, including Claude Agent Skills, MicroSims, pedagogical mascots with mascot admonitions, and short-form graphic novels.",
     "creator": "Dan McCreary",
     "date": "2026-04-19",
     "version": "1.0",
@@ -12,63 +12,63 @@
   "groups": {
     "FOUND": {
       "classifierName": "Foundations",
-      "color": "PaleGreen",
+      "color": "SteelBlue",
       "font": {
         "color": "black"
       }
     },
     "DOMAIN": {
       "classifierName": "Seven Domains Overview",
-      "color": "MistyRose",
+      "color": "LightCoral",
       "font": {
         "color": "black"
       }
     },
     "MOT": {
       "classifierName": "Motivation and Engagement",
-      "color": "Honeydew",
+      "color": "LightYellow",
       "font": {
         "color": "black"
       }
     },
     "COG": {
       "classifierName": "Cognitive Architecture",
-      "color": "MintCream",
+      "color": "LavenderBlush",
       "font": {
         "color": "black"
       }
     },
     "RET": {
       "classifierName": "Knowledge Retention",
-      "color": "Plum",
+      "color": "MistyRose",
       "font": {
         "color": "black"
       }
     },
     "APP": {
       "classifierName": "Knowledge Application and Transfer",
-      "color": "Gainsboro",
+      "color": "Lavender",
       "font": {
         "color": "black"
       }
     },
     "EXP": {
       "classifierName": "Expertise and Mastery",
-      "color": "PaleTurquoise",
+      "color": "Thistle",
       "font": {
         "color": "black"
       }
     },
     "MEAS": {
       "classifierName": "Measurement and Feedback",
-      "color": "Thistle",
+      "color": "PaleGreen",
       "font": {
         "color": "black"
       }
     },
     "COND": {
       "classifierName": "Learning Conditions and Environment",
-      "color": "SteelBlue",
+      "color": "PowderBlue",
       "font": {
         "color": "black"
       }
@@ -82,35 +82,35 @@
     },
     "AIST": {
       "classifierName": "AI Skills and Tooling",
-      "color": "LavenderBlush",
+      "color": "MintCream",
       "font": {
         "color": "black"
       }
     },
     "SIM": {
       "classifierName": "MicroSims",
-      "color": "LightYellow",
+      "color": "Plum",
       "font": {
         "color": "black"
       }
     },
     "MASC": {
       "classifierName": "Pedagogical Mascots and Admonitions",
-      "color": "LightCoral",
+      "color": "Honeydew",
       "font": {
         "color": "black"
       }
     },
     "GN": {
       "classifierName": "Graphic Novels and Stories",
-      "color": "PowderBlue",
+      "color": "PaleTurquoise",
       "font": {
         "color": "black"
       }
     },
     "CAP": {
       "classifierName": "Capstone and Deployment",
-      "color": "Lavender",
+      "color": "Gainsboro",
       "font": {
         "color": "black"
       }
@@ -198,7 +198,7 @@
     },
     {
       "id": 16,
-      "label": "Seven Interlocking Domains",
+      "label": "Seven Domains",
       "group": "DOMAIN"
     },
     {

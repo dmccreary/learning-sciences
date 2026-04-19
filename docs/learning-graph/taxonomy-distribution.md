@@ -356,7 +356,7 @@ All categories are under the 30% threshold. Good balance!
 
 **Concepts**:
 
-- 16. Seven Interlocking Domains
+- 16. Seven Domains
 - 17. Motivation Domain
 - 18. Understanding Domain
 - 19. Retention Domain

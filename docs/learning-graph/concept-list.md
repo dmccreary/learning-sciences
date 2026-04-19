@@ -22,7 +22,7 @@ This numbered list contains 220 concepts for the **Learning Sciences for Intelli
 
 ## Seven Domains Overview
 
-16. Seven Interlocking Domains
+16. Seven Domains
 17. Motivation Domain
 18. Understanding Domain
 19. Retention Domain

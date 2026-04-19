@@ -8,7 +8,7 @@ Field-level definitions and the AI/authoring stack that the rest of the course a
 
 ## Seven Domains Overview (DOMAIN)
 
-The top-level framework of the course: the Seven Interlocking Domains and a named node for each domain (Motivation, Understanding, Retention, Application, Expertise, Measurement, Learning Conditions). Downstream concepts depend on the relevant domain node.
+The top-level framework of the course: the Seven Domains and a named node for each domain (Motivation, Understanding, Retention, Application, Expertise, Measurement, Learning Conditions). Downstream concepts depend on the relevant domain node.
 
 ## Motivation and Engagement (MOT)
 

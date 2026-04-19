@@ -1,3 +1,9 @@
+---
+title: "A Learning Graph for Learning Sciences"
+description: "A learning graph visualization for a 221 element learning concept graph with 340 concept dependencies for the emerging field of Learning Sciences"
+image: /sims/graph-viewer/graph-viewer.png
+og:image: /sims/graph-viewer/graph-viewer.png
+---
 # Learning Graph Viewer
 
 This interactive viewer allows you to explore the learning graph for this course.

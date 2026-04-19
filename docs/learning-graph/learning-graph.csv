@@ -14,7 +14,7 @@ ConceptID,ConceptLabel,Dependencies,TaxonomyID
 13,Agent Skill,12,FOUND
 14,MkDocs Material,15,FOUND
 15,Markdown Authoring,,FOUND
-16,Seven Interlocking Domains,1,DOMAIN
+16,Seven Domains,1,DOMAIN
 17,Motivation Domain,16,DOMAIN
 18,Understanding Domain,16,DOMAIN
 19,Retention Domain,16,DOMAIN
