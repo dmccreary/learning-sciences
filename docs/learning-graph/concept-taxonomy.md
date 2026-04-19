@@ -61,3 +61,7 @@ Short-form narrative content for engagement: graphic novel chapters, the 12-pane
 ## Capstone and Deployment (CAP)
 
 Producing and shipping the capstone artifact: the capstone project itself, GitHub Pages deployment, the MkDocs build process, portfolio artifacts, peer review, iterative improvement, accessibility audit basics, publishing workflows, chapter rubric evaluation, and mastery demonstration.
+
+## Privacy and Regulation (PRIV)
+
+The regulatory and standards surface that attaches once an intelligent textbook moves beyond Level 2 and begins collecting individual student data: the Privacy Inflection Point between Level 2 and Level 3, the major educational-data regulations (FERPA, COPPA, GDPR, CCPA/CPRA), the principle of data minimization, and the open standards (xAPI and the Learning Record Store) that allow student-controlled personalization with portability. This book teaches Level 2 only — this taxonomy exists to make the boundary visible and unmissable, not to teach readers to operate as Level 3+ data controllers.

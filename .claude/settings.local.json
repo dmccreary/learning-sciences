@@ -10,7 +10,12 @@
       "Bash(cp /Users/dan/Documents/ws/moss/docs/sims/graph-viewer/script.js /Users/dan/Documents/ws/learning-sciences/docs/sims/graph-viewer/script.js)",
       "Bash(cp /Users/dan/Documents/ws/moss/docs/sims/graph-viewer/script.js /Users/dan/.claude/skills/book-installer/references/assets/script.js)",
       "Bash(md5 -q /Users/dan/Documents/ws/moss/docs/sims/graph-viewer/script.js /Users/dan/Documents/ws/learning-sciences/docs/sims/graph-viewer/script.js /Users/dan/.claude/skills/book-installer/references/assets/script.js)",
-      "Bash(md5 -q /Users/dan/.claude/skills/book-installer/references/assets/script.js /Users/dan/Documents/ws/moss/docs/sims/graph-viewer/script.js)"
+      "Bash(md5 -q /Users/dan/.claude/skills/book-installer/references/assets/script.js /Users/dan/Documents/ws/moss/docs/sims/graph-viewer/script.js)",
+      "Bash(python3)",
+      "Bash(tee -a /Users/dan/Documents/ws/learning-sciences/logs/ch-01-content-generation.md)",
+      "Bash(curl --version)",
+      "WebSearch",
+      "Bash(tee -a /Users/dan/Documents/ws/learning-sciences/logs/ch-02-content-generation.md)"
     ]
   }
 }

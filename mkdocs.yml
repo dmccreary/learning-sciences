@@ -12,6 +12,23 @@ nav:
   - Home: index.md
   - About: about.md
   - Course Description: course-description.md
+  - Chapters:
+      - List of Chapters: chapters/index.md
+      - 1. Foundations of Learning Sciences: chapters/01-foundations/index.md
+      - 2. The Seven Domains Framework: chapters/02-seven-domains/index.md
+      - 3. Motivation and Engagement: chapters/03-motivation-engagement/index.md
+      - 4. Cognitive Architecture and Load: chapters/04-cognitive-architecture/index.md
+      - 5. Knowledge Retention: chapters/05-knowledge-retention/index.md
+      - 6. Application and Transfer: chapters/06-application-transfer/index.md
+      - 7. Expertise and Mastery: chapters/07-expertise-mastery/index.md
+      - 8. Measurement and Feedback: chapters/08-measurement-feedback/index.md
+      - 9. Learning Conditions and Environment: chapters/09-learning-conditions/index.md
+      - 10. Intelligent Textbook Architecture and AI Tooling: chapters/10-textbook-architecture/index.md
+      - 11. MicroSims and Interactive Visualizations: chapters/11-microsims/index.md
+      - 12. Pedagogical Mascots and Admonitions: chapters/12-mascots-admonitions/index.md
+      - 13. Graphic Novels and Short-Form Stories: chapters/13-graphic-novels/index.md
+      - 14. AI Agent Skills for Textbook Generation: chapters/14-agent-skills/index.md
+      - 15. Capstone and Deployment: chapters/15-capstone-deployment/index.md
   - Learning Graph:
       - Introduction: learning-graph/index.md
       - Course Description Assessment: learning-graph/course-description-assessment.md

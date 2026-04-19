@@ -20,6 +20,8 @@ What makes this course distinctive is its relentless focus on **application thro
 
 Finally, the course explores two emerging engagement techniques that are uniquely enabled by generative AI: **pedagogical mascots with mascot admonitions** (recurring AI-generated characters that deliver hints, warnings, and encouragement in consistent visual and narrative voice) and **short-form graphic novels** (12-panel story arcs about scientists, engineers, and mathematicians that embed domain concepts inside a compelling narrative). By the end of the course, students will have produced a working intelligent-textbook chapter that demonstrates mastery of all seven domains.
 
+A critical boundary defines the scope of this course. We teach **Level 2** on the five-level classification of intelligent textbooks — interactive textbooks built with learning graphs, MicroSims, and path recommendations that require **no collection of individual student data**. The jump from Level 2 to Level 3 (adaptive textbooks driven by stored student records) is the **privacy inflection point**. Once a system stores individual learning histories, it enters a highly regulated domain governed by FERPA, COPPA, GDPR, and state-level laws such as CCPA/CPRA, with real obligations around data minimization, consent, retention, encryption, audit logging, and algorithmic bias auditing. This course names the boundary, teaches learners to recognize it, and deliberately does **not** train learners to operate as Level 3+ data controllers. Students leave knowing *where to stop* and *when to partner with an institution that has the governance infrastructure to go further responsibly*.
+
 ## Main Topics Covered
 
 - The Seven Domains of the Learning Sciences and their relationships
@@ -38,6 +40,8 @@ Finally, the course explores two emerging engagement techniques that are uniquel
 - Short-form graphic novels (12-panel stories) for engagement and historical context
 - Glossary, FAQ, and quiz generation aligned to Bloom's Taxonomy
 - Measuring and iterating on intelligent textbook quality with AI-generated metrics
+- The five-level classification of intelligent textbooks and the Level 3 privacy inflection point (FERPA, COPPA, GDPR, CCPA/CPRA) — recognizing where the scope of this course ends and where regulated-data-handling expertise becomes necessary
+- Open standards for student-controlled data portability (xAPI, Learning Record Store) introduced as the principled path for projects that genuinely need Level 3+ capabilities
 
 ## Topics Not Covered
 
@@ -45,11 +49,12 @@ Finally, the course explores two emerging engagement techniques that are uniquel
 - Detailed neuroscience of brain anatomy and neuroimaging techniques
 - Formal educational research methods, statistics, and IRB procedures for conducting original studies
 - Learning Management System (LMS) administration (Canvas, Moodle, Blackboard configuration)
-- SCORM, xAPI, and enterprise LMS interoperability standards
+- SCORM and enterprise LMS interoperability standards (xAPI is introduced conceptually as part of the Level 3+ privacy discussion, but implementation is not taught)
 - Fine-tuning or training foundation models from scratch
 - Classroom management, teacher certification, and in-person pedagogy techniques
 - Accessibility auditing at the full WCAG 2.2 AAA compliance level (introduced, not mastered)
 - Publishing business models, royalties, and academic press workflows
+- Operating Level 3+ intelligent textbooks that collect individual student data — data governance, privacy-by-design engineering, consent workflows, retention and deletion policies, and formal compliance auditing are treated as **warnings and scope boundaries**, not as competencies
 
 ## Learning Outcomes
 
@@ -79,6 +84,7 @@ After completing this course, students will be able to:
 - Describe how a learning graph encodes concept dependencies and why ordering matters
 - Explain how a pedagogical mascot reduces extraneous cognitive load through consistent voice and visual identity
 - Summarize how short-form graphic novels activate narrative transportation to increase engagement
+- Explain the five-level classification of intelligent textbooks and articulate why the Level 2 → Level 3 transition is a **privacy inflection point** that triggers FERPA, COPPA, GDPR, and CCPA/CPRA obligations the moment individual student data is collected
 
 ### Apply
 *Carrying out or using a procedure in a given situation.*
@@ -115,6 +121,7 @@ After completing this course, students will be able to:
 - Judge the completeness of a learning graph against the target of 200 concepts with validated dependencies
 - Evaluate an intelligent textbook's overall quality using a metrics report (word counts, concept coverage, Bloom distribution, diagram density)
 - Critique an AI-generated chapter for alignment with the stated learning outcomes
+- Evaluate whether a proposed intelligent-textbook feature crosses the Level 2 → Level 3 privacy inflection point, and justify the decision against data-minimization and regulatory-scope criteria (FERPA, COPPA, GDPR, CCPA/CPRA) — recommending either a Level 2 redesign or a partnership with an institution that has the data-governance infrastructure to operate responsibly at Level 3+
 
 ### Create
 *Putting elements together to form a coherent or functional whole; reorganizing elements into a new pattern or structure.*
