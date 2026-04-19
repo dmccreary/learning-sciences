@@ -3,10 +3,16 @@ title: "A Learning Graph for Learning Sciences"
 description: "A learning graph visualization for a 221 element learning concept graph with 340 concept dependencies for the emerging field of Learning Sciences"
 image: /sims/graph-viewer/graph-viewer.png
 og:image: /sims/graph-viewer/graph-viewer.png
+hide:
+   toc
 ---
 # Learning Graph Viewer
 
-This interactive viewer allows you to explore the learning graph for this course.
+[Open Learning Graph Viewer Fullscreen (recommended)](./main.html){ .md-button .md-button--primary }
+
+<iframe src="./main.html" width="100%" height="600px" scrolling="no" style="overflow: hidden;"></iframe>
+
+This interactive viewer allows you to explore the 221 element learning graph for this course.
 
 ## Features
 
@@ -30,12 +36,21 @@ This interactive viewer allows you to explore the learning graph for this course
 
 ## Graph Structure
 
-- **Foundational Concepts** (left side): Prerequisites with no dependencies
-- **Advanced Concepts** (right side): Topics that build on multiple prerequisites
+- **Foundational Concepts** : Prerequisites with no dependencies
+- **Advanced Concepts**: Topics that build on multiple prerequisites
 - **Edges**: Arrows point from a concept to its prerequisites
 
-## Launch the Viewer
+## Iframe Template
 
-[Open Learning Graph Viewer](./main.html){ .md-button .md-button--primary }
+You can place this learning graph on your web page by adding the following `iframe` to your website HTML:
 
-<iframe src="./main.html" width="100%" height="600px" frameborder="0"></iframe>
+```html
+<iframe src="http://dmccreary.github.io/learning-sciences/sims/graph-viewer/main.html"
+   width="100%"
+   height="600px"
+   scrolling="no"
+   style="overflow: hidden;">
+</iframe>
+
+```
+

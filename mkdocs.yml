@@ -19,6 +19,7 @@ nav:
       - Concept Taxonomy: learning-graph/concept-taxonomy.md
       - Quality Metrics: learning-graph/quality-metrics.md
       - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
+      - Mascot Style Guide: learning-graph/mascot-test.md
   - MicroSims:
       - Learning Graph Viewer: sims/graph-viewer/index.md
   - License: license.md
@@ -78,6 +79,10 @@ plugins:
       caption_position: bottom
   # - tags                       # Tag support (optional)
   # - blog                       # Blog support (optional)
+
+# Hooks
+hooks:
+  - plugins/social_override.py   # Override og:image / twitter:image via page front-matter
 
 # Markdown Extensions
 markdown_extensions:
