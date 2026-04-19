@@ -42,3 +42,8 @@ Each domain highlights key principles:
 6. If you don’t measure it, you are flying blind. What gets measured gets improved—but only if measured wisely.
 
 7. Learning does not occur in isolation. It is embedded within environments.
+
+## Five Level Model
+
+Include the Five Level Model for Intelligent Textbooks
+Mention the 2.9 to 3.0 privacy inflection point
