@@ -1,0 +1,2592 @@
+{
+  "metadata": {
+    "title": "Learning Sciences for Intelligent Textbook Design",
+    "description": "A learning graph of 220 concepts covering the Seven Interlocking Domains of the Learning Sciences and their application to AI-generated intelligent textbooks, including Claude Agent Skills, MicroSims, pedagogical mascots with mascot admonitions, and short-form graphic novels.",
+    "creator": "Dan McCreary",
+    "date": "2026-04-19",
+    "version": "1.0",
+    "format": "Learning Graph JSON v1.0",
+    "schema": "https://raw.githubusercontent.com/dmccreary/learning-graphs/refs/heads/main/src/schema/learning-graph-schema.json",
+    "license": "CC BY-NC-SA 4.0 DEED"
+  },
+  "groups": {
+    "FOUND": {
+      "classifierName": "Foundations",
+      "color": "PaleGreen",
+      "font": {
+        "color": "black"
+      }
+    },
+    "DOMAIN": {
+      "classifierName": "Seven Domains Overview",
+      "color": "MistyRose",
+      "font": {
+        "color": "black"
+      }
+    },
+    "MOT": {
+      "classifierName": "Motivation and Engagement",
+      "color": "Honeydew",
+      "font": {
+        "color": "black"
+      }
+    },
+    "COG": {
+      "classifierName": "Cognitive Architecture",
+      "color": "MintCream",
+      "font": {
+        "color": "black"
+      }
+    },
+    "RET": {
+      "classifierName": "Knowledge Retention",
+      "color": "Plum",
+      "font": {
+        "color": "black"
+      }
+    },
+    "APP": {
+      "classifierName": "Knowledge Application and Transfer",
+      "color": "Gainsboro",
+      "font": {
+        "color": "black"
+      }
+    },
+    "EXP": {
+      "classifierName": "Expertise and Mastery",
+      "color": "PaleTurquoise",
+      "font": {
+        "color": "black"
+      }
+    },
+    "MEAS": {
+      "classifierName": "Measurement and Feedback",
+      "color": "Thistle",
+      "font": {
+        "color": "black"
+      }
+    },
+    "COND": {
+      "classifierName": "Learning Conditions and Environment",
+      "color": "SteelBlue",
+      "font": {
+        "color": "black"
+      }
+    },
+    "ITB": {
+      "classifierName": "Intelligent Textbook Architecture",
+      "color": "PeachPuff",
+      "font": {
+        "color": "black"
+      }
+    },
+    "AIST": {
+      "classifierName": "AI Skills and Tooling",
+      "color": "LavenderBlush",
+      "font": {
+        "color": "black"
+      }
+    },
+    "SIM": {
+      "classifierName": "MicroSims",
+      "color": "LightYellow",
+      "font": {
+        "color": "black"
+      }
+    },
+    "MASC": {
+      "classifierName": "Pedagogical Mascots and Admonitions",
+      "color": "LightCoral",
+      "font": {
+        "color": "black"
+      }
+    },
+    "GN": {
+      "classifierName": "Graphic Novels and Stories",
+      "color": "PowderBlue",
+      "font": {
+        "color": "black"
+      }
+    },
+    "CAP": {
+      "classifierName": "Capstone and Deployment",
+      "color": "Lavender",
+      "font": {
+        "color": "black"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "label": "Learning Sciences",
+      "group": "FOUND",
+      "shape": "box"
+    },
+    {
+      "id": 2,
+      "label": "Instructional Design",
+      "group": "FOUND"
+    },
+    {
+      "id": 3,
+      "label": "Cognitive Science",
+      "group": "FOUND",
+      "shape": "box"
+    },
+    {
+      "id": 4,
+      "label": "Educational Psychology",
+      "group": "FOUND"
+    },
+    {
+      "id": 5,
+      "label": "Neuroscience in Learning",
+      "group": "FOUND"
+    },
+    {
+      "id": 6,
+      "label": "Evidence-Based Pedagogy",
+      "group": "FOUND"
+    },
+    {
+      "id": 7,
+      "label": "Bloom Taxonomy 2001",
+      "group": "FOUND"
+    },
+    {
+      "id": 8,
+      "label": "Learning Objective",
+      "group": "FOUND"
+    },
+    {
+      "id": 9,
+      "label": "Intelligent Textbook",
+      "group": "FOUND"
+    },
+    {
+      "id": 10,
+      "label": "Generative AI",
+      "group": "FOUND",
+      "shape": "box"
+    },
+    {
+      "id": 11,
+      "label": "Large Language Model",
+      "group": "FOUND"
+    },
+    {
+      "id": 12,
+      "label": "Claude Code",
+      "group": "FOUND"
+    },
+    {
+      "id": 13,
+      "label": "Agent Skill",
+      "group": "FOUND"
+    },
+    {
+      "id": 14,
+      "label": "MkDocs Material",
+      "group": "FOUND"
+    },
+    {
+      "id": 15,
+      "label": "Markdown Authoring",
+      "group": "FOUND",
+      "shape": "box"
+    },
+    {
+      "id": 16,
+      "label": "Seven Interlocking Domains",
+      "group": "DOMAIN"
+    },
+    {
+      "id": 17,
+      "label": "Motivation Domain",
+      "group": "DOMAIN"
+    },
+    {
+      "id": 18,
+      "label": "Understanding Domain",
+      "group": "DOMAIN"
+    },
+    {
+      "id": 19,
+      "label": "Retention Domain",
+      "group": "DOMAIN"
+    },
+    {
+      "id": 20,
+      "label": "Application Domain",
+      "group": "DOMAIN"
+    },
+    {
+      "id": 21,
+      "label": "Expertise Domain",
+      "group": "DOMAIN"
+    },
+    {
+      "id": 22,
+      "label": "Measurement Domain",
+      "group": "DOMAIN"
+    },
+    {
+      "id": 23,
+      "label": "Learning Conditions Domain",
+      "group": "DOMAIN"
+    },
+    {
+      "id": 24,
+      "label": "Intrinsic Motivation",
+      "group": "MOT"
+    },
+    {
+      "id": 25,
+      "label": "Extrinsic Motivation",
+      "group": "MOT"
+    },
+    {
+      "id": 26,
+      "label": "Self-Determination Theory",
+      "group": "MOT"
+    },
+    {
+      "id": 27,
+      "label": "Autonomy Need",
+      "group": "MOT"
+    },
+    {
+      "id": 28,
+      "label": "Competence Need",
+      "group": "MOT"
+    },
+    {
+      "id": 29,
+      "label": "Relatedness Need",
+      "group": "MOT"
+    },
+    {
+      "id": 30,
+      "label": "Flow State",
+      "group": "MOT"
+    },
+    {
+      "id": 31,
+      "label": "Goal Orientation",
+      "group": "MOT"
+    },
+    {
+      "id": 32,
+      "label": "Growth Mindset",
+      "group": "MOT"
+    },
+    {
+      "id": 33,
+      "label": "Fixed Mindset",
+      "group": "MOT"
+    },
+    {
+      "id": 34,
+      "label": "Self-Efficacy",
+      "group": "MOT"
+    },
+    {
+      "id": 35,
+      "label": "Engagement",
+      "group": "MOT"
+    },
+    {
+      "id": 36,
+      "label": "Attention",
+      "group": "MOT"
+    },
+    {
+      "id": 37,
+      "label": "Attention Capture",
+      "group": "MOT"
+    },
+    {
+      "id": 38,
+      "label": "Sustained Attention",
+      "group": "MOT"
+    },
+    {
+      "id": 39,
+      "label": "Curiosity",
+      "group": "MOT"
+    },
+    {
+      "id": 40,
+      "label": "Interest Development",
+      "group": "MOT"
+    },
+    {
+      "id": 41,
+      "label": "ARCS Model",
+      "group": "MOT"
+    },
+    {
+      "id": 42,
+      "label": "Sensory Memory",
+      "group": "COG"
+    },
+    {
+      "id": 43,
+      "label": "Iconic Memory",
+      "group": "COG"
+    },
+    {
+      "id": 44,
+      "label": "Echoic Memory",
+      "group": "COG"
+    },
+    {
+      "id": 45,
+      "label": "Working Memory",
+      "group": "COG"
+    },
+    {
+      "id": 46,
+      "label": "Miller's Law",
+      "group": "COG"
+    },
+    {
+      "id": 47,
+      "label": "Phonological Loop",
+      "group": "COG"
+    },
+    {
+      "id": 48,
+      "label": "Visuospatial Sketchpad",
+      "group": "COG"
+    },
+    {
+      "id": 49,
+      "label": "Central Executive",
+      "group": "COG"
+    },
+    {
+      "id": 50,
+      "label": "Long-Term Memory",
+      "group": "COG"
+    },
+    {
+      "id": 51,
+      "label": "Semantic Memory",
+      "group": "COG"
+    },
+    {
+      "id": 52,
+      "label": "Episodic Memory",
+      "group": "COG"
+    },
+    {
+      "id": 53,
+      "label": "Procedural Memory",
+      "group": "COG"
+    },
+    {
+      "id": 54,
+      "label": "Schema",
+      "group": "COG"
+    },
+    {
+      "id": 55,
+      "label": "Schema Construction",
+      "group": "COG"
+    },
+    {
+      "id": 56,
+      "label": "Chunking",
+      "group": "COG"
+    },
+    {
+      "id": 57,
+      "label": "Encoding",
+      "group": "COG"
+    },
+    {
+      "id": 58,
+      "label": "Consolidation",
+      "group": "COG"
+    },
+    {
+      "id": 59,
+      "label": "Elaboration",
+      "group": "COG"
+    },
+    {
+      "id": 60,
+      "label": "Dual Coding Theory",
+      "group": "COG"
+    },
+    {
+      "id": 61,
+      "label": "Multimedia Learning Theory",
+      "group": "COG"
+    },
+    {
+      "id": 62,
+      "label": "Cognitive Load",
+      "group": "COG"
+    },
+    {
+      "id": 63,
+      "label": "Intrinsic Cognitive Load",
+      "group": "COG"
+    },
+    {
+      "id": 64,
+      "label": "Extraneous Cognitive Load",
+      "group": "COG"
+    },
+    {
+      "id": 65,
+      "label": "Germane Cognitive Load",
+      "group": "COG"
+    },
+    {
+      "id": 66,
+      "label": "Cognitive Load Theory",
+      "group": "COG"
+    },
+    {
+      "id": 67,
+      "label": "Retrieval Practice",
+      "group": "RET"
+    },
+    {
+      "id": 68,
+      "label": "Testing Effect",
+      "group": "RET"
+    },
+    {
+      "id": 69,
+      "label": "Spaced Repetition",
+      "group": "RET"
+    },
+    {
+      "id": 70,
+      "label": "Massed Practice",
+      "group": "RET"
+    },
+    {
+      "id": 71,
+      "label": "Distributed Practice",
+      "group": "RET"
+    },
+    {
+      "id": 72,
+      "label": "Interleaving",
+      "group": "RET"
+    },
+    {
+      "id": 73,
+      "label": "Forgetting Curve",
+      "group": "RET"
+    },
+    {
+      "id": 74,
+      "label": "Retrieval Cue",
+      "group": "RET"
+    },
+    {
+      "id": 75,
+      "label": "Recall vs Recognition",
+      "group": "RET"
+    },
+    {
+      "id": 76,
+      "label": "Retrieval Strength",
+      "group": "RET"
+    },
+    {
+      "id": 77,
+      "label": "Storage Strength",
+      "group": "RET"
+    },
+    {
+      "id": 78,
+      "label": "Desirable Difficulty",
+      "group": "RET"
+    },
+    {
+      "id": 79,
+      "label": "Leitner System",
+      "group": "RET"
+    },
+    {
+      "id": 80,
+      "label": "Spaced Retrieval Scheduling",
+      "group": "RET"
+    },
+    {
+      "id": 81,
+      "label": "Knowledge Transfer",
+      "group": "APP"
+    },
+    {
+      "id": 82,
+      "label": "Near Transfer",
+      "group": "APP"
+    },
+    {
+      "id": 83,
+      "label": "Far Transfer",
+      "group": "APP"
+    },
+    {
+      "id": 84,
+      "label": "Novel Problem Solving",
+      "group": "APP"
+    },
+    {
+      "id": 85,
+      "label": "Unlearning",
+      "group": "APP"
+    },
+    {
+      "id": 86,
+      "label": "Misconception",
+      "group": "APP"
+    },
+    {
+      "id": 87,
+      "label": "Conceptual Change",
+      "group": "APP"
+    },
+    {
+      "id": 88,
+      "label": "Mental Model",
+      "group": "APP"
+    },
+    {
+      "id": 89,
+      "label": "Analogical Reasoning",
+      "group": "APP"
+    },
+    {
+      "id": 90,
+      "label": "Problem-Based Learning",
+      "group": "APP"
+    },
+    {
+      "id": 91,
+      "label": "Case-Based Learning",
+      "group": "APP"
+    },
+    {
+      "id": 92,
+      "label": "Worked Example",
+      "group": "APP"
+    },
+    {
+      "id": 93,
+      "label": "Example-Problem Pair",
+      "group": "APP"
+    },
+    {
+      "id": 94,
+      "label": "Scenario-Based Assessment",
+      "group": "APP"
+    },
+    {
+      "id": 95,
+      "label": "Expertise",
+      "group": "EXP"
+    },
+    {
+      "id": 96,
+      "label": "Deliberate Practice",
+      "group": "EXP"
+    },
+    {
+      "id": 97,
+      "label": "Pattern Recognition",
+      "group": "EXP"
+    },
+    {
+      "id": 98,
+      "label": "Automaticity",
+      "group": "EXP"
+    },
+    {
+      "id": 99,
+      "label": "Novice Expert Difference",
+      "group": "EXP"
+    },
+    {
+      "id": 100,
+      "label": "Expert Chunking",
+      "group": "EXP"
+    },
+    {
+      "id": 101,
+      "label": "Dreyfus Skill Model",
+      "group": "EXP"
+    },
+    {
+      "id": 102,
+      "label": "Tacit Knowledge",
+      "group": "EXP"
+    },
+    {
+      "id": 103,
+      "label": "Explicit Knowledge",
+      "group": "EXP"
+    },
+    {
+      "id": 104,
+      "label": "Mastery Learning",
+      "group": "EXP"
+    },
+    {
+      "id": 105,
+      "label": "Ten Thousand Hour Rule",
+      "group": "EXP"
+    },
+    {
+      "id": 106,
+      "label": "Formative Assessment",
+      "group": "MEAS"
+    },
+    {
+      "id": 107,
+      "label": "Summative Assessment",
+      "group": "MEAS"
+    },
+    {
+      "id": 108,
+      "label": "Learning Analytics",
+      "group": "MEAS"
+    },
+    {
+      "id": 109,
+      "label": "Feedback Loop",
+      "group": "MEAS"
+    },
+    {
+      "id": 110,
+      "label": "Immediate Feedback",
+      "group": "MEAS"
+    },
+    {
+      "id": 111,
+      "label": "Delayed Feedback",
+      "group": "MEAS"
+    },
+    {
+      "id": 112,
+      "label": "Corrective Feedback",
+      "group": "MEAS"
+    },
+    {
+      "id": 113,
+      "label": "Assessment Rubric",
+      "group": "MEAS"
+    },
+    {
+      "id": 114,
+      "label": "Item Response Theory",
+      "group": "MEAS"
+    },
+    {
+      "id": 115,
+      "label": "Diagnostic Assessment",
+      "group": "MEAS"
+    },
+    {
+      "id": 116,
+      "label": "Metacognition",
+      "group": "MEAS"
+    },
+    {
+      "id": 117,
+      "label": "Self-Regulated Learning",
+      "group": "MEAS"
+    },
+    {
+      "id": 118,
+      "label": "Learning Dashboard",
+      "group": "MEAS"
+    },
+    {
+      "id": 119,
+      "label": "A/B Testing in Learning",
+      "group": "MEAS"
+    },
+    {
+      "id": 120,
+      "label": "Quality Metrics",
+      "group": "MEAS"
+    },
+    {
+      "id": 121,
+      "label": "Learning Environment",
+      "group": "COND"
+    },
+    {
+      "id": 122,
+      "label": "Scaffolding",
+      "group": "COND"
+    },
+    {
+      "id": 123,
+      "label": "Zone of Proximal Development",
+      "group": "COND"
+    },
+    {
+      "id": 124,
+      "label": "Social Learning Theory",
+      "group": "COND"
+    },
+    {
+      "id": 125,
+      "label": "Community of Practice",
+      "group": "COND"
+    },
+    {
+      "id": 126,
+      "label": "Constructivism",
+      "group": "COND"
+    },
+    {
+      "id": 127,
+      "label": "Situated Cognition",
+      "group": "COND"
+    },
+    {
+      "id": 128,
+      "label": "Universal Design for Learning",
+      "group": "COND"
+    },
+    {
+      "id": 129,
+      "label": "Accessibility",
+      "group": "COND"
+    },
+    {
+      "id": 130,
+      "label": "Psychological Safety",
+      "group": "COND"
+    },
+    {
+      "id": 131,
+      "label": "Culturally Responsive Teaching",
+      "group": "COND"
+    },
+    {
+      "id": 132,
+      "label": "Classroom Discourse",
+      "group": "COND"
+    },
+    {
+      "id": 133,
+      "label": "Online Learning Environment",
+      "group": "COND"
+    },
+    {
+      "id": 134,
+      "label": "Blended Learning",
+      "group": "COND"
+    },
+    {
+      "id": 135,
+      "label": "Intelligent Textbook Design",
+      "group": "ITB"
+    },
+    {
+      "id": 136,
+      "label": "Learning Graph",
+      "group": "ITB"
+    },
+    {
+      "id": 137,
+      "label": "Concept Dependency",
+      "group": "ITB"
+    },
+    {
+      "id": 138,
+      "label": "DAG Structure",
+      "group": "ITB"
+    },
+    {
+      "id": 139,
+      "label": "Concept Node",
+      "group": "ITB"
+    },
+    {
+      "id": 140,
+      "label": "Concept Edge",
+      "group": "ITB"
+    },
+    {
+      "id": 141,
+      "label": "Glossary",
+      "group": "ITB"
+    },
+    {
+      "id": 142,
+      "label": "FAQ Section",
+      "group": "ITB"
+    },
+    {
+      "id": 143,
+      "label": "Quiz Bank",
+      "group": "ITB"
+    },
+    {
+      "id": 144,
+      "label": "Chapter Outline",
+      "group": "ITB"
+    },
+    {
+      "id": 145,
+      "label": "Chapter Content Authoring",
+      "group": "ITB"
+    },
+    {
+      "id": 146,
+      "label": "Reference List",
+      "group": "ITB"
+    },
+    {
+      "id": 147,
+      "label": "Table of Contents",
+      "group": "ITB"
+    },
+    {
+      "id": 148,
+      "label": "Search Index",
+      "group": "ITB"
+    },
+    {
+      "id": 149,
+      "label": "Site Navigation",
+      "group": "ITB"
+    },
+    {
+      "id": 150,
+      "label": "Print-Friendly Output",
+      "group": "ITB"
+    },
+    {
+      "id": 151,
+      "label": "Prompt Engineering",
+      "group": "AIST"
+    },
+    {
+      "id": 152,
+      "label": "Context Window",
+      "group": "AIST"
+    },
+    {
+      "id": 153,
+      "label": "Token Budgeting",
+      "group": "AIST"
+    },
+    {
+      "id": 154,
+      "label": "SKILL.md Format",
+      "group": "AIST"
+    },
+    {
+      "id": 155,
+      "label": "Skill Invocation",
+      "group": "AIST"
+    },
+    {
+      "id": 156,
+      "label": "Course Description Analyzer",
+      "group": "AIST"
+    },
+    {
+      "id": 157,
+      "label": "Learning Graph Generator",
+      "group": "AIST"
+    },
+    {
+      "id": 158,
+      "label": "Book Chapter Generator",
+      "group": "AIST"
+    },
+    {
+      "id": 159,
+      "label": "Chapter Content Generator",
+      "group": "AIST"
+    },
+    {
+      "id": 160,
+      "label": "Glossary Generator",
+      "group": "AIST"
+    },
+    {
+      "id": 161,
+      "label": "FAQ Generator",
+      "group": "AIST"
+    },
+    {
+      "id": 162,
+      "label": "Quiz Generator",
+      "group": "AIST"
+    },
+    {
+      "id": 163,
+      "label": "MicroSim Generator",
+      "group": "AIST"
+    },
+    {
+      "id": 164,
+      "label": "Story Generator",
+      "group": "AIST"
+    },
+    {
+      "id": 165,
+      "label": "Reference Generator",
+      "group": "AIST"
+    },
+    {
+      "id": 166,
+      "label": "Book Metrics Generator",
+      "group": "AIST"
+    },
+    {
+      "id": 167,
+      "label": "Diagram Reports Generator",
+      "group": "AIST"
+    },
+    {
+      "id": 168,
+      "label": "LinkedIn Announcement Generator",
+      "group": "AIST"
+    },
+    {
+      "id": 169,
+      "label": "Concept Classifier",
+      "group": "AIST"
+    },
+    {
+      "id": 170,
+      "label": "MicroSim",
+      "group": "SIM"
+    },
+    {
+      "id": 171,
+      "label": "MicroSim Design Principles",
+      "group": "SIM"
+    },
+    {
+      "id": 172,
+      "label": "p5.js Library",
+      "group": "SIM"
+    },
+    {
+      "id": 173,
+      "label": "Chart.js Library",
+      "group": "SIM"
+    },
+    {
+      "id": 174,
+      "label": "Plotly Library",
+      "group": "SIM"
+    },
+    {
+      "id": 175,
+      "label": "Mermaid Diagram",
+      "group": "SIM"
+    },
+    {
+      "id": 176,
+      "label": "vis-network Library",
+      "group": "SIM"
+    },
+    {
+      "id": 177,
+      "label": "Leaflet Map Library",
+      "group": "SIM"
+    },
+    {
+      "id": 178,
+      "label": "Venn.js Library",
+      "group": "SIM"
+    },
+    {
+      "id": 179,
+      "label": "Interactive Infographic",
+      "group": "SIM"
+    },
+    {
+      "id": 180,
+      "label": "MicroSim Control Complexity",
+      "group": "SIM"
+    },
+    {
+      "id": 181,
+      "label": "Iframe Embedding",
+      "group": "SIM"
+    },
+    {
+      "id": 182,
+      "label": "Screen Capture Automation",
+      "group": "SIM"
+    },
+    {
+      "id": 183,
+      "label": "Diagram Overlay Pattern",
+      "group": "SIM"
+    },
+    {
+      "id": 184,
+      "label": "Pedagogical Mascot",
+      "group": "MASC"
+    },
+    {
+      "id": 185,
+      "label": "Mascot Persona",
+      "group": "MASC"
+    },
+    {
+      "id": 186,
+      "label": "Mascot Visual Identity",
+      "group": "MASC"
+    },
+    {
+      "id": 187,
+      "label": "Mascot Voice Guide",
+      "group": "MASC"
+    },
+    {
+      "id": 188,
+      "label": "Mascot Admonition",
+      "group": "MASC"
+    },
+    {
+      "id": 189,
+      "label": "Hint Admonition",
+      "group": "MASC"
+    },
+    {
+      "id": 190,
+      "label": "Warning Admonition",
+      "group": "MASC"
+    },
+    {
+      "id": 191,
+      "label": "Tip Admonition",
+      "group": "MASC"
+    },
+    {
+      "id": 192,
+      "label": "Encouragement Admonition",
+      "group": "MASC"
+    },
+    {
+      "id": 193,
+      "label": "Danger Admonition",
+      "group": "MASC"
+    },
+    {
+      "id": 194,
+      "label": "Understanding Check Admonition",
+      "group": "MASC"
+    },
+    {
+      "id": 195,
+      "label": "Admonition CSS Styling",
+      "group": "MASC"
+    },
+    {
+      "id": 196,
+      "label": "Narrative Voice Consistency",
+      "group": "MASC"
+    },
+    {
+      "id": 197,
+      "label": "Graphic Novel Chapter",
+      "group": "GN"
+    },
+    {
+      "id": 198,
+      "label": "Short-Form Narrative",
+      "group": "GN"
+    },
+    {
+      "id": 199,
+      "label": "Twelve Panel Story",
+      "group": "GN"
+    },
+    {
+      "id": 200,
+      "label": "Panel Composition",
+      "group": "GN"
+    },
+    {
+      "id": 201,
+      "label": "Image Prompt Engineering",
+      "group": "GN"
+    },
+    {
+      "id": 202,
+      "label": "Image Generation",
+      "group": "GN"
+    },
+    {
+      "id": 203,
+      "label": "Historical Figure Selection",
+      "group": "GN"
+    },
+    {
+      "id": 204,
+      "label": "Narrative Transportation",
+      "group": "GN"
+    },
+    {
+      "id": 205,
+      "label": "Story Arc Structure",
+      "group": "GN"
+    },
+    {
+      "id": 206,
+      "label": "Character Design",
+      "group": "GN"
+    },
+    {
+      "id": 207,
+      "label": "Speech Bubble Design",
+      "group": "GN"
+    },
+    {
+      "id": 208,
+      "label": "Caption Box Writing",
+      "group": "GN"
+    },
+    {
+      "id": 209,
+      "label": "Historical Accuracy Check",
+      "group": "GN"
+    },
+    {
+      "id": 210,
+      "label": "Story Engagement Techniques",
+      "group": "GN"
+    },
+    {
+      "id": 211,
+      "label": "Capstone Project",
+      "group": "CAP"
+    },
+    {
+      "id": 212,
+      "label": "GitHub Pages Deployment",
+      "group": "CAP"
+    },
+    {
+      "id": 213,
+      "label": "MkDocs Build Process",
+      "group": "CAP"
+    },
+    {
+      "id": 214,
+      "label": "Portfolio Artifact",
+      "group": "CAP"
+    },
+    {
+      "id": 215,
+      "label": "Peer Review Process",
+      "group": "CAP"
+    },
+    {
+      "id": 216,
+      "label": "Iterative Improvement",
+      "group": "CAP"
+    },
+    {
+      "id": 217,
+      "label": "Accessibility Audit Basics",
+      "group": "CAP"
+    },
+    {
+      "id": 218,
+      "label": "Publishing Workflow",
+      "group": "CAP"
+    },
+    {
+      "id": 219,
+      "label": "Chapter Rubric Evaluation",
+      "group": "CAP"
+    },
+    {
+      "id": 220,
+      "label": "Mastery Demonstration",
+      "group": "CAP"
+    },
+    {
+      "id": 221,
+      "label": "Image Generation Costs",
+      "group": "AIST"
+    }
+  ],
+  "edges": [
+    {
+      "from": 2,
+      "to": 1
+    },
+    {
+      "from": 4,
+      "to": 1
+    },
+    {
+      "from": 4,
+      "to": 3
+    },
+    {
+      "from": 5,
+      "to": 3
+    },
+    {
+      "from": 6,
+      "to": 1
+    },
+    {
+      "from": 6,
+      "to": 4
+    },
+    {
+      "from": 7,
+      "to": 2
+    },
+    {
+      "from": 8,
+      "to": 2
+    },
+    {
+      "from": 8,
+      "to": 7
+    },
+    {
+      "from": 9,
+      "to": 1
+    },
+    {
+      "from": 9,
+      "to": 2
+    },
+    {
+      "from": 11,
+      "to": 10
+    },
+    {
+      "from": 12,
+      "to": 10
+    },
+    {
+      "from": 12,
+      "to": 11
+    },
+    {
+      "from": 13,
+      "to": 12
+    },
+    {
+      "from": 14,
+      "to": 15
+    },
+    {
+      "from": 16,
+      "to": 1
+    },
+    {
+      "from": 17,
+      "to": 16
+    },
+    {
+      "from": 18,
+      "to": 16
+    },
+    {
+      "from": 19,
+      "to": 16
+    },
+    {
+      "from": 20,
+      "to": 16
+    },
+    {
+      "from": 21,
+      "to": 16
+    },
+    {
+      "from": 22,
+      "to": 16
+    },
+    {
+      "from": 23,
+      "to": 16
+    },
+    {
+      "from": 24,
+      "to": 17
+    },
+    {
+      "from": 25,
+      "to": 17
+    },
+    {
+      "from": 26,
+      "to": 24
+    },
+    {
+      "from": 26,
+      "to": 25
+    },
+    {
+      "from": 27,
+      "to": 26
+    },
+    {
+      "from": 28,
+      "to": 26
+    },
+    {
+      "from": 29,
+      "to": 26
+    },
+    {
+      "from": 30,
+      "to": 24
+    },
+    {
+      "from": 30,
+      "to": 34
+    },
+    {
+      "from": 31,
+      "to": 17
+    },
+    {
+      "from": 32,
+      "to": 17
+    },
+    {
+      "from": 33,
+      "to": 32
+    },
+    {
+      "from": 34,
+      "to": 32
+    },
+    {
+      "from": 35,
+      "to": 17
+    },
+    {
+      "from": 35,
+      "to": 24
+    },
+    {
+      "from": 36,
+      "to": 3
+    },
+    {
+      "from": 37,
+      "to": 36
+    },
+    {
+      "from": 38,
+      "to": 36
+    },
+    {
+      "from": 39,
+      "to": 24
+    },
+    {
+      "from": 40,
+      "to": 39
+    },
+    {
+      "from": 41,
+      "to": 35
+    },
+    {
+      "from": 41,
+      "to": 36
+    },
+    {
+      "from": 42,
+      "to": 18
+    },
+    {
+      "from": 43,
+      "to": 42
+    },
+    {
+      "from": 44,
+      "to": 42
+    },
+    {
+      "from": 45,
+      "to": 18
+    },
+    {
+      "from": 46,
+      "to": 45
+    },
+    {
+      "from": 47,
+      "to": 45
+    },
+    {
+      "from": 48,
+      "to": 45
+    },
+    {
+      "from": 49,
+      "to": 45
+    },
+    {
+      "from": 50,
+      "to": 18
+    },
+    {
+      "from": 51,
+      "to": 50
+    },
+    {
+      "from": 52,
+      "to": 50
+    },
+    {
+      "from": 53,
+      "to": 50
+    },
+    {
+      "from": 54,
+      "to": 50
+    },
+    {
+      "from": 54,
+      "to": 51
+    },
+    {
+      "from": 55,
+      "to": 54
+    },
+    {
+      "from": 56,
+      "to": 45
+    },
+    {
+      "from": 56,
+      "to": 46
+    },
+    {
+      "from": 57,
+      "to": 45
+    },
+    {
+      "from": 57,
+      "to": 50
+    },
+    {
+      "from": 58,
+      "to": 50
+    },
+    {
+      "from": 58,
+      "to": 57
+    },
+    {
+      "from": 59,
+      "to": 57
+    },
+    {
+      "from": 60,
+      "to": 57
+    },
+    {
+      "from": 61,
+      "to": 60
+    },
+    {
+      "from": 61,
+      "to": 45
+    },
+    {
+      "from": 62,
+      "to": 45
+    },
+    {
+      "from": 63,
+      "to": 62
+    },
+    {
+      "from": 64,
+      "to": 62
+    },
+    {
+      "from": 65,
+      "to": 62
+    },
+    {
+      "from": 66,
+      "to": 62
+    },
+    {
+      "from": 66,
+      "to": 63
+    },
+    {
+      "from": 66,
+      "to": 64
+    },
+    {
+      "from": 66,
+      "to": 65
+    },
+    {
+      "from": 67,
+      "to": 19
+    },
+    {
+      "from": 67,
+      "to": 50
+    },
+    {
+      "from": 68,
+      "to": 67
+    },
+    {
+      "from": 69,
+      "to": 19
+    },
+    {
+      "from": 69,
+      "to": 50
+    },
+    {
+      "from": 70,
+      "to": 69
+    },
+    {
+      "from": 71,
+      "to": 69
+    },
+    {
+      "from": 72,
+      "to": 71
+    },
+    {
+      "from": 73,
+      "to": 50
+    },
+    {
+      "from": 73,
+      "to": 58
+    },
+    {
+      "from": 74,
+      "to": 67
+    },
+    {
+      "from": 74,
+      "to": 57
+    },
+    {
+      "from": 75,
+      "to": 67
+    },
+    {
+      "from": 76,
+      "to": 67
+    },
+    {
+      "from": 76,
+      "to": 69
+    },
+    {
+      "from": 77,
+      "to": 58
+    },
+    {
+      "from": 77,
+      "to": 76
+    },
+    {
+      "from": 78,
+      "to": 67
+    },
+    {
+      "from": 78,
+      "to": 72
+    },
+    {
+      "from": 79,
+      "to": 69
+    },
+    {
+      "from": 80,
+      "to": 69
+    },
+    {
+      "from": 80,
+      "to": 79
+    },
+    {
+      "from": 81,
+      "to": 20
+    },
+    {
+      "from": 81,
+      "to": 50
+    },
+    {
+      "from": 82,
+      "to": 81
+    },
+    {
+      "from": 83,
+      "to": 81
+    },
+    {
+      "from": 84,
+      "to": 83
+    },
+    {
+      "from": 84,
+      "to": 88
+    },
+    {
+      "from": 85,
+      "to": 81
+    },
+    {
+      "from": 86,
+      "to": 18
+    },
+    {
+      "from": 87,
+      "to": 85
+    },
+    {
+      "from": 87,
+      "to": 86
+    },
+    {
+      "from": 88,
+      "to": 54
+    },
+    {
+      "from": 88,
+      "to": 18
+    },
+    {
+      "from": 89,
+      "to": 88
+    },
+    {
+      "from": 89,
+      "to": 83
+    },
+    {
+      "from": 90,
+      "to": 20
+    },
+    {
+      "from": 90,
+      "to": 84
+    },
+    {
+      "from": 91,
+      "to": 20
+    },
+    {
+      "from": 91,
+      "to": 88
+    },
+    {
+      "from": 92,
+      "to": 20
+    },
+    {
+      "from": 92,
+      "to": 64
+    },
+    {
+      "from": 93,
+      "to": 92
+    },
+    {
+      "from": 93,
+      "to": 67
+    },
+    {
+      "from": 94,
+      "to": 90
+    },
+    {
+      "from": 94,
+      "to": 83
+    },
+    {
+      "from": 95,
+      "to": 21
+    },
+    {
+      "from": 96,
+      "to": 95
+    },
+    {
+      "from": 96,
+      "to": 67
+    },
+    {
+      "from": 97,
+      "to": 95
+    },
+    {
+      "from": 97,
+      "to": 54
+    },
+    {
+      "from": 98,
+      "to": 95
+    },
+    {
+      "from": 98,
+      "to": 53
+    },
+    {
+      "from": 99,
+      "to": 95
+    },
+    {
+      "from": 100,
+      "to": 56
+    },
+    {
+      "from": 100,
+      "to": 97
+    },
+    {
+      "from": 101,
+      "to": 99
+    },
+    {
+      "from": 102,
+      "to": 95
+    },
+    {
+      "from": 102,
+      "to": 98
+    },
+    {
+      "from": 103,
+      "to": 95
+    },
+    {
+      "from": 103,
+      "to": 51
+    },
+    {
+      "from": 104,
+      "to": 95
+    },
+    {
+      "from": 104,
+      "to": 96
+    },
+    {
+      "from": 105,
+      "to": 96
+    },
+    {
+      "from": 106,
+      "to": 22
+    },
+    {
+      "from": 106,
+      "to": 8
+    },
+    {
+      "from": 107,
+      "to": 22
+    },
+    {
+      "from": 107,
+      "to": 8
+    },
+    {
+      "from": 108,
+      "to": 22
+    },
+    {
+      "from": 108,
+      "to": 120
+    },
+    {
+      "from": 109,
+      "to": 22
+    },
+    {
+      "from": 110,
+      "to": 109
+    },
+    {
+      "from": 111,
+      "to": 109
+    },
+    {
+      "from": 112,
+      "to": 109
+    },
+    {
+      "from": 112,
+      "to": 106
+    },
+    {
+      "from": 113,
+      "to": 107
+    },
+    {
+      "from": 113,
+      "to": 8
+    },
+    {
+      "from": 114,
+      "to": 107
+    },
+    {
+      "from": 115,
+      "to": 106
+    },
+    {
+      "from": 115,
+      "to": 86
+    },
+    {
+      "from": 116,
+      "to": 18
+    },
+    {
+      "from": 116,
+      "to": 34
+    },
+    {
+      "from": 117,
+      "to": 116
+    },
+    {
+      "from": 118,
+      "to": 108
+    },
+    {
+      "from": 119,
+      "to": 108
+    },
+    {
+      "from": 119,
+      "to": 6
+    },
+    {
+      "from": 120,
+      "to": 22
+    },
+    {
+      "from": 121,
+      "to": 23
+    },
+    {
+      "from": 122,
+      "to": 123
+    },
+    {
+      "from": 122,
+      "to": 121
+    },
+    {
+      "from": 123,
+      "to": 23
+    },
+    {
+      "from": 123,
+      "to": 124
+    },
+    {
+      "from": 124,
+      "to": 23
+    },
+    {
+      "from": 125,
+      "to": 124
+    },
+    {
+      "from": 125,
+      "to": 127
+    },
+    {
+      "from": 126,
+      "to": 23
+    },
+    {
+      "from": 126,
+      "to": 54
+    },
+    {
+      "from": 127,
+      "to": 126
+    },
+    {
+      "from": 127,
+      "to": 121
+    },
+    {
+      "from": 128,
+      "to": 129
+    },
+    {
+      "from": 128,
+      "to": 23
+    },
+    {
+      "from": 129,
+      "to": 23
+    },
+    {
+      "from": 130,
+      "to": 121
+    },
+    {
+      "from": 130,
+      "to": 29
+    },
+    {
+      "from": 131,
+      "to": 121
+    },
+    {
+      "from": 132,
+      "to": 121
+    },
+    {
+      "from": 132,
+      "to": 124
+    },
+    {
+      "from": 133,
+      "to": 121
+    },
+    {
+      "from": 134,
+      "to": 133
+    },
+    {
+      "from": 134,
+      "to": 121
+    },
+    {
+      "from": 135,
+      "to": 9
+    },
+    {
+      "from": 135,
+      "to": 2
+    },
+    {
+      "from": 136,
+      "to": 135
+    },
+    {
+      "from": 137,
+      "to": 136
+    },
+    {
+      "from": 138,
+      "to": 137
+    },
+    {
+      "from": 139,
+      "to": 136
+    },
+    {
+      "from": 140,
+      "to": 137
+    },
+    {
+      "from": 140,
+      "to": 139
+    },
+    {
+      "from": 141,
+      "to": 135
+    },
+    {
+      "from": 142,
+      "to": 135
+    },
+    {
+      "from": 143,
+      "to": 135
+    },
+    {
+      "from": 143,
+      "to": 107
+    },
+    {
+      "from": 144,
+      "to": 135
+    },
+    {
+      "from": 144,
+      "to": 8
+    },
+    {
+      "from": 145,
+      "to": 144
+    },
+    {
+      "from": 145,
+      "to": 15
+    },
+    {
+      "from": 146,
+      "to": 135
+    },
+    {
+      "from": 147,
+      "to": 135
+    },
+    {
+      "from": 147,
+      "to": 144
+    },
+    {
+      "from": 148,
+      "to": 135
+    },
+    {
+      "from": 148,
+      "to": 14
+    },
+    {
+      "from": 149,
+      "to": 135
+    },
+    {
+      "from": 149,
+      "to": 14
+    },
+    {
+      "from": 150,
+      "to": 135
+    },
+    {
+      "from": 150,
+      "to": 129
+    },
+    {
+      "from": 151,
+      "to": 11
+    },
+    {
+      "from": 152,
+      "to": 11
+    },
+    {
+      "from": 153,
+      "to": 152
+    },
+    {
+      "from": 154,
+      "to": 13
+    },
+    {
+      "from": 154,
+      "to": 15
+    },
+    {
+      "from": 155,
+      "to": 13
+    },
+    {
+      "from": 155,
+      "to": 154
+    },
+    {
+      "from": 156,
+      "to": 155
+    },
+    {
+      "from": 156,
+      "to": 7
+    },
+    {
+      "from": 156,
+      "to": 8
+    },
+    {
+      "from": 157,
+      "to": 155
+    },
+    {
+      "from": 157,
+      "to": 136
+    },
+    {
+      "from": 158,
+      "to": 155
+    },
+    {
+      "from": 158,
+      "to": 144
+    },
+    {
+      "from": 158,
+      "to": 157
+    },
+    {
+      "from": 159,
+      "to": 155
+    },
+    {
+      "from": 159,
+      "to": 145
+    },
+    {
+      "from": 159,
+      "to": 158
+    },
+    {
+      "from": 160,
+      "to": 155
+    },
+    {
+      "from": 160,
+      "to": 141
+    },
+    {
+      "from": 161,
+      "to": 155
+    },
+    {
+      "from": 161,
+      "to": 142
+    },
+    {
+      "from": 162,
+      "to": 155
+    },
+    {
+      "from": 162,
+      "to": 143
+    },
+    {
+      "from": 162,
+      "to": 7
+    },
+    {
+      "from": 163,
+      "to": 155
+    },
+    {
+      "from": 163,
+      "to": 170
+    },
+    {
+      "from": 164,
+      "to": 155
+    },
+    {
+      "from": 164,
+      "to": 197
+    },
+    {
+      "from": 165,
+      "to": 155
+    },
+    {
+      "from": 165,
+      "to": 146
+    },
+    {
+      "from": 166,
+      "to": 155
+    },
+    {
+      "from": 166,
+      "to": 120
+    },
+    {
+      "from": 167,
+      "to": 155
+    },
+    {
+      "from": 167,
+      "to": 170
+    },
+    {
+      "from": 168,
+      "to": 155
+    },
+    {
+      "from": 168,
+      "to": 166
+    },
+    {
+      "from": 169,
+      "to": 155
+    },
+    {
+      "from": 169,
+      "to": 170
+    },
+    {
+      "from": 169,
+      "to": 7
+    },
+    {
+      "from": 170,
+      "to": 9
+    },
+    {
+      "from": 171,
+      "to": 170
+    },
+    {
+      "from": 171,
+      "to": 66
+    },
+    {
+      "from": 172,
+      "to": 170
+    },
+    {
+      "from": 173,
+      "to": 170
+    },
+    {
+      "from": 174,
+      "to": 170
+    },
+    {
+      "from": 175,
+      "to": 170
+    },
+    {
+      "from": 175,
+      "to": 15
+    },
+    {
+      "from": 176,
+      "to": 170
+    },
+    {
+      "from": 177,
+      "to": 170
+    },
+    {
+      "from": 178,
+      "to": 170
+    },
+    {
+      "from": 179,
+      "to": 170
+    },
+    {
+      "from": 179,
+      "to": 60
+    },
+    {
+      "from": 180,
+      "to": 171
+    },
+    {
+      "from": 180,
+      "to": 62
+    },
+    {
+      "from": 181,
+      "to": 170
+    },
+    {
+      "from": 181,
+      "to": 14
+    },
+    {
+      "from": 182,
+      "to": 170
+    },
+    {
+      "from": 182,
+      "to": 181
+    },
+    {
+      "from": 183,
+      "to": 179
+    },
+    {
+      "from": 183,
+      "to": 175
+    },
+    {
+      "from": 184,
+      "to": 17
+    },
+    {
+      "from": 184,
+      "to": 35
+    },
+    {
+      "from": 185,
+      "to": 184
+    },
+    {
+      "from": 186,
+      "to": 184
+    },
+    {
+      "from": 187,
+      "to": 185
+    },
+    {
+      "from": 188,
+      "to": 184
+    },
+    {
+      "from": 188,
+      "to": 15
+    },
+    {
+      "from": 189,
+      "to": 188
+    },
+    {
+      "from": 190,
+      "to": 188
+    },
+    {
+      "from": 191,
+      "to": 188
+    },
+    {
+      "from": 192,
+      "to": 188
+    },
+    {
+      "from": 192,
+      "to": 34
+    },
+    {
+      "from": 193,
+      "to": 188
+    },
+    {
+      "from": 193,
+      "to": 190
+    },
+    {
+      "from": 194,
+      "to": 188
+    },
+    {
+      "from": 194,
+      "to": 67
+    },
+    {
+      "from": 195,
+      "to": 188
+    },
+    {
+      "from": 195,
+      "to": 14
+    },
+    {
+      "from": 196,
+      "to": 187
+    },
+    {
+      "from": 197,
+      "to": 35
+    },
+    {
+      "from": 197,
+      "to": 9
+    },
+    {
+      "from": 198,
+      "to": 197
+    },
+    {
+      "from": 199,
+      "to": 198
+    },
+    {
+      "from": 200,
+      "to": 199
+    },
+    {
+      "from": 201,
+      "to": 151
+    },
+    {
+      "from": 201,
+      "to": 197
+    },
+    {
+      "from": 202,
+      "to": 201
+    },
+    {
+      "from": 202,
+      "to": 10
+    },
+    {
+      "from": 203,
+      "to": 197
+    },
+    {
+      "from": 203,
+      "to": 39
+    },
+    {
+      "from": 204,
+      "to": 35
+    },
+    {
+      "from": 204,
+      "to": 198
+    },
+    {
+      "from": 205,
+      "to": 199
+    },
+    {
+      "from": 206,
+      "to": 200
+    },
+    {
+      "from": 207,
+      "to": 200
+    },
+    {
+      "from": 208,
+      "to": 200
+    },
+    {
+      "from": 208,
+      "to": 15
+    },
+    {
+      "from": 209,
+      "to": 203
+    },
+    {
+      "from": 209,
+      "to": 6
+    },
+    {
+      "from": 210,
+      "to": 204
+    },
+    {
+      "from": 210,
+      "to": 205
+    },
+    {
+      "from": 211,
+      "to": 16
+    },
+    {
+      "from": 211,
+      "to": 135
+    },
+    {
+      "from": 211,
+      "to": 145
+    },
+    {
+      "from": 212,
+      "to": 213
+    },
+    {
+      "from": 212,
+      "to": 14
+    },
+    {
+      "from": 213,
+      "to": 14
+    },
+    {
+      "from": 213,
+      "to": 15
+    },
+    {
+      "from": 214,
+      "to": 211
+    },
+    {
+      "from": 214,
+      "to": 212
+    },
+    {
+      "from": 215,
+      "to": 211
+    },
+    {
+      "from": 215,
+      "to": 113
+    },
+    {
+      "from": 216,
+      "to": 215
+    },
+    {
+      "from": 216,
+      "to": 120
+    },
+    {
+      "from": 217,
+      "to": 129
+    },
+    {
+      "from": 217,
+      "to": 128
+    },
+    {
+      "from": 218,
+      "to": 213
+    },
+    {
+      "from": 218,
+      "to": 212
+    },
+    {
+      "from": 219,
+      "to": 113
+    },
+    {
+      "from": 219,
+      "to": 145
+    },
+    {
+      "from": 220,
+      "to": 211
+    },
+    {
+      "from": 220,
+      "to": 104
+    },
+    {
+      "from": 220,
+      "to": 214
+    },
+    {
+      "from": 221,
+      "to": 202
+    },
+    {
+      "from": 221,
+      "to": 153
+    }
+  ]
+}

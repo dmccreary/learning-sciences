@@ -1,0 +1,222 @@
+ConceptID,ConceptLabel,Dependencies,TaxonomyID
+1,Learning Sciences,,FOUND
+2,Instructional Design,1,FOUND
+3,Cognitive Science,,FOUND
+4,Educational Psychology,1|3,FOUND
+5,Neuroscience in Learning,3,FOUND
+6,Evidence-Based Pedagogy,1|4,FOUND
+7,Bloom Taxonomy 2001,2,FOUND
+8,Learning Objective,2|7,FOUND
+9,Intelligent Textbook,1|2,FOUND
+10,Generative AI,,FOUND
+11,Large Language Model,10,FOUND
+12,Claude Code,10|11,FOUND
+13,Agent Skill,12,FOUND
+14,MkDocs Material,15,FOUND
+15,Markdown Authoring,,FOUND
+16,Seven Interlocking Domains,1,DOMAIN
+17,Motivation Domain,16,DOMAIN
+18,Understanding Domain,16,DOMAIN
+19,Retention Domain,16,DOMAIN
+20,Application Domain,16,DOMAIN
+21,Expertise Domain,16,DOMAIN
+22,Measurement Domain,16,DOMAIN
+23,Learning Conditions Domain,16,DOMAIN
+24,Intrinsic Motivation,17,MOT
+25,Extrinsic Motivation,17,MOT
+26,Self-Determination Theory,24|25,MOT
+27,Autonomy Need,26,MOT
+28,Competence Need,26,MOT
+29,Relatedness Need,26,MOT
+30,Flow State,24|34,MOT
+31,Goal Orientation,17,MOT
+32,Growth Mindset,17,MOT
+33,Fixed Mindset,32,MOT
+34,Self-Efficacy,32,MOT
+35,Engagement,17|24,MOT
+36,Attention,3,MOT
+37,Attention Capture,36,MOT
+38,Sustained Attention,36,MOT
+39,Curiosity,24,MOT
+40,Interest Development,39,MOT
+41,ARCS Model,35|36,MOT
+42,Sensory Memory,18,COG
+43,Iconic Memory,42,COG
+44,Echoic Memory,42,COG
+45,Working Memory,18,COG
+46,Miller's Law,45,COG
+47,Phonological Loop,45,COG
+48,Visuospatial Sketchpad,45,COG
+49,Central Executive,45,COG
+50,Long-Term Memory,18,COG
+51,Semantic Memory,50,COG
+52,Episodic Memory,50,COG
+53,Procedural Memory,50,COG
+54,Schema,50|51,COG
+55,Schema Construction,54,COG
+56,Chunking,45|46,COG
+57,Encoding,45|50,COG
+58,Consolidation,50|57,COG
+59,Elaboration,57,COG
+60,Dual Coding Theory,57,COG
+61,Multimedia Learning Theory,60|45,COG
+62,Cognitive Load,45,COG
+63,Intrinsic Cognitive Load,62,COG
+64,Extraneous Cognitive Load,62,COG
+65,Germane Cognitive Load,62,COG
+66,Cognitive Load Theory,62|63|64|65,COG
+67,Retrieval Practice,19|50,RET
+68,Testing Effect,67,RET
+69,Spaced Repetition,19|50,RET
+70,Massed Practice,69,RET
+71,Distributed Practice,69,RET
+72,Interleaving,71,RET
+73,Forgetting Curve,50|58,RET
+74,Retrieval Cue,67|57,RET
+75,Recall vs Recognition,67,RET
+76,Retrieval Strength,67|69,RET
+77,Storage Strength,58|76,RET
+78,Desirable Difficulty,67|72,RET
+79,Leitner System,69,RET
+80,Spaced Retrieval Scheduling,69|79,RET
+81,Knowledge Transfer,20|50,APP
+82,Near Transfer,81,APP
+83,Far Transfer,81,APP
+84,Novel Problem Solving,83|88,APP
+85,Unlearning,81,APP
+86,Misconception,18,APP
+87,Conceptual Change,85|86,APP
+88,Mental Model,54|18,APP
+89,Analogical Reasoning,88|83,APP
+90,Problem-Based Learning,20|84,APP
+91,Case-Based Learning,20|88,APP
+92,Worked Example,20|64,APP
+93,Example-Problem Pair,92|67,APP
+94,Scenario-Based Assessment,90|83,APP
+95,Expertise,21,EXP
+96,Deliberate Practice,95|67,EXP
+97,Pattern Recognition,95|54,EXP
+98,Automaticity,95|53,EXP
+99,Novice Expert Difference,95,EXP
+100,Expert Chunking,56|97,EXP
+101,Dreyfus Skill Model,99,EXP
+102,Tacit Knowledge,95|98,EXP
+103,Explicit Knowledge,95|51,EXP
+104,Mastery Learning,95|96,EXP
+105,Ten Thousand Hour Rule,96,EXP
+106,Formative Assessment,22|8,MEAS
+107,Summative Assessment,22|8,MEAS
+108,Learning Analytics,22|120,MEAS
+109,Feedback Loop,22,MEAS
+110,Immediate Feedback,109,MEAS
+111,Delayed Feedback,109,MEAS
+112,Corrective Feedback,109|106,MEAS
+113,Assessment Rubric,107|8,MEAS
+114,Item Response Theory,107,MEAS
+115,Diagnostic Assessment,106|86,MEAS
+116,Metacognition,18|34,MEAS
+117,Self-Regulated Learning,116,MEAS
+118,Learning Dashboard,108,MEAS
+119,A/B Testing in Learning,108|6,MEAS
+120,Quality Metrics,22,MEAS
+121,Learning Environment,23,COND
+122,Scaffolding,123|121,COND
+123,Zone of Proximal Development,23|124,COND
+124,Social Learning Theory,23,COND
+125,Community of Practice,124|127,COND
+126,Constructivism,23|54,COND
+127,Situated Cognition,126|121,COND
+128,Universal Design for Learning,129|23,COND
+129,Accessibility,23,COND
+130,Psychological Safety,121|29,COND
+131,Culturally Responsive Teaching,121,COND
+132,Classroom Discourse,121|124,COND
+133,Online Learning Environment,121,COND
+134,Blended Learning,133|121,COND
+135,Intelligent Textbook Design,9|2,ITB
+136,Learning Graph,135,ITB
+137,Concept Dependency,136,ITB
+138,DAG Structure,137,ITB
+139,Concept Node,136,ITB
+140,Concept Edge,137|139,ITB
+141,Glossary,135,ITB
+142,FAQ Section,135,ITB
+143,Quiz Bank,135|107,ITB
+144,Chapter Outline,135|8,ITB
+145,Chapter Content Authoring,144|15,ITB
+146,Reference List,135,ITB
+147,Table of Contents,135|144,ITB
+148,Search Index,135|14,ITB
+149,Site Navigation,135|14,ITB
+150,Print-Friendly Output,135|129,ITB
+151,Prompt Engineering,11,AIST
+152,Context Window,11,AIST
+153,Token Budgeting,152,AIST
+154,SKILL.md Format,13|15,AIST
+155,Skill Invocation,13|154,AIST
+156,Course Description Analyzer,155|7|8,AIST
+157,Learning Graph Generator,155|136,AIST
+158,Book Chapter Generator,155|144|157,AIST
+159,Chapter Content Generator,155|145|158,AIST
+160,Glossary Generator,155|141,AIST
+161,FAQ Generator,155|142,AIST
+162,Quiz Generator,155|143|7,AIST
+163,MicroSim Generator,155|170,AIST
+164,Story Generator,155|197,AIST
+165,Reference Generator,155|146,AIST
+166,Book Metrics Generator,155|120,AIST
+167,Diagram Reports Generator,155|170,AIST
+168,LinkedIn Announcement Generator,155|166,AIST
+169,Concept Classifier,155|170|7,AIST
+170,MicroSim,9,SIM
+171,MicroSim Design Principles,170|66,SIM
+172,p5.js Library,170,SIM
+173,Chart.js Library,170,SIM
+174,Plotly Library,170,SIM
+175,Mermaid Diagram,170|15,SIM
+176,vis-network Library,170,SIM
+177,Leaflet Map Library,170,SIM
+178,Venn.js Library,170,SIM
+179,Interactive Infographic,170|60,SIM
+180,MicroSim Control Complexity,171|62,SIM
+181,Iframe Embedding,170|14,SIM
+182,Screen Capture Automation,170|181,SIM
+183,Diagram Overlay Pattern,179|175,SIM
+184,Pedagogical Mascot,17|35,MASC
+185,Mascot Persona,184,MASC
+186,Mascot Visual Identity,184,MASC
+187,Mascot Voice Guide,185,MASC
+188,Mascot Admonition,184|15,MASC
+189,Hint Admonition,188,MASC
+190,Warning Admonition,188,MASC
+191,Tip Admonition,188,MASC
+192,Encouragement Admonition,188|34,MASC
+193,Danger Admonition,188|190,MASC
+194,Understanding Check Admonition,188|67,MASC
+195,Admonition CSS Styling,188|14,MASC
+196,Narrative Voice Consistency,187,MASC
+197,Graphic Novel Chapter,35|9,GN
+198,Short-Form Narrative,197,GN
+199,Twelve Panel Story,198,GN
+200,Panel Composition,199,GN
+201,Image Prompt Engineering,151|197,GN
+202,Image Generation,201|10,GN
+203,Historical Figure Selection,197|39,GN
+204,Narrative Transportation,35|198,GN
+205,Story Arc Structure,199,GN
+206,Character Design,200,GN
+207,Speech Bubble Design,200,GN
+208,Caption Box Writing,200|15,GN
+209,Historical Accuracy Check,203|6,GN
+210,Story Engagement Techniques,204|205,GN
+211,Capstone Project,16|135|145,CAP
+212,GitHub Pages Deployment,213|14,CAP
+213,MkDocs Build Process,14|15,CAP
+214,Portfolio Artifact,211|212,CAP
+215,Peer Review Process,211|113,CAP
+216,Iterative Improvement,215|120,CAP
+217,Accessibility Audit Basics,129|128,CAP
+218,Publishing Workflow,213|212,CAP
+219,Chapter Rubric Evaluation,113|145,CAP
+220,Mastery Demonstration,211|104|214,CAP
+221,Image Generation Costs,202|153,AIST
