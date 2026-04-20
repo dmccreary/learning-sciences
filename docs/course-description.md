@@ -10,7 +10,7 @@ quality_score: 95
 
 **Target Audience:** Graduate students, adult continuing education learners, instructional designers, curriculum developers, educational technologists, and professional developers interested in authoring AI-augmented learning experiences
 
-**Prerequisites:** None. Basic familiarity with web publishing (Markdown, static site generators) and with generative AI tools is helpful but not required. A curiosity about how people learn and an interest in building educational content with AI is sufficient.
+**Prerequisites:** None. Basic familiarity with web publishing (Markdown, static site generators) and with generative AI tools is helpful but not required. A curiosity about how people learn and an interest in building educational content with AI is sufficient. A small number of chapters include mathematical equations for readers with a quantitative background — the Ebbinghaus forgetting curve, the cognitive-load budget inequality, and a few similar formulas. These are included as a courtesy to math-oriented students; later chapters assume only the **qualitative shape** of the underlying graphs (e.g., that retention decays quickly and then levels off), not the ability to manipulate the equations.
 
 ## Course Overview
 
