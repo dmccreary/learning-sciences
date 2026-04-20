@@ -48,7 +48,7 @@ This chapter builds on concepts from:
 
 ## The Student Who Aced the Quiz
 
-A graduate student has just finished a unit on statistical hypothesis testing. On the chapter quiz she scores 94% — she can state the null and alternative, compute a *t*-statistic by hand, and identify a *p*-value on a distribution plot. The next week her advisor hands her a messy dataset from a pilot study and asks, "Is the new intervention working?" She stares at the spreadsheet for twenty minutes. Nothing in it looks like the quiz. She does not know which test to run, or whether the question is even a testing question. The knowledge is there, and it is *stuck*.
+A graduate student has recently finished a unit on statistical hypothesis testing. On the chapter quiz she scores 94% — she can state the null and alternative, compute a *t*-statistic by hand, and identify a *p*-value on a distribution plot. The next week her advisor hands her a messy dataset from a pilot study and asks, "Is the new intervention working?" She stares at the spreadsheet for twenty minutes. Nothing in it looks like the quiz. She does not know which test to run, or whether the question is even a testing question. The knowledge is there, and it is *stuck*.
 
 The student did not fail to learn. She failed to *transfer*. The gap between the quiz and the spreadsheet — small to the instructor, vast to the learner — is the central phenomenon of this chapter. Almost everything we do in instruction is aimed at producing the performance the student already has. Almost nothing is aimed at producing the performance she needs.
 
@@ -81,7 +81,7 @@ An interactive infographic built with the `interactive-infographic-overlay` skil
 
 Modes (standard for this skill):
 
-- **Explore mode:** Hovering over any axis shows a tooltip containing the dimension name, a one-sentence definition, two example training-to-transfer pairs (one clearly near on that axis, one clearly far), and a note on how designers typically underestimate distance on that axis.
+- **Explore mode:** Hovering over any axis shows a tooltip containing the dimension name, a one-sentence definition, two example training-to-transfer pairs (one that is close on that axis, one that is distant), and a note on how designers typically underestimate distance on that axis.
 - **Quiz mode:** A short training-to-transfer pair is described ("trained on paper algebra, tested orally on a word problem a month later"); the student clicks each axis and rates near/far. The system scores how many dimensions the student classified correctly.
 - **Edit mode (authors only):** Drag axis-label anchors to recalibrate marker positions; export updated `data.json`.
 
@@ -118,7 +118,7 @@ A central, slightly uncomfortable finding of the learning sciences is that what 
 
 When prior knowledge is accurate and well-organized, new material attaches to it, is elaborated by it, and becomes far easier to retrieve and transfer. When prior knowledge is inaccurate — a ***misconception*** — the same attaching machinery works against instruction. A new correct explanation does not overwrite the misconception; it sits beside it, and the older, more practiced belief often wins the retrieval contest.
 
-A ***misconception*** is a durable prior belief that contradicts the target knowledge and that interferes with learning the target knowledge. Misconceptions are not ignorance — the learner has a model; the model is simply wrong in a way that produces confident incorrect predictions. Classic examples from science education include the belief that heavier objects fall faster, that summer is caused by Earth being closer to the Sun, and that electric current is used up as it travels through a bulb. Each has been tested in thousands of learners; each resists brief corrective instruction; each re-emerges on delayed tests even after the learner appears to have absorbed the correct account.
+A ***misconception*** is a durable prior belief that contradicts the target knowledge and that interferes with learning the target knowledge. Misconceptions are not ignorance — the learner has a model; the model is wrong in a way that produces confident incorrect predictions. Classic examples from science education include the belief that heavier objects fall faster, that summer is caused by Earth being closer to the Sun, and that electric current is used up as it travels through a bulb. Each has been tested in thousands of learners; each resists brief corrective instruction; each re-emerges on delayed tests even after the learner appears to have absorbed the correct account.
 
 The table below gives a set of learning-sciences-specific misconceptions worth anticipating in readers of this very book, paired with the correction and the research basis.
 
@@ -151,7 +151,7 @@ Textbooks that skip step one — and most do — are trying to overwrite a belie
 
 !!! mascot-warning "Correcting a Misconception by Assertion Does Not Work"
     <img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Bloom the elephant flagging a warning">
-    If your instructional plan for a common misconception is "state the correct version clearly," expect the misconception to persist. The prior belief has to be elicited and made to fail before the correction has somewhere to land. This is the most common structural failure in AI-generated explanatory content.
+    If your instructional plan for a common misconception is "state the correct version and move on," expect the misconception to persist. The prior belief has to be elicited and made to fail before the correction has somewhere to land. This is the most common structural failure in AI-generated explanatory content.
 
 ## Mental Models
 
@@ -238,6 +238,32 @@ The ***example-problem pair*** is the standard fading structure. A worked exampl
 
 Two practical design notes. First, self-explanation matters. Learners who are prompted to explain each step of a worked example — in writing or aloud — learn more than those who read it passively (Chi et al., 1989). The prompt can be as light as "explain why this step works" after each step. Second, variety matters. Worked examples that vary surface features across the set — different cover stories, different numerical values, different notations for the same structure — produce better transfer than sets of near-identical examples, because the varied surface forces the learner to extract the underlying structure.
 
+#### Diagram: Scaffold Fading Progression
+
+<details markdown="1">
+<summary>MicroSim: interactive fading-scaffold trainer that walks a learner through the worked-example to independent-problem arc</summary>
+Type: microsim
+**sim-id:** scaffold-fading-trainer<br/>
+**Library:** p5.js<br/>
+**Status:** Specified
+
+An interactive p5.js MicroSim that implements the six-stage fading progression from the table above for a chosen concept (default: Bayes' rule). The canvas shows a problem statement on the left and a solution workspace on the right. The top of the canvas shows a stage indicator (1 through 6) with the current scaffold level highlighted, and a mini cognitive-load meter that reflects the extraneous-load reduction at each stage.
+
+Controls (using built-in p5.js controls per project convention):
+
+- **Stage stepper buttons** — previous / next to move through the six stages on the same structural problem.
+- **Concept dropdown** — Bayes' rule, *t*-test selection, conditional probability, analogical mapping. Each concept has an authored sequence of six problems with matched structure and varied surface.
+- **Self-explain prompt toggle** — turns on or off the "explain why this step works" prompt after each step; data is logged so the learner can compare their own performance with and without self-explanation.
+- **Surface-variety slider** — 1 to 5; higher values swap more surface features between stages, exposing the underlying structure more aggressively.
+- **Reset button** — restart the sequence.
+
+Learning objective (Bloom level: Apply): *Given a target concept and a learner profile, choose the appropriate stage in the fading progression and justify the choice in cognitive-load terms.*
+
+Canvas responsive via `updateCanvasSize()` as first line of `setup()`; parented to the standard `<main></main>` element.
+
+Implementation: p5.js sketch in `/docs/sims/scaffold-fading-trainer/` with `main.html`, `script.js`, `local.css`, and `index.md`. Generated via the `microsim-generator` skill.
+</details>
+
 ## Problem-Based Learning and Case-Based Learning
 
 Two instructional traditions sit at the high-autonomy end of the spectrum and are often confused. ***Problem-based learning (PBL)*** is an approach in which learners are presented with an ill-structured problem at the start of a unit, organize their own investigation, consult resources (including instructors, who act as facilitators rather than lecturers), and construct the content knowledge they need to solve the problem. The method originated in medical education at McMaster University in the late 1960s and has since spread to engineering, law, and K–12 classrooms.
@@ -318,7 +344,7 @@ Loop labels placed at each loop's geometric center:
 - **R1 — Schema flywheel (reinforcing, productive).** variety → abstraction → schema → far transfer → more varied practice → more variety. Each trip around the loop builds the capacity for the next structurally novel problem.
 - **R2 — Surface-match trap (reinforcing, corrosive).** Near-transfer success → surface-feature reliance → perceived competence → less varied practice → less structural abstraction → and yet near-transfer performance keeps looking fine because the practice problems keep matching surface features. The loop feels like learning and starves transfer.
 
-Visual treatment: R1 nodes in cool blue; R2 nodes in warm red-orange; the node "practice on varied problems" drawn with a dual border to signal that it is the lever that switches between the two loops. Delay marker ⧚ on the schema strength → far-transfer capability edge because schema-based transfer shows up most clearly at delayed assessment, not immediately. Every edge labeled with `+` or `−`.
+Visual treatment: R1 nodes in cool blue; R2 nodes in warm red-orange; the node "practice on varied problems" drawn with a dual border to signal that it is the lever that switches between the two loops. Delay marker ⧚ on the schema strength → far-transfer capability edge because schema-based transfer shows up most distinctly at delayed assessment, not immediately. Every edge labeled with `+` or `−`.
 
 Implementation: Mermaid `flowchart LR` with `linkStyle` declarations for polarity coloring and `classDef` for loop grouping. A one-paragraph walkthrough of R1 in plain English accompanies the diagram in the prose that follows.
 </details>

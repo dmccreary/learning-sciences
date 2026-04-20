@@ -15,7 +15,10 @@
       "Bash(tee -a /Users/dan/Documents/ws/learning-sciences/logs/ch-01-content-generation.md)",
       "Bash(curl --version)",
       "WebSearch",
-      "Bash(tee -a /Users/dan/Documents/ws/learning-sciences/logs/ch-02-content-generation.md)"
+      "Bash(tee -a /Users/dan/Documents/ws/learning-sciences/logs/ch-02-content-generation.md)",
+      "Bash(awk '/^---$/{f=!f;next} !f' docs/chapters/06-application-transfer/index.md)",
+      "Read(//Users/dan/.claude/skills/**)",
+      "Read(//Users/dan/Documents/ws/claude-skills/skills/**)"
     ]
   }
 }
