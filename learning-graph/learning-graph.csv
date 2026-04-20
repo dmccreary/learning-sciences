@@ -220,3 +220,12 @@ ConceptID,ConceptLabel,Dependencies,TaxonomyID
 219,Chapter Rubric Evaluation,113|145,CAP
 220,Mastery Demonstration,211|104|214,CAP
 221,Image Generation Costs,202|153,AIST
+222,Intelligent Textbook Level,9,FOUND
+223,Privacy Inflection Point,222,PRIV
+224,FERPA,223,PRIV
+225,COPPA,223,PRIV
+226,GDPR,223,PRIV
+227,CCPA CPRA,223,PRIV
+228,Data Minimization,223,PRIV
+229,xAPI,222|108,PRIV
+230,Learning Record Store,229|223,PRIV

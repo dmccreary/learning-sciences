@@ -1,0 +1,1820 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Defines the MicroSim as the interactive heart of an intelligent textbook, grounds its design principles in cognitive load theory and Mayer's multimedia learning principles, introduces the seven libraries the project uses (p5.js, Chart.js, Plotly, Mermaid, vis-network, Leaflet, Venn.js), treats the diagram-overlay pattern and interactive infographics, and covers the production concerns — iframe embedding, control-complexity budgets, and screen-capture automation — that make MicroSims deployable at scale.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/learning-sciences/chapters/11-microsims/">
+      
+      
+        <link rel="prev" href="../10-textbook-architecture/">
+      
+      
+        <link rel="next" href="../12-mascots-admonitions/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>MicroSims and Interactive Visualizations - Learning Sciences</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="MicroSims and Interactive Visualizations - Learning Sciences">
+      
+        <meta property="og:description" content="Defines the MicroSim as the interactive heart of an intelligent textbook, grounds its design principles in cognitive load theory and Mayer's multimedia learning principles, introduces the seven libraries the project uses (p5.js, Chart.js, Plotly, Mermaid, vis-network, Leaflet, Venn.js), treats the diagram-overlay pattern and interactive infographics, and covers the production concerns — iframe embedding, control-complexity budgets, and screen-capture automation — that make MicroSims deployable at scale.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/learning-sciences/assets/images/social/chapters/11-microsims/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/learning-sciences/chapters/11-microsims/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="MicroSims and Interactive Visualizations - Learning Sciences">
+      
+        <meta name="twitter:description" content="Defines the MicroSim as the interactive heart of an intelligent textbook, grounds its design principles in cognitive load theory and Mayer's multimedia learning principles, introduces the seven libraries the project uses (p5.js, Chart.js, Plotly, Mermaid, vis-network, Leaflet, Venn.js), treats the diagram-overlay pattern and interactive infographics, and covers the production concerns — iframe embedding, control-complexity budgets, and screen-capture automation — that make MicroSims deployable at scale.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/learning-sciences/assets/images/social/chapters/11-microsims/index.png">
+      
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#microsims-and-interactive-visualizations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Learning Sciences" class="md-header__button md-logo" aria-label="Learning Sciences" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learning Sciences
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MicroSims and Interactive Visualizations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/learning-sciences.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Learning Sciences" class="md-nav__button md-logo" aria-label="Learning Sciences" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Learning Sciences
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/learning-sciences.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundations of Learning Sciences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-seven-domains/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. The Seven Domains Framework
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-motivation-engagement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Motivation and Engagement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-cognitive-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Cognitive Architecture and Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-knowledge-retention/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Knowledge Retention
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-application-transfer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Application and Transfer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-expertise-mastery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Expertise and Mastery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-measurement-feedback/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Measurement and Feedback
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-learning-conditions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Learning Conditions and Environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-textbook-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Intelligent Textbook Architecture and AI Tooling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    11. MicroSims and Interactive Visualizations
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    11. MicroSims and Interactive Visualizations
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-microsim-is-and-what-it-is-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      What a MicroSim Is — and What It Is Not
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microsim-design-principles-grounded-in-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim Design Principles, Grounded in Evidence
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microsim-control-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim Control Complexity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MicroSim Control Complexity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-control-complexity-dynamics-the-scaffolded-exploration-flywheel-and-the-cognitive-overload-trap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Control Complexity Dynamics — The Scaffolded-Exploration Flywheel and the Cognitive-Overload Trap
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-a-library-the-seven-way-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing a Library: The Seven-Way Decision
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Choosing a Library: The Seven-Way Decision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-which-library-should-i-use-for-this-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Which Library Should I Use for This Visualization?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-infographics-and-the-diagram-overlay-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Infographics and the Diagram Overlay Pattern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iframe-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iframe Embedding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screen-capture-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screen Capture Automation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-minimal-p5js-microsim-annotated" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Minimal p5.js MicroSim, Annotated
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-microsim-evaluation-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      A MicroSim Evaluation Rubric
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-critical-thinking-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Critical-Thinking Prompt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval Check
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bridge-to-chapter-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bridge to Chapter 12
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-mascots-admonitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Pedagogical Mascots and Admonitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-graphic-novels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Graphic Novels and Short-Form Stories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-agent-skills/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. AI Agent Skills for Textbook Generation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-capstone-deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Capstone and Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/graph-viewer/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-microsim-is-and-what-it-is-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      What a MicroSim Is — and What It Is Not
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microsim-design-principles-grounded-in-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim Design Principles, Grounded in Evidence
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#microsim-control-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim Control Complexity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MicroSim Control Complexity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-control-complexity-dynamics-the-scaffolded-exploration-flywheel-and-the-cognitive-overload-trap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Control Complexity Dynamics — The Scaffolded-Exploration Flywheel and the Cognitive-Overload Trap
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-a-library-the-seven-way-decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing a Library: The Seven-Way Decision
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Choosing a Library: The Seven-Way Decision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-which-library-should-i-use-for-this-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Which Library Should I Use for This Visualization?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-infographics-and-the-diagram-overlay-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactive Infographics and the Diagram Overlay Pattern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iframe-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iframe Embedding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screen-capture-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Screen Capture Automation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-minimal-p5js-microsim-annotated" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Minimal p5.js MicroSim, Annotated
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-microsim-evaluation-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      A MicroSim Evaluation Rubric
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-critical-thinking-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Critical-Thinking Prompt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval Check
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bridge-to-chapter-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bridge to Chapter 12
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/learning-sciences.git/blob/master/docs/chapters/11-microsims/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+    </a>
+  
+  
+
+
+<h1 id="microsims-and-interactive-visualizations">MicroSims and Interactive Visualizations<a class="headerlink" href="#microsims-and-interactive-visualizations" title="Permanent link">¶</a></h1>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome — An Interactive Simulation Is Worth Ten Thousand Words</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/welcome.png" data-desc-position="bottom"><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Bloom the elephant waving welcome"></a>
+A picture is worth a thousand words, and the old saying has been load-bearing in textbooks for a century. An <em>interactive simulation</em> the reader can perturb, rewind, and explore is worth an order of magnitude more — because the reader is no longer guessing what would happen if a variable changed; they are watching it change. In this chapter we will treat that jump carefully. The power is real; the footguns are also real, and most of them live in the gap between "interactive" and "instructive." Let's build a mental model.</p>
+</div>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
+<p>MicroSims are the interactive heart of an intelligent textbook. We cover the MicroSim concept, design principles, control-complexity management, iframe embedding, screen-capture automation, and the libraries readers will choose among (p5.js, Chart.js, Plotly, Mermaid, vis-network, Leaflet, Venn.js). We close with interactive infographics and the diagram overlay pattern — the go-to choice when a concept has spatial structure worth pointing at.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
+<p>This chapter covers the following 14 concepts from the learning graph:</p>
+<ol>
+<li>MicroSim</li>
+<li>MicroSim Design Principles</li>
+<li>p5.js Library</li>
+<li>Chart.js Library</li>
+<li>Plotly Library</li>
+<li>Mermaid Diagram</li>
+<li>vis-network Library</li>
+<li>Leaflet Map Library</li>
+<li>Venn.js Library</li>
+<li>Interactive Infographic</li>
+<li>MicroSim Control Complexity</li>
+<li>Iframe Embedding</li>
+<li>Screen Capture Automation</li>
+<li>Diagram Overlay Pattern</li>
+</ol>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-foundations/">Chapter 1: Foundations of Learning Sciences</a></li>
+<li><a href="../10-textbook-architecture/">Chapter 10: Intelligent Textbook Architecture and AI Tooling</a></li>
+</ul>
+<hr>
+<h2 id="what-a-microsim-is-and-what-it-is-not">What a MicroSim Is — and What It Is Not<a class="headerlink" href="#what-a-microsim-is-and-what-it-is-not" title="Permanent link">¶</a></h2>
+<p>A <strong><em>MicroSim</em></strong> is a small, single-concept interactive simulation embedded inline inside a chapter, scoped tightly enough that a reader can understand its purpose within ten seconds of seeing it and extract its insight within two minutes of using it. The word <em>small</em> is doing real work in that definition. A MicroSim is not a course; it is not a virtual laboratory; it is not a multi-page simulator with tabbed views and a settings panel. It is a tight interactive artifact — usually a single canvas or chart with a few controls — that makes one idea observable in motion.</p>
+<p>By the end of this chapter you will be able to:</p>
+<ul>
+<li>Define a MicroSim and distinguish it from an interactive lab, a tutorial, and a static diagram.</li>
+<li>State Mayer's multimedia-learning principles as operational design rules for MicroSims.</li>
+<li>Apply a control-complexity budget to a simulation and predict whether it will overflow a novice's working memory.</li>
+<li>Choose the right library from a set of seven candidates for a given visualization need.</li>
+<li>Explain the diagram-overlay pattern and state when it beats a redrawn interactive figure.</li>
+<li>Describe the iframe-embedding convention this book uses and name the class of errors that iframe-height calibration prevents.</li>
+<li>Sketch the role of screen-capture automation in a MicroSim production pipeline and name one failure mode it removes.</li>
+</ul>
+<p>The distinction between a MicroSim and its neighbors is worth stating plainly before we move on. A static diagram shows the reader a frozen state; a MicroSim lets them perturb the state. An interactive lab (in the sense that PhET or simulation-based courseware uses the word) is a substantially larger artifact with many concepts bundled inside it; a MicroSim pulls one concept out. A worked example is a scripted walkthrough of a solution; a MicroSim is an exploration whose path the reader chooses. The point of the tight scope is not minimalism for its own sake — it is that every additional dimension of interactivity adds cognitive load the reader has to pay out of the same fixed budget that Chapter 4 introduced. One concept, one canvas, two to four controls is the design center.</p>
+<h2 id="microsim-design-principles-grounded-in-evidence">MicroSim Design Principles, Grounded in Evidence<a class="headerlink" href="#microsim-design-principles-grounded-in-evidence" title="Permanent link">¶</a></h2>
+<p>The <strong><em>MicroSim design principles</em></strong> are the small set of rules we apply before any code gets written. Four of them matter enough to name.</p>
+<p><strong>One concept per sim.</strong> A MicroSim that teaches two concepts at once teaches neither; the reader cannot tell which interaction is illustrating which idea. If a chapter has two concepts worth interactive treatment, two MicroSims will serve the reader better than one composite. The discipline is the same one that keeps Unix utilities small: do one thing and do it well.</p>
+<p><strong>Controls match the audience.</strong> A MicroSim for a graduate course can assume familiarity with sliders, dropdowns, and numeric inputs; a MicroSim for a middle-school audience may need big buttons and a tutorial first click. The question is not "what control is most elegant?" but "what control will the reader recognize and use without reading a manual?"</p>
+<p><strong>Responsive to container width.</strong> Every MicroSim the project ships scales to the width of its container on both desktop and mobile viewports. The p5.js convention the project uses — <code>updateCanvasSize()</code> as the first line of <code>setup()</code> — exists because responsive sizing is not a nice-to-have; it is the rule that keeps the sim usable on the device the reader actually has.</p>
+<p><strong>Accessibility by default.</strong> Keyboard navigation for every control; color choices that survive a red-green colorblind simulation; alt text on every embedded image; a description of what the sim does in prose near the embed. A MicroSim that works only for sighted keyboard-optional readers is a sim that has excluded part of its audience.</p>
+<p>These four principles sit on top of a richer substrate — Richard Mayer's <em>multimedia learning principles</em>, which Chapter 4 introduced as general instructional-design findings. The principles translate almost directly into MicroSim design rules, with only light rewording. The table below is the working checklist we apply before shipping.</p>
+<table>
+<thead>
+<tr>
+<th>Mayer principle</th>
+<th>Original rule</th>
+<th>MicroSim design rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coherence</td>
+<td>Exclude extraneous words, pictures, and sounds that do not support the learning goal</td>
+<td>Remove decorative graphics, background music, and atmospheric animation; every element on the canvas earns its pixels</td>
+</tr>
+<tr>
+<td>Signaling</td>
+<td>Highlight the essential material explicitly</td>
+<td>Use color, arrows, and labels to direct the eye to the region that changes when the reader moves a control</td>
+</tr>
+<tr>
+<td>Redundancy</td>
+<td>Do not present the same verbal information simultaneously as printed text and narration</td>
+<td>If the sim narrates a value, do not also draw the value as a large text overlay on the canvas</td>
+</tr>
+<tr>
+<td>Spatial contiguity</td>
+<td>Place related words and pictures near each other</td>
+<td>Labels live on the parts they name, not in a legend off to the side</td>
+</tr>
+<tr>
+<td>Temporal contiguity</td>
+<td>Present related words and pictures simultaneously, not sequentially</td>
+<td>Numeric readouts update in the same frame as the visual changes they describe</td>
+</tr>
+<tr>
+<td>Segmenting</td>
+<td>Break continuous material into learner-paced segments</td>
+<td>Offer step-through controls on dense sims; never autoplay past a decision point</td>
+</tr>
+<tr>
+<td>Pre-training</td>
+<td>Teach the names of key components before running the simulation</td>
+<td>Label the parts in the chapter prose before the sim appears, not only in tooltips</td>
+</tr>
+<tr>
+<td>Modality</td>
+<td>Present words as narration rather than on-screen text when paired with graphics</td>
+<td>When narration is added, prefer spoken audio over captions; when narration is absent, keep on-canvas text terse</td>
+</tr>
+</tbody>
+</table>
+<p>A careful reader will already be asking the right critical-thinking question: <em>under what conditions would you break one of these rules?</em> The principles are not axioms; they are empirical generalizations with effect-size estimates whose magnitude varies across populations and content types. The coherence, signaling, and contiguity principles have the strongest replication records and should be treated as near-certain defaults. The modality and personalization principles have weaker records, and the redundancy principle is known to reverse for very-low-prior-knowledge learners who benefit from both modalities until they can drop one. Breaking a principle is reasonable when the evidence for the reversal in your specific audience is stronger than the evidence for the rule — and when you can name that evidence out loud. Breaking it because it felt right is the failure mode.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Principles Are Defaults, Not Axioms</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/thinking.png" data-desc-position="bottom"><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Bloom the elephant thinking, one hoof raised"></a>
+When you catch yourself wanting to break a multimedia principle, the right move is not to suppress the instinct — it is to name the evidence that justifies the break. If the answer is <em>"it feels more elegant"</em>, trust the principle. If the answer is <em>"my audience is early-stage novices and the redundancy effect reverses in that population"</em>, break the rule and document the call. That second sentence is the habit worth building.</p>
+</div>
+<h2 id="microsim-control-complexity">MicroSim Control Complexity<a class="headerlink" href="#microsim-control-complexity" title="Permanent link">¶</a></h2>
+<p><strong><em>MicroSim control complexity</em></strong> is the sum of interactive dimensions — sliders, buttons, checkboxes, dropdowns, numeric inputs — the reader must hold in mind to use the simulation effectively. It is the budget line that silently bankrupts otherwise-excellent sims.</p>
+<p>The constraint is not aesthetic; it is architectural. A reader using a MicroSim is running three processes in working memory at once. They are holding the <em>purpose</em> of the sim (what am I trying to observe?); they are tracking the <em>state</em> of the sim (what do the controls currently show?); and they are doing the <em>comparison</em> the learning objective demands (how does the output change when I move this control?). Each control adds to the second pool. On the four-item Cowan capacity floor we introduced in Chapter 4, a sim with six sliders has already spent more than the budget before the reader does any conceptual work. The germane processing — the noticing and pattern-finding that is supposed to produce learning — has nothing left to spend.</p>
+<p>The working-rule the project uses is: <em>under seven controls, with four as the target and three as the ideal</em>. A sim that wants eight controls is usually two sims in disguise, or one sim with presets that collapse several related dimensions into a scenario dropdown. Presets are the main move for recovering from control bloat: instead of asking the reader to discover the interesting corners of a six-dimensional parameter space by hand, a scenario dropdown lets the author pre-author the corners and hand the reader a flyover. The reader still gets exploration; the exploration is pre-tuned.</p>
+<p>The dynamics of control complexity have the shape of a loop, and naming the loop makes the failure mode easier to see before it happens.</p>
+<h4 id="diagram-control-complexity-dynamics-the-scaffolded-exploration-flywheel-and-the-cognitive-overload-trap">Diagram: Control Complexity Dynamics — The Scaffolded-Exploration Flywheel and the Cognitive-Overload Trap<a class="headerlink" href="#diagram-control-complexity-dynamics-the-scaffolded-exploration-flywheel-and-the-cognitive-overload-trap" title="Permanent link">¶</a></h4>
+<details>
+<summary>Causal loop diagram showing how control count drives cognitive-load dynamics in MicroSims, with one reinforcing loop (R1) and one balancing-but-corrosive loop (B1)</summary>
+<p>Type: causal-loop-diagram
+<strong>sim-id:</strong> microsim-control-complexity-loops<br>
+<strong>Library:</strong> Mermaid<br>
+<strong>Status:</strong> Specified</p>
+<p>A causal loop diagram rendered with Mermaid <code>flowchart LR</code> showing eight variable-nodes and two named loops. All nodes are noun phrases naming variables that can go up or down.</p>
+<p>Nodes: <em>number of controls</em>, <em>extraneous cognitive load</em>, <em>available germane capacity</em>, <em>observation quality</em>, <em>pattern recognition</em>, <em>schema construction</em>, <em>learner confidence</em>, <em>exploration depth</em>.</p>
+<p>Edges and polarities:</p>
+<ul>
+<li>number of controls → extraneous cognitive load (+) — each control the reader must hold costs capacity</li>
+<li>extraneous cognitive load → available germane capacity (−) — load is a zero-sum budget</li>
+<li>available germane capacity → observation quality (+) — germane capacity is what lets the reader notice change</li>
+<li>observation quality → pattern recognition (+) — clean observations feed pattern-finding</li>
+<li>pattern recognition → schema construction (+) — recognized patterns consolidate into schemas</li>
+<li>schema construction → learner confidence (+, with delay marker ⧚) — durable schemas feed confidence</li>
+<li>learner confidence → exploration depth (+) — a confident reader runs more scenarios</li>
+<li>exploration depth → pattern recognition (+) — more scenarios surface more patterns</li>
+<li>number of controls → exploration depth (−) — too many controls make the reader freeze; they stop exploring</li>
+</ul>
+<p>Loop labels placed at each loop's geometric center:</p>
+<ul>
+<li><strong>R1 — Scaffolded-exploration flywheel (reinforcing, productive).</strong> Germane capacity → observation quality → pattern recognition → schema construction → confidence → exploration depth → more pattern recognition. When control count is kept tight, this loop spins.</li>
+<li><strong>B1 — Cognitive-overload trap (balancing, corrosive).</strong> Number of controls → extraneous load → crowded germane capacity → poor observation → stalled pattern recognition → no schema → no confidence → shallow exploration. When control count creeps past the budget, this loop takes over.</li>
+</ul>
+<p>Visual treatment: R1 nodes in cool blue; B1 nodes in warm red-orange; the shared node <em>available germane capacity</em> drawn in a neutral tone with dual borders to signal that it belongs to both loops. Delay marker ⧚ on the schema-construction → learner-confidence edge. Every edge labeled with <code>+</code> or <code>−</code>.</p>
+<p>Implementation: Mermaid <code>flowchart LR</code> with <code>linkStyle</code> declarations for polarity coloring and <code>classDef</code> for loop grouping. A one-paragraph walkthrough of R1 in plain English accompanies the diagram in the prose that follows.</p>
+</details>
+<p>Read loop <strong>R1</strong> in plain English. A MicroSim with a tight control set leaves most of the reader's working memory free for germane processing. Germane capacity is what notices that <em>when I nudge the intrinsic-load slider up, the overflow indicator turns red</em>. Clean observations feed pattern recognition; recognized patterns consolidate into schemas; schemas produce the confidence that makes the reader willing to try a second and third scenario. Each trip around the loop deepens exploration. Now read <strong>B1</strong>. A MicroSim that grew to nine controls — because each new feature seemed reasonable on its own — presents a reader whose extraneous-load budget is already spent on remembering what the controls do. Available germane capacity collapses. The reader moves a slider, cannot quite tell what changed, loses confidence, and stops exploring. The sim still works; it simply does not teach.</p>
+<p>The design move that makes B1 impossible rather than merely avoided is structural: the MicroSim skill imposes a control-count cap that the author has to argue past in writing, not tune up by accident. That is the footgun shape worth naming. A free-form widget toolkit is <em>silent</em> (no warning appears when the sixth slider is added), <em>easy to trigger</em> (each new slider feels like an improvement), and produces <em>delayed damage</em> (the sim works in testing because the author already knows what each control does, and it collapses only when a cold reader encounters it). The structural fix is a budget the authoring pipeline enforces, not a guideline the author remembers. We will return to this footgun when we discuss the <code>microsim-generator</code> skill in Chapter 14.</p>
+<h2 id="choosing-a-library-the-seven-way-decision">Choosing a Library: The Seven-Way Decision<a class="headerlink" href="#choosing-a-library-the-seven-way-decision" title="Permanent link">¶</a></h2>
+<p>The project uses seven libraries, and the choice among them is not a matter of taste. Each library has a shape, and picking the wrong shape produces a sim that fights its medium. Before the comparison table, here are the seven in their own terms.</p>
+<p>The <strong><em>p5.js library</em></strong> is a creative-coding framework, descended from Processing, that treats the canvas as a programmable drawing surface with a tight <code>setup()</code>/<code>draw()</code> loop. It is the right choice for generative visuals, custom interactive behaviors, and any sim whose visual representation is not a standard chart type. Almost every bespoke MicroSim in this book is built with p5.js, because the library's surface is small enough that a reader with moderate JavaScript fluency can modify a sim they find in the book.</p>
+<p>The <strong><em>Chart.js library</em></strong> is a lightweight standard-chart library — bar charts, line charts, pie charts, scatter plots, radar charts — with sensible defaults, clean animations, and a small API. It is the right choice when the visualization <em>is</em> a standard chart. A reader learning about the forgetting curve does not need a custom p5.js animation; they need a line chart with a tunable decay constant.</p>
+<p>The <strong><em>Plotly library</em></strong> is a richer interactive-charting library that goes where Chart.js stops — 3D surfaces, contour plots, hover-tooltip detail on every point, zoomable axes, and subplot grids. Plotly is the right choice when the reader needs to hover, zoom, or rotate to extract the insight, or when the visualization is genuinely three-dimensional (a loss surface, a response curve, a cost landscape). Plotly's bundle is larger than Chart.js's; the cost is worth it when the interaction justifies it.</p>
+<p>A <strong><em>Mermaid diagram</em></strong> is a text-to-diagram rendering produced from a small domain-specific language embedded directly in Markdown. Mermaid renders flowcharts, sequence diagrams, class diagrams, state machines, entity-relationship diagrams, Gantt charts, and causal loop diagrams from declarative text. It is the right choice for any diagram whose structure is fixed at authoring time — every non-interactive architecture or flow diagram in this book is a Mermaid diagram, because authoring the diagram in text keeps it versionable, diff-able, and regeneratable.</p>
+<p>The <strong><em>vis-network library</em></strong> is a JavaScript library for rendering and interacting with node-link graphs — the project's learning-graph viewer is built on it. It is the right choice when the reader needs to <em>interact with a graph</em> — drag nodes, expand neighborhoods, filter by metadata, or navigate from concept to concept. Mermaid renders graphs; vis-network lets the reader manipulate them.</p>
+<p>The <strong><em>Leaflet map library</em></strong> is an interactive-map library with tile-based rendering, marker overlays, and pan/zoom controls. It is the right choice whenever the data has a geographic component — the distribution of a field's foundational studies across universities, the historical spread of an instructional movement, the placement of a school district whose analytics crossed the Level 3 line. Leaflet is small, well-documented, and plugin-rich.</p>
+<p>The <strong><em>Venn.js library</em></strong> is a specialized library for drawing Venn and Euler diagrams from set-intersection data. It is the right choice when the concept being taught is literally about overlapping sets — the capabilities of two AI models, the shared methods of three research disciplines, the intersection of three taxonomies. Most textbook authors reach for it once per book and then retire it, which is correct usage.</p>
+<h4 id="diagram-which-library-should-i-use-for-this-visualization">Diagram: Which Library Should I Use for This Visualization?<a class="headerlink" href="#diagram-which-library-should-i-use-for-this-visualization" title="Permanent link">¶</a></h4>
+<details>
+<summary>Decision tree routing a visualization need to one of the seven libraries based on the shape of the data and the interaction needed</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> library-decision-tree<br>
+<strong>Library:</strong> Mermaid<br>
+<strong>Status:</strong> Specified</p>
+<p>A Mermaid <code>flowchart TD</code> decision tree. Starting from the root <em>"What do I need to show?"</em>, the first split asks whether the data is spatial, temporal, quantitative, relational, categorical-overlap, or bespoke. Subsequent splits route each branch to one of the seven libraries with a one-sentence justification label on each leaf.</p>
+<p>Branches:</p>
+<ul>
+<li><em>Is the data geographic?</em> → Yes → <strong>Leaflet</strong> (interactive map with tile rendering).</li>
+<li><em>Is the data a graph of nodes and edges the reader should manipulate?</em> → Yes → <strong>vis-network</strong> (interactive node-link).</li>
+<li><em>Is the data a graph the reader only needs to read?</em> → Yes → <strong>Mermaid</strong> (text-authored diagram).</li>
+<li><em>Is the visualization a set-intersection picture?</em> → Yes → <strong>Venn.js</strong> (specialized Venn/Euler rendering).</li>
+<li><em>Is the data a standard 2D chart (bar, line, pie, scatter)?</em> → Yes → <strong>Chart.js</strong> (lightweight standard charts).</li>
+<li><em>Is the data higher-dimensional, hover-detailed, or 3D?</em> → Yes → <strong>Plotly</strong> (richer interactive charting).</li>
+<li><em>Is the visualization bespoke, generative, or custom-interactive?</em> → Yes → <strong>p5.js</strong> (creative-coding canvas).</li>
+</ul>
+<p>Leaves colored by library with the project's blue-amber palette. The tree is rendered top-down so that the root reads first and the leaves are visually grouped by shape.</p>
+<p>Implementation: Mermaid <code>flowchart TD</code> with labeled edges and <code>classDef</code> per library. Embedded directly in the chapter markdown.</p>
+</details>
+<p>The table below stacks the seven libraries along the dimensions that matter when the decision is not obvious from the data shape alone — strengths, limitations, typical use, and availability.</p>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Primary strength</th>
+<th>Main limitation</th>
+<th>Typical MicroSim use case</th>
+<th>Delivery</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p5.js</td>
+<td>Generative, custom-interactive, tight creative-coding loop</td>
+<td>Not a chart library; every visualization is hand-coded</td>
+<td>Bespoke cognitive-architecture sims, algorithm visualizers, any custom canvas</td>
+<td>CDN or npm</td>
+</tr>
+<tr>
+<td>Chart.js</td>
+<td>Standard chart types with clean defaults and small API</td>
+<td>Not designed for 3D or deep hover interactions</td>
+<td>Forgetting curves, dose-response curves, quiz-score distributions</td>
+<td>CDN or npm</td>
+</tr>
+<tr>
+<td>Plotly</td>
+<td>Rich interactivity, 3D surfaces, hover tooltips, zoomable axes</td>
+<td>Larger bundle; steeper API surface</td>
+<td>Cognitive-load surfaces, response landscapes, multi-dimensional exploration</td>
+<td>CDN or npm</td>
+</tr>
+<tr>
+<td>Mermaid</td>
+<td>Diagrams from text, versionable, Markdown-native</td>
+<td>Layout is automatic; fine control is limited</td>
+<td>Flowcharts, causal loop diagrams, architecture diagrams, sequence diagrams</td>
+<td>Built into MkDocs Material via pymdownx.superfences</td>
+</tr>
+<tr>
+<td>vis-network</td>
+<td>Interactive node-link graphs at scale</td>
+<td>Overkill for static diagrams</td>
+<td>Learning-graph viewer, concept-dependency exploration</td>
+<td>CDN or npm</td>
+</tr>
+<tr>
+<td>Leaflet</td>
+<td>Interactive maps with tile rendering</td>
+<td>Geographic-only; not a general-purpose visualization tool</td>
+<td>Historical-spread maps, field-study geography</td>
+<td>CDN or npm</td>
+</tr>
+<tr>
+<td>Venn.js</td>
+<td>Specialized Venn/Euler diagrams from set data</td>
+<td>Only draws one kind of diagram</td>
+<td>Overlaps of disciplines, capabilities, taxonomies</td>
+<td>CDN or npm</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Default to the Smallest Library That Fits</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/tip.png" data-desc-position="bottom"><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Bloom the elephant giving a tip"></a>
+When two libraries could reasonably render the same visualization, pick the smaller one. A bar chart in Chart.js is a 40-kilobyte dependency; the same chart reaching for Plotly pulls in ten times that. The reader pays for the bundle on every page load, and the extra capability goes unused. Smallest-library-that-fits is a habit that compounds across a book.</p>
+</div>
+<h2 id="interactive-infographics-and-the-diagram-overlay-pattern">Interactive Infographics and the Diagram Overlay Pattern<a class="headerlink" href="#interactive-infographics-and-the-diagram-overlay-pattern" title="Permanent link">¶</a></h2>
+<p>The sharpest tool in the MicroSim toolbox is often the one that involves the least new code. An <strong><em>interactive infographic</em></strong> is a static scientific illustration paired with an overlay of markers that reveal labels, definitions, or quiz prompts on hover or click. The base image is authored once — ideally as a clean, annotation-free illustration produced by a text-to-image model from a detailed prompt — and the interactivity lives in a small data file plus a shared JavaScript layer that reads the data at runtime.</p>
+<p>The <strong><em>diagram overlay pattern</em></strong> is the structural name for this approach, and the project implements it through the <code>interactive-infographic-overlay</code> skill. Every overlay sim in the book — the Bloom's Taxonomy pyramid, the three-stage memory model, Baddeley's working memory components, the intelligent-textbook component architecture — is built with this skill, and they all share the same three files:</p>
+<ul>
+<li><code>image-prompt.md</code> — a self-contained prompt for regenerating the base image when it needs updating; specifies that the image must be annotation-free so that overlay labels do not collide with baked-in text.</li>
+<li><code>data.json</code> — the overlay configuration: marker positions as percentages of canvas width and height (so the overlay survives image resizes), label text, tooltip content, and — when quiz mode is enabled — the correct-answer mapping.</li>
+<li><code>main.html</code> — a thin wrapper that imports the shared <code>diagram.js</code> library, points it at the base image and the data file, and exposes three modes.</li>
+</ul>
+<p>The three modes are the heart of the pattern.</p>
+<p><strong>Explore mode</strong> is the default. Hovering a marker reveals its label and a short definition. The reader wanders the image, activating labels on their own schedule — which is a segmenting move in Mayer's sense, and a pre-training move in the sense that a reader can self-pace the vocabulary before they encounter it in prose.</p>
+<p><strong>Quiz mode</strong> flips the polarity. A prompt appears at the top ("click the component that holds the book's structural spine"); the reader clicks a marker; correct clicks highlight the marker green; incorrect clicks reveal the correct marker and a one-sentence explanation. Quiz mode converts a passive picture into a low-stakes retrieval opportunity — which, per Chapter 5's treatment of the testing effect, is one of the few interventions whose pedagogical benefit is both cheap and well-replicated.</p>
+<p><strong>Edit mode</strong> is for authors. It lets the author drag markers to new positions on the base image and export the updated <code>data.json</code>. The mode exists because calibrating marker positions by hand in a JSON file is tedious and error-prone; edit mode turns calibration into a direct-manipulation task.</p>
+<p>The structural advantage of this pattern over a redrawn interactive figure is large. A p5.js sim that drew the three-stage memory model from scratch would need to encode the shapes, the arrows, the color gradient, the typography, and the layout algorithm in JavaScript — hundreds of lines of code that must be maintained as the image evolves. The overlay pattern pushes all of that into the image asset, and the code becomes a tiny runtime that reads coordinates from a data file. A contributor who wants to swap the base image for a better one changes a single file; a contributor who wants to add a new marker changes a single JSON entry; a contributor who wants to add quiz mode to an existing overlay changes no code at all.</p>
+<p>The pattern is not the right choice for every case. When the <em>spatial structure itself</em> is the thing the reader needs to manipulate (a graph whose nodes can be dragged, a model whose parts can be reassembled), overlay cannot carry the load and a bespoke p5.js sim is warranted. But when the reader's job is to <em>learn the parts of a fixed structure</em> — the anatomy of a rubric, the stages of a memory model, the components of an architecture, the regions of a brain, the phases of a retrieval-practice study — the overlay wins on every metric: authoring cost, maintenance cost, regeneration cost, and pedagogical fit.</p>
+<h2 id="iframe-embedding">Iframe Embedding<a class="headerlink" href="#iframe-embedding" title="Permanent link">¶</a></h2>
+<p>A MicroSim is a self-contained artifact; a chapter is a Markdown document that becomes a page. The mechanism that joins them is an <strong><em>iframe embedding</em></strong> — an HTML <code>&lt;iframe&gt;</code> element that loads the sim's <code>main.html</code> from its own directory and renders it inside the chapter at a declared width and height.</p>
+<p>The project convention is that every MicroSim lives at <code>docs/sims/&lt;sim-id&gt;/main.html</code>, with its own <code>script.js</code>, <code>local.css</code>, <code>index.md</code> description page, and (for overlay sims) a <code>data.json</code> and a base image. Chapters embed the sim with an iframe whose <code>src</code> is the sim's <code>main.html</code> and whose <code>height</code> attribute is calibrated to the sim's actual content height. The separation buys four properties worth naming.</p>
+<p><strong>Isolation.</strong> The sim's JavaScript cannot accidentally collide with the chapter's JavaScript or the MkDocs Material theme's own scripts. A p5.js sketch declares its own globals, its own event listeners, and its own canvas, all inside the iframe's own document. If two sims on the same chapter both use a variable called <code>speed</code>, nothing breaks — each lives in its own window context.</p>
+<p><strong>Independent testing.</strong> The sim can be opened standalone at its own URL — <code>http://127.0.0.1:8000/learning-sciences/sims/&lt;sim-id&gt;/main.html</code> during development, or the equivalent GitHub Pages path in production — and tested without loading the surrounding chapter. The author iterates on the sim in its own tab; the chapter picks up the iteration on the next build.</p>
+<p><strong>Copy-paste portability.</strong> The project's convention is that <code>main.html</code> uses the p5.js-editor standard <code>&lt;main&gt;&lt;/main&gt;</code> tag (no <code>id</code> attribute) and that the sketch parents its canvas with <code>canvas.parent(document.querySelector('main'))</code>. This means a reader who wants to paste the sim's JavaScript into the p5.js online editor can do so unchanged — which turns the textbook into a launchpad for the reader's own modifications, which is a learning move in its own right.</p>
+<p><strong>Deployment granularity.</strong> Rebuilding a chapter does not require rebuilding the sim; rebuilding a sim does not require rebuilding the chapter. The site's deployed structure mirrors the source structure, and a change to a single sim ships as a change to the files under its own directory.</p>
+<p>The footgun the iframe embedding produces, and the one that deserves an explicit callout, is iframe height calibration. An iframe has no native intrinsic-height behavior; the browser renders it at whatever height the embedding markup declares, and any sim content that overflows that height is silently clipped. A sim whose controls sit at the bottom of the canvas and whose iframe height is set ten pixels too short ships a version in which the reader cannot see the reset button — and nothing warns the author, because the sim works fine when opened standalone. This is the classic footgun shape: <em>silent</em> (no error), <em>easy to trigger</em> (any iframe height mismatch produces it), and <em>delayed</em> (the damage appears only when a cold reader who does not know the controls exist fails to find them).</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Iframe Height Is Not a Cosmetic Detail</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/warning.png" data-desc-position="bottom"><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Bloom the elephant flagging a warning"></a>
+If I had to pick one failure mode that has quietly shipped in more intelligent textbooks than any other, it would be a MicroSim whose last row of controls was clipped by a too-short iframe. The author tested the sim standalone; the chapter-embedded version lost the reset button; no error was logged; no reader complained, because readers do not complain about what they cannot see. The structural fix is to automate iframe height testing — and this project does exactly that, via the <code>microsim-iframe-tester</code> skill, which uses Playwright to load each sim, measure its actual content height, and compare against the iframe height declared in the chapter. Run the tester whenever you add or modify a sim. The three-line commit that changes <code>height="520"</code> to <code>height="620"</code> is one of the most quietly valuable commits in the history of the repository.</p>
+</div>
+<h2 id="screen-capture-automation">Screen Capture Automation<a class="headerlink" href="#screen-capture-automation" title="Permanent link">¶</a></h2>
+<p>Every MicroSim needs a thumbnail — a static image that appears in the <code>index.md</code> description page, in the sims-index table of contents, in LinkedIn announcements about the chapter, and in any PDF export of the book that cannot render interactive canvases. Generating these thumbnails by hand — taking a screenshot, cropping it, saving it with the right filename in the right directory — is a task that scales poorly with the sim count and fails silently when a sim's visual state drifts.</p>
+<p><strong><em>Screen capture automation</em></strong> is the practice of producing these thumbnails programmatically from the running sim. The production pipeline uses a headless-browser automation tool (Playwright, in the current configuration) that loads each sim's <code>main.html</code> at a standard viewport size, waits for the sim to finish its initial render, takes a PNG screenshot, crops it to the sim's content region, and saves it to a conventional path alongside the sim's other files. The script is idempotent — running it twice produces the same result — and it is fast enough to re-run across the entire sim directory on every significant build.</p>
+<p>Three production concerns motivate the automation. First, <em>drift</em>. A sim whose visual default changes (a new color palette, a repositioned control, a renamed label) needs its thumbnail regenerated. A hand-captured thumbnail drifts from the sim silently; an automated capture stays current by definition. Second, <em>consistency</em>. Every automated thumbnail is taken at the same viewport size, with the same background, after the same initial-render delay; hand-captured thumbnails vary in all three dimensions. Third, <em>cover images for announcements</em>. LinkedIn posts and external references benefit from a clean cover image sized to platform conventions; the automation produces both the small thumbnail and the larger cover image from the same run.</p>
+<p>The automation is not free of its own failure modes. A sim whose initial render depends on a network request, a slow-loading font, or a user interaction produces a screenshot of a mid-render state — which looks broken even though the sim is fine. The remediation is to add a stable "ready" signal to each sim (a data attribute the script can wait for) and to have the capture step poll for it before snapping. The structural move is the same one that shows up everywhere in production automation: <em>replace implicit timing with explicit signals</em>.</p>
+<h2 id="a-minimal-p5js-microsim-annotated">A Minimal p5.js MicroSim, Annotated<a class="headerlink" href="#a-minimal-p5js-microsim-annotated" title="Permanent link">¶</a></h2>
+<p>Before showing code, we name what the code does, in the order Chapter 4's pre-training principle asks for. The sim below is a fifteen-line p5.js sketch that draws a filled circle whose radius is controlled by a single slider. It demonstrates three conventions the project uses for every p5.js sim. First, <code>updateCanvasSize()</code> runs as the first line of <code>setup()</code> so the canvas picks up the actual container width at construction. Second, the canvas is parented to the page's <code>&lt;main&gt;</code> element — with no <code>id</code> attribute — so that the JavaScript is copy-paste-portable to the p5.js online editor. Third, the sim uses p5.js's built-in <code>createSlider()</code> control rather than a hand-drawn slider, per the project's convention that controls should use built-in widgets.</p>
+<p>The sketch parameterizes one thing — the radius — to keep control complexity at the absolute floor. Under the scaffolded-exploration rubric from the causal-loop diagram earlier in this chapter, a single-control sim leaves essentially all of working memory free for germane processing. That is the design center; bigger sims should argue their way up from here, not down from a larger starting point.</p>
+<div class="language-javascript highlight"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">// main.js — minimal p5.js MicroSim skeleton</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">radiusSlider</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kd">let</span><span class="w"> </span><span class="nx">canvasWidth</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">320</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="kd">function</span><span class="w"> </span><span class="nx">updateCanvasSize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'main'</span><span class="p">);</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">  </span><span class="nx">canvasWidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">main</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">main</span><span class="p">.</span><span class="nx">offsetWidth</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">600</span><span class="p">;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="p">}</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">  </span><span class="nx">updateCanvasSize</span><span class="p">();</span><span class="w">                               </span><span class="c1">// must be first</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">canvas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createCanvas</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="p">);</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">  </span><span class="nx">canvas</span><span class="p">.</span><span class="nx">parent</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'main'</span><span class="p">));</span><span class="w">    </span><span class="c1">// no id="main"</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">  </span><span class="nx">radiusSlider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createSlider</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">140</span><span class="p">,</span><span class="w"> </span><span class="mf">60</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span><span class="w">      </span><span class="c1">// min, max, start, step</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">  </span><span class="nx">radiusSlider</span><span class="p">.</span><span class="nx">position</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">30</span><span class="p">);</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="p">}</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="kd">function</span><span class="w"> </span><span class="nx">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">  </span><span class="nx">background</span><span class="p">(</span><span class="mf">245</span><span class="p">);</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">  </span><span class="nx">fill</span><span class="p">(</span><span class="mf">70</span><span class="p">,</span><span class="w"> </span><span class="mf">130</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">);</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">  </span><span class="nx">circle</span><span class="p">(</span><span class="nx">canvasWidth</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">canvasHeight</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">radiusSlider</span><span class="p">.</span><span class="nx">value</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></tbody></table></div>
+<p>Three features of this code are load-bearing beyond their line count. <code>updateCanvasSize()</code> is called <em>before</em> <code>createCanvas()</code> so the canvas is created at the correct width; calling it afterward is the silent-failure shape in which the canvas renders at the default 100-pixel width and the reader cannot tell whether the sim is broken or simply small. The <code>canvas.parent()</code> call with <code>document.querySelector('main')</code> targets the p5.js-editor-standard <code>&lt;main&gt;</code> element; the HTML file must use a bare <code>&lt;main&gt;&lt;/main&gt;</code> with no <code>id</code> attribute, because adding <code>id="main"</code> would break the copy-paste portability the convention is trying to preserve. The slider uses <code>createSlider(min, max, start, step)</code> — the built-in p5.js widget — rather than a hand-drawn slider or a third-party component, which keeps the control behavior consistent with every other sim in the book.</p>
+<p>A real MicroSim adds a learning objective, a prose description, and — usually — one or two more controls. The skeleton is the starting floor, not the target.</p>
+<h2 id="a-microsim-evaluation-rubric">A MicroSim Evaluation Rubric<a class="headerlink" href="#a-microsim-evaluation-rubric" title="Permanent link">¶</a></h2>
+<p>Before shipping, every sim the project produces runs through a four-dimension rubric. The rubric is not a gate; it is a checklist that catches the failure modes that cause sims to teach less than they could.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Question</th>
+<th>What a failing sim looks like</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cognitive load</td>
+<td>Is the control count under seven? Does each control have a clear, labeled purpose?</td>
+<td>Nine sliders, three checkboxes, and a hidden-until-hovered reset. The reader spends their entire working memory on the interface.</td>
+</tr>
+<tr>
+<td>Learning-objective clarity</td>
+<td>Can the author state the Bloom-leveled learning objective in one sentence?</td>
+<td>"Students will explore cognitive load." What does explore mean? At what level? The sim has no target.</td>
+</tr>
+<tr>
+<td>Accessibility</td>
+<td>Does every control have a keyboard path? Does every color pass a colorblind-simulation check? Is there alt text and a prose description?</td>
+<td>Drag-only interactions, red-green color coding, and a mystery canvas with no surrounding text.</td>
+</tr>
+<tr>
+<td>Responsiveness</td>
+<td>Does the sim render correctly on a 320-pixel-wide mobile viewport and a 1920-pixel-wide desktop?</td>
+<td>Fixed 800-pixel canvas that horizontally scrolls on phones and floats in a sea of whitespace on desktop.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="a-critical-thinking-prompt">A Critical-Thinking Prompt<a class="headerlink" href="#a-critical-thinking-prompt" title="Permanent link">¶</a></h2>
+<p>The principles collected in this chapter are the working defaults. Name a case from your own teaching practice in which you would deliberately break one of them. Be specific: <em>which</em> principle, <em>what evidence</em> in your audience would justify breaking it, and <em>what measurement</em> would tell you whether the break helped. Resist the urge to answer with a general preference ("I think the redundancy effect is overstated"); prefer an answer grounded in a named population, a named learning objective, and a named outcome measure.</p>
+<p>And one more: the decision tree for library selection routes every visualization to exactly one library. But the routes are not hard walls — a bar-chart-of-counts could be drawn in p5.js if the author wanted a custom visual treatment, and a causal loop diagram could be drawn interactively in vis-network rather than statically in Mermaid. <em>What conditions would justify the less-obvious route?</em> Name one case where a custom p5.js bar chart beats the default Chart.js bar chart, and one case where it does not. The exercise sharpens the taste you will need when the tree does not have the right branch.</p>
+<h2 id="retrieval-check">Retrieval Check<a class="headerlink" href="#retrieval-check" title="Permanent link">¶</a></h2>
+<p>Close the tab and try these from memory. Stumbling is diagnostic — it tells you which section to revisit.</p>
+<ol>
+<li><strong>Define</strong> a MicroSim and give two properties that distinguish it from an interactive laboratory. (Level: Remember.)</li>
+<li><strong>State</strong> the control-complexity budget this project uses, and explain which working-memory finding motivates it. (Level: Remember / Understand.)</li>
+<li><strong>Given</strong> a visualization need — "show how three research disciplines overlap in their use of a specific method" — choose the appropriate library from the seven, and justify the choice in one sentence. (Level: Apply.)</li>
+<li><strong>Explain</strong> why the diagram-overlay pattern usually beats a redrawn interactive figure when the reader's job is to learn the parts of a fixed structure. Name two structural advantages. (Level: Understand.)</li>
+<li><strong>Describe</strong> the iframe-height-clipping footgun. Name all three footgun properties as they apply, and state the structural fix the project uses. (Level: Analyze.)</li>
+<li><strong>Critique</strong> this design: "a MicroSim with eight sliders, three dropdowns, two checkboxes, and an autoplay that starts on page load." Name at least three principles it violates and propose a redesign that preserves the intended pedagogical function. (Level: Evaluate.)</li>
+<li><strong>Apply</strong> the scaffolded-exploration flywheel to a MicroSim you have used or built recently. Trace one trip around R1 in plain English, and name one change to the sim that would spin R1 faster. (Level: Apply / Analyze.)</li>
+</ol>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">If the Library Landscape Feels Wide</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/encouraging.png" data-desc-position="bottom"><img src="../../img/mascot/encouraging.png" class="mascot-admonition-img" alt="Bloom the elephant offering encouragement"></a>
+Seven libraries is a lot to meet in one chapter, and nobody becomes fluent in all seven in a single pass. The decision tree earlier in the chapter is the piece to keep open while you are authoring your first sims; fluency with the libraries' own APIs follows from building one sim at a time, not from memorizing seven API surfaces in the abstract. Come back to the tree. It will shorten with use.</p>
+</div>
+<h2 id="bridge-to-chapter-12">Bridge to Chapter 12<a class="headerlink" href="#bridge-to-chapter-12" title="Permanent link">¶</a></h2>
+<p>We now have the interactive heart of the book — the MicroSim as a design category, the principles that keep it educational rather than merely interactive, the seven libraries we choose among, the overlay pattern that covers most fixed-structure cases, and the production concerns (iframes, control budgets, screen capture) that make sims ship-able at scale. What we do not yet have is the <em>voice</em> that speaks around the sims, introducing them, framing their purpose, normalizing the struggle when a reader gets stuck, and celebrating what they learned. That voice is Bloom — and Chapter 12 is the whole chapter on getting the mascot and admonition system right. We will look at Bloom's character design, the admonition types, the placement rules the style guide encodes, and the cross-cutting infrastructure that keeps the voice consistent across every chapter of the book.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">The Interactive Heart Is Yours</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/celebration.png" data-desc-position="bottom"><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Bloom the elephant celebrating with trunk raised"></a>
+You now have the mental model for how MicroSims teach — tight scope, evidence-based design rules, a working control-complexity budget, a seven-library toolkit with a decision tree that routes visualizations to the right medium, an overlay pattern that covers most fixed-structure cases, and the production conventions that keep sims deployable. Hold onto three headlines: <em>one concept per sim</em>, <em>under seven controls with four as the target</em>, and <em>iframe heights are not a cosmetic detail</em>. Next up: the mascot and admonition system — the voice that walks alongside every sim and every chapter, and the cross-cutting infrastructure that keeps that voice consistent. See you in Chapter 12.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../10-textbook-architecture/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 10. Intelligent Textbook Architecture and AI Tooling">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                10. Intelligent Textbook Architecture and AI Tooling
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../12-mascots-admonitions/" class="md-footer__link md-footer__link--next" aria-label="Next: 12. Pedagogical Mascots and Admonitions">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                12. Pedagogical Mascots and Admonitions
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Richard Tandler. All rights reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "content.action.edit", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

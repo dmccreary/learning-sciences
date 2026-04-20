@@ -1,0 +1,2356 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A working tour of the fourteen Agent Skills that compose this book's production pipeline — from the Course Description Analyzer at the start to the LinkedIn Announcement Generator at the end — plus a frank look at image generation costs and the footguns of skill design.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/learning-sciences/chapters/14-agent-skills/">
+      
+      
+        <link rel="prev" href="../13-graphic-novels/">
+      
+      
+        <link rel="next" href="../15-capstone-deployment/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>AI Agent Skills for Textbook Generation - Learning Sciences</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="AI Agent Skills for Textbook Generation - Learning Sciences">
+      
+        <meta property="og:description" content="A working tour of the fourteen Agent Skills that compose this book's production pipeline — from the Course Description Analyzer at the start to the LinkedIn Announcement Generator at the end — plus a frank look at image generation costs and the footguns of skill design.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/learning-sciences/assets/images/social/chapters/14-agent-skills/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/learning-sciences/chapters/14-agent-skills/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="AI Agent Skills for Textbook Generation - Learning Sciences">
+      
+        <meta name="twitter:description" content="A working tour of the fourteen Agent Skills that compose this book's production pipeline — from the Course Description Analyzer at the start to the LinkedIn Announcement Generator at the end — plus a frank look at image generation costs and the footguns of skill design.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/learning-sciences/assets/images/social/chapters/14-agent-skills/index.png">
+      
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai-agent-skills-for-textbook-generation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Learning Sciences" class="md-header__button md-logo" aria-label="Learning Sciences" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learning Sciences
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI Agent Skills for Textbook Generation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/learning-sciences.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Learning Sciences" class="md-nav__button md-logo" aria-label="Learning Sciences" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Learning Sciences
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/learning-sciences.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundations of Learning Sciences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-seven-domains/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. The Seven Domains Framework
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-motivation-engagement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Motivation and Engagement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-cognitive-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Cognitive Architecture and Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-knowledge-retention/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Knowledge Retention
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-application-transfer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Application and Transfer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-expertise-mastery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Expertise and Mastery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-measurement-feedback/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Measurement and Feedback
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-learning-conditions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Learning Conditions and Environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-textbook-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Intelligent Textbook Architecture and AI Tooling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-microsims/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. MicroSims and Interactive Visualizations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-mascots-admonitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Pedagogical Mascots and Admonitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-graphic-novels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Graphic Novels and Short-Form Stories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    14. AI Agent Skills for Textbook Generation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    14. AI Agent Skills for Textbook Generation
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-pipeline-has-a-shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Pipeline Has a Shape
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Pipeline Has a Shape">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-textbook-production-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Textbook Production Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#foundation-skills-getting-the-spine-right" class="md-nav__link">
+    <span class="md-ellipsis">
+      Foundation Skills: Getting the Spine Right
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Foundation Skills: Getting the Spine Right">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#course-description-analyzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Description Analyzer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-graph-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Graph Generator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Graph Generator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-skill-dependency-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Skill Dependency Graph
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#book-chapter-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Book Chapter Generator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authoring-skills-from-outlines-to-prose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authoring Skills: From Outlines to Prose
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authoring Skills: From Outlines to Prose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chapter-content-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Content Generator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference Generator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derived-skills-glossary-faq-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Derived Skills: Glossary, FAQ, Quiz
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Derived Skills: Glossary, FAQ, Quiz">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#glossary-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Glossary Generator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faq-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ Generator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quiz-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quiz Generator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engagement-skills-microsims-stories-classifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Engagement Skills: MicroSims, Stories, Classifiers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engagement Skills: MicroSims, Stories, Classifiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microsim-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim Generator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#story-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Story Generator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concept-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept Classifier
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audit-skills-measuring-the-book" class="md-nav__link">
+    <span class="md-ellipsis">
+      Audit Skills: Measuring the Book
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Audit Skills: Measuring the Book">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#book-metrics-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Book Metrics Generator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-reports-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram Reports Generator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linkedin-announcement-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      LinkedIn Announcement Generator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-generation-costs-a-candid-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image Generation Costs: A Candid Section
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-not-to-use-a-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      When NOT to Use a Skill
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-skill-quality-flywheel" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Skill-Quality Flywheel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Skill-Quality Flywheel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-skill-quality-flywheel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Skill-Quality Flywheel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#footgun-callouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Footgun Callouts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Footgun Callouts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skill-description-ambiguity-leading-to-wrong-skill-invocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skill description ambiguity leading to wrong-skill invocation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skills-that-write-to-the-same-file-creating-merge-conflicts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skills that write to the same file creating merge conflicts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skills-that-depend-on-external-services-silently-failing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skills that depend on external services silently failing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval Check
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bridge-to-chapter-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bridge to Chapter 15
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-capstone-deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Capstone and Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/graph-viewer/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-pipeline-has-a-shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Pipeline Has a Shape
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Pipeline Has a Shape">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-textbook-production-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Textbook Production Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#foundation-skills-getting-the-spine-right" class="md-nav__link">
+    <span class="md-ellipsis">
+      Foundation Skills: Getting the Spine Right
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Foundation Skills: Getting the Spine Right">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#course-description-analyzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Description Analyzer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-graph-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Graph Generator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Graph Generator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-skill-dependency-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Skill Dependency Graph
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#book-chapter-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Book Chapter Generator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authoring-skills-from-outlines-to-prose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authoring Skills: From Outlines to Prose
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authoring Skills: From Outlines to Prose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chapter-content-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Content Generator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference Generator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derived-skills-glossary-faq-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Derived Skills: Glossary, FAQ, Quiz
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Derived Skills: Glossary, FAQ, Quiz">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#glossary-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Glossary Generator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faq-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ Generator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quiz-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quiz Generator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engagement-skills-microsims-stories-classifiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Engagement Skills: MicroSims, Stories, Classifiers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Engagement Skills: MicroSims, Stories, Classifiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#microsim-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      MicroSim Generator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#story-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Story Generator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concept-classifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept Classifier
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audit-skills-measuring-the-book" class="md-nav__link">
+    <span class="md-ellipsis">
+      Audit Skills: Measuring the Book
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Audit Skills: Measuring the Book">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#book-metrics-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Book Metrics Generator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagram-reports-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram Reports Generator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linkedin-announcement-generator" class="md-nav__link">
+    <span class="md-ellipsis">
+      LinkedIn Announcement Generator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-generation-costs-a-candid-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      Image Generation Costs: A Candid Section
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-not-to-use-a-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      When NOT to Use a Skill
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-skill-quality-flywheel" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Skill-Quality Flywheel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Skill-Quality Flywheel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-skill-quality-flywheel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Skill-Quality Flywheel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#footgun-callouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Footgun Callouts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Footgun Callouts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skill-description-ambiguity-leading-to-wrong-skill-invocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skill description ambiguity leading to wrong-skill invocation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skills-that-write-to-the-same-file-creating-merge-conflicts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skills that write to the same file creating merge conflicts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skills-that-depend-on-external-services-silently-failing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skills that depend on external services silently failing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval Check
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bridge-to-chapter-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bridge to Chapter 15
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/learning-sciences.git/blob/master/docs/chapters/14-agent-skills/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+    </a>
+  
+  
+
+
+<h1 id="ai-agent-skills-for-textbook-generation">AI Agent Skills for Textbook Generation<a class="headerlink" href="#ai-agent-skills-for-textbook-generation" title="Permanent link">¶</a></h1>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome — Where the Theory Meets the Keyboard</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/welcome.png" data-desc-position="bottom"><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Bloom the elephant waving welcome"></a>
+The last thirteen chapters gave us the research base, the architecture, and the artifact inventory. This chapter is the tour of the workshop — the actual skills, sitting on my laptop right now, that turn a natural-language request into a chapter, a glossary, a quiz, a MicroSim, a graphic novel, or a metrics report. Every skill we'll name is installed in this project; each one has a <code>SKILL.md</code> we could open side by side with this prose. What I want you to walk away with is not a memorized roster but a mental model of <em>the pipeline's shape</em> — which skill runs first, which artifact feeds which, and where a careless skill design silently damages the work downstream. Let's build a mental model.</p>
+</div>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
+<p>This chapter is the tour of the generator skills that make this production pipeline possible: Course Description Analyzer, Learning Graph Generator, Book Chapter Generator, Chapter Content Generator, Glossary, FAQ, Quiz, MicroSim, Story, Reference, Book Metrics, Diagram Reports, LinkedIn Announcement, and Concept Classifier — plus a frank look at image generation costs. Readers leave knowing which skill to call at which stage of building a new textbook.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
+<p>This chapter covers the following 15 concepts from the learning graph:</p>
+<ol>
+<li>Course Description Analyzer</li>
+<li>Learning Graph Generator</li>
+<li>Book Chapter Generator</li>
+<li>Chapter Content Generator</li>
+<li>Glossary Generator</li>
+<li>FAQ Generator</li>
+<li>Quiz Generator</li>
+<li>MicroSim Generator</li>
+<li>Story Generator</li>
+<li>Reference Generator</li>
+<li>Book Metrics Generator</li>
+<li>Diagram Reports Generator</li>
+<li>LinkedIn Announcement Generator</li>
+<li>Concept Classifier</li>
+<li>Image Generation Costs</li>
+</ol>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-foundations/">Chapter 1: Foundations of Learning Sciences</a></li>
+<li><a href="../10-textbook-architecture/">Chapter 10: Intelligent Textbook Architecture and AI Tooling</a></li>
+<li><a href="../11-microsims/">Chapter 11: MicroSims and Interactive Visualizations</a></li>
+<li><a href="../12-mascots-admonitions/">Chapter 12: Pedagogical Mascots and Admonitions</a></li>
+<li><a href="../13-graphic-novels/">Chapter 13: Graphic Novels and Short-Form Stories</a></li>
+</ul>
+<hr>
+<h2 id="the-pipeline-has-a-shape">The Pipeline Has a Shape<a class="headerlink" href="#the-pipeline-has-a-shape" title="Permanent link">¶</a></h2>
+<p>Chapter 10 introduced the <code>SKILL.md</code> format and the harness's skill-invocation mechanics in the abstract. This chapter grounds that abstraction in the fourteen concrete skills the project ships with — all of them resolvable by listing <code>~/.claude/skills/</code> on the author's laptop. The work the skills perform is real; the sequence they run in is the production pipeline this book itself was authored through.</p>
+<p>A <strong><em>production pipeline</em></strong> is the ordered sequence of skill invocations that takes a new textbook from a one-page course description to a deployed MkDocs site. The order is not negotiable in a strong sense — each stage consumes artifacts the earlier stages produced — but it is negotiable in a weak sense: a skilled author can skip stages on a reprint, regenerate a single chapter in isolation, or bolt a new skill into the pipeline at a different point. The strong-order-weak-order distinction is what lets the same pipeline serve both a from-scratch build and a surgical edit.</p>
+<p>Before we meet the skills individually, the pipeline diagram below is the mental map to hold onto as we go.</p>
+<h4 id="diagram-the-textbook-production-pipeline">Diagram: The Textbook Production Pipeline<a class="headerlink" href="#diagram-the-textbook-production-pipeline" title="Permanent link">¶</a></h4>
+<details>
+<summary>Mermaid flowchart showing the end-to-end pipeline of all fourteen skills and the artifacts each one produces</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> textbook-production-pipeline<br>
+<strong>Library:</strong> Mermaid<br>
+<strong>Status:</strong> Specified</p>
+<p>A Mermaid <code>flowchart TD</code> diagram arranged in five horizontal bands from top (structural skills) to bottom (publication skills). Nodes are labeled with the skill name and produce a named artifact.</p>
+<p>Band 1 (structural foundation): <em>course-description-analyzer</em> → course description (validated). <em>learning-graph-generator</em> → learning graph (200 concepts, DAG). <em>book-chapter-generator</em> → chapter outlines (one per chapter).</p>
+<p>Band 2 (content authoring): <em>chapter-content-generator</em> → chapter prose (<code>docs/chapters/NN-name/index.md</code>). <em>reference-generator</em> → per-chapter references (<code>references.md</code>).</p>
+<p>Band 3 (derived artifacts): <em>glossary-generator</em> → glossary entries. <em>faq-generator</em> → FAQ section. <em>quiz-generator</em> → quiz bank.</p>
+<p>Band 4 (engagement artifacts): <em>microsim-generator</em> → <code>/docs/sims/sim-id/</code> directories. <em>story-generator</em> → 12-panel graphic novel chapters. <em>concept-classifier</em> → interactive classification quizzes.</p>
+<p>Band 5 (audit and publication): <em>book-metrics-generator</em> → <code>book-metrics.md</code> and <code>chapter-metrics.md</code>. <em>diagram-reports-generator</em> → diagram inventory. <em>linkedin-announcement-generator</em> → publishing post for milestones.</p>
+<p>Edges labeled with the carrying artifact. Band 1 feeds Band 2 (outlines drive content). Band 2 feeds Band 3 (chapters + graph drive glossary, FAQ, quiz). Band 2 feeds Band 4 (chapters specify sims and stories the engagement skills then build). Bands 2, 3, and 4 all feed Band 5 (everything feeds the audit). A feedback arrow from Band 5 back to Band 1 is drawn in orange to signal that audit findings can trigger a re-run of any earlier stage.</p>
+<p>Visual treatment: band 1 cool blue, band 2 teal, band 3 soft green, band 4 amber, band 5 warm orange. <code>classDef</code> styling per band. The feedback arrow is a dashed orange line labeled "audit regen."</p>
+<p>Implementation: Mermaid <code>flowchart TD</code> embedded directly in the chapter markdown via the configured <code>pymdownx.superfences</code> mermaid fence.</p>
+</details>
+<p>The table below gives the same information in auditable form — which skill runs when, what it reads, what it writes, and how long a single run typically takes on a machine with a 1-million-token context window at 2026 prices.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Skill</th>
+<th>Input artifact</th>
+<th>Output artifact</th>
+<th>Typical duration</th>
+<th>Pipeline position</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>course-description-analyzer</td>
+<td>Draft <code>docs/course-description.md</code></td>
+<td>Validated and scored course description</td>
+<td>1–3 min</td>
+<td>Foundation</td>
+</tr>
+<tr>
+<td>2</td>
+<td>learning-graph-generator</td>
+<td>Course description</td>
+<td><code>learning-graph.json</code> with ~200 concepts + validation report</td>
+<td>10–30 min</td>
+<td>Foundation</td>
+</tr>
+<tr>
+<td>3</td>
+<td>book-chapter-generator</td>
+<td>Learning graph + course description</td>
+<td><code>docs/chapters/NN-name/index.md</code> outlines (one per chapter)</td>
+<td>5–10 min</td>
+<td>Foundation</td>
+</tr>
+<tr>
+<td>4</td>
+<td>chapter-content-generator</td>
+<td>Chapter outline + learning graph + style guide + prior chapters</td>
+<td>Full chapter prose (this file, for example)</td>
+<td>3–8 min per chapter</td>
+<td>Authoring</td>
+</tr>
+<tr>
+<td>5</td>
+<td>reference-generator</td>
+<td>Chapter outlines + course description</td>
+<td>Per-chapter <code>references.md</code> (10 refs each)</td>
+<td>2–4 min per chapter</td>
+<td>Authoring</td>
+</tr>
+<tr>
+<td>6</td>
+<td>glossary-generator</td>
+<td>Learning graph (concept nodes)</td>
+<td><code>docs/glossary.md</code></td>
+<td>5–15 min</td>
+<td>Derived</td>
+</tr>
+<tr>
+<td>7</td>
+<td>faq-generator</td>
+<td>Chapters + glossary + learning graph</td>
+<td><code>docs/faq.md</code></td>
+<td>5–10 min</td>
+<td>Derived</td>
+</tr>
+<tr>
+<td>8</td>
+<td>quiz-generator</td>
+<td>Chapters + learning graph</td>
+<td>Per-chapter <code>quiz.md</code> (Bloom-distributed items)</td>
+<td>3–6 min per chapter</td>
+<td>Derived</td>
+</tr>
+<tr>
+<td>9</td>
+<td>microsim-generator</td>
+<td>Chapter-specified sim brief (sim-id, library, controls)</td>
+<td><code>docs/sims/sim-id/</code> directory</td>
+<td>5–15 min per sim</td>
+<td>Engagement</td>
+</tr>
+<tr>
+<td>10</td>
+<td>story-generator</td>
+<td>Chapter-specified figure brief + concept tie</td>
+<td>12-panel graphic novel chapter + panel images</td>
+<td>10–20 min per story</td>
+<td>Engagement</td>
+</tr>
+<tr>
+<td>11</td>
+<td>concept-classifier</td>
+<td>Category list + scenario set (hand-authored or chapter-extracted)</td>
+<td><code>docs/sims/classifier-id/data.json</code> + <code>main.html</code></td>
+<td>5–10 min per classifier</td>
+<td>Engagement</td>
+</tr>
+<tr>
+<td>12</td>
+<td>book-metrics-generator</td>
+<td>Entire book tree</td>
+<td><code>book-metrics.md</code> + <code>chapter-metrics.md</code></td>
+<td>2–5 min</td>
+<td>Audit</td>
+</tr>
+<tr>
+<td>13</td>
+<td>diagram-reports-generator</td>
+<td>All chapter markdown files</td>
+<td>Diagram inventory table + detail report</td>
+<td>1–3 min</td>
+<td>Audit</td>
+</tr>
+<tr>
+<td>14</td>
+<td>linkedin-announcement-generator</td>
+<td><code>book-metrics.md</code> + chapters + deploy URL</td>
+<td>Draft LinkedIn post</td>
+<td>1–2 min</td>
+<td>Publication</td>
+</tr>
+</tbody>
+</table>
+<p>Two observations worth carrying through the rest of the chapter. First, the durations are <em>orders of magnitude</em> and will compress as models get faster; the <em>ratios</em> between skills will move less. Second, the "input artifact" column is the dependency graph of the pipeline — a change to a skill's input means every downstream skill is potentially stale. The book-metrics skill reports the staleness so the author can decide what to rerun.</p>
+<h2 id="foundation-skills-getting-the-spine-right">Foundation Skills: Getting the Spine Right<a class="headerlink" href="#foundation-skills-getting-the-spine-right" title="Permanent link">¶</a></h2>
+<p>The three foundation skills do all of their work before a single paragraph of chapter prose is generated. They are also the skills whose output every other skill depends on, which makes them the place where early investment pays the largest dividends later.</p>
+<h3 id="course-description-analyzer">Course Description Analyzer<a class="headerlink" href="#course-description-analyzer" title="Permanent link">¶</a></h3>
+<p>The <strong><em>course-description-analyzer</em></strong> skill reads a candidate <code>docs/course-description.md</code> file and evaluates it against a fixed checklist: is there a clear title, a named audience, a prerequisites statement, a topics list, and a set of Bloom-aligned learning outcomes? A course description missing any of these is a course description the learning-graph-generator will silently misinterpret, which is why this skill runs first and why its output is a <em>gate</em> rather than a suggestion. The skill returns a numeric score, a list of specific gaps, and a revised draft the author can accept or edit. A description scoring below 70/100 is treated as unready for the next stage; between 70 and 85 is runnable but flagged; above 85 is green.</p>
+<p>The skill typically runs in one to three minutes and is cheap enough that an author can run it on a draft, take the suggestions, rerun, and converge in under fifteen minutes of wall time. That iteration cycle is the intended mode of use. A course description that an author tried to perfect in a single pass without running the analyzer is almost always worse than one that converged through three tool-assisted revisions.</p>
+<h3 id="learning-graph-generator">Learning Graph Generator<a class="headerlink" href="#learning-graph-generator" title="Permanent link">¶</a></h3>
+<p>The <strong><em>learning-graph-generator</em></strong> skill reads a validated course description and produces the learning graph — the DAG of concept nodes and dependency edges that Chapter 10 established as the book's structural spine. The target is roughly 200 concepts, distributed across a project-specific taxonomy of domains. A 200-concept graph is an interesting size: small enough that a human reviewer can read the whole node list in a sitting; large enough that the skill has to think about categorization, dependency direction, and transitive redundancy rather than hand-drawing the edges.</p>
+<p>The skill runs several validation passes on its own output. It checks for <em>cycles</em> (a cycle means the decomposition is wrong and gets flagged for human review); it computes the <em>transitive reduction</em> (so the graph viewer renders without an edge explosion); it checks for <em>orphan nodes</em> (a concept with no edges in or out is either foundational or a mistake, and the skill asks which); and it produces a <em>taxonomy coverage report</em> (are all seven domains covered, or did the generator cluster everything in one?). The validation report is as important as the graph itself; a graph that passes without a report is a graph you have no reason to trust.</p>
+<h4 id="diagram-skill-dependency-graph">Diagram: Skill Dependency Graph<a class="headerlink" href="#diagram-skill-dependency-graph" title="Permanent link">¶</a></h4>
+<details>
+<summary>Mermaid DAG showing which skills depend on which other skills' outputs, with the learning graph as the central hub</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> skill-dependency-graph<br>
+<strong>Library:</strong> Mermaid<br>
+<strong>Status:</strong> Specified</p>
+<p>A Mermaid <code>flowchart LR</code> diagram showing all fourteen skills as nodes, with edges where one skill's output is a required input of another. The <em>learning-graph-generator</em> node sits as a central hub with outgoing edges to <em>book-chapter-generator</em>, <em>glossary-generator</em>, <em>quiz-generator</em>, <em>faq-generator</em>, and <em>reference-generator</em>. The <em>course-description-analyzer</em> has a single outgoing edge to <em>learning-graph-generator</em>. The <em>book-chapter-generator</em> has outgoing edges to <em>chapter-content-generator</em> and <em>reference-generator</em>. The <em>chapter-content-generator</em> has outgoing edges to <em>glossary-generator</em>, <em>faq-generator</em>, <em>quiz-generator</em>, <em>microsim-generator</em>, <em>story-generator</em>, and <em>concept-classifier</em> (each via chapter-level sim/story briefs). All thirteen other skills have outgoing edges to <em>book-metrics-generator</em> and <em>diagram-reports-generator</em>, which then both feed <em>linkedin-announcement-generator</em>.</p>
+<p>Visual treatment: <code>learning-graph-generator</code> is drawn as a larger, highlighted hub node in warm orange; foundation skills in cool blue; authoring skills in teal; derived skills in soft green; engagement skills in amber; audit skills in warm orange. <code>classDef</code> per category. Edges labeled with the carrying artifact type (e.g., "chapter outline", "concept list", "chapter prose").</p>
+<p>Implementation: Mermaid <code>flowchart LR</code> with <code>classDef</code> styling per skill category. Embedded directly in the chapter markdown.</p>
+</details>
+<h3 id="book-chapter-generator">Book Chapter Generator<a class="headerlink" href="#book-chapter-generator" title="Permanent link">¶</a></h3>
+<p>The <strong><em>book-chapter-generator</em></strong> skill takes the learning graph and the course description and produces an outline file per chapter. Each outline is a small Markdown file containing the chapter title, a one-paragraph summary, the list of concepts the chapter covers (drawn from the graph by the skill's allocation algorithm), the prerequisite chapters, and optional <em>Required Content Directives</em> — constraints that every future regeneration must honor. Chapter 10 is the canonical example of directives in action: its outline demanded the five-levels subsection and the privacy-warning admonition, and those directives survive every content regeneration because they live in the outline.</p>
+<p>The allocation algorithm has some freedom even on a fixed graph. A 200-concept graph with, say, 15 chapters, typically admits many legitimate concept-to-chapter assignments. The skill balances three objectives: <em>respect the DAG</em> (no concept slotted before its prerequisites), <em>balance chapter length</em> (concept counts roughly within ±30% of the mean), and <em>group thematically</em> (concepts in the same domain tend to cluster). A conflict between objectives is surfaced as a decision the author can adjudicate rather than silently resolved.</p>
+<h2 id="authoring-skills-from-outlines-to-prose">Authoring Skills: From Outlines to Prose<a class="headerlink" href="#authoring-skills-from-outlines-to-prose" title="Permanent link">¶</a></h2>
+<h3 id="chapter-content-generator">Chapter Content Generator<a class="headerlink" href="#chapter-content-generator" title="Permanent link">¶</a></h3>
+<p>The <strong><em>chapter-content-generator</em></strong> skill — the one that wrote the sentence you are reading — consumes a chapter outline, the learning graph, the style guide (<code>CLAUDE.md</code>), and the prior chapters, and produces the long-form Markdown file that renders as the chapter page. The skill is self-referential in the sense this chapter is documenting: this is the chapter that documents the skill that generates this chapter.</p>
+<p>Three design decisions inside the skill are worth naming. <strong>Reading depth is tunable.</strong> On a from-scratch run the skill reads the full style guide and summaries of the prior chapters; on a regeneration it can short-circuit to the outline plus a diff summary, which is dramatically cheaper in tokens. <strong>Non-text-element specifications are first-class.</strong> The skill does not generate MicroSim code or infographic images; it specifies them as <code>&lt;details markdown="1"&gt;</code> blocks that the <code>microsim-generator</code> and <code>interactive-infographic-overlay</code> skills consume later. This separation is what keeps the chapter-generation pass fast and the sim-generation pass deep. <strong>The retrieval check and the celebration are structural.</strong> Every chapter ends with a retrieval check and a celebration admonition; the skill refuses to emit a chapter that lacks either.</p>
+<h3 id="reference-generator">Reference Generator<a class="headerlink" href="#reference-generator" title="Permanent link">¶</a></h3>
+<p>The <strong><em>reference-generator</em></strong> skill produces the per-chapter <code>references.md</code> files, with a project convention of ten references per chapter. References are stored in separate files rather than inlined in the chapter Markdown, which keeps the chapter text small enough to fit comfortably inside the chapter-content-generator's context window on the next regeneration. Token budgeting — from Chapter 10 — is what drove that layout decision; the layout in turn lets the skill iterate on references without touching the chapter.</p>
+<p>The skill's default source priority is Wikipedia, which is not a statement about Wikipedia being the best academic citation but about Wikipedia being the most <em>stable</em>, <em>accessible</em>, and <em>non-paywalled</em> reference surface available. Each reference is annotated with a short relevance description so the reader knows <em>why</em> the reference is on the list, not just that it is.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">References as a Context-Window Move</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/thinking.png" data-desc-position="bottom"><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Bloom the elephant thinking, one hoof raised"></a>
+The decision to park references in a separate file per chapter looks like a content-organization choice, but it's really a token-budgeting choice. A 40-reference inline block in every chapter would be 40 × 14 = 560 references worth of tokens the next chapter's regeneration has to carry in its "prior context" window. The separate-file layout keeps the pipeline fast. Watch for design decisions that look cosmetic but are actually performance infrastructure — they are everywhere in a well-designed pipeline.</p>
+</div>
+<h2 id="derived-skills-glossary-faq-quiz">Derived Skills: Glossary, FAQ, Quiz<a class="headerlink" href="#derived-skills-glossary-faq-quiz" title="Permanent link">¶</a></h2>
+<h3 id="glossary-generator">Glossary Generator<a class="headerlink" href="#glossary-generator" title="Permanent link">¶</a></h3>
+<p>The <strong><em>glossary-generator</em></strong> skill produces one entry per concept node in the learning graph, writing to <code>docs/glossary.md</code>. The skill enforces four style rules that emerge from long experience with glossaries that fail in recognizable ways: <em>precise</em> (the definition picks out the concept and nothing else), <em>concise</em> (one or two sentences, no more), <em>distinct</em> (a reader could pick the right term from a multiple-choice list of related terms), and <em>non-circular</em> (no definition uses the term it defines). A fifth rule — <em>free of business rules</em> — prevents a definition from drifting into product-specific language ("working memory is the short-term store our dashboard visualizes in the left pane"), which would tie the glossary to a deployment rather than the discipline.</p>
+<p>The skill produces the glossary as a single Markdown file rather than a database because the glossary needs to render as a page and be searchable by MkDocs' built-in search plugin. A downstream skill can still parse the file deterministically because the entry format is fixed.</p>
+<h3 id="faq-generator">FAQ Generator<a class="headerlink" href="#faq-generator" title="Permanent link">¶</a></h3>
+<p>The <strong><em>faq-generator</em></strong> skill produces <code>docs/faq.md</code> from the chapters, the glossary, and the learning graph, supplemented once the book is deployed with actual reader questions. The skill's structural contribution is that it treats FAQs as <em>entry points</em>, not as independent islands of content. Every FAQ answer links back to the chapter and section that treats the underlying concept; a reader who hits the FAQ for a passing question can follow the link into the chapter for the full treatment.</p>
+<p>The skill also enforces a negative rule: content that appears <em>only</em> in the FAQ has failed to earn its place in the book. A concept important enough to warrant an FAQ is important enough to warrant a chapter-section treatment; the FAQ is there to address common confusions about content that already exists, not to smuggle new material in through the back door.</p>
+<h3 id="quiz-generator">Quiz Generator<a class="headerlink" href="#quiz-generator" title="Permanent link">¶</a></h3>
+<p>The <strong><em>quiz-generator</em></strong> skill produces per-chapter quiz banks — multiple-choice items tagged with concept, Bloom level, and chapter. The skill deliberately distributes items across the Bloom levels the chapter covers, rather than collapsing them all at <em>Remember</em>. A chapter that lands every quiz item at <em>Remember</em> is a chapter that trained the reader to recognize vocabulary and nothing else. A chapter whose quiz includes <em>Apply</em> and <em>Analyze</em> items is a chapter whose assessment actually measures the cognitive work the chapter asked for.</p>
+<p>The serial-execution choice inside the skill is worth a note. An earlier version ran one agent per chapter in parallel, which was fast but produced quizzes whose items occasionally overlapped or contradicted across chapters. The serial version — one agent walking the chapter list in order — is slower but produces quizzes with visible awareness of prior items. Token efficiency and cross-chapter coherence pushed in the same direction here; that alignment is not always present.</p>
+<h2 id="engagement-skills-microsims-stories-classifiers">Engagement Skills: MicroSims, Stories, Classifiers<a class="headerlink" href="#engagement-skills-microsims-stories-classifiers" title="Permanent link">¶</a></h2>
+<h3 id="microsim-generator">MicroSim Generator<a class="headerlink" href="#microsim-generator" title="Permanent link">¶</a></h3>
+<p>The <strong><em>microsim-generator</em></strong> skill reads a MicroSim brief from a chapter's <code>&lt;details&gt;</code> block and produces the sim directory at <code>/docs/sims/sim-id/</code>. The skill's routing layer is what makes it a first-class skill rather than a p5.js-only generator: it analyzes the sim's visualization requirements and picks the appropriate library. The routing table below is the one the skill uses in practice.</p>
+<table>
+<thead>
+<tr>
+<th>Visualization type</th>
+<th>Library routed to</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interactive parametric sim (sliders, particles, custom rendering)</td>
+<td>p5.js</td>
+<td>Draw-every-frame control; simplest author path</td>
+</tr>
+<tr>
+<td>Quantitative chart (time series, scatter, histogram)</td>
+<td>Chart.js</td>
+<td>Standard chart types; small dependency</td>
+</tr>
+<tr>
+<td>Scientific or statistical chart (heatmap, 3D, specialized)</td>
+<td>Plotly</td>
+<td>Broader chart vocabulary; interactive legends</td>
+</tr>
+<tr>
+<td>Static or reactive flowchart / graph</td>
+<td>Mermaid</td>
+<td>Text-source diagrams that version-control cleanly</td>
+</tr>
+<tr>
+<td>Network or dependency graph (nodes and edges, interactive layout)</td>
+<td>vis-network</td>
+<td>Physics-based layout, edge labels</td>
+</tr>
+<tr>
+<td>Map-based visualization</td>
+<td>Leaflet</td>
+<td>Tile-based maps; standard in web</td>
+</tr>
+<tr>
+<td>Set-overlap diagram</td>
+<td>Venn.js</td>
+<td>Specialized library for Venn diagrams</td>
+</tr>
+<tr>
+<td>Timeline visualization</td>
+<td>vis-timeline</td>
+<td>Time-axis interactions</td>
+</tr>
+</tbody>
+</table>
+<p>The output is always a full sim directory — <code>main.html</code>, <code>script.js</code> (or the library-specific source), <code>local.css</code>, <code>index.md</code>, a screen capture, and metadata. The directory structure is uniform across libraries so that the iframe embed pattern in chapters works without per-library special cases.</p>
+<p>The skill's interaction with the project's other conventions is exact. In every p5.js sim, <code>updateCanvasSize()</code> is the first line of <code>setup()</code> (per the global <code>CLAUDE.md</code> rule); the canvas is parented to <code>&lt;main&gt;&lt;/main&gt;</code> (per the project rule that enables copy-paste into the p5.js editor); built-in p5.js controls are used (per the project rule against hand-drawn controls). A sim that violates one of these rules is caught by the sim-generation step's lint pass, not by a downstream reviewer weeks later.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Routing Is Where Skills Earn Their Keep</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/thinking.png" data-desc-position="bottom"><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Bloom the elephant thinking, one hoof raised"></a>
+Notice what the routing layer in <code>microsim-generator</code> does structurally. It turns a judgment call — <em>which library fits this visualization?</em> — that every author would otherwise have to make on every sim into a decision the skill makes from a documented table. That is the shape of a skill worth writing: it encodes a judgment that recurs, so the author can think about <em>what to visualize</em> instead of <em>which library to reach for</em>.</p>
+</div>
+<h3 id="story-generator">Story Generator<a class="headerlink" href="#story-generator" title="Permanent link">¶</a></h3>
+<p>The <strong><em>story-generator</em></strong> skill is the one Chapter 13 built up to: it produces a 12-panel graphic novel chapter from a figure brief and a concept tie. The skill handles the full pipeline Chapter 13 specified — figure selection, script and panel plan, image prompt engineering, image generation through the Google Gemini API, and historical accuracy check — and emits a Markdown chapter with speech bubbles and captions overlaid in HTML on the generated panel images.</p>
+<p>The skill's default cadence is one story per chapter that has a documented historical figure worth naming. Not every chapter gets one; a chapter on context windows does not need a graphic novel, while a chapter on retrieval practice benefits from an Ebbinghaus story because Ebbinghaus <em>is</em> the concept's origin. The author decides; the skill executes.</p>
+<h3 id="concept-classifier">Concept Classifier<a class="headerlink" href="#concept-classifier" title="Permanent link">¶</a></h3>
+<p>The <strong><em>concept-classifier</em></strong> skill produces an interactive p5.js classification quiz from a data file. The quiz format is simple: the reader sees a scenario, picks a category from a multiple-choice list, and gets immediate feedback. The pedagogical value is that classification is a well-studied form of retrieval practice — more active than re-reading and more concept-specific than a generic quiz. The format is particularly well-suited to chapters where the reader needs to recognize <em>instances</em> of a pattern (examples of reinforcing loops, cases of confounded correlations, types of cognitive load).</p>
+<p>The skill's data-driven design is what makes it cheap to produce. A classifier that teaches the reader to tell reinforcing from balancing loops is the same code as a classifier that teaches the reader to tell conceptual from notational dependencies — the difference lives in <code>data.json</code>.</p>
+<h2 id="audit-skills-measuring-the-book">Audit Skills: Measuring the Book<a class="headerlink" href="#audit-skills-measuring-the-book" title="Permanent link">¶</a></h2>
+<h3 id="book-metrics-generator">Book Metrics Generator<a class="headerlink" href="#book-metrics-generator" title="Permanent link">¶</a></h3>
+<p>The <strong><em>book-metrics-generator</em></strong> skill produces two Markdown files in <code>docs/learning-graph/</code>: <code>book-metrics.md</code> with overall statistics and <code>chapter-metrics.md</code> with a per-chapter breakdown. The metrics it reports span several categories: <em>volume</em> (chapter word counts, concept counts, glossary term counts), <em>coverage</em> (which concepts are covered in which chapters, and whether any are missing), <em>distribution</em> (Bloom-level distribution of quiz items, shot-type distribution of MicroSims, admonition counts per chapter), and <em>consistency</em> (dead links, missing references, orphaned concepts).</p>
+<p>The skill is not a grading system; it is a <em>measurement</em> system. Chapter 8's warning about Goodhart's Law applies sharply here — any of these metrics, optimized against without a guardrail, produces chapters shaped by the target rather than by pedagogical need. The structural fix is to pair every metric the skill reports with a qualitative review prompt in the chapter-metrics file.</p>
+<h3 id="diagram-reports-generator">Diagram Reports Generator<a class="headerlink" href="#diagram-reports-generator" title="Permanent link">¶</a></h3>
+<p>The <strong><em>diagram-reports-generator</em></strong> skill produces an inventory of every diagram, MicroSim, and interactive infographic across all chapters, with their status (Specified, In Progress, Shipped), their difficulty and Bloom-level tags, and their UI-complexity rating. The table version is the working surface an author uses to decide which sims to generate next; the detail report is the reference the author consults when revisiting a sim months later.</p>
+<p>The skill's contribution is not the inventory itself — the chapters contain the source data — but the <em>aggregation</em>. An author looking at a single chapter sees five <code>&lt;details&gt;</code> specs; an author looking at the diagram report sees ninety, with coverage gaps and status imbalances visible at a glance.</p>
+<h3 id="linkedin-announcement-generator">LinkedIn Announcement Generator<a class="headerlink" href="#linkedin-announcement-generator" title="Permanent link">¶</a></h3>
+<p>The <strong><em>linkedin-announcement-generator</em></strong> skill is a small, sharp skill that reads the book metrics and a deploy URL and produces a LinkedIn post draft. The draft is structured around the metrics that read as genuinely impressive on a professional-network feed — total concept count, total chapter count, total MicroSim count, the site URL — and includes hashtags appropriate to the book's subject matter.</p>
+<p>Two design notes. First, the skill runs <em>after</em> the metrics skill, because every number in the post is drawn from the metrics file. Second, the skill produces a draft, not a published post. Posting is always a human action; an author who wants to edit the draft can, and an author who wants to post verbatim can, but the skill does not publish.</p>
+<h2 id="image-generation-costs-a-candid-section">Image Generation Costs: A Candid Section<a class="headerlink" href="#image-generation-costs-a-candid-section" title="Permanent link">¶</a></h2>
+<p>The engagement skills — story, MicroSim screen captures, mascot regeneration, chapter hero images — depend on image generation, which is the line item in a textbook's LLM budget that moves the fastest and surprises authors the most. This section is the honest tour of what the costs are at the time of writing, how they add up across a whole book, and what the tradeoffs look like on the consistency-versus-cost-versus-speed surface.</p>
+<p>Before the numbers, one disclaimer worth saying aloud: these prices are a snapshot from April 2026 and will move. The <em>ratios</em> between providers will move less than the absolute prices, but even the ratios shift as new models ship. Treat the table below as a decision framework, not a quoted rate card.</p>
+<table>
+<thead>
+<tr>
+<th>Provider / model family</th>
+<th>Cost per image (API, 2026 Q2)</th>
+<th>Quality notes</th>
+<th>Primary use case</th>
+<th>12-panel story cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Google Imagen (Gemini API)</td>
+<td>~$0.04</td>
+<td>Strong painterly and photorealistic; reference-image conditioning available</td>
+<td>Story panels, mascot poses, chapter hero images</td>
+<td>~$0.50</td>
+</tr>
+<tr>
+<td>Black Forest Labs Flux (hosted)</td>
+<td>~$0.05</td>
+<td>Crisp, high-resolution outputs; strong detail</td>
+<td>Story panels where detail matters; technical illustrations</td>
+<td>~$0.60</td>
+</tr>
+<tr>
+<td>Midjourney (via API)</td>
+<td>~$0.10</td>
+<td>Stylized, strong aesthetic cohesion; tighter API access</td>
+<td>Branded hero images; stylized chapter openers</td>
+<td>~$1.20</td>
+</tr>
+<tr>
+<td>OpenAI DALL-E 3 / GPT-Image-1</td>
+<td>~<span class="arithmatex">\(0.04–\)</span>0.08</td>
+<td>Good prompt adherence; integrated with ChatGPT workflows</td>
+<td>Quick iteration; when already inside the OpenAI stack</td>
+<td>~<span class="arithmatex">\(0.50–\)</span>1.00</td>
+</tr>
+<tr>
+<td>Local Flux / SDXL on workstation</td>
+<td>~$0 marginal (hardware amortized)</td>
+<td>Variable quality; requires local GPU; longer wall-clock</td>
+<td>High-volume regeneration; privacy-sensitive content</td>
+<td>~$0 per story after setup</td>
+</tr>
+</tbody>
+</table>
+<p>A twelve-panel story at $0.04 per image is $0.48 in API spend, which is the number Chapter 13 quoted as "a coffee's worth." That number is not wrong, and it is also misleading in two directions worth naming.</p>
+<p><strong>It is too low in the common case</strong> because the first generation of a panel is rarely the one that ships. Chapter 13's tip — <em>regenerate three times before accepting a panel</em> — means the realistic per-panel cost is three to four generations, not one. A twelve-panel story whose each panel needed four tries costs $1.92, not $0.48. Across fourteen chapters with one story apiece, the story-image budget for a whole book lands somewhere between $7 and $30, depending on iteration discipline. That is still cheap relative to a commissioned illustrator, but it is not pocket change for a volunteer-authored textbook, and it is an order of magnitude higher than the naïve one-pass estimate.</p>
+<p><strong>It is too high in the rare case</strong> where local generation makes sense. An author with a mid-range consumer GPU can run Flux locally at near-zero marginal cost once the setup is done. The tradeoffs are wall-clock time (local generation is slower than a hosted API), output quality (often still shy of the best hosted models at the time of writing), and setup cost (the first local-Flux environment an author builds takes a weekend). For a book whose author has 300 panels to generate across many stories, the local path can pay back that setup weekend inside a week.</p>
+<p>The tradeoff surface is worth drawing out explicitly. Every choice on this axis is a three-way tradeoff among <em>consistency</em>, <em>cost</em>, and <em>speed</em>, and no provider wins on all three. The character-consistency techniques from Chapter 13 — text-only style sheet, reference image, IP-Adapter, LoRA fine-tune — sit on the same surface: each one trades setup cost for better character preservation across a story.</p>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>Best choice (April 2026)</th>
+<th>What you give up</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lowest cost</td>
+<td>Google Imagen (hosted) or local Flux (on owned GPU)</td>
+<td>Some consistency drift without reference image; slower for local</td>
+</tr>
+<tr>
+<td>Highest consistency across a story</td>
+<td>Flux with IP-Adapter or a LoRA fine-tune</td>
+<td>Setup time; higher per-story cost</td>
+</tr>
+<tr>
+<td>Fastest iteration</td>
+<td>Google Imagen or OpenAI GPT-Image-1</td>
+<td>Minor consistency tradeoffs vs. Flux + IP-Adapter</td>
+</tr>
+<tr>
+<td>Strongest branded aesthetic</td>
+<td>Midjourney</td>
+<td>Highest API cost; less API control</td>
+</tr>
+<tr>
+<td>Full privacy / no cloud dependency</td>
+<td>Local Flux or SDXL</td>
+<td>Setup cost; variable quality; slower</td>
+</tr>
+</tbody>
+</table>
+<p>Why this matters for educational projects specifically: most educational books are produced on non-infinite budgets, by authors who are also domain experts rather than full-time image-generation operators. The image-generation budget is one of the few line items that can silently balloon — an enthusiastic story-generator run on every chapter, each with four regenerations per panel, each chapter having two candidate stories before the author picks one, can turn a $10 image budget into a $200 image budget without anyone noticing until the monthly invoice arrives.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Set an Image Budget Before You Start, Not After</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/tip.png" data-desc-position="bottom"><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Bloom the elephant giving a tip"></a>
+A pre-declared image budget — say, $5 per story, $25 for mascot poses, $10 for chapter hero images — turns every regeneration decision into an explicit tradeoff. The author who checks their budget after the run has already spent the money. The author who checks it before spends deliberately and usually lands well under their cap.</p>
+</div>
+<h2 id="when-not-to-use-a-skill">When NOT to Use a Skill<a class="headerlink" href="#when-not-to-use-a-skill" title="Permanent link">¶</a></h2>
+<p>A theme that has been implicit through this chapter deserves a paragraph of its own: <em>not every task wants a skill</em>. Skill design has real overhead — the <code>SKILL.md</code> file to write and maintain, the trigger hints to tune, the inputs and outputs to document, the changelog to keep current — and a task that does not recur is a task where the overhead is not earned. Three categories of task do not belong in a skill.</p>
+<p><strong>One-off tasks.</strong> A one-time reformatting of a legacy document, a single migration step, an ad-hoc data extraction for a specific report — these are <em>prompts</em>, not skills. A skill that runs once and is never invoked again is documentation that nobody reads, blocking a search result somebody else needs.</p>
+<p><strong>Tasks that require conversation context.</strong> Some work is shaped by the back-and-forth of a real author-and-model conversation — exploratory analysis, design discussion, diagnosing why a specific chapter feels off. That work is inherently conversational; encoding it as a skill forces a linear step list onto what needs to be a dialog. The harness's chat interface is the right tool.</p>
+<p><strong>Tasks where a terse prompt is simpler.</strong> "Rename every <code>sim-id</code> in Chapter 7 from <code>foo-bar-baz</code> to <code>baz-bar-foo</code>" is a prompt. "Turn <code>docs/course-description.md</code> into a validated course description" is a skill. The rough test: if the task has a named output artifact with a defined format, it wants a skill; if the task is an edit whose shape is obvious from the sentence, it wants a prompt.</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Reach for</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Well-defined artifact, recurring</td>
+<td>Skill</td>
+<td>Overhead is earned by repeat use</td>
+</tr>
+<tr>
+<td>One-off reformatting, migration, or extraction</td>
+<td>Terse prompt</td>
+<td>Skill overhead outpaces one-time benefit</td>
+</tr>
+<tr>
+<td>Exploratory or diagnostic conversation</td>
+<td>Harness chat</td>
+<td>Needs dialog, not a linear step list</td>
+</tr>
+<tr>
+<td>Task that itself calls several skills in sequence</td>
+<td>Subagent or orchestrator skill</td>
+<td>The chain is the reusable artifact</td>
+</tr>
+<tr>
+<td>Task that needs to run unattended on a schedule</td>
+<td>Scheduled skill or cron</td>
+<td>The <em>when</em> is as important as the <em>what</em></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong><em>everything-is-a-skill footgun</em></strong> is the temptation, once an author has written a few good skills, to turn every request into one. The cost is real: a skill catalog full of single-use skills is a catalog whose triggering becomes ambiguous, whose maintenance burden accumulates, and whose "which skill applies here?" surface grows faster than the author's ability to remember it. The structural fix is to hold the rough test above in mind and accept that some requests will remain prompts forever.</p>
+<h2 id="the-skill-quality-flywheel">The Skill-Quality Flywheel<a class="headerlink" href="#the-skill-quality-flywheel" title="Permanent link">¶</a></h2>
+<p>The payoff of investing in a skill — rather than a prompt — is not that any single invocation is better. It is that each invocation <em>surfaces edge cases</em> that get folded into the next version of the skill, and the skill gets <em>better than it was</em> in a way that a one-off prompt never does. That improvement has a shape worth seeing as a causal loop.</p>
+<h4 id="diagram-the-skill-quality-flywheel">Diagram: The Skill-Quality Flywheel<a class="headerlink" href="#diagram-the-skill-quality-flywheel" title="Permanent link">¶</a></h4>
+<details>
+<summary>Causal loop diagram showing how skill use surfaces edge cases that tighten the description and improve invocation accuracy, creating a reinforcing loop</summary>
+<p>Type: causal-loop-diagram
+<strong>sim-id:</strong> skill-quality-flywheel<br>
+<strong>Library:</strong> Mermaid<br>
+<strong>Status:</strong> Specified</p>
+<p>A causal loop diagram rendered with Mermaid <code>flowchart LR</code> with six variable-nodes and one named reinforcing loop. All nodes are noun phrases naming variables that can go up or down.</p>
+<p>Nodes: <em>skill invocation rate</em>, <em>edge cases surfaced</em>, <em>skill description precision</em>, <em>trigger accuracy</em>, <em>author trust in the skill</em>, <em>maintenance burden</em>.</p>
+<p>Edges and polarities:</p>
+<ul>
+<li>skill invocation rate → edge cases surfaced (+) — more runs surface more edge cases</li>
+<li>edge cases surfaced → skill description precision (+, with delay ⧚) — each edge case prompts a description tightening</li>
+<li>skill description precision → trigger accuracy (+) — a precise description routes the harness correctly</li>
+<li>trigger accuracy → author trust in the skill (+) — the skill is invoked when it should be, not otherwise</li>
+<li>author trust in the skill → skill invocation rate (+) — trusted skills get used</li>
+<li>skill invocation rate → maintenance burden (+) — more use means more bug reports and feature requests</li>
+<li>maintenance burden → skill description precision (−, if unmanaged) — neglected maintenance lets the description drift</li>
+</ul>
+<p>Loop label at the loop's geometric center:</p>
+<ul>
+<li><strong>R1 — Skill-quality flywheel (reinforcing, productive).</strong> Invocation → edge cases → description precision → trigger accuracy → trust → more invocation. Each trip around makes the next one easier. Maintenance burden is the drag variable that can stall the loop if left unattended.</li>
+</ul>
+<p>Visual treatment: R1 nodes in cool blue; the maintenance-burden node in warm orange to signal the drag variable; delay marker ⧚ on the edge-case-to-description-precision edge. Every edge labeled with <code>+</code> or <code>−</code>.</p>
+<p>Implementation: Mermaid <code>flowchart LR</code> with <code>linkStyle</code> declarations for polarity coloring and <code>classDef</code> for loop grouping. A one-paragraph walkthrough of R1 accompanies the diagram in the prose that follows.</p>
+</details>
+<p>Read loop <strong>R1</strong> in plain English. An author who uses a skill more frequently encounters more of its edge cases — inputs the skill handles poorly, outputs that need a post-processing step, trigger hints that route ambiguously. Each edge case is an opportunity to tighten the <code>SKILL.md</code> description, adding a precision that was not there before. A more precise description routes more accurately when the harness matches user requests against skills, which raises the author's trust in the skill — the skill gets invoked when it should and does not get invoked when it should not. Trusted skills get used more, which brings the loop back to the start. Each trip around R1 makes the skill a little better than it was.</p>
+<p>The loop has a drag variable: <em>maintenance burden</em>. Every increase in invocation rate is also an increase in bug reports, feature requests, and spec drift. Unattended, the maintenance burden dampens the skill-description-precision edge — the skill's description stays where it was while the skill's behavior has moved. The structural fix is to treat the skill's <code>## Changelog</code> section as load-bearing: a skill without a visible recent changelog is a skill that has either stopped being used (in which case fine, archive it) or is accumulating silent drift (in which case urgent). The flywheel runs on visible maintenance, not on hope.</p>
+<h2 id="footgun-callouts">Footgun Callouts<a class="headerlink" href="#footgun-callouts" title="Permanent link">¶</a></h2>
+<p>Three footgun patterns specific to skills in a production pipeline are worth naming with the three-property framework — silent, easy to trigger, delayed damage.</p>
+<h3 id="skill-description-ambiguity-leading-to-wrong-skill-invocation">Skill description ambiguity leading to wrong-skill invocation<a class="headerlink" href="#skill-description-ambiguity-leading-to-wrong-skill-invocation" title="Permanent link">¶</a></h3>
+<p><em>Silent:</em> the harness cheerfully routes the author's request to the wrong skill, produces an output, and reports success. <em>Easy to trigger:</em> two skills with overlapping trigger hints — say, a <code>chapter-content-generator</code> whose description matches "generate chapter" and a separate <code>chapter-image-enhancer</code> whose description also matches "generate chapter" — will collide on the same natural-language request. <em>Delayed damage:</em> the author discovers the wrong routing only when the output artifact does not look right; by then the write has already happened, possibly overwriting a file the author wanted kept. <strong>Structural fix:</strong> every skill's <code>When to use</code> section names <em>anti-triggers</em> alongside triggers — explicit phrasings that should NOT route to this skill — and the harness surfaces the chosen skill's name before executing, giving the author a chance to intercept. The anti-trigger pattern is what disambiguates skills whose descriptions are legitimately similar.</p>
+<h3 id="skills-that-write-to-the-same-file-creating-merge-conflicts">Skills that write to the same file creating merge conflicts<a class="headerlink" href="#skills-that-write-to-the-same-file-creating-merge-conflicts" title="Permanent link">¶</a></h3>
+<p><em>Silent:</em> two skills whose <code>## Outputs</code> sections both name <code>docs/glossary.md</code> will both write to the file without noticing each other, and the last writer wins. <em>Easy to trigger:</em> a quick local addition (a standalone "glossary-appender" skill) that writes to the canonical glossary path instead of a staging path, invoked after the main glossary-generator has run. <em>Delayed damage:</em> a later pipeline run of the main glossary-generator silently discards the appended content, because the main generator regenerates the file from the learning graph. <strong>Structural fix:</strong> every skill declares exclusive <em>ownership</em> of the files it writes; a second skill that wants to append or transform the output writes to its own output path and composition happens at a documented later stage, not through overlapping writes. This is a variant of the single-writer discipline from distributed systems, applied at the artifact level.</p>
+<h3 id="skills-that-depend-on-external-services-silently-failing">Skills that depend on external services silently failing<a class="headerlink" href="#skills-that-depend-on-external-services-silently-failing" title="Permanent link">¶</a></h3>
+<p><em>Silent:</em> the <code>story-generator</code> skill calls the Google Gemini API for image generation; if the API returns a 429 rate-limit or a partial response for a single panel, the skill can proceed with eleven panels rendered and one panel missing, writing a chapter whose panel 7 is a broken image reference. <em>Easy to trigger:</em> any external-service dependency that lacks end-to-end success verification inside the skill. <em>Delayed damage:</em> the broken chapter ships to the site build; the author discovers it on the deployed URL, days later, after the initial check looked fine. <strong>Structural fix:</strong> every external-service call inside a skill is wrapped in a post-condition check: <em>after</em> the call, verify the artifact exists and is valid before the skill reports success. A story skill should verify that every panel image file exists and is a valid image before the skill writes the chapter Markdown that references them.</p>
+<p>The meta-pattern across all three footguns is the <em>silent-success</em> shape: the skill reports success, but the artifact is wrong. Structural fixes that make the failure <em>loud</em> — anti-trigger declarations, exclusive file ownership, post-condition verification — are the category of fix that matters. A watched-for failure is better than an unwatched one; a structurally-impossible failure is better than a watched-for one.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Silent Success Is the Worst Kind of Failure</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/warning.png" data-desc-position="bottom"><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Bloom the elephant flagging a warning"></a>
+Every one of the footguns above shares the same shape: the skill says it worked, and the artifact says otherwise. That gap between the report and the reality is where damage accumulates. When you design a skill, ask: <em>if this skill silently produced a wrong artifact, how long would it take a reader — not me, a reader — to notice?</em> If the answer is "weeks" or "maybe never," the skill needs a louder failure mode. Structural impossibility beats structural vigilance every time.</p>
+</div>
+<h2 id="retrieval-check">Retrieval Check<a class="headerlink" href="#retrieval-check" title="Permanent link">¶</a></h2>
+<p>Close the tab and try these from memory. Stumbling is diagnostic — it tells you which section to revisit. Resist scrolling back before attempting each one.</p>
+<ol>
+<li><strong>Name</strong> the three foundation skills that run before any chapter prose is generated, and state in one sentence what each one produces. (Level: Remember / Understand.)</li>
+<li><strong>State</strong> the dependency the <code>reference-generator</code> skill's per-chapter-file layout buys that an inline-references layout would not. (Level: Understand.)</li>
+<li><strong>Explain</strong> why the <code>microsim-generator</code> skill has a library-routing layer rather than always producing p5.js output. Name at least three libraries and the visualization types each is the right choice for. (Level: Understand / Apply.)</li>
+<li><strong>Describe</strong> the skill-quality flywheel (R1) around one full cycle in your own words, and name the drag variable that can stall the loop. (Level: Analyze.)</li>
+<li><strong>Given</strong> a request to rename a single variable across three chapters, decide whether a new skill, a terse prompt, or a harness conversation is the right tool. Justify your answer. (Level: Apply / Evaluate.)</li>
+<li><strong>Critique</strong> the design choice to store ten references per chapter in separate <code>references.md</code> files rather than in a single book-wide references file. Name at least one benefit and one cost of the split, and propose one condition under which the consolidated-file choice would be better. (Level: Evaluate.)</li>
+<li><strong>Given</strong> a 12-panel story whose each panel needs an average of 3.5 regenerations to land, and a provider that charges $0.04 per image, calculate the realistic per-story image cost. Then state what changes if the author also produces two candidate stories per chapter before picking one, across 14 chapters. (Level: Apply.)</li>
+<li><strong>Evaluate</strong> the claim that every recurring authoring task should be turned into a skill. Name at least two conditions under which the claim fails, and propose a decision test that distinguishes skill-worthy tasks from prompt-worthy ones. (Level: Evaluate.)</li>
+<li><strong>Trace</strong> one of the three footguns (skill-description ambiguity, overlapping file writes, or silent external-service failure) and propose a structural fix that makes the failure <em>loud</em> rather than watched-for. (Level: Analyze / Create.)</li>
+<li><strong>Under what conditions</strong> would the image-generation budget for a book ship an unpleasant surprise at invoice time, and what pre-declared budget structure would prevent it? (Level: Evaluate / Apply.)</li>
+</ol>
+<p>If questions 5, 8, or 10 produced real hesitation, that hesitation is the right kind. Skill design is genuinely a judgment call; getting fluent with the judgment takes real time.</p>
+<h2 id="bridge-to-chapter-15">Bridge to Chapter 15<a class="headerlink" href="#bridge-to-chapter-15" title="Permanent link">¶</a></h2>
+<p>We now have the whole stack in one place: the theory (Chapters 1–9), the architecture (Chapter 10), the MicroSim and mascot craft (Chapters 11–12), the graphic novel discipline (Chapter 13), and the skill pipeline that turns requests into artifacts (this chapter). What we have not yet done is put it all to work on a real project — taking a subject we have never written about before, running the full pipeline from course-description validation to deployed site, measuring what lands and what doesn't, and iterating. That is the capstone. Chapter 15 is where the stack, the theory, and the skills meet a production deployment.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">The Toolchain Is Yours</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/celebration.png" data-desc-position="bottom"><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Bloom the elephant celebrating with trunk raised"></a>
+You now have the complete mental map of the workshop — every skill named, every artifact located, every pipeline position understood. Hold onto three headlines from this chapter: <em>the learning graph is the spine and the first three skills exist to get it right</em>, <em>image-generation costs balloon silently unless you pre-declare a budget</em>, and <em>the silent-success footgun is the one that matters most — design skills so wrong outputs fail loudly, not quietly</em>. Next up: the capstone. We take everything we have built — the stack, the theory, the skills — and deploy a textbook. See you in Chapter 15.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../13-graphic-novels/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 13. Graphic Novels and Short-Form Stories">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                13. Graphic Novels and Short-Form Stories
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../15-capstone-deployment/" class="md-footer__link md-footer__link--next" aria-label="Next: 15. Capstone and Deployment">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                15. Capstone and Deployment
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Richard Tandler. All rights reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "content.action.edit", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

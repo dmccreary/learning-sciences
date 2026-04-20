@@ -1,0 +1,2531 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Defines the intelligent textbook as a software artifact — learning graphs, concept dependencies, DAG structure, nodes and edges, glossaries, FAQ sections, quiz banks, chapter outlines, reference lists, tables of contents, search indexes, navigation, and print-friendly output — alongside the AI tooling foundations (prompt engineering, context windows, token budgeting, SKILL.md format, skill invocation), the five-level classification of intelligent textbooks, and the architectural implications of the Level 2 to Level 3 privacy inflection.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/learning-sciences/chapters/10-textbook-architecture/">
+      
+      
+        <link rel="prev" href="../09-learning-conditions/">
+      
+      
+        <link rel="next" href="../11-microsims/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Intelligent Textbook Architecture and AI Tooling - Learning Sciences</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="Intelligent Textbook Architecture and AI Tooling - Learning Sciences">
+      
+        <meta property="og:description" content="Defines the intelligent textbook as a software artifact — learning graphs, concept dependencies, DAG structure, nodes and edges, glossaries, FAQ sections, quiz banks, chapter outlines, reference lists, tables of contents, search indexes, navigation, and print-friendly output — alongside the AI tooling foundations (prompt engineering, context windows, token budgeting, SKILL.md format, skill invocation), the five-level classification of intelligent textbooks, and the architectural implications of the Level 2 to Level 3 privacy inflection.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/learning-sciences/assets/images/social/chapters/10-textbook-architecture/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/learning-sciences/chapters/10-textbook-architecture/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="Intelligent Textbook Architecture and AI Tooling - Learning Sciences">
+      
+        <meta name="twitter:description" content="Defines the intelligent textbook as a software artifact — learning graphs, concept dependencies, DAG structure, nodes and edges, glossaries, FAQ sections, quiz banks, chapter outlines, reference lists, tables of contents, search indexes, navigation, and print-friendly output — alongside the AI tooling foundations (prompt engineering, context windows, token budgeting, SKILL.md format, skill invocation), the five-level classification of intelligent textbooks, and the architectural implications of the Level 2 to Level 3 privacy inflection.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/learning-sciences/assets/images/social/chapters/10-textbook-architecture/index.png">
+      
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#intelligent-textbook-architecture-and-ai-tooling" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Learning Sciences" class="md-header__button md-logo" aria-label="Learning Sciences" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learning Sciences
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Intelligent Textbook Architecture and AI Tooling
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/learning-sciences.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Learning Sciences" class="md-nav__button md-logo" aria-label="Learning Sciences" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Learning Sciences
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/learning-sciences.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundations of Learning Sciences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-seven-domains/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. The Seven Domains Framework
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-motivation-engagement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Motivation and Engagement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-cognitive-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Cognitive Architecture and Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-knowledge-retention/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Knowledge Retention
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-application-transfer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Application and Transfer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-expertise-mastery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Expertise and Mastery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-measurement-feedback/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Measurement and Feedback
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-learning-conditions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Learning Conditions and Environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    10. Intelligent Textbook Architecture and AI Tooling
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    10. Intelligent Textbook Architecture and AI Tooling
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-content-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Content Directives
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Required Content Directives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-five-levels-of-intelligent-textbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Five Levels of Intelligent Textbooks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-level-3-privacy-inflection-mascot-warning-admonition" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Level 3 Privacy Inflection — Mascot-Warning Admonition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concepts-already-in-the-learning-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Already in the Learning Graph
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-textbook-as-software-artifact" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Textbook as Software Artifact
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-architecture-of-a-level-2-intelligent-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Architecture of a Level 2 Intelligent Textbook
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Architecture of a Level 2 Intelligent Textbook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-intelligent-textbook-component-architecture-level-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Intelligent Textbook Component Architecture (Level 2)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-learning-graph-as-the-structural-spine" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Learning Graph as the Structural Spine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Learning Graph as the Structural Spine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dag-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      DAG Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DAG Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-a-small-learning-graph-its-topological-ordering-and-its-transitive-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: A Small Learning Graph, Its Topological Ordering, and Its Transitive Reduction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concept-node-and-concept-edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept Node and Concept Edge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concept-dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept Dependency
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-outline-and-chapter-content-authoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Outline and Chapter Content Authoring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derived-artifacts-glossary-faq-quiz-bank-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Derived Artifacts: Glossary, FAQ, Quiz Bank, References
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#packaging-table-of-contents-navigation-search-print" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packaging: Table of Contents, Navigation, Search, Print
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-tooling-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI Tooling Foundations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Tooling Foundations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt Engineering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Window
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-budgeting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Token Budgeting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Token Budgeting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-token-budget-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Token Budget Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-skillmd-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      The SKILL.md Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill-invocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skill Invocation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Skill Invocation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-authoring-pipeline-prompt-to-published-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Authoring Pipeline — Prompt to Published Site
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-five-levels-of-intelligent-textbooks_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Five Levels of Intelligent Textbooks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Five Levels of Intelligent Textbooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-level-3-privacy-inflection" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Level 3 Privacy Inflection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-level-2-components-vs-the-level-3-delta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture: Level 2 Components vs. the Level 3 Delta
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authoring-pipeline-dynamics-a-causal-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authoring-Pipeline Dynamics: A Causal Loop
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authoring-Pipeline Dynamics: A Causal Loop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-authoring-pipeline-dynamics-graph-quality-flywheel-vs-token-pressure-trap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Authoring Pipeline Dynamics — Graph-Quality Flywheel vs. Token-Pressure Trap
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-critical-thinking-interlude-when-level-2-and-when-level-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Critical-Thinking Interlude: When Level 2 and When Level 3?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Critical-Thinking Interlude: When Level 2 and When Level 3?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-goodhart-risk-in-our-own-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Goodhart Risk in Our Own Metrics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval Check
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bridge-to-chapter-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bridge to Chapter 11
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-microsims/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. MicroSims and Interactive Visualizations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-mascots-admonitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Pedagogical Mascots and Admonitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-graphic-novels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Graphic Novels and Short-Form Stories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-agent-skills/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. AI Agent Skills for Textbook Generation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-capstone-deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Capstone and Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/graph-viewer/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-content-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Content Directives
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Required Content Directives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-five-levels-of-intelligent-textbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Five Levels of Intelligent Textbooks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-level-3-privacy-inflection-mascot-warning-admonition" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Level 3 Privacy Inflection — Mascot-Warning Admonition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concepts-already-in-the-learning-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Already in the Learning Graph
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-textbook-as-software-artifact" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Textbook as Software Artifact
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-architecture-of-a-level-2-intelligent-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Architecture of a Level 2 Intelligent Textbook
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Component Architecture of a Level 2 Intelligent Textbook">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-intelligent-textbook-component-architecture-level-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Intelligent Textbook Component Architecture (Level 2)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-learning-graph-as-the-structural-spine" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Learning Graph as the Structural Spine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Learning Graph as the Structural Spine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dag-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      DAG Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DAG Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-a-small-learning-graph-its-topological-ordering-and-its-transitive-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: A Small Learning Graph, Its Topological Ordering, and Its Transitive Reduction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concept-node-and-concept-edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept Node and Concept Edge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concept-dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept Dependency
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-outline-and-chapter-content-authoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Outline and Chapter Content Authoring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derived-artifacts-glossary-faq-quiz-bank-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Derived Artifacts: Glossary, FAQ, Quiz Bank, References
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#packaging-table-of-contents-navigation-search-print" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packaging: Table of Contents, Navigation, Search, Print
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-tooling-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      AI Tooling Foundations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Tooling Foundations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prompt-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt Engineering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#context-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Context Window
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-budgeting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Token Budgeting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Token Budgeting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-token-budget-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Token Budget Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-skillmd-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      The SKILL.md Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skill-invocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skill Invocation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Skill Invocation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-authoring-pipeline-prompt-to-published-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Authoring Pipeline — Prompt to Published Site
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-five-levels-of-intelligent-textbooks_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Five Levels of Intelligent Textbooks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Five Levels of Intelligent Textbooks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-level-3-privacy-inflection" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Level 3 Privacy Inflection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-level-2-components-vs-the-level-3-delta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture: Level 2 Components vs. the Level 3 Delta
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authoring-pipeline-dynamics-a-causal-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authoring-Pipeline Dynamics: A Causal Loop
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authoring-Pipeline Dynamics: A Causal Loop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-authoring-pipeline-dynamics-graph-quality-flywheel-vs-token-pressure-trap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Authoring Pipeline Dynamics — Graph-Quality Flywheel vs. Token-Pressure Trap
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-critical-thinking-interlude-when-level-2-and-when-level-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Critical-Thinking Interlude: When Level 2 and When Level 3?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Critical-Thinking Interlude: When Level 2 and When Level 3?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-goodhart-risk-in-our-own-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Goodhart Risk in Our Own Metrics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval Check
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bridge-to-chapter-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bridge to Chapter 11
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/learning-sciences.git/blob/master/docs/chapters/10-textbook-architecture/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+    </a>
+  
+  
+
+
+<h1 id="intelligent-textbook-architecture-and-ai-tooling">Intelligent Textbook Architecture and AI Tooling<a class="headerlink" href="#intelligent-textbook-architecture-and-ai-tooling" title="Permanent link">¶</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
+<p>Now we turn from theory to architecture. This chapter defines what an intelligent textbook is as a software artifact: learning graphs, concept dependencies, DAG structure, nodes and edges, glossaries, FAQ sections, quiz banks, chapter outlines, reference lists, tables of contents, search indexes, navigation, and print-friendly output. We also introduce the AI tooling foundations — prompt engineering, context windows, token budgeting, the SKILL.md format, and skill invocation — that every generator skill in Chapter 14 builds on.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
+<p>This chapter covers the following 21 concepts from the learning graph:</p>
+<ol>
+<li>Intelligent Textbook Design</li>
+<li>Learning Graph</li>
+<li>Concept Dependency</li>
+<li>DAG Structure</li>
+<li>Concept Node</li>
+<li>Concept Edge</li>
+<li>Glossary</li>
+<li>FAQ Section</li>
+<li>Quiz Bank</li>
+<li>Chapter Outline</li>
+<li>Chapter Content Authoring</li>
+<li>Reference List</li>
+<li>Table of Contents</li>
+<li>Search Index</li>
+<li>Site Navigation</li>
+<li>Print-Friendly Output</li>
+<li>Prompt Engineering</li>
+<li>Context Window</li>
+<li>Token Budgeting</li>
+<li>SKILL.md Format</li>
+<li>Skill Invocation</li>
+</ol>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-foundations/">Chapter 1: Foundations of Learning Sciences</a></li>
+<li><a href="../02-seven-domains/">Chapter 2: The Seven Domains Framework</a></li>
+</ul>
+<h2 id="required-content-directives">Required Content Directives<a class="headerlink" href="#required-content-directives" title="Permanent link">¶</a></h2>
+<p>When the <code>chapter-content-generator</code> skill generates this chapter, it MUST include the following in addition to the concepts listed above. These directives are durable and should be respected on every regeneration.</p>
+<h3 id="the-five-levels-of-intelligent-textbooks">The Five Levels of Intelligent Textbooks<a class="headerlink" href="#the-five-levels-of-intelligent-textbooks" title="Permanent link">¶</a></h3>
+<p>A dedicated subsection — titled <strong>"The Five Levels of Intelligent Textbooks"</strong> — must introduce the classification framework proposed by McCreary and colleagues (analogous to the SAE J3016 framework for autonomous vehicles):</p>
+<ol>
+<li><strong>Level 1 — Static.</strong> Fixed content, no interactivity (traditional textbook).</li>
+<li><strong>Level 2 — Interactive.</strong> Learning graphs, MicroSims, path recommendations. No storage of student records.</li>
+<li><strong>Level 3 — Adaptive.</strong> Driven by stored student goals and progress history.</li>
+<li><strong>Level 4 — Chatbot.</strong> Conversational tutoring via a large language model.</li>
+<li><strong>Level 5 — Autonomous.</strong> Real-time generation of fully personalized instruction.</li>
+</ol>
+<p>The subsection must:</p>
+<ul>
+<li>State explicitly that <strong>this book targets Level 2</strong>, and explain why that is a deliberate scope choice.</li>
+<li>Include a table comparing the five levels on (a) interactivity, (b) student data stored, © typical cost per student per day, (d) regulatory surface, (e) an example product or pattern.</li>
+<li>Cite the source paper: <em>A Five-Level Classification Framework for Intelligent Textbooks: Lessons from Autonomous Vehicle Standards</em> (McCreary et al.).</li>
+<li>Reference the METR finding that AI task capabilities double approximately every seven months and use it to motivate why Level 2 content is commoditizing while Level 3+ capabilities become the strategic focus for educational organizations.</li>
+</ul>
+<h3 id="the-level-3-privacy-inflection-mascot-warning-admonition">The Level 3 Privacy Inflection — Mascot-Warning Admonition<a class="headerlink" href="#the-level-3-privacy-inflection-mascot-warning-admonition" title="Permanent link">¶</a></h3>
+<p>A prominent <code>!!! mascot-warning</code> admonition must appear inside or immediately after the five-levels subsection. It must include the mascot image (<code>&lt;img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Bloom warning about student data"&gt;</code>) and communicate the following points in Bloom's voice:</p>
+<ul>
+<li>Moving from Level 2 to Level 3 means <strong>storing individual student data</strong> — goals, progress, behavior, performance — tied to an identifiable learner.</li>
+<li>The moment student data is collected, the system enters a <strong>highly regulated domain</strong>. Name the regulations that apply in the US and EU: <strong>FERPA</strong> (K-12 and higher-ed in the US), <strong>COPPA</strong> (children under 13 in the US), <strong>GDPR</strong> (EU residents), and state-level laws such as CCPA/CPRA.</li>
+<li>The obligations that attach at that moment include data minimization, informed consent (often parental for minors), explicit purpose limitation, retention limits, access and deletion rights, encryption at rest and in transit, audit logging, third-party processor agreements, and algorithmic bias auditing where automated decisions affect the learner.</li>
+<li>These obligations are <strong>out of scope for this course</strong>. Nothing in this book teaches a reader how to operate a Level 3+ system responsibly. Crossing the threshold without that expertise creates real legal, ethical, and reputational risk.</li>
+<li>Close with actionable guidance: Level 2 is a safe, productive place to build; if a project needs Level 3+ capabilities, partner with an institution that has existing data-governance infrastructure, or adopt open standards like <strong>xAPI</strong> and a <strong>Learning Record Store</strong> with student-controlled portability.</li>
+</ul>
+<h3 id="concepts-already-in-the-learning-graph">Concepts Already in the Learning Graph<a class="headerlink" href="#concepts-already-in-the-learning-graph" title="Permanent link">¶</a></h3>
+<p>The following related concepts now live in the learning graph and are introduced in earlier chapters. This chapter should <strong>reference</strong> them (not re-introduce them from scratch) when they appear in the architectural treatment:</p>
+<ul>
+<li><em>Intelligent Textbook Level</em> — introduced in <a href="../01-foundations/">Chapter 1</a> (FOUND taxonomy).</li>
+<li><em>Privacy Inflection Point</em>, <em>FERPA</em>, <em>COPPA</em>, <em>GDPR</em>, <em>CCPA / CPRA</em>, <em>Data Minimization</em>, <em>xAPI</em>, <em>Learning Record Store</em> — introduced in <a href="../08-measurement-feedback/">Chapter 8</a> (PRIV taxonomy).</li>
+</ul>
+<p>This chapter's contribution is the <strong>architectural framing</strong>: how each level maps to concrete component choices (learning graph only vs. graph + student record store vs. graph + LRS + chatbot runtime), what infrastructure each level implies, and why the jump from Level 2 to Level 3 changes the system's software architecture as well as its regulatory surface.</p>
+<hr>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome — The Book Is a Piece of Software</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/welcome.png" data-desc-position="bottom"><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Bloom the elephant waving welcome"></a>
+The previous nine chapters gave us the research base. This chapter is where we pick up the hammer. We are going to look at an intelligent textbook the way a software engineer looks at any build — as a graph, a set of components, a pipeline, a deployment target, and a set of architectural commitments that make some futures easy and others hard. The commitment I want you to notice above all others is the one we make about student data. Let's build a mental model.</p>
+</div>
+<h2 id="the-textbook-as-software-artifact">The Textbook as Software Artifact<a class="headerlink" href="#the-textbook-as-software-artifact" title="Permanent link">¶</a></h2>
+<p>An ordinary book is a frozen document. An <strong><em>intelligent textbook design</em></strong> treats the book as a <em>software artifact</em> whose source of truth is a structured, machine-readable description of what the reader needs to learn, and whose prose, diagrams, simulations, quizzes, and navigation are all <em>generated against</em> that description. Change the description and the downstream artifacts change; leave the description alone and the book stays stable. The discipline is exactly the same as the one a web engineer applies when separating data, view, and controller — except that here the data is a learning graph, the view is a MkDocs Material site, and the controller is a pipeline of agent skills dispatched by an IDE harness.</p>
+<p>That framing has a few consequences worth naming up front. The first is that <em>nothing in the output is authoritative</em>. If a chapter and the learning graph disagree about whether a concept depends on another, the learning graph wins, the chapter is regenerated, and the mismatch is a build-time signal rather than a runtime surprise. The second is that <em>every artifact must be cheap to rebuild</em>. A chapter that takes three days to hand-edit after every concept-graph refactor is not a chapter in this sense; it is a dependency that has been allowed to drift. The third is that <em>architecture is a policy decision</em>, not just a diagram. The choice to stay at Level 2 — which this chapter will spend real time on — is an architectural commitment that closes off entire categories of infrastructure the book does not need to build, own, or operate.</p>
+<p>By the end of this chapter you will be able to:</p>
+<ul>
+<li>Describe the core components of a Level 2 intelligent textbook and explain which component is the structural spine.</li>
+<li>Define a directed acyclic graph and explain why acyclicity is a design discipline for learning material, not a mere formality.</li>
+<li>Distinguish a concept node from a concept edge and state the dependency-direction convention the project uses.</li>
+<li>Explain the difference between a chapter outline and chapter content authoring, and why they are separate pipeline stages.</li>
+<li>Describe prompt engineering, context windows, and token budgeting as the three controls that shape LLM behavior in an authoring pipeline.</li>
+<li>Read a <code>SKILL.md</code> file and identify the sections that make a skill reusable across projects.</li>
+<li>State the five levels of the intelligent-textbook classification, place this book at Level 2, and explain why crossing to Level 3 is both a regulatory and an architectural inflection.</li>
+<li>Sketch the delta in infrastructure between a Level 2 and a Level 3 system — what new components appear, and what each one costs to operate responsibly.</li>
+</ul>
+<h2 id="component-architecture-of-a-level-2-intelligent-textbook">Component Architecture of a Level 2 Intelligent Textbook<a class="headerlink" href="#component-architecture-of-a-level-2-intelligent-textbook" title="Permanent link">¶</a></h2>
+<p>Before we can talk about what changes at Level 3, we need a crisp picture of what sits inside Level 2. A Level 2 intelligent textbook has a small number of components, each with a single job, arranged around a structural spine.</p>
+<h4 id="diagram-intelligent-textbook-component-architecture-level-2">Diagram: Intelligent Textbook Component Architecture (Level 2)<a class="headerlink" href="#diagram-intelligent-textbook-component-architecture-level-2" title="Permanent link">¶</a></h4>
+<details>
+<summary>Interactive infographic overlay: the component architecture of a Level 2 intelligent textbook with the learning graph at the center and derived artifacts radiating outward</summary>
+<p>Type: interactive-infographic
+<strong>sim-id:</strong> intelligent-textbook-architecture<br>
+<strong>Library:</strong> p5.js<br>
+<strong>Status:</strong> Specified</p>
+<p>An interactive infographic overlay using the <code>interactive-infographic-overlay</code> skill. Base image: a labeled architecture illustration with the <em>Learning Graph</em> rendered as a large central node (a small concept-node cluster with arrows between concepts suggests its DAG nature). Radiating outward from the graph are the generated artifacts: <em>Chapter Outlines</em>, <em>Chapter Content</em>, <em>Glossary</em>, <em>FAQ</em>, <em>Quiz Bank</em>, <em>Reference List</em>, <em>MicroSims</em>, <em>Stories</em>. Beneath these is a packaging layer labeled <em>Site Build</em>, which decomposes into <em>Table of Contents</em>, <em>Site Navigation</em>, <em>Search Index</em>, and <em>Print-Friendly Output</em>. A vertical stripe down one side is labeled <em>Mascot Voice Layer</em> to indicate the cross-cutting concern. A second vertical stripe, clearly separated, is labeled <em>Authoring Pipeline</em> with sub-nodes <em>Harness</em>, <em>Skills</em>, <em>Prompts</em>. The base image is annotation-free; all labels are delivered by overlay markers defined in <code>data.json</code>.</p>
+<p>Modes (standard for this skill):</p>
+<ul>
+<li><strong>Explore mode:</strong> Hovering over any component shows a tooltip with the component's one-sentence definition, the concept or artifact it owns, and a pointer to the chapter where it is treated in detail.</li>
+<li><strong>Quiz mode:</strong> A design decision is posed (e.g., "You need to add a new concept that every Chapter 6 quiz item depends on"); the learner clicks the component that owns the change. Correct answers highlight the component green; incorrect answers reveal the correct component and a one-sentence explanation of the ownership rule.</li>
+<li><strong>Edit mode (authors only):</strong> Drag markers to recalibrate their positions on the base image; export updated <code>data.json</code>.</li>
+</ul>
+<p>Learning objective (Bloom level: Understand / Apply): <em>Given a proposed change to an intelligent textbook, identify the component whose ownership the change respects, and explain which other components the change cascades into.</em></p>
+<p>Canvas responsive via <code>updateCanvasSize()</code> as the first line of <code>setup()</code>; marker anchors preserved on resize.</p>
+<p>Implementation: Generated with the <code>interactive-infographic-overlay</code> skill. The directory <code>/docs/sims/intelligent-textbook-architecture/</code> will contain <code>image-prompt.md</code>, <code>data.json</code>, <code>main.html</code>, <code>index.md</code>, and the architecture base image.</p>
+</details>
+<p>The vocabulary the rest of the chapter uses is collected here, so that when the pipeline diagrams appear later, the labels already mean something.</p>
+<ul>
+<li><strong><em>Learning graph</em></strong> — the directed acyclic graph of concepts with dependency edges that serves as the book's structural spine. Every other artifact is generated against it.</li>
+<li><strong><em>Concept node</em></strong> — one entry in the learning graph representing a single unit of knowledge the reader is expected to acquire.</li>
+<li><strong><em>Concept edge</em></strong> — one dependency relationship between two concept nodes, oriented from the dependent concept to its prerequisite.</li>
+<li><strong><em>Chapter outline</em></strong> — the structured plan for a chapter, listing the concepts it covers, its prerequisites, its summary, and any directives that should be respected on regeneration.</li>
+<li><strong><em>Chapter content authoring</em></strong> — the generation of prose, admonitions, tables, and non-text-element specifications against a chapter outline.</li>
+<li><strong><em>Glossary</em></strong> — a term-by-term definition list with one entry per concept node.</li>
+<li><strong><em>FAQ section</em></strong> — a curated set of Frequently Asked Questions derived from chapter content, reader feedback, and anticipated points of confusion.</li>
+<li><strong><em>Quiz bank</em></strong> — a store of assessment items tagged by concept and Bloom level.</li>
+<li><strong><em>Reference list</em></strong> — a per-chapter curated reading list grounding the claims the chapter makes.</li>
+<li><strong><em>Table of contents</em></strong> — the ordered, hierarchical index of chapters and sections.</li>
+<li><strong><em>Site navigation</em></strong> — the interactive navigation surface (sidebar, breadcrumbs, next/previous) that lets a reader move through the book.</li>
+<li><strong><em>Search index</em></strong> — the precomputed full-text index that powers the book's site search.</li>
+<li><strong><em>Print-friendly output</em></strong> — a stylesheet or build target that renders the book as a continuous document suitable for printing or PDF export.</li>
+</ul>
+<p>Three properties of this architecture are worth emphasizing before we zoom in.</p>
+<p>First, <strong>the learning graph is the spine, not an accessory</strong>. Every other artifact is generated against it. Chapters list their concepts; the glossary has one entry per concept node; quiz items tag themselves against concepts; reference lists pin themselves to chapters that pin themselves to concepts. A project that treats the graph as "nice to have, chapters come first" has inverted the dependency — and will spend the rest of its life fighting drift between the chapters and the concept list nobody maintains.</p>
+<p>Second, <strong>packaging is a separate concern from authoring</strong>. The table of contents, site navigation, search index, and print-friendly output are all derived from the chapter files and the site configuration by MkDocs Material at build time. Authors do not hand-maintain them. A chapter reorder is a one-line change in <code>mkdocs.yml</code>; the TOC, sidebar, search index, and print output all regenerate. Treating packaging as a separate layer is what makes the content layer cheap to edit.</p>
+<p>Third, <strong>the mascot voice layer is cross-cutting</strong>. Bloom does not live next to the content; Bloom lives <em>through</em> the content. The style guide, the admonition types, and the pose images are shared infrastructure that every chapter consumes. That is why Chapter 12 gets a whole chapter on getting the voice right; a cross-cutting concern is the category of architectural decision that is expensive to change later.</p>
+<h2 id="the-learning-graph-as-the-structural-spine">The Learning Graph as the Structural Spine<a class="headerlink" href="#the-learning-graph-as-the-structural-spine" title="Permanent link">¶</a></h2>
+<p>The <strong><em>learning graph</em></strong> is the machine-readable representation of what the book teaches. Formally, it is a directed graph whose nodes represent concepts and whose edges represent concept dependencies. Informally, it is the document the whole pipeline argues with: when a chapter and the graph disagree, the graph is right.</p>
+<p>A well-formed learning graph has three structural properties.</p>
+<p><strong>It is directed.</strong> Every edge has a source and a target. The project's convention, embodied in <code>learning-graph.json</code>, is that <em>an edge from A to B means "A depends on B"</em> — that is, B is the prerequisite and A is the dependent. The arrow points <em>from the dependent concept toward the prerequisite concept</em>. This is the convention used by most build-system dependency graphs (a build target depends on its sources), and it is the one the downstream skills expect.</p>
+<p><strong>It is acyclic.</strong> No sequence of edges starting at a node returns to that same node. Acyclicity is not a mere formality; it is a discipline. A cycle in the learning graph means a concept depends on itself transitively, which means there is no order in which a learner could encounter the concepts for the first time. The graph is telling us the decomposition is wrong and asking us to break the cycle.</p>
+<p><strong>It is labeled.</strong> Each node carries metadata — a canonical name, a short definition, a taxonomy tag, a chapter assignment, a Bloom level, a status flag. Each edge carries optional metadata — the kind of dependency (conceptual, notational, procedural) and a short justification.</p>
+<h3 id="dag-structure">DAG Structure<a class="headerlink" href="#dag-structure" title="Permanent link">¶</a></h3>
+<p>A <strong><em>DAG structure</em></strong> — directed acyclic graph — is the mathematical object underlying the learning graph. Its properties are worth stating carefully because they directly enable the pipeline stages that come later.</p>
+<p><strong>Topological ordering.</strong> A DAG admits at least one <em>topological ordering</em> — a linear ordering of the nodes such that every edge goes from later to earlier in the ordering (if we read the edge as "dependent → prerequisite"). A topological order is exactly the order in which concepts can be taught: every concept appears after all of its prerequisites. A graph with a cycle has no topological order, which is one concrete reason acyclicity matters.</p>
+<p><strong>Transitive reduction.</strong> A DAG can be reduced to its <em>transitive reduction</em> — the minimum set of edges that preserves reachability. If A depends on B and B depends on C, the direct edge A → C is transitively redundant: the dependency is already implied by A → B → C. Maintaining the transitive reduction keeps the visual graph readable and prevents an edge explosion as the concept count grows. The <code>learning-graph-generator</code> skill produces both the full dependency graph and the transitive reduction, and the graph viewer defaults to the reduction.</p>
+<p><strong>Multiple valid orderings.</strong> A DAG with 200 concepts typically admits many topological orderings. The chapter-structuring skill uses this freedom to allocate concepts to chapters in a way that balances chapter length, groups thematically related concepts, and respects pedagogical constraints that the bare dependency structure does not encode. Two textbooks with identical learning graphs can legitimately differ in chapter order.</p>
+<h4 id="diagram-a-small-learning-graph-its-topological-ordering-and-its-transitive-reduction">Diagram: A Small Learning Graph, Its Topological Ordering, and Its Transitive Reduction<a class="headerlink" href="#diagram-a-small-learning-graph-its-topological-ordering-and-its-transitive-reduction" title="Permanent link">¶</a></h4>
+<details>
+<summary>Side-by-side diagram showing a small sample learning graph with eight concepts, one valid topological ordering numbered along the left, and the graph's transitive reduction with the redundant edges grayed out</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> dag-topological-reduction<br>
+<strong>Library:</strong> Mermaid<br>
+<strong>Status:</strong> Specified</p>
+<p>A Mermaid <code>flowchart TD</code> diagram composed of two side-by-side panels sharing the same eight-concept graph. Nodes: <em>Working Memory</em>, <em>Chunking</em>, <em>Schema</em>, <em>Retrieval Practice</em>, <em>Spacing Effect</em>, <em>Desirable Difficulty</em>, <em>Deliberate Practice</em>, <em>Transfer</em>. Edges (from dependent to prerequisite, per project convention): <em>Chunking → Working Memory</em>; <em>Schema → Chunking</em>; <em>Retrieval Practice → Working Memory</em>; <em>Spacing Effect → Retrieval Practice</em>; <em>Desirable Difficulty → Spacing Effect</em>; <em>Desirable Difficulty → Retrieval Practice</em>; <em>Deliberate Practice → Desirable Difficulty</em>; <em>Deliberate Practice → Schema</em>; <em>Transfer → Schema</em>; <em>Transfer → Deliberate Practice</em>.</p>
+<p>Left panel: the full graph with every edge shown. A numbered list along the left margin shows one valid topological ordering — <em>Working Memory (1), Chunking (2), Schema (3), Retrieval Practice (4), Spacing Effect (5), Desirable Difficulty (6), Deliberate Practice (7), Transfer (8)</em> — with the note "one of several valid orderings."</p>
+<p>Right panel: the same graph with transitively redundant edges de-emphasized (rendered as dashed gray lines). The candidate for reduction is the <em>Desirable Difficulty → Retrieval Practice</em> edge, which is already implied by <em>Desirable Difficulty → Spacing Effect → Retrieval Practice</em>. A caption explains that the transitive reduction preserves reachability with fewer edges and is what the graph viewer renders by default.</p>
+<p>Implementation: Mermaid <code>flowchart TD</code> with two <code>subgraph</code> blocks and <code>classDef</code> styling for the dashed reduced edges. Embedded directly in the chapter markdown.</p>
+</details>
+<h3 id="concept-node-and-concept-edge">Concept Node and Concept Edge<a class="headerlink" href="#concept-node-and-concept-edge" title="Permanent link">¶</a></h3>
+<p>A <strong><em>concept node</em></strong> is one knowledge unit. The schema the project uses is deliberately small: every extra field is a field that must be filled on every regeneration, so we stay close to the minimum that supports the downstream skills.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>integer</td>
+<td>Stable identifier used by every edge and artifact that references the concept</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>Canonical concept name, used in chapters, glossaries, quiz tags</td>
+</tr>
+<tr>
+<td><code>definition</code></td>
+<td>string</td>
+<td>Short, non-circular, business-rule-free gloss (see the <code>glossary-generator</code> skill)</td>
+</tr>
+<tr>
+<td><code>taxonomy</code></td>
+<td>string</td>
+<td>Seven-domain tag or a project-specific tag (e.g., FOUND, MOT, UND, RET, APP, EXP, MEAS, COND, PRIV, ARCH)</td>
+</tr>
+<tr>
+<td><code>chapter</code></td>
+<td>string</td>
+<td>Chapter the concept is taught in (assigned by the <code>book-chapter-generator</code> skill)</td>
+</tr>
+<tr>
+<td><code>bloom_level</code></td>
+<td>string</td>
+<td>The cognitive level at which the concept is targeted</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>string</td>
+<td><code>proposed</code>, <code>approved</code>, or <code>deprecated</code></td>
+</tr>
+</tbody>
+</table>
+<p>A <strong><em>concept edge</em></strong> is one prerequisite relationship. The project's dependency-direction convention — edge goes <em>from dependent to prerequisite</em> — is the first thing a contributor needs to know, because the same edge pair means opposite things depending on convention. The <code>learning-graph.json</code> file and the viewer at <code>docs/sims/graph-viewer/</code> both assume the "dependent → prerequisite" orientation.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>from</code></td>
+<td>integer</td>
+<td>The dependent concept's <code>id</code></td>
+</tr>
+<tr>
+<td><code>to</code></td>
+<td>integer</td>
+<td>The prerequisite concept's <code>id</code></td>
+</tr>
+<tr>
+<td><code>kind</code></td>
+<td>string (optional)</td>
+<td><code>conceptual</code>, <code>notational</code>, <code>procedural</code></td>
+</tr>
+<tr>
+<td><code>note</code></td>
+<td>string (optional)</td>
+<td>Short justification for the dependency</td>
+</tr>
+</tbody>
+</table>
+<h3 id="concept-dependency">Concept Dependency<a class="headerlink" href="#concept-dependency" title="Permanent link">¶</a></h3>
+<p>A <strong><em>concept dependency</em></strong> is the relationship an edge encodes. A useful working definition: <em>A depends on B if a reader who does not know B will not be able to understand A on first encounter without a forward reference</em>. That definition is intentionally operational — it is a test the author can run in their head rather than a metaphysical claim about the nature of knowledge.</p>
+<p>Three categories of dependency are worth distinguishing, because they lead to different remediation when a chapter tries to violate them.</p>
+<p>A <strong>conceptual dependency</strong> is the one we most often mean: you need the idea of <em>working memory</em> before the idea of <em>cognitive load</em>, because cognitive load is defined in terms of working-memory capacity. Violating a conceptual dependency usually means the prerequisite concept needs to be introduced earlier, or the dependent concept needs to be deferred.</p>
+<p>A <strong>notational dependency</strong> is more mechanical: a reader who has not seen the Rasch logit equation cannot read a sentence that uses <span class="arithmatex">\(\theta\)</span> and <span class="arithmatex">\(b\)</span> without loss. Notational dependencies are often best resolved by inlining a one-sentence notational gloss rather than by pulling the prerequisite forward.</p>
+<p>A <strong>procedural dependency</strong> shows up in worked examples and MicroSims: a simulation that asks the reader to tune a slider assumes the reader knows how sliders work. The remediation is usually to demonstrate the procedure once in a low-stakes earlier context rather than to reorganize the concept graph.</p>
+<p>Maintaining the <em>transitive reduction</em> of the concept-dependency graph is the structural habit that keeps the graph from bloating. Every time a contributor proposes an edge A → C, the graph-generator's validator asks: is C already reachable from A by some other path? If so, the edge is redundant and should not be added. If not, the edge is informative and should be added explicitly.</p>
+<h2 id="chapter-outline-and-chapter-content-authoring">Chapter Outline and Chapter Content Authoring<a class="headerlink" href="#chapter-outline-and-chapter-content-authoring" title="Permanent link">¶</a></h2>
+<p>The chapter-generation pipeline has two stages, and treating them as one stage is one of the more common ways authors tangle themselves.</p>
+<p>The first stage produces a <strong><em>chapter outline</em></strong> — a structured plan for the chapter. The outline file is a small Markdown file containing the chapter title, a one-paragraph summary, the list of concepts covered (drawn from the learning graph), the prerequisites (drawn from the concepts' dependency edges), and any <em>Required Content Directives</em> that future regenerations must respect. The file the reader is looking at right now was produced from an outline that, among other things, demanded the Five Levels subsection and the privacy-warning admonition. The directives live in the outline precisely because they outlive any individual generation run.</p>
+<p>The second stage is <strong><em>chapter content authoring</em></strong> — the generation of the chapter's prose, admonitions, tables, retrieval checks, and non-text-element specifications against the outline. The <code>chapter-content-generator</code> skill consumes the outline, the learning graph, the style guide, and the prior chapters, and produces a long-form Markdown file. A re-generation is not a rewrite from scratch; it is a deterministic-by-design re-run of the same pipeline on (possibly) updated inputs.</p>
+<p>Separating the two stages buys three properties.</p>
+<p><strong>Idempotence under unchanged inputs.</strong> Running the pipeline twice on the same inputs should produce substantively the same chapter. Idempotence is what makes the pipeline safe to re-run every time the learning graph changes.</p>
+<p><strong>Targeted regeneration.</strong> A graph refactor that touches three concepts can regenerate just the chapters those concepts are assigned to, leaving other chapters untouched. Without the outline/content split, the whole book would have to be regenerated on every change.</p>
+<p><strong>Directives that survive regenerations.</strong> A <code>Required Content Directives</code> section in the outline is the structural place to park constraints — like the privacy-warning admonition — that must appear in every version of the chapter. The generator reads them as input, not as something it might choose to keep.</p>
+<h2 id="derived-artifacts-glossary-faq-quiz-bank-references">Derived Artifacts: Glossary, FAQ, Quiz Bank, References<a class="headerlink" href="#derived-artifacts-glossary-faq-quiz-bank-references" title="Permanent link">¶</a></h2>
+<p>Four artifacts are <em>derived</em> from the combination of the learning graph and the chapters. Derived means they are regenerated by their own skills against the same source of truth, not hand-maintained alongside it.</p>
+<p>The <strong><em>glossary</em></strong> has one entry per concept node, produced by the <code>glossary-generator</code> skill. The skill's style rules — precise, concise, distinct, non-circular, free of business rules — come from long experience with glossaries that fail in recognizable ways. A circular definition ("<em>working memory</em> — the memory system used for working memory tasks") teaches nothing; a business-rule definition ("<em>working memory</em> — the part of memory the product's dashboard highlights") ties the glossary to a specific deployment rather than the discipline.</p>
+<p>The <strong><em>FAQ section</em></strong> is a curated set of reader-oriented Frequently Asked Questions derived from chapter content, anticipated points of confusion, and — once the book is deployed — reader feedback. The <code>faq-generator</code> skill builds it. Two structural moves keep the FAQ useful. First, every FAQ answer links back to the chapter and section that treats the underlying concept, so the FAQ serves as an entry point rather than an independent island of content. Second, FAQs are not a dumping ground for content that could not find a chapter; content that appears <em>only</em> in the FAQ has failed to earn its place in the book.</p>
+<p>The <strong><em>quiz bank</em></strong> is the collection of assessment items produced by the <code>quiz-generator</code> skill. Each item is tagged with the concept(s) it assesses, the Bloom level it targets, and the chapter that contains the concept. The tagging is what lets the book metrics tell us whether a chapter's assessment is distributed across Bloom levels or collapsed at <em>Remember</em>, and it is what lets future re-orderings move items alongside the concepts they test.</p>
+<p>The <strong><em>reference list</em></strong> is the per-chapter curated reading list produced by the <code>reference-generator</code> skill. The project convention is ten references per chapter, prioritizing Wikipedia for reliability and stability, with each reference annotated for relevance to the chapter's topics. References are stored in separate <code>references.md</code> files per chapter rather than inlined, which keeps the chapter Markdown small enough to fit comfortably inside the chapter-generator's context window — a token-budgeting move we return to below.</p>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Skill</th>
+<th>Source of truth</th>
+<th>Regeneration trigger</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Glossary</td>
+<td><code>glossary-generator</code></td>
+<td>Learning graph (concept nodes)</td>
+<td>Concept added, renamed, or its definition edited</td>
+</tr>
+<tr>
+<td>FAQ</td>
+<td><code>faq-generator</code></td>
+<td>Learning graph + chapter content + reader questions</td>
+<td>Major chapter revision or a batch of new reader questions</td>
+</tr>
+<tr>
+<td>Quiz bank</td>
+<td><code>quiz-generator</code></td>
+<td>Learning graph + chapter content</td>
+<td>Concept added or chapter content significantly revised</td>
+</tr>
+<tr>
+<td>References</td>
+<td><code>reference-generator</code></td>
+<td>Chapter outline (topics) + course description</td>
+<td>New chapter or a chapter's scope has shifted</td>
+</tr>
+</tbody>
+</table>
+<h2 id="packaging-table-of-contents-navigation-search-print">Packaging: Table of Contents, Navigation, Search, Print<a class="headerlink" href="#packaging-table-of-contents-navigation-search-print" title="Permanent link">¶</a></h2>
+<p>The packaging layer is MkDocs Material's responsibility, which is why it barely appears in the source repository outside <code>mkdocs.yml</code>.</p>
+<p>The <strong><em>table of contents</em></strong> is generated from the chapter file structure and the <code>nav</code> section of <code>mkdocs.yml</code>. A chapter reorder is a one-line edit; the TOC that appears in the sidebar, at the top of each chapter, and in the print build all regenerate from that single source.</p>
+<p><strong><em>Site navigation</em></strong> — the sidebar, the next/previous links at the chapter bottom, the breadcrumbs at the chapter top — is produced by the Material theme from the same <code>nav</code> tree. A project convention worth re-stating here: <em>no <code>navigation.tabs</code></em>. The tabs-at-top pattern breaks the side-nav affordance the book relies on. If a contributor reintroduces <code>navigation.tabs</code> in <code>mkdocs.yml</code>, the build should be failed on review.</p>
+<p>The <strong><em>search index</em></strong> is built by MkDocs's built-in search plugin at <code>mkdocs build</code> time by tokenizing the chapter Markdown and serializing a client-side index the browser consumes at runtime. Two design consequences follow. First, the search runs entirely in the browser — there is no server-side query handler, and therefore no per-search log to worry about. Second, the index is rebuilt on every deploy, which means search freshness is a function of deploy cadence rather than a separate cron.</p>
+<p><strong><em>Print-friendly output</em></strong> is the build target that renders the entire book as a single continuous HTML document suitable for printing to PDF. The <code>mkdocs-with-pdf</code> plugin (or a custom print stylesheet) stitches the chapters together in TOC order, removes interactive elements that do not make sense on paper (sliders, buttons, collapsible <code>&lt;details&gt;</code> blocks), and applies a print stylesheet that controls page breaks, footers, and figure placement. The print target is regenerated from the same chapter Markdown the site uses, which is why authoring never involves a "print version" as a separate file.</p>
+<p>One footgun worth flagging explicitly: a whitelist exporter that silently drops any chapter-level YAML field it does not recognize is a classic silent-failure shape. A new <code>audio</code> or <code>video</code> field added to a chapter's frontmatter that is silently dropped by a print build produces a chapter whose metadata is quietly lost in the print artifact with no warning. The structural fix is to spread the source frontmatter into the export rather than selecting named fields, and to fail the build when an unknown required field is seen. The footgun's three properties apply cleanly here: the drop is silent (no error), it is easy to trigger (add a field), and the damage is delayed (you discover it only when someone asks why the print version lacks the audio reference). We return to this pattern in Chapter 14 when we discuss skill design.</p>
+<h2 id="ai-tooling-foundations">AI Tooling Foundations<a class="headerlink" href="#ai-tooling-foundations" title="Permanent link">¶</a></h2>
+<p>The authoring pipeline consumes prompts, runs them through Claude, and dispatches the results into the artifact tree. Three controls shape what the model produces — prompt engineering, the context window, and the token budget — and a fourth abstraction — the SKILL.md format — packages the controls into something reusable.</p>
+<h3 id="prompt-engineering">Prompt Engineering<a class="headerlink" href="#prompt-engineering" title="Permanent link">¶</a></h3>
+<p><strong><em>Prompt engineering</em></strong> is the practice of structuring the inputs to a large language model so that its outputs reliably serve a specific purpose. It is not magic, and it is not prose alone. A production-grade prompt is a structured message made of several components that the model's training has learned to interpret.</p>
+<p>Three structural moves matter most.</p>
+<p><strong>System, user, and assistant roles.</strong> The Claude API distinguishes the <em>system</em> role (the persistent instructions and persona that apply across the whole conversation), the <em>user</em> role (the current request), and the <em>assistant</em> role (the model's prior responses). The system role is where project-wide constraints live — the style guide, the schema conventions, the "never use the word <em>obviously</em>" rule. The user role is where the immediate request lives — "generate Chapter 10 content against this outline." The assistant role is where prior turns of the conversation appear. Keeping the roles separated, rather than concatenating everything into a single blob, is what lets the model apply global constraints to a local request.</p>
+<p><strong>Instruction-following vs. completion framing.</strong> Modern Claude models are trained as instruction-followers — give them a directive and an output schema and they execute. Older completion-style models expected a prose prefix and continued it. The two framings produce different behaviors even from the same underlying model capability; this book assumes the instruction-following framing throughout.</p>
+<p><strong>In-context learning.</strong> LLMs learn patterns from examples shown in the prompt itself, a phenomenon called <em>in-context learning</em>. A prompt that shows the model two or three examples of the desired output format ("here is how previous chapters structured their retrieval checks") will reliably elicit that format, without any fine-tuning or model update. Few-shot prompting — showing a handful of examples — is the bread-and-butter move of prompt engineering, and it is the reason the style guide is worth reading into the prompt rather than merely referenced.</p>
+<h3 id="context-window">Context Window<a class="headerlink" href="#context-window" title="Permanent link">¶</a></h3>
+<p>The <strong><em>context window</em></strong> is the total number of tokens the model can attend to in a single request — system role, user role, assistant history, and the in-flight response all share it. The window has an architectural origin: the transformer's attention mechanism has a hard upper bound on the sequence length it can process. Claude Opus 4.7 at the time of writing offers a 1-million-token context; earlier models had 200 thousand; GPT-class models vary. The specific number will keep moving; the fact that it is <em>bounded</em> will not.</p>
+<p>Two practical consequences follow from the context-window bound.</p>
+<p><strong>Retrieval beats concatenation.</strong> When the source material exceeds the window, you cannot fit it all in. The pipeline has to <em>retrieve</em> the relevant slices — the chapter outline, the prior chapter, the style guide, the concept subgraph — rather than concatenate everything. Retrieval strategies (embedding-based, keyword-based, structured-query-based) are a whole sub-discipline in their own right.</p>
+<p><strong>Position matters.</strong> Even within a window that fits, the model's attention is not uniform — tokens near the start of the prompt (especially in the system role) and tokens at the end (the recent request) get more weight than tokens in the middle. Long prompts can suffer from the <em>lost-in-the-middle</em> effect, where a constraint stated in the middle of a 50,000-token prompt is ignored in favor of constraints stated at the ends. The structural fix is to put high-priority directives in the system role or at the end of the user role, not buried in the middle.</p>
+<h3 id="token-budgeting">Token Budgeting<a class="headerlink" href="#token-budgeting" title="Permanent link">¶</a></h3>
+<p><strong><em>Token budgeting</em></strong> is the practice of estimating, constraining, and measuring the token cost of a pipeline's prompts and completions. Tokens are the unit the model charges on, the unit the context window is measured in, and the unit the prompt cache is keyed on. Running a chapter-generation pipeline without thinking about tokens is like running a web service without thinking about HTTP requests — it will work until suddenly it does not.</p>
+<p>Three practical levers control token cost.</p>
+<p><strong>Instruction depth.</strong> How much of the style guide, the outline, and the prior chapters do you read into the prompt? Reading in more increases fidelity at linear token cost. Reading in less increases the risk of drift from project conventions. The pipeline's heuristic: read in the entire style guide once (it is a few thousand tokens), the outline in full, and a <em>summary</em> of the prior chapters rather than their full text.</p>
+<p><strong>Output length.</strong> The completion is also billed per token. A chapter targeting 6,000 words of prose is roughly 8,000 tokens out; the surrounding admonition markup and tables add another 2,000. Setting a deliberate output-length target is the structural move that prevents runaway completions.</p>
+<p><strong>Prompt caching.</strong> Anthropic's prompt cache stores the model's attention state for a prefix of the prompt for five minutes, so that repeated runs with the same system role and the same leading user-role content pay the cache-hit price rather than the full-prefix price. The five-minute window has a sharp consequence for pipeline design: runs scheduled closer than five minutes apart benefit; runs scheduled further apart do not. We return to this in the causal-loop diagram below.</p>
+<h4 id="diagram-token-budget-explorer">Diagram: Token Budget Explorer<a class="headerlink" href="#diagram-token-budget-explorer" title="Permanent link">¶</a></h4>
+<details>
+<summary>MicroSim: interactive token-budget calculator with sliders for instruction depth, output length, and run cadence; shows budget utilization and cache hit status</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> token-budget-explorer<br>
+<strong>Library:</strong> p5.js<br>
+<strong>Status:</strong> Specified</p>
+<p>An interactive p5.js MicroSim that makes token budgeting visible. The canvas shows a horizontal budget bar representing the context window (default 1,000,000 tokens), filled from left to right by colored segments: <em>system role</em>, <em>style guide</em>, <em>outline</em>, <em>prior-chapter summary</em>, <em>learning-graph subgraph</em>, <em>in-flight response</em>. A secondary panel shows the prompt-cache timer (a shrinking bar with a 300-second TTL) and a cost-per-run readout.</p>
+<p>Controls (using built-in p5.js controls per project convention):</p>
+<ul>
+<li><strong>Instruction-depth slider</strong> — 1 (minimal) to 10 (full style guide + full prior chapters). Moves the <em>style guide</em> and <em>prior-chapter summary</em> segments wider or narrower.</li>
+<li><strong>Output-length slider</strong> — 500 to 15,000 tokens. Moves the <em>in-flight response</em> segment.</li>
+<li><strong>Context-window dropdown</strong> — 200k, 400k, 1M. Redraws the bar scale.</li>
+<li><strong>Run-cadence slider</strong> — 60s to 3600s. The cache-timer panel shows whether each scheduled run lands inside the 5-minute cache window or outside it; outside-window runs get a warning icon.</li>
+<li><strong>Reset button</strong> — restore defaults.</li>
+</ul>
+<p>A caption reports the total token usage, the remaining budget, the estimated cost per run (at a sample rate), and whether the run is a cache hit or a cache miss. The MicroSim uses no real API calls — it is purely a budget visualizer.</p>
+<p>Learning objective (Bloom level: Apply): <em>Given a target chapter length and a style-guide size, choose a run cadence that keeps the pipeline inside the prompt-cache window and the context-window bound.</em></p>
+<p>Canvas responsive via <code>updateCanvasSize()</code> as the first line of <code>setup()</code>; parented to the standard <code>&lt;main&gt;&lt;/main&gt;</code> element so the sketch can be pasted into the p5.js editor.</p>
+<p>Implementation: p5.js sketch in <code>/docs/sims/token-budget-explorer/</code> with <code>main.html</code>, <code>script.js</code>, <code>local.css</code>, and <code>index.md</code>. Generated via the <code>microsim-generator</code> skill.</p>
+</details>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Cache Windows Change the Shape of the Pipeline</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/thinking.png" data-desc-position="bottom"><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Bloom the elephant thinking, one hoof raised"></a>
+The five-minute cache window is not a minor optimization; it changes which batch shapes are cheap. Regenerating five chapters in a loop that takes two minutes each keeps every run inside the cache. Regenerating the same chapters once per hour pays the full prefix cost every time. When the pipeline is slow and expensive, look at the cadence before looking at the model.</p>
+</div>
+<h3 id="the-skillmd-format">The SKILL.md Format<a class="headerlink" href="#the-skillmd-format" title="Permanent link">¶</a></h3>
+<p>An <strong><em>Agent Skill</em></strong> is a modular, reusable capability an IDE harness can invoke by name; Chapter 1 introduced the idea, and this chapter names its shape. At the skill's root is a <strong><em>SKILL.md format</em></strong> file: a Markdown document whose frontmatter and sections describe when the skill applies, what it does, and how to run it. The format is deliberately small, because every field is a field future maintainers must keep current.</p>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Purpose</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>YAML frontmatter</td>
+<td>Machine-readable metadata: <code>name</code>, <code>version</code>, <code>description</code>, <code>trigger</code>, <code>inputs</code>, <code>outputs</code></td>
+<td><code>name: chapter-content-generator</code></td>
+</tr>
+<tr>
+<td><code>## Description</code></td>
+<td>One paragraph, human-readable, answering <em>what does this skill do?</em></td>
+<td>"Generates chapter Markdown from an outline and the learning graph."</td>
+</tr>
+<tr>
+<td><code>## When to use</code></td>
+<td>Trigger hints — concrete natural-language phrasings and project conditions that should route to this skill</td>
+<td>"Trigger when a chapter index.md exists with a TODO placeholder."</td>
+</tr>
+<tr>
+<td><code>## Inputs</code></td>
+<td>Named inputs, their types, and where the skill expects them</td>
+<td>"<code>outline_path</code> — path to <code>docs/chapters/NN-name/index.md</code>"</td>
+</tr>
+<tr>
+<td><code>## Steps</code></td>
+<td>Ordered, numbered procedure the skill performs. This is the operational core of the skill.</td>
+<td>"1. Read outline. 2. Load style guide. 3. Draft. 4. Write."</td>
+</tr>
+<tr>
+<td><code>## Outputs</code></td>
+<td>Named artifacts the skill produces, with paths</td>
+<td>"Overwrites the <code>TODO: Generate Chapter Content</code> placeholder in the outline file."</td>
+</tr>
+<tr>
+<td><code>## References</code></td>
+<td>Pointers to deeper documentation, reference implementations, and related skills</td>
+<td>Links to style guide, learning-graph spec</td>
+</tr>
+<tr>
+<td><code>## Changelog</code></td>
+<td>A dated, short history of non-trivial changes to the skill</td>
+<td>"2026-04-19: added Required Content Directives support."</td>
+</tr>
+</tbody>
+</table>
+<p>Two properties make skills reusable across projects. First, <strong>skills are side-effect-explicit</strong>. The <code>## Outputs</code> section names every file the skill will write; a skill that silently edits files outside its declared output surface is broken. Second, <strong>skills are composable</strong>. The <code>reference-generator</code> skill does not re-implement chapter parsing; it calls conventions that the <code>chapter-content-generator</code> skill also follows. The convergence on a shared convention — chapter files in <code>docs/chapters/NN-name/index.md</code>, sims in <code>docs/sims/sim-id/main.html</code>, the learning graph at <code>docs/data/learning-graph.json</code> — is what makes the skill ecosystem cooperative rather than balkanized.</p>
+<h3 id="skill-invocation">Skill Invocation<a class="headerlink" href="#skill-invocation" title="Permanent link">¶</a></h3>
+<p><strong><em>Skill invocation</em></strong> is the harness's act of routing a prompt to the skill that matches it. The harness reads the <code>When to use</code> section of each skill's <code>SKILL.md</code>, compares the trigger hints against the current user request and project state, and either invokes a single skill or — if the match is ambiguous — asks the author to choose. The invocation passes the user's request, the project context, and any explicit inputs to the skill's entry point; the skill's <code>Steps</code> section runs; the harness reads the <code>Outputs</code> and surfaces them to the author.</p>
+<p>Three invocation patterns recur across this project.</p>
+<p><strong>Explicit invocation.</strong> The author types <code>/chapter-content-generator</code> (or names the skill in natural language: "run the chapter-content-generator skill on Chapter 10"). The harness routes directly; there is no ambiguity.</p>
+<p><strong>Implicit invocation.</strong> The author types a request in natural language ("please generate Chapter 10") and the harness matches it against skill trigger hints. The match is probabilistic; the harness surfaces the chosen skill and proceeds.</p>
+<p><strong>Chained invocation.</strong> One skill invokes another as part of its own steps. The <code>book-chapter-generator</code> skill calls the <code>course-description-analyzer</code> skill to validate its inputs; the <code>book-metrics-generator</code> skill calls the <code>glossary-generator</code> to recount terms. Chaining is powerful and also a source of runaway complexity; the project's rule is that a skill may call at most one other skill, and deeper chains go through the harness rather than skill-to-skill.</p>
+<h4 id="diagram-the-authoring-pipeline-prompt-to-published-site">Diagram: The Authoring Pipeline — Prompt to Published Site<a class="headerlink" href="#diagram-the-authoring-pipeline-prompt-to-published-site" title="Permanent link">¶</a></h4>
+<details>
+<summary>Diagram of the end-to-end authoring pipeline: author prompt → harness → skill → Markdown → mkdocs build → deployed site</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> authoring-pipeline-architecture<br>
+<strong>Library:</strong> Mermaid<br>
+<strong>Status:</strong> Specified</p>
+<p>A Mermaid <code>flowchart LR</code> diagram showing six horizontal stages, each labeled and colored distinctly on a blue-to-orange palette.</p>
+<ol>
+<li><em>Author</em> — prompt or natural-language request.</li>
+<li><em>IDE Harness (Claude Code)</em> — receives request, reads <code>SKILL.md</code> files, selects a matching skill.</li>
+<li><em>Agent Skill</em> — runs its Steps; reads shared inputs (learning graph, style guide, prior chapters); writes Markdown.</li>
+<li><em>Markdown Files</em> — the chapter, glossary entry, quiz file, reference list.</li>
+<li><em>MkDocs Material Build</em> — converts Markdown to HTML, builds the search index, renders navigation, applies the print stylesheet.</li>
+<li><em>Deployed Site</em> — GitHub Pages URL served from the <code>gh-pages</code> branch.</li>
+</ol>
+<p>Secondary arrows show:</p>
+<ul>
+<li><em>Author → Harness</em> (primary request)</li>
+<li><em>Harness → Skill</em> (invocation)</li>
+<li><em>Skill ↔ Shared Inputs</em> (learning graph, style guide)</li>
+<li><em>Skill → Markdown</em> (write)</li>
+<li><em>Markdown → Build → Site</em> (deployment)</li>
+<li><em>Site → Author</em> (preview loop at <code>http://127.0.0.1:8000/learning-sciences/</code> during development; deployed URL in production)</li>
+</ul>
+<p>A side panel labels the three control surfaces we have discussed — <em>Prompt</em>, <em>Context Window</em>, <em>Token Budget</em> — and draws arrows from them into the Harness and Skill stages to indicate where each control lands in the flow.</p>
+<p>Implementation: Mermaid <code>flowchart LR</code> with <code>classDef</code> for the stage colors and a <code>subgraph</code> for the control-surface side panel. Embedded directly in the chapter markdown.</p>
+</details>
+<h2 id="the-five-levels-of-intelligent-textbooks_1">The Five Levels of Intelligent Textbooks<a class="headerlink" href="#the-five-levels-of-intelligent-textbooks_1" title="Permanent link">¶</a></h2>
+<p>Not every intelligent textbook sits at the same point on the interactivity-and-personalization spectrum, and conflating the levels produces most of the category confusion that surrounds the term in marketing copy. The classification framework introduced by McCreary and colleagues in <em>A Five-Level Classification Framework for Intelligent Textbooks: Lessons from Autonomous Vehicle Standards</em> borrows its shape from the Society of Automotive Engineers' J3016 standard for autonomous vehicles — a five-tier specification that gives a shared vocabulary for a capability spectrum whose levels carry very different engineering, regulatory, and operational commitments. Chapter 1 introduced the levels briefly; here we give each level its architectural treatment and name the transition that changes the game.</p>
+<ol>
+<li><strong>Level 1 — Static.</strong> Fixed content, no interactivity. The traditional printed or PDF textbook. The reader cannot interact with the content; the content cannot interact with the reader. Architecturally, a Level 1 book is a document.</li>
+<li><strong>Level 2 — Interactive.</strong> Learning graphs, MicroSims, embedded simulations, and path recommendations generated from the graph, with <em>no storage of individual student records</em>. The reader interacts with the content; the content does not remember the reader between sessions. Aggregate, anonymized analytics (cohort completion rates, chapter-level averages) are compatible with Level 2.</li>
+<li><strong>Level 3 — Adaptive.</strong> Personalization driven by stored student goals, progress, and behavioral history. The textbook adapts what the reader sees based on what the reader has done. Storage of a per-learner record is the defining architectural addition.</li>
+<li><strong>Level 4 — Chatbot.</strong> Conversational tutoring via a large language model, typically layered on top of an adaptive substrate. The reader converses with an LLM that retains session context and, commonly, conversation history across sessions.</li>
+<li><strong>Level 5 — Autonomous.</strong> Real-time generation of fully personalized instruction for each learner. Every reader sees a bespoke book that the system composes, modifies, or regenerates as the learning trajectory unfolds.</li>
+</ol>
+<p><strong>This book targets Level 2, and does so deliberately.</strong> The scope choice is not timidity; it is an architectural commitment with three consequences we want to hold visible.</p>
+<p><em>Level 2 is where a solo author or small team can ship responsibly.</em> Every pattern in this book — the learning graph, the MicroSims, the aggregate metrics dashboard, the glossary regeneration, the mascot voice layer — runs without a student record store, a consent flow, a retention policy, or a breach-notification playbook. A capable author with a laptop, a GitHub account, and a budget for LLM API calls can produce Level 2 work; the same author cannot produce Level 3 work responsibly without institutional partnership.</p>
+<p><em>Level 2 content is commoditizing faster than most teams realize.</em> The METR finding on frontier AI task-capability growth — that the length of tasks an AI system can reliably complete roughly doubles every seven months, a trend that has held across several years of independent evaluations — has a direct implication for the Level 2 layer. The production of high-quality Level 2 content (chapter prose, MicroSims, quiz items, glossaries) is the kind of task whose time-to-completion that trend is compressing. Two years from now, producing a Level 2 chapter that today takes a small team a week will take a single author an hour. <em>Producing</em> Level 2 is becoming cheap; <em>producing it well</em> — with the pedagogical discipline the first nine chapters of this book defend — is what separates valuable work from the content flood.</p>
+<p><em>Level 3+ is where the durable strategic moat sits for educational organizations.</em> If Level 2 is commoditizing, then the work that justifies an institution's continued existence is the work that sits on top of Level 2 — the adaptive personalization, the conversational tutoring, the real-time generation — which all require the per-learner data-governance infrastructure that Level 2 does not. Organizations that will thrive in the 2028 landscape are the ones that learn to operate Level 3+ responsibly: with the consent flows, the retention policies, the audit logging, and the algorithmic-accountability practices that turn stored student data into a durable asset rather than a compliance liability. This book is not the place to learn those practices; this book is the place to acquire the Level 2 fluency that makes the Level 3 move possible and to name the regulatory line you are about to cross before you cross it.</p>
+<p>The table below summarizes the five levels along the dimensions that matter most for architectural decisions. The cost-per-student-per-day numbers are order-of-magnitude estimates at 2026 prices and will move; the ratios between levels will move less.</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Interactivity</th>
+<th>Student Data Stored</th>
+<th>Typical Cost per Student per Day (2026, order of magnitude)</th>
+<th>Regulatory Surface</th>
+<th>Example Product or Pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 — Static</td>
+<td>None</td>
+<td>None</td>
+<td>~$0</td>
+<td>Minimal (copyright, accessibility)</td>
+<td>Printed textbook, PDF course reader</td>
+</tr>
+<tr>
+<td>2 — Interactive</td>
+<td>MicroSims, learning graphs, path recommendations</td>
+<td>None (aggregate analytics only)</td>
+<td>~$0.01 (hosting + occasional LLM batch regeneration)</td>
+<td>Minimal (accessibility, cookie notice, standard web)</td>
+<td>This book; most Khan Academy pre-AI content; CK-12 FlexBooks</td>
+</tr>
+<tr>
+<td>3 — Adaptive</td>
+<td>Level 2 plus personalized sequencing</td>
+<td>Per-learner goals, progress, behavioral history</td>
+<td>~<span class="arithmatex">\(0.10–\)</span>0.50 (record store, backup, compliance tooling)</td>
+<td>FERPA, COPPA (if under 13), GDPR, CCPA/CPRA; data minimization, consent, retention, access/deletion, encryption, audit logging</td>
+<td>ALEKS, Knewton (historical), adaptive courseware in LMS</td>
+</tr>
+<tr>
+<td>4 — Chatbot</td>
+<td>Level 3 plus conversational tutoring</td>
+<td>Per-learner conversation history, session context</td>
+<td>~<span class="arithmatex">\(1–\)</span>10 (per-learner LLM inference, longer context windows, conversation storage)</td>
+<td>All of Level 3 plus algorithmic-accountability obligations for AI-driven feedback</td>
+<td>Khanmigo, Duolingo Max, MATHia chat features</td>
+</tr>
+<tr>
+<td>5 — Autonomous</td>
+<td>Full real-time generation of personalized content</td>
+<td>Full per-learner generation state, often with cross-session memory</td>
+<td>~<span class="arithmatex">\(5–\)</span>50+ (continuous generation, long-context inference, high-fidelity retrieval)</td>
+<td>All of Level 4 plus heightened scrutiny of automated decision-making, data-protection impact assessments</td>
+<td>Emerging research prototypes; bespoke tutor-as-a-service products</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-level-3-privacy-inflection">The Level 3 Privacy Inflection<a class="headerlink" href="#the-level-3-privacy-inflection" title="Permanent link">¶</a></h3>
+<div class="admonition mascot-warning">
+<p class="admonition-title">The Moment You Store Student Data, the Rules Change</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/warning.png" data-desc-position="bottom"><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Bloom warning about student data"></a>
+I need you to slow down for this one. Moving from Level 2 to Level 3 means <strong>storing individual student data</strong> — a learner's goals, progress, behavior, quiz attempts, and performance tied to an identifiable human being. The instant that first <code>student_id</code> column appears in a database, your project has crossed from a document-with-MicroSims into a <em>highly regulated domain</em>. In the United States, <strong>FERPA</strong> (the Family Educational Rights and Privacy Act) governs educational records for K-12 and higher education, and <strong>COPPA</strong> (the Children's Online Privacy Protection Act) attaches verifiable-parental-consent requirements for any user under 13. For European Union residents, <strong>GDPR</strong> applies with some of the strictest data-subject protections anywhere in the world. In California — and, increasingly, in a dozen other states following the same pattern — <strong>CCPA</strong> and <strong>CPRA</strong> add a state-level layer on top of federal law. The obligations that attach the moment you store the first identifiable record are real, auditable, and cumulative: <em>data minimization</em> (collect only what you genuinely need), <em>informed consent</em> (often parental for minors), <em>explicit purpose limitation</em> (you may not quietly repurpose the data you collected), <em>retention limits</em> (you must delete on a schedule you can describe precisely), <em>access and deletion rights</em> (students and parents can ask for records and ask you to erase them), <em>encryption at rest and in transit</em>, <em>audit logging</em> (every access leaves a trail), <em>third-party processor agreements</em> (every vendor that touches the data is bound by your compliance posture), and — when automated decisions affect the learner — <em>algorithmic bias auditing</em>. None of that is in scope for this course. Nothing in this book teaches a reader how to operate a Level 3+ system responsibly, and crossing the threshold without that expertise creates real legal, ethical, and reputational risk. <strong>The actionable guidance is the same in both directions.</strong> Level 2 is a safe, productive place to build; most of the pedagogical value you care about is available without ever collecting a per-learner record. If a project genuinely needs Level 3+ capabilities, partner with an institution that already has data-governance infrastructure — a university registrar's office, a K-12 district's technology department, an LMS vendor with an existing compliance posture — and adopt open standards like <strong>xAPI</strong> (the Experience API) paired with a <strong>Learning Record Store</strong> so that students retain control and portability of their own records. We do not collect student data because we have not earned the right to handle it. When you earn it, you will know — and the partner you earn it with will be the one telling you the rest of what this admonition left out.</p>
+</div>
+<h3 id="architecture-level-2-components-vs-the-level-3-delta">Architecture: Level 2 Components vs. the Level 3 Delta<a class="headerlink" href="#architecture-level-2-components-vs-the-level-3-delta" title="Permanent link">¶</a></h3>
+<p>The privacy warning above is a regulatory statement. It is also, and this is the contribution this chapter makes that <a href="../08-measurement-feedback/">Chapter 8</a> deferred, an <em>architectural</em> statement. The jump from Level 2 to Level 3 is not a feature addition; it is the appearance of an entire infrastructure layer the book did not need before. The table below lists the component inventory.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Level 2</th>
+<th>Level 3 delta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Learning graph</td>
+<td>Present</td>
+<td>Present (unchanged)</td>
+</tr>
+<tr>
+<td>Chapters, glossary, quiz bank, references</td>
+<td>Present</td>
+<td>Present (unchanged; may be per-learner-filtered)</td>
+</tr>
+<tr>
+<td>MicroSims, stories</td>
+<td>Present</td>
+<td>Present (unchanged)</td>
+</tr>
+<tr>
+<td>Site build (TOC, nav, search, print)</td>
+<td>Present</td>
+<td>Present (unchanged)</td>
+</tr>
+<tr>
+<td>Aggregate analytics (cohort-level, no PII)</td>
+<td>Present</td>
+<td>Present (extended with per-learner roll-ups)</td>
+</tr>
+<tr>
+<td><strong>Student record store</strong></td>
+<td>Absent</td>
+<td><strong>New.</strong> Relational or document database storing <code>student_id</code>, goals, progress, behavior, performance. Requires backups, retention policy, encryption at rest.</td>
+</tr>
+<tr>
+<td><strong>Session state</strong></td>
+<td>Absent</td>
+<td><strong>New.</strong> Per-learner ephemeral state (current chapter, current reading position, current MicroSim parameters) that must be associated with <code>student_id</code> across visits.</td>
+</tr>
+<tr>
+<td><strong>Authentication and identity</strong></td>
+<td>Absent (or optional at the organization level)</td>
+<td><strong>New.</strong> Login flow, password or SSO handling, account recovery, session cookies.</td>
+</tr>
+<tr>
+<td><strong>Consent flow</strong></td>
+<td>Absent</td>
+<td><strong>New.</strong> Consent capture at onboarding, versioned consent records, support for withdrawal. Parental consent flows for COPPA if applicable.</td>
+</tr>
+<tr>
+<td><strong>Audit log</strong></td>
+<td>Absent</td>
+<td><strong>New.</strong> Append-only record of every access to per-learner data, with who, when, and why. Retained per regulation.</td>
+</tr>
+<tr>
+<td><strong>Encryption at rest and in transit</strong></td>
+<td>Transport-only (HTTPS)</td>
+<td><strong>New at rest.</strong> Disk-level or field-level encryption for the student record store, key management, rotation.</td>
+</tr>
+<tr>
+<td><strong>Purge and deletion workflow</strong></td>
+<td>Absent</td>
+<td><strong>New.</strong> Scheduled deletion per retention policy; on-demand deletion per GDPR/CCPA access requests.</td>
+</tr>
+<tr>
+<td><strong>Third-party processor agreements (DPAs)</strong></td>
+<td>Generally not required</td>
+<td><strong>New.</strong> Every vendor that touches PII (database host, backup provider, analytics vendor, LLM provider if data crosses its boundary) requires a signed data processing agreement.</td>
+</tr>
+<tr>
+<td><strong>Algorithmic-accountability review</strong></td>
+<td>Not applicable</td>
+<td><strong>New when automated decisions affect the learner.</strong> Bias auditing, impact assessments, documented model governance.</td>
+</tr>
+<tr>
+<td><strong>Breach-notification playbook</strong></td>
+<td>Not required</td>
+<td><strong>New.</strong> Documented response procedure with regulator and data-subject notifications within the statutory window (72 hours under GDPR).</td>
+</tr>
+<tr>
+<td><strong>Per-learner LLM inference infrastructure (Level 4+)</strong></td>
+<td>Absent</td>
+<td><strong>Further new at Level 4.</strong> Per-session context management, conversation-history storage, per-learner prompt caching, rate limiting.</td>
+</tr>
+</tbody>
+</table>
+<p>Two things about this table are worth holding onto. The first is that <em>each new component is not one artifact but a whole operational practice</em>. A student record store is not a database schema; it is a database schema plus a backup policy plus a retention schedule plus an on-call rotation for when the backup fails plus a breach-notification playbook plus a DPA template plus a legal review for every schema change. The second is that <em>every new component is a new failure surface</em>. The moral weight of operating them is proportional to what they protect — and what they protect is the record of a human being learning, which is exactly the kind of record whose misuse damages trust in education as a whole.</p>
+<p>Choosing Level 2 is, structurally, the choice to leave the entire right column empty. That is not a small choice; it is the reason a solo author or a two-person team can produce an intelligent textbook at all.</p>
+<h2 id="authoring-pipeline-dynamics-a-causal-loop">Authoring-Pipeline Dynamics: A Causal Loop<a class="headerlink" href="#authoring-pipeline-dynamics-a-causal-loop" title="Permanent link">¶</a></h2>
+<p>The pieces from earlier in this chapter — the learning graph, the chapter outlines, the chapter content, the derived artifacts, the token budget, the skill invocations — do not sit still. They move in relation to each other, and two loops in particular govern whether the pipeline runs as a productive flywheel or as a rework trap.</p>
+<h4 id="diagram-authoring-pipeline-dynamics-graph-quality-flywheel-vs-token-pressure-trap">Diagram: Authoring Pipeline Dynamics — Graph-Quality Flywheel vs. Token-Pressure Trap<a class="headerlink" href="#diagram-authoring-pipeline-dynamics-graph-quality-flywheel-vs-token-pressure-trap" title="Permanent link">¶</a></h4>
+<details>
+<summary>Causal loop diagram contrasting R1 (the graph-quality flywheel, productive) with B1 (the token-pressure trap, corrosive) in the intelligent-textbook authoring pipeline</summary>
+<p>Type: causal-loop-diagram
+<strong>sim-id:</strong> authoring-pipeline-dynamics<br>
+<strong>Library:</strong> Mermaid<br>
+<strong>Status:</strong> Specified</p>
+<p>A causal loop diagram rendered with Mermaid <code>flowchart LR</code> showing ten variable-nodes and two named loops. All nodes are noun phrases naming variables that can go up or down.</p>
+<p>Nodes for R1 (graph-quality flywheel, productive): <em>learning-graph quality</em>, <em>generated-artifact quality</em>, <em>author-iteration rate</em>, <em>graph-refinement rate</em>, <em>pipeline confidence</em>.</p>
+<p>Nodes for B1 (token-pressure trap, balancing-but-corrosive): <em>chapter-content size</em>, <em>token-budget pressure</em>, <em>context-window truncation</em>, <em>generation inconsistency</em>, <em>rework cost</em>.</p>
+<p>Edges and polarities for R1:</p>
+<ul>
+<li>learning-graph quality → generated-artifact quality (+) — a clearer graph produces clearer artifacts</li>
+<li>generated-artifact quality → author-iteration rate (+) — an author who trusts the artifacts iterates more</li>
+<li>author-iteration rate → graph-refinement rate (+) — each iteration surfaces a graph improvement</li>
+<li>graph-refinement rate → learning-graph quality (+, with delay marker ⧚) — refinements accumulate</li>
+<li>generated-artifact quality → pipeline confidence (+) — visible quality reinforces the author's willingness to trust the pipeline</li>
+</ul>
+<p>Edges and polarities for B1:</p>
+<ul>
+<li>chapter-content size → token-budget pressure (+) — longer chapters cost more tokens per run</li>
+<li>token-budget pressure → context-window truncation (+) — pressure forces the pipeline to drop prior-chapter context</li>
+<li>context-window truncation → generation inconsistency (+) — dropped context produces style, voice, and schema drift</li>
+<li>generation inconsistency → rework cost (+) — drift is caught on review and fixed by hand</li>
+<li>rework cost → author-iteration rate (−) — time spent on rework is time not spent on refinement, starving R1</li>
+<li>token-budget pressure → author-iteration rate (−) — expensive runs are run less often</li>
+</ul>
+<p>Loop labels at each loop's geometric center:</p>
+<ul>
+<li><strong>R1 — Graph-quality flywheel (reinforcing, productive).</strong> Graph quality raises artifact quality, which raises iteration rate, which raises graph-refinement rate, which raises graph quality.</li>
+<li><strong>B1 — Token-pressure trap (balancing, corrosive).</strong> Chapter size raises token pressure, which forces truncation, which creates inconsistency, which creates rework, which throttles iteration — starving R1.</li>
+</ul>
+<p>The cross-link <em>rework cost → author-iteration rate (−)</em> is rendered in a distinct warning color to show how B1 leaks into R1. Delay marker ⧚ on the graph-refinement-rate → learning-graph-quality edge. Every edge labeled with <code>+</code> or <code>−</code>.</p>
+<p>Implementation: Mermaid <code>flowchart LR</code> with <code>linkStyle</code> declarations for polarity coloring and <code>classDef</code> for loop grouping. A two-paragraph walkthrough accompanies the diagram in the prose that follows.</p>
+</details>
+<p>Read loop <strong>R1</strong> — the graph-quality flywheel — in plain English. A well-structured learning graph, with clean concept nodes and a valid transitive reduction, feeds clean inputs to every downstream skill. Clean inputs produce higher-quality generated artifacts — chapters whose prose reads as coherent, glossaries whose entries are non-circular, quiz banks whose items are tagged correctly. When the artifacts are visibly high-quality, the author iterates more: they run the pipeline against a broader set of chapters, they refine edges they had been hesitant to touch, they propose new concepts whose definitions they can test immediately. Each iteration surfaces graph improvements — a redundant edge, a missing dependency, a concept whose definition is too narrow — which feed back into graph quality. Each trip around R1 makes the next trip a little easier.</p>
+<p>Read loop <strong>B1</strong> — the token-pressure trap — in plain English. As chapters grow (and the research chapters in this book are genuinely long), the chapter-generation prompt starts consuming more tokens — the outline, the style guide, the prior-chapter summaries, the concept subgraph. Token pressure rises. Under pressure, the pipeline has to truncate: it drops prior-chapter context, or compresses the style guide, or retrieves a smaller concept subgraph. Truncation produces generation inconsistency — a chapter whose voice drifts from the previous one, a retrieval check that does not match the style guide's conventions, a table that uses a different column order than the rest of the book. Inconsistency is caught on review and fixed by hand, which is rework. Rework throttles iteration — the author runs fewer regenerations because each one costs more time than it saves — which starves R1. The loop is balancing in the sense that it pushes back on pipeline activity, and it is corrosive in the sense that the push is exactly on the activity that keeps the graph healthy.</p>
+<p>The lever the author has is not in the R1 loop itself but in the B1 loop: reduce the pressure and R1 runs. Three concrete moves do this. First, keep the chapter outline separate from the chapter content (the two-stage split from earlier in this chapter) so that the chapter-generation prompt does not have to re-read every directive on every run. Second, keep the references in a separate <code>references.md</code> file per chapter rather than inlined in the chapter Markdown, so the chapter text the next chapter's generation reads as "prior context" is smaller. Third, regenerate chapters in <em>batches scheduled inside the five-minute cache window</em>, so the leading prompt prefix is cached and the per-run cost drops dramatically. These are three different moves at three different layers — architecture, file layout, and scheduling — and all three are targeting the same loop.</p>
+<h2 id="a-critical-thinking-interlude-when-level-2-and-when-level-3">A Critical-Thinking Interlude: When Level 2 and When Level 3?<a class="headerlink" href="#a-critical-thinking-interlude-when-level-2-and-when-level-3" title="Permanent link">¶</a></h2>
+<p>The directives that structure this chapter make a specific recommendation — <em>default to Level 2</em>. But a recommendation is not an argument, and a reader who takes the recommendation without being able to state the conditions under which it would flip is not thinking at the level this book is asking for. So the question worth holding: <em>under what conditions would you choose Level 3 over Level 2 for a specific project?</em></p>
+<p>A few answers are clearly insufficient. "Because the market expects personalization" is not a condition; it is a pressure. "Because a competitor does it" is not a condition; it is a status move. "Because the data would be useful" is a nearly universal condition and does not discriminate. The conditions that do discriminate are narrower.</p>
+<p><em>The pedagogical benefit of Level 3 is large and documented for the specific learner population.</em> Adaptive pacing produces measurable outcome gains in some contexts (procedural skill acquisition in well-structured domains like early arithmetic) and produces indistinguishable-from-non-adaptive outcomes in others (conceptual learning in open domains). A project that adopts Level 3 without evidence that adaptation helps its specific content is paying the compliance overhead for a personalization benefit that may not exist.</p>
+<p><em>The institution has already earned the right.</em> A university registrar's office, a K-12 district IT department, or an enterprise LMS vendor may already have the consent flows, the retention policies, the audit logging, and the breach-notification playbook that Level 3 requires. In that case the marginal cost of adding an adaptive textbook is the textbook's own engineering cost, not the full compliance layer. The author is not personally operating Level 3; the institution is, and the author is building on top of the institution's posture.</p>
+<p><em>The data collected respects minimization and is student-controlled.</em> If the per-learner record is the minimum needed for adaptation, is accessible and exportable by the student, is deletable on request, and is stored under xAPI in a Learning Record Store the student chose, the ethical calculus tips differently than it does for an opaque behavioral log the student cannot see.</p>
+<p>The evidence that would change the answer in the other direction — away from Level 3 and back to Level 2 — is easier to find than the evidence for Level 3. A single well-designed A/B test against the Level 2 baseline that fails to show a meaningful outcome gain is often enough, because the compliance overhead of Level 3 does not vanish when the outcome gain does.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">This Is the Question That Will Keep Coming Back</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/encouraging.png" data-desc-position="bottom"><img src="../../img/mascot/encouraging.png" class="mascot-admonition-img" alt="Bloom the elephant offering encouragement"></a>
+If the Level 2 / Level 3 question feels unresolved after this chapter, good. The right answer is not "always Level 2" and it is not "always Level 3"; it is "<em>it depends on conditions you can name out loud</em>," and getting fluent with those conditions takes real time. Keep the question in front of you on every design decision that touches personalization — it will sharpen with use.</p>
+</div>
+<h3 id="a-goodhart-risk-in-our-own-metrics">A Goodhart Risk in Our Own Metrics<a class="headerlink" href="#a-goodhart-risk-in-our-own-metrics" title="Permanent link">¶</a></h3>
+<p>One more critical-thinking thread to pull before the retrieval check. The quality metrics we introduced in Chapter 8 — coverage, distribution, readability, structural — are measurements of the book itself, not of its learners, and are therefore inside Level 2. But Chapter 8 also named Goodhart's Law, the pattern in which <em>any measure that becomes a target ceases to be a good measure</em>, and the same law applies to our own quality metrics.</p>
+<p>A chapter author who relentlessly optimizes against the "mascot admonition count ≤ 6" rule will eventually write chapters whose structure is shaped by the count rather than by pedagogical need. A project that optimizes against "Flesch-Kincaid grade level ≤ 14" will eventually write prose that hits the grade-level number by breaking long sentences whose length was the right choice. A generator that optimizes against the "every concept appears in exactly one chapter" rule will eventually slot concepts into the wrong chapter because the rule said to slot them somewhere.</p>
+<p>The structural fix — the same one we named in Chapter 8 for A/B testing — is to triangulate. Pair every quality metric with at least one guardrail metric that would move in the wrong direction if the primary were being gamed. Pair the admonition-count rule with a qualitative review of whether each admonition changes what the reader does next. Pair the grade-level number with a sample read-aloud. Pair the one-chapter-per-concept rule with a dependency-edge check that catches concepts slotted before their prerequisites. A metric alone is a target; a metric with a guardrail is a measurement.</p>
+<h2 id="retrieval-check">Retrieval Check<a class="headerlink" href="#retrieval-check" title="Permanent link">¶</a></h2>
+<p>Close the tab and try these from memory. Stumbling is diagnostic — it tells you which section to revisit. Resist scrolling before attempting each one.</p>
+<ol>
+<li><strong>Name</strong> the central structural spine of a Level 2 intelligent textbook and three artifacts derived from it. (Level: Remember.)</li>
+<li><strong>State</strong> the dependency-direction convention the project uses for concept edges, and give an example sentence that reads the convention out loud for a specific edge pair. (Level: Remember / Apply.)</li>
+<li><strong>Explain</strong> why a DAG admits a topological ordering and why a graph with a cycle does not. Describe one concrete workflow consequence. (Level: Understand.)</li>
+<li><strong>Distinguish</strong> a chapter outline from chapter content authoring, and state one pipeline property that the two-stage split buys. (Level: Understand.)</li>
+<li><strong>Describe</strong> the role of the system role in prompt engineering and name one class of content that should live there rather than in the user role. (Level: Understand / Apply.)</li>
+<li><strong>Given</strong> a 1-million-token context window, a 20,000-token style guide, a 12,000-token chapter outline, and a 50,000-token prior-chapter summary, calculate the token budget remaining for the in-flight response and state whether the run will fit inside the prompt-cache window. (Level: Apply.)</li>
+<li><strong>List</strong> the five levels of the intelligent-textbook classification, state which level this book targets, and give one architectural component that appears only at Level 3 or above. (Level: Remember / Analyze.)</li>
+<li><strong>Critique</strong> this design: "Our new textbook adds a small personalization feature that remembers each learner's last chapter and highlights three concepts from their recent quiz errors on the homepage." Name the level the design sits at, at least three regulations that attach, and one Level 2 redesign that would preserve most of the pedagogical benefit. (Level: Evaluate.)</li>
+<li><strong>Evaluate</strong> the claim that adopting Level 3 is the right move for any organization whose competitors have done so. What evidence would you need to see to change your answer either way? (Level: Evaluate.)</li>
+<li><strong>Apply</strong> the B1 token-pressure trap to a hypothetical pipeline whose chapter files have grown from 5,000 to 15,000 words each. Name the three concrete moves that reduce pressure, and trace which part of R1 each move frees up. (Level: Apply / Analyze.)</li>
+</ol>
+<p>If questions 8, 9, or 10 produced genuine hesitation, that hesitation is the right kind. It means the question is more contested than a headline suggests, and you are reading it at the resolution it deserves.</p>
+<h2 id="bridge-to-chapter-11">Bridge to Chapter 11<a class="headerlink" href="#bridge-to-chapter-11" title="Permanent link">¶</a></h2>
+<p>We now have the architecture: the learning graph as the spine, the derived artifacts that hang off it, the packaging layer MkDocs Material provides, the AI tooling foundations that shape every generator skill, the five-level classification that names where we are and where we are not going, and the infrastructure delta that the Level 3 regulatory inflection forces. What we do not yet have is the <em>interactive heart</em> of the book — the MicroSim patterns that turn a chapter from a page you read into an experiment you run. Chapter 11 turns there. We will look at the MicroSim as a design category, the controls that make one educational rather than merely interactive, the accessibility commitments that keep them usable for every learner, and the skill that generates them against the learning graph we just specified.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">The Architecture Is Yours</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/celebration.png" data-desc-position="bottom"><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Bloom the elephant celebrating with trunk raised"></a>
+You now have the component-level mental model for how an intelligent textbook holds together — graph as spine, chapters as generated artifacts, derived glossary and quiz and references, packaging from MkDocs, AI tooling as the control surface, and the Level 2 commitment that keeps the build tractable and ethical. Hold onto three headlines: <em>the learning graph is the source of truth</em>, <em>the five-minute cache window changes the shape of the pipeline</em>, and <em>we do not collect student data because we have not earned the right to handle it</em>. Next up: MicroSims — the interactive heart of the book, and the place where the architecture you now own meets the reader. See you in Chapter 11.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../09-learning-conditions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 9. Learning Conditions and Environment">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                9. Learning Conditions and Environment
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../11-microsims/" class="md-footer__link md-footer__link--next" aria-label="Next: 11. MicroSims and Interactive Visualizations">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                11. MicroSims and Interactive Visualizations
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Richard Tandler. All rights reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "content.action.edit", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

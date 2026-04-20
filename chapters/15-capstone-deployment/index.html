@@ -1,0 +1,1860 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The capstone chapter — producing a publishable intelligent-textbook chapter that demonstrates all Seven Domains, deploying it through the MkDocs and GitHub Pages pipeline, and shipping it with accessibility, peer review, and a repeatable publishing rhythm.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/learning-sciences/chapters/15-capstone-deployment/">
+      
+      
+        <link rel="prev" href="../14-agent-skills/">
+      
+      
+        <link rel="next" href="../../learning-graph/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Capstone and Deployment - Learning Sciences</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="Capstone and Deployment - Learning Sciences">
+      
+        <meta property="og:description" content="The capstone chapter — producing a publishable intelligent-textbook chapter that demonstrates all Seven Domains, deploying it through the MkDocs and GitHub Pages pipeline, and shipping it with accessibility, peer review, and a repeatable publishing rhythm.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/learning-sciences/assets/images/social/chapters/15-capstone-deployment/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/learning-sciences/chapters/15-capstone-deployment/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="Capstone and Deployment - Learning Sciences">
+      
+        <meta name="twitter:description" content="The capstone chapter — producing a publishable intelligent-textbook chapter that demonstrates all Seven Domains, deploying it through the MkDocs and GitHub Pages pipeline, and shipping it with accessibility, peer review, and a repeatable publishing rhythm.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/learning-sciences/assets/images/social/chapters/15-capstone-deployment/index.png">
+      
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#capstone-and-deployment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Learning Sciences" class="md-header__button md-logo" aria-label="Learning Sciences" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learning Sciences
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Capstone and Deployment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/learning-sciences.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Learning Sciences" class="md-nav__button md-logo" aria-label="Learning Sciences" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Learning Sciences
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/learning-sciences.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundations of Learning Sciences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-seven-domains/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. The Seven Domains Framework
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-motivation-engagement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Motivation and Engagement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-cognitive-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Cognitive Architecture and Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-knowledge-retention/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Knowledge Retention
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-application-transfer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Application and Transfer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-expertise-mastery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Expertise and Mastery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-measurement-feedback/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Measurement and Feedback
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-learning-conditions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Learning Conditions and Environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-textbook-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Intelligent Textbook Architecture and AI Tooling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-microsims/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. MicroSims and Interactive Visualizations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-mascots-admonitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Pedagogical Mascots and Admonitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-graphic-novels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Graphic Novels and Short-Form Stories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-agent-skills/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. AI Agent Skills for Textbook Generation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    15. Capstone and Deployment
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    15. Capstone and Deployment
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fourteen-chapters-one-artifact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fourteen Chapters, One Artifact
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-capstone-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Capstone Project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scoping-the-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scoping the Chapter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mkdocs-build-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      The MkDocs Build Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The MkDocs Build Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-deploy-pipeline-from-source-to-live-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Deploy Pipeline from Source to Live Site
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-pages-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Pages Deployment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-publishing-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Publishing Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-portfolio-artifact" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Portfolio Artifact
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-rubric-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Rubric Evaluation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter Rubric Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-interactive-capstone-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Interactive Capstone Rubric
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessibility-audit-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessibility Audit Basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-peer-review-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Peer Review Process
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterative-improvement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterative Improvement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iterative Improvement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-iteration-flywheel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Iteration Flywheel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mastery-demonstration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mastery Demonstration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-flight-check-before-you-ship" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pre-Flight Check: Before You Ship
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-books-closing-thought" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Book's Closing Thought
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/graph-viewer/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fourteen-chapters-one-artifact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fourteen Chapters, One Artifact
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-capstone-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Capstone Project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scoping-the-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scoping the Chapter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mkdocs-build-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      The MkDocs Build Process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The MkDocs Build Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-deploy-pipeline-from-source-to-live-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Deploy Pipeline from Source to Live Site
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github-pages-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Pages Deployment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-publishing-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Publishing Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-portfolio-artifact" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Portfolio Artifact
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-rubric-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter Rubric Evaluation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter Rubric Evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-interactive-capstone-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Interactive Capstone Rubric
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessibility-audit-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessibility Audit Basics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-peer-review-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Peer Review Process
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iterative-improvement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterative Improvement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iterative Improvement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-iteration-flywheel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Iteration Flywheel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mastery-demonstration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mastery Demonstration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-flight-check-before-you-ship" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pre-Flight Check: Before You Ship
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-books-closing-thought" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Book's Closing Thought
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/learning-sciences.git/blob/master/docs/chapters/15-capstone-deployment/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+    </a>
+  
+  
+
+
+<h1 id="capstone-and-deployment">Capstone and Deployment<a class="headerlink" href="#capstone-and-deployment" title="Permanent link">¶</a></h1>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome — Where Theory Becomes Artifact</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/welcome.png" data-desc-position="bottom"><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Bloom the elephant waving welcome"></a>
+This is the last chapter. For fourteen chapters we've been loading the workbench — the Seven Domains, the architecture, the MicroSims, the mascot craft, the graphic novels, the skills. This chapter is where we pick up the tools and make something that's <em>shippable</em>. You won't walk away from here with more theory; you'll walk away with a deployed site, a peer-reviewed chapter, and a pipeline you can run again next month on a different subject. Let's build something the world can actually open in a browser.</p>
+</div>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
+<p>The book closes with the capstone: producing a publishable intelligent-textbook chapter that demonstrates all Seven Domains. We cover GitHub Pages deployment, the MkDocs build process, portfolio artifacts, peer review, iterative improvement, accessibility audit basics, publishing workflows, chapter-rubric evaluation, and mastery demonstration. Readers leave with a live site, a reusable mascot, and a repeatable pipeline.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
+<p>This chapter covers the following 10 concepts from the learning graph:</p>
+<ol>
+<li>Capstone Project</li>
+<li>GitHub Pages Deployment</li>
+<li>MkDocs Build Process</li>
+<li>Portfolio Artifact</li>
+<li>Peer Review Process</li>
+<li>Iterative Improvement</li>
+<li>Accessibility Audit Basics</li>
+<li>Publishing Workflow</li>
+<li>Chapter Rubric Evaluation</li>
+<li>Mastery Demonstration</li>
+</ol>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-foundations/">Chapter 1: Foundations of Learning Sciences</a></li>
+<li><a href="../10-textbook-architecture/">Chapter 10: Intelligent Textbook Architecture and AI Tooling</a></li>
+<li><a href="../11-microsims/">Chapter 11: MicroSims and Interactive Visualizations</a></li>
+<li><a href="../12-mascots-admonitions/">Chapter 12: Pedagogical Mascots and Admonitions</a></li>
+<li><a href="../13-graphic-novels/">Chapter 13: Graphic Novels and Short-Form Stories</a></li>
+<li><a href="../14-agent-skills/">Chapter 14: AI Agent Skills for Textbook Generation</a></li>
+</ul>
+<hr>
+<h2 id="fourteen-chapters-one-artifact">Fourteen Chapters, One Artifact<a class="headerlink" href="#fourteen-chapters-one-artifact" title="Permanent link">¶</a></h2>
+<p>Before we define the capstone, let's recover the arc of the course in one paragraph — because the capstone is the thing that makes the arc visible as a whole. Chapter 1 set the field and the toolchain. Chapter 2 installed the Seven Domains — Motivation, Understanding, Retention, Application, Expertise, Measurement, and Learning Conditions — as the organizing spine. Chapters 3 through 9 walked each domain in order, each chapter one pass through the spine. Chapter 10 moved us from the research base into the architecture of an intelligent textbook: the learning graph, the chapter/glossary/quiz artifact set, and the five levels with the privacy inflection point at the Level 2 to Level 3 boundary. Chapters 11, 12, and 13 taught the three engagement artifacts — MicroSims, mascot admonitions, and 12-panel graphic novels. Chapter 14 named the fourteen skills that turn natural-language requests into all of the above. The capstone is the first project where the arc is applied end-to-end on a subject nobody has seen before.</p>
+<h2 id="the-capstone-project">The Capstone Project<a class="headerlink" href="#the-capstone-project" title="Permanent link">¶</a></h2>
+<p>The <strong><em>Capstone Project</em></strong> is a single publishable intelligent-textbook chapter, on a subject of the learner's choosing, that demonstrates mastery of the Seven Domains and the full artifact set, and that ships as a live MkDocs Material site. The course description fixes the minimum contents of the artifact. Every capstone must include:</p>
+<ul>
+<li>Chapter prose that exercises all seven domains — motivation hook, understanding scaffold, retention prompts, application scenarios, expertise cues, measurement check, and attention to learning conditions.</li>
+<li>At least <strong>one original MicroSim</strong> that teaches a concept from the chapter while respecting cognitive-load constraints.</li>
+<li>At least <strong>one original pedagogical mascot</strong> with a documented persona, voice guide, and visual style sheet — plus <strong>four mascot admonitions</strong> that exercise different cognitive intents (for example, welcome, thinking, warning, celebration).</li>
+<li>At least <strong>one 12-panel graphic novel</strong> about a scientist, engineer, or mathematician whose work relates to the chapter's subject.</li>
+<li>At least <strong>one Bloom-aligned quiz</strong> whose items are distributed across the cognitive levels the chapter targets, not collapsed at <em>Remember</em>.</li>
+<li>A deployed, publicly reachable URL on GitHub Pages.</li>
+</ul>
+<p>That list is intentionally short. Mastery isn't demonstrated by producing more artifacts; it's demonstrated by producing <em>coherent</em> artifacts that hang together around a single subject and that a reader can actually learn from. The rubric later in this chapter is how we check coherence.</p>
+<h2 id="scoping-the-chapter">Scoping the Chapter<a class="headerlink" href="#scoping-the-chapter" title="Permanent link">¶</a></h2>
+<p>Before writing a single Markdown file, the capstone author picks a subject and right-sizes the scope. The most common capstone failure mode is not under-ambition; it's over-ambition — attempting a whole subject where a <em>chapter-sized slice</em> was the assignment. A capstone chapter should sit at the same grain as any one of this book's own chapters: a handful of concepts (10 to 16 is the working range), a word count around 4,000 to 6,000, and a total production effort that fits inside a two-to-three-week window rather than a semester.</p>
+<p>Three questions help with right-sizing:</p>
+<ol>
+<li><strong>Is the subject something you already know well enough to catch AI hallucinations?</strong> The capstone is not the place to learn a new field and teach it at the same time. Pick something where your expert knowledge is the quality filter.</li>
+<li><strong>Does a coherent 10-to-16-concept slice of the subject exist?</strong> If the natural unit is 40 concepts, you've picked a <em>course</em>, not a chapter. Narrow until the dependency graph of your concept list is something a reader can hold in working memory.</li>
+<li><strong>Is there a historical figure whose work intersects with the subject?</strong> The graphic-novel requirement is easier to honor when a named person exists. If no figure surfaces naturally, the subject may be at the wrong grain.</li>
+</ol>
+<h2 id="the-mkdocs-build-process">The MkDocs Build Process<a class="headerlink" href="#the-mkdocs-build-process" title="Permanent link">¶</a></h2>
+<p>The <strong><em>MkDocs Build Process</em></strong> is the procedure that turns a directory of Markdown files and a configuration file into a static HTML site. Three invocations matter in practice, and the difference between them is the difference between a smooth release and a mysterious production bug.</p>
+<ul>
+<li><code>mkdocs serve</code> — runs a local development server at <code>http://127.0.0.1:8000/</code> and rebuilds on every file change. Watchdog detects saves; the page reloads. This is the authoring loop. The console stream is load-bearing — build errors and warnings appear here, not in the rendered page. (The global <code>CLAUDE.md</code> instructs Claude not to start or kill this process; the author keeps it running in their own terminal so they can watch the console.)</li>
+<li><code>mkdocs build</code> — produces a one-shot build into <code>site/</code> without serving. Use this to inspect the final HTML, to run a link checker against the output, or to hand the built site to a different web server. Build warnings that scroll past in <code>serve</code> are easier to read as a static list here.</li>
+<li><code>mkdocs gh-deploy</code> — builds the site and pushes it to the <code>gh-pages</code> branch of the current repository in a single atomic step. This is the release command. It is also the command with the highest blast radius, because a successful deploy overwrites the live site.</li>
+</ul>
+<p>Plugin order in <code>mkdocs.yml</code> matters more than it looks. Plugins run in the order they appear, and later plugins see the output of earlier ones. A plugin that rewrites URLs must run before a plugin that validates them; a plugin that injects content must run before a plugin that counts words. When a build does the wrong thing silently, reordering plugins is the first thing to try.</p>
+<h4 id="diagram-the-deploy-pipeline-from-source-to-live-site">Diagram: The Deploy Pipeline from Source to Live Site<a class="headerlink" href="#diagram-the-deploy-pipeline-from-source-to-live-site" title="Permanent link">¶</a></h4>
+<details>
+<summary>Flowchart showing the pipeline from Markdown source through mkdocs build to GitHub Pages, with failure points marked</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> deploy-pipeline-flow<br>
+<strong>Library:</strong> Mermaid<br>
+<strong>Status:</strong> Specified</p>
+<p>A Mermaid <code>flowchart LR</code> diagram with five stages from left to right, each a named node with an inline status color, and three failure-mode callouts drawn as side nodes attached to the stage where they most often originate.</p>
+<p>Main path (left to right):</p>
+<ol>
+<li><strong>Markdown source</strong> (<code>docs/</code>, <code>mkdocs.yml</code>) — author's working tree.</li>
+<li><strong>MkDocs build</strong> (<code>mkdocs build</code>) — produces <code>site/</code> HTML.</li>
+<li><strong>Git commit and push</strong> to <code>main</code> — triggers the publishing workflow.</li>
+<li><strong><code>mkdocs gh-deploy</code></strong> — rebuilds and pushes built output to the <code>gh-pages</code> branch.</li>
+<li><strong>GitHub Pages</strong> — serves the <code>gh-pages</code> branch at the project's public URL.</li>
+</ol>
+<p>Failure callouts (drawn as red-bordered side nodes):</p>
+<ul>
+<li><strong>F1 — Build error</strong> attached to stage 2. Missing plugin, malformed front matter, unresolved reference. Caught by the <code>mkdocs build</code> console output.</li>
+<li><strong>F2 — Broken link</strong> attached to stage 2. Relative path mismatch, chapter renamed without link update. Caught by the link-check plugin if configured; otherwise silent.</li>
+<li><strong>F3 — Deploy cache drift</strong> attached to stages 4 and 5. Browser serves a stale asset because the CDN TTL hasn't expired or a hashed filename wasn't bumped. Caught by a hard refresh and a second check in a private window.</li>
+</ul>
+<p>A dashed feedback arrow runs from stage 5 back to stage 1 labeled "reader feedback" to signal that deployment is not the end — it is the start of the next iteration.</p>
+<p>Visual treatment: main path in cool blue; failure callouts in warm red with a red border; feedback arrow in dashed orange. Nodes labeled with both the command and the artifact produced. Every edge labeled with the carrying artifact.</p>
+<p>Implementation: Mermaid <code>flowchart LR</code> with <code>classDef</code> per stage category. Embedded directly in the chapter markdown.</p>
+</details>
+<h2 id="github-pages-deployment">GitHub Pages Deployment<a class="headerlink" href="#github-pages-deployment" title="Permanent link">¶</a></h2>
+<p><strong><em>GitHub Pages Deployment</em></strong> is the mechanism that turns a <code>gh-pages</code> branch into a publicly reachable HTTPS URL at <code>https://&lt;user-or-org&gt;.github.io/&lt;repo-name&gt;/</code>. For this course, <code>mkdocs gh-deploy</code> is the only command an author needs to run — the <code>ghp-import</code> library that MkDocs uses under the hood handles the branch commit, the orphan-history trick that keeps <code>gh-pages</code> small, and the push. GitHub Pages notices the push and updates the live site within a minute or two.</p>
+<p>Three settings matter on the GitHub side, and all three are one-time configuration. The repository's <em>Pages</em> settings must point at the <code>gh-pages</code> branch and the root folder. If a custom domain is in use, the repository must own a <code>CNAME</code> file at the root of <code>gh-pages</code>, and the domain's DNS must point a <code>CNAME</code> record at <code>&lt;user&gt;.github.io</code>. HTTPS must be enabled (GitHub provisions the certificate automatically through Let's Encrypt once the DNS is valid). A fourth, optional concern is the <code>404.html</code> page — MkDocs Material provides one; keeping it in the deployed site makes mistyped URLs friendlier.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">The Ship-Before-Audit Footgun</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/warning.png" data-desc-position="bottom"><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Bloom the elephant flagging a warning"></a>
+Deploying before running an accessibility audit is a classic footgun. It's <em>silent</em> — the site looks fine to the author, whose browser and abilities aren't being tested. It's <em>easy to trigger</em> — the deploy command is one keystroke, and the audit feels like optional polish. The <em>damage is delayed and invisible to the author</em> — a screen-reader user hits the site, can't navigate the quiz, and quietly leaves. The structural fix is to run the accessibility checks <em>before</em> <code>gh-deploy</code> is even available to the author — wire them into the publishing workflow so a failing audit blocks the deploy, not warns about it.</p>
+</div>
+<h2 id="the-publishing-workflow">The Publishing Workflow<a class="headerlink" href="#the-publishing-workflow" title="Permanent link">¶</a></h2>
+<p>The <strong><em>Publishing Workflow</em></strong> is the repeatable sequence an author runs every time the site is updated. This book uses the <strong><em>CPD pattern</em></strong> — Commit, Push, Deploy — as its release rhythm. The three steps run sequentially, each one verifies something the next step depends on, and the combination is short enough to be muscle memory by the end of the capstone.</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Command</th>
+<th>What it does</th>
+<th>What it verifies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Commit</strong></td>
+<td><code>git add &lt;files&gt;; git commit -m "…"</code></td>
+<td>Records the change locally with a message</td>
+<td>That the author has paused long enough to describe the change in prose — the message is the first quality gate</td>
+</tr>
+<tr>
+<td><strong>Push</strong></td>
+<td><code>git push</code></td>
+<td>Uploads the commit to GitHub</td>
+<td>That the commit builds cleanly against any remote pre-commit checks and that the change is backed up off-machine</td>
+</tr>
+<tr>
+<td><strong>Deploy</strong></td>
+<td><code>mkdocs gh-deploy</code></td>
+<td>Rebuilds the site and pushes to <code>gh-pages</code></td>
+<td>That the build is error-free, all links resolve, and the site renders correctly at the public URL</td>
+</tr>
+</tbody>
+</table>
+<p>The CPD cadence matters for more than convenience. It <em>separates concerns</em> — a failing commit doesn't leave a half-deployed site; a successful push doesn't imply the site is live; a broken deploy is discoverable independently of whether the source was saved. Each step has its own failure mode and its own recovery path. Authors who fuse the three into a single "publish" action lose the ability to diagnose which stage went wrong.</p>
+<h2 id="the-portfolio-artifact">The Portfolio Artifact<a class="headerlink" href="#the-portfolio-artifact" title="Permanent link">¶</a></h2>
+<p>A <strong><em>Portfolio Artifact</em></strong> is a finished, externally-reachable piece of work that can stand on its own as evidence of capability. A deployed capstone is a portfolio artifact in a strong sense: it has a URL anyone can visit, it demonstrates a concrete skill set, and — unlike a traditional academic paper — it continues to accept iteration after the course ends.</p>
+<p>The <code>README.md</code> at the repository root is the artifact's cover letter. It should name the subject, link to the deployed site with a screenshot or a small GIF of the MicroSim in motion, list the seven domains and where each one surfaces in the chapter, name the mascot and show a pose, and credit the course. A reader who lands on the repository should understand in thirty seconds what the artifact is, who it is for, and where to see it live.</p>
+<p>Three things to resist in the README. Don't pad the file with generic descriptions of MkDocs or Claude Code — those belong in their own documentation. Don't bury the live URL under three headings; put it in the first paragraph. Don't turn the README into a second version of the chapter — summarize, link, and let the deployed site do the teaching.</p>
+<h2 id="chapter-rubric-evaluation">Chapter Rubric Evaluation<a class="headerlink" href="#chapter-rubric-evaluation" title="Permanent link">¶</a></h2>
+<p>The <strong><em>Chapter Rubric Evaluation</em></strong> is the formal review an author runs on their own capstone before submitting it for peer review, and the rubric peer reviewers apply when they read. The rubric below is the one this book itself is authored against; the chapter-metrics skill reports most of these items automatically, but the rubric is the document of record.</p>
+<p>A rubric that works as a rubric — not as a checklist — contains items that can <em>fail honestly</em>. The list below has twenty items, organized into five categories.</p>
+<p><strong>Structure (6 items).</strong> (1) Title, summary, concepts list, and prerequisites present in the front matter. (2) Exactly one <code>mascot-welcome</code> admonition at the chapter opening. (3) Exactly one <code>mascot-celebration</code> admonition at the chapter close. (4) Total mascot admonitions at or below six. (5) No back-to-back mascot admonitions. (6) A retrieval check or equivalent "pre-flight" section is present.</p>
+<p><strong>Seven-Domain coverage (3 items).</strong> (7) All seven domains are either foregrounded or touched in the chapter, and the author can point to the paragraph where each one lands. (8) At least one causal loop diagram appears where two or more variables influence each other. (9) At least one critical-thinking prompt asks the reader to evaluate, critique, or extend a claim rather than recall.</p>
+<p><strong>Engagement artifacts (3 items).</strong> (10) At least one MicroSim is specified and implemented. (11) At least one mascot with four admonitions is present and voice-consistent across them. (12) At least one 12-panel graphic novel is specified and implemented.</p>
+<p><strong>Measurement (3 items).</strong> (13) A Bloom-aligned quiz is present; items are distributed across Bloom levels, not collapsed at <em>Remember</em>. (14) Every term-of-art is italicized on first use and glossed in the same sentence. (15) No banned vocabulary in body prose ("obviously", "simply", "just", "clearly", or hype adjectives).</p>
+<p><strong>Systems thinking and evidence (3 items).</strong> (16) Every "X causes Y" claim notes study design and at least one plausible confound. (17) At least one feedback loop is <em>named</em> as a loop with polarity and loop label. (18) A footgun pattern is called out and a structural fix proposed.</p>
+<p><strong>Shippability (2 items).</strong> (19) The site deploys cleanly from a fresh clone — <code>mkdocs gh-deploy</code> produces a working public URL with no console errors. (20) An accessibility pass at WCAG 2.2 AA-floor has been run and documented.</p>
+<h4 id="diagram-the-interactive-capstone-rubric">Diagram: The Interactive Capstone Rubric<a class="headerlink" href="#diagram-the-interactive-capstone-rubric" title="Permanent link">¶</a></h4>
+<details>
+<summary>Interactive infographic overlay showing the 20-item capstone rubric as clickable cells with detail on hover</summary>
+<p>Type: interactive-infographic
+<strong>sim-id:</strong> capstone-rubric-board<br>
+<strong>Library:</strong> p5.js<br>
+<strong>Status:</strong> Specified</p>
+<p>An interactive infographic overlay using the <code>interactive-infographic-overlay</code> skill. Base image: a 5 x 4 grid representing the twenty rubric items, grouped into five color bands for Structure, Seven-Domain coverage, Engagement artifacts, Measurement, and Systems thinking and evidence. Each cell contains the rubric item's short name. The bottom of the image holds two larger "Shippability" cells in a distinct color.</p>
+<p>Modes (standard for this skill):</p>
+<ul>
+<li><strong>Explore mode:</strong> Hovering a cell shows the rubric item's full text, the tool or skill that checks it automatically (if any), and a one-sentence example of what passing and failing look like.</li>
+<li><strong>Self-audit mode:</strong> The author clicks each cell to mark it pass, partial, or fail for their current draft; the board colors update and a summary bar reports the count of each.</li>
+<li><strong>Edit mode (authors only):</strong> Drag cells to recalibrate positions; export updated <code>data.json</code>.</li>
+</ul>
+<p>Learning objective (Bloom level: Evaluate): <em>Given a chapter draft, judge its readiness to ship by applying the 20-item rubric and identifying the two or three items most likely to fail.</em></p>
+<p>Implementation: Generated with the <code>interactive-infographic-overlay</code> skill. The directory <code>/docs/sims/capstone-rubric-board/</code> contains <code>image-prompt.md</code>, <code>data.json</code>, <code>main.html</code>, <code>index.md</code>, and the grid base image. Canvas width is responsive via <code>updateCanvasSize()</code> as the first line of <code>setup()</code>.</p>
+</details>
+<p>A critical-thinking prompt sits on top of the rubric itself. <strong>Goodhart's Law</strong> — when a measure becomes a target, it stops being a good measure — applies sharply here. An author who optimizes the chapter <em>to score well on the rubric</em> rather than <em>to teach well</em> produces a chapter whose rubric score rises while its pedagogical quality doesn't. We've seen this pattern: the mascot count hits exactly six, the retrieval check exists but asks only <em>Remember</em>-level questions, every term-of-art is italicized on first use but the explanations drift. Every rubric item passes; no reader learns.</p>
+<p>The structural fix is to treat the rubric as a <strong>floor, not a ceiling</strong>. A chapter that fails a rubric item is probably not ready to ship; a chapter that passes every item is <em>eligible</em> to ship, not certified as good. Pair every rubric pass with the qualitative prompt: <em>does this item serve a reader, or does it just satisfy the rubric?</em> When those two judgments diverge, trust the reader.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Rubrics Measure What They Measure</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/thinking.png" data-desc-position="bottom"><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Bloom the elephant thinking, one hoof raised"></a>
+A rubric is diagnostic, not prescriptive. When an item fails, the rubric tells you <em>something</em> is off — it doesn't tell you what. A missing retrieval check might mean the author forgot, or it might mean the chapter as drafted doesn't have material worth retrieving, which is a bigger problem than the checkbox suggests. Use rubric failures as prompts for diagnosis, not for quick fixes.</p>
+</div>
+<h2 id="accessibility-audit-basics">Accessibility Audit Basics<a class="headerlink" href="#accessibility-audit-basics" title="Permanent link">¶</a></h2>
+<p><strong><em>Accessibility Audit Basics</em></strong> covers the minimum accessibility work that turns a deployable site into one that a meaningfully broader audience can actually use. The floor for this course is <strong>WCAG 2.2 Level AA</strong> — the version of the Web Content Accessibility Guidelines current at the time of writing, at the middle of three conformance levels. Full AAA conformance is out of scope; AA is the realistic target for a volunteer-authored textbook and covers the failure modes that most directly exclude readers.</p>
+<p>An accessibility audit has two modes — automated and manual — and neither one alone is sufficient. Automated tools catch what can be mechanically checked; manual checks catch what requires human judgment. The table below summarizes the split.</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Automated or manual</th>
+<th>Tool</th>
+<th>What it catches</th>
+<th>What it misses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Color contrast ratios</td>
+<td>Automated</td>
+<td>axe DevTools, Lighthouse</td>
+<td>Text that fails the 4.5:1 contrast floor</td>
+<td>Contrast inside images (like labels baked into diagrams)</td>
+</tr>
+<tr>
+<td>Missing alt text</td>
+<td>Automated</td>
+<td>axe, Lighthouse, <code>pa11y</code></td>
+<td><code>&lt;img&gt;</code> elements with no <code>alt</code> attribute</td>
+<td>Alt text that exists but is empty, decorative, or unhelpful</td>
+</tr>
+<tr>
+<td>Heading order</td>
+<td>Automated</td>
+<td>axe, Lighthouse</td>
+<td>Skipped heading levels (h2 to h4 without h3)</td>
+<td>Whether the heading <em>labels</em> the section correctly</td>
+</tr>
+<tr>
+<td>Form-label association</td>
+<td>Automated</td>
+<td>axe</td>
+<td><code>&lt;input&gt;</code> without a linked <code>&lt;label&gt;</code></td>
+<td>Labels that are present but misleading</td>
+</tr>
+<tr>
+<td>Keyboard navigation</td>
+<td>Manual</td>
+<td>Tab key in any browser</td>
+<td>Focus traps, unreachable controls, missing focus rings</td>
+<td>Nothing — this is where manual testing wins</td>
+</tr>
+<tr>
+<td>Screen-reader experience</td>
+<td>Manual</td>
+<td>VoiceOver, NVDA, JAWS</td>
+<td>Reading order, announcement wording, landmark structure</td>
+<td>Nothing automated gets close</td>
+</tr>
+<tr>
+<td>MicroSim accessibility</td>
+<td>Manual</td>
+<td>Hand testing</td>
+<td>Whether a p5.js canvas has a keyboard-equivalent path</td>
+<td>Nearly everything; canvases are opaque to automated tools</td>
+</tr>
+<tr>
+<td>Reduced-motion support</td>
+<td>Manual</td>
+<td>OS reduced-motion toggle</td>
+<td>Animations that don't respect the user preference</td>
+<td>Partial coverage by Lighthouse</td>
+</tr>
+<tr>
+<td>Language attribute</td>
+<td>Automated</td>
+<td>axe, Lighthouse</td>
+<td>Missing <code>lang="en"</code> on the document</td>
+<td>Incorrect language code (mark-up says "en" but content is French)</td>
+</tr>
+<tr>
+<td>Link text quality</td>
+<td>Manual</td>
+<td>Read-through</td>
+<td>Links whose text is "click here" or "read more"</td>
+<td>All of it — tools can't judge context</td>
+</tr>
+</tbody>
+</table>
+<p>The right audit rhythm: run the automated checks every time before a deploy (they take seconds), and run the manual checks once per capstone and again whenever the chapter changes substantially. Fix violations before deploying — which means the audit runs <em>before</em> <code>mkdocs gh-deploy</code>, not after.</p>
+<p>Alt-text discipline deserves its own paragraph because it is the accessibility failure that LLM-generated content reproduces most reliably. Every image in the capstone needs alt text that describes <em>what the image conveys in the context of the surrounding prose</em>, not what the image literally depicts. Bloom waving has <code>alt="Bloom the elephant waving welcome"</code>, not <code>alt="cartoon elephant standing"</code>. The distinction is whether a reader who can't see the image can still follow the chapter.</p>
+<h2 id="the-peer-review-process">The Peer Review Process<a class="headerlink" href="#the-peer-review-process" title="Permanent link">¶</a></h2>
+<p>The <strong><em>Peer Review Process</em></strong> is a structured protocol for getting a second set of eyes on a capstone before it ships. Peer review is asynchronous, written, and time-boxed — the reviewer gets the chapter, reads it once at reading pace, runs the rubric once, and writes back. A typical review cycle takes ninety minutes end to end.</p>
+<p>Four kinds of feedback tend to come out of peer review, and they require different responses from the author.</p>
+<table>
+<thead>
+<tr>
+<th>Feedback type</th>
+<th>What it sounds like</th>
+<th>How to respond</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Praise</strong></td>
+<td>"The mascot voice is really consistent across the chapter."</td>
+<td>Note it, thank the reviewer, and preserve the thing that worked. Don't rewrite around praise.</td>
+</tr>
+<tr>
+<td><strong>Critique</strong></td>
+<td>"The causal loop in section 4 doesn't close — there's no arrow back from outcomes to motivation."</td>
+<td>Treat as a specific claim to verify and fix. If the critique is right, the chapter has a real defect; if it's wrong, the reviewer probably misread, which is itself signal that the section is unclear.</td>
+</tr>
+<tr>
+<td><strong>Sharpening</strong></td>
+<td>"This paragraph is good, but the term <em>desirable difficulty</em> is introduced twice. You could compress."</td>
+<td>High-value feedback that tightens the text. Apply directly; these changes rarely make things worse.</td>
+</tr>
+<tr>
+<td><strong>Deflective</strong></td>
+<td>"Have you thought about adding a chapter on gamification?"</td>
+<td>Out of scope. Thank the reviewer and log it as a future-work note, not as a capstone change. Scope creep is the silent killer of peer-review cycles.</td>
+</tr>
+</tbody>
+</table>
+<p>The author's job during peer review is to <strong>separate the signal from the preference</strong>. A reviewer's preference for a different chapter structure isn't a defect; a reviewer's confusion about what a paragraph claims <em>is</em> a defect, even if the reviewer didn't articulate it as one. Train yourself to hear "I got lost in section 3" as "section 3 needs work," not as "this reader wasn't paying attention."</p>
+<p>The peer-review protocol also has two anti-patterns worth naming. <strong>Shipping without peer review</strong> is a footgun: it's silent (the author's own eyes can't see the chapter the way a first-time reader does), easy to trigger (the deploy command is right there), and produces delayed damage (the public reader finds the bugs instead of the reviewer). The structural fix is to require a peer-review turn-around in the publishing workflow — no deploy until at least one external reader has run the rubric. <strong>Treating peer review as approval</strong> is the opposite footgun: the author interprets "I read it, looked good" as a pass when the reviewer actually skimmed. The fix is to ask the reviewer to report their rubric scores, not a thumbs-up — scores force actual reading.</p>
+<h2 id="iterative-improvement">Iterative Improvement<a class="headerlink" href="#iterative-improvement" title="Permanent link">¶</a></h2>
+<p><strong><em>Iterative Improvement</em></strong> is the discipline that turns a shipped capstone into a series of better-shipped capstones. The chapter-content-generator skill emits a <code>version</code> field in the front matter; every meaningful change increments that field, and a short changelog at the bottom of the chapter records what changed and why. A chapter at version 0.03 that has been deployed three times should read like a chapter that has seen three rounds of real feedback.</p>
+<p>A recurring decision inside iterative improvement is <em>regenerate or edit by hand</em>. Regenerating the whole chapter from the outline costs tokens and discards the prose-level edits an author has already made; editing by hand preserves those edits but doesn't benefit from changes in the outline, the style guide, or the learning graph. A rough rule: structural changes (new section, reordered concepts, new rubric item) want a regeneration; prose-level changes (a clearer sentence, a fixed typo, a tightened paragraph) want a hand edit. When both kinds of change are pending, stage the regeneration first and then apply hand edits on top.</p>
+<h4 id="diagram-the-iteration-flywheel">Diagram: The Iteration Flywheel<a class="headerlink" href="#diagram-the-iteration-flywheel" title="Permanent link">¶</a></h4>
+<details>
+<summary>Causal loop diagram showing how shipping, feedback, revision, and quality reinforce each other — and how ship-and-forget breaks the loop</summary>
+<p>Type: causal-loop-diagram
+<strong>sim-id:</strong> iteration-flywheel<br>
+<strong>Library:</strong> Mermaid<br>
+<strong>Status:</strong> Specified</p>
+<p>A causal loop diagram rendered with Mermaid <code>flowchart LR</code> showing seven variable-nodes and one reinforcing loop plus one balancing anti-pattern. All nodes are noun phrases naming variables that can go up or down.</p>
+<p>Nodes: <em>ship cadence</em>, <em>reader feedback volume</em>, <em>peer review turnaround</em>, <em>revision rate</em>, <em>chapter quality</em>, <em>reader trust</em>, <em>ship-and-forget frequency</em>.</p>
+<p>Edges and polarities for <strong>R1 — Iteration flywheel (reinforcing):</strong></p>
+<ul>
+<li>ship cadence → reader feedback volume (+) — shipping produces readers, readers produce feedback</li>
+<li>peer review turnaround → revision rate (+) — faster reviews mean faster revisions</li>
+<li>reader feedback volume → revision rate (+) — feedback seeds revision</li>
+<li>revision rate → chapter quality (+, with delay ⧚) — revisions compound into quality</li>
+<li>chapter quality → reader trust (+) — good chapters build trust</li>
+<li>reader trust → ship cadence (+) — trusted authors ship more confidently</li>
+<li>peer review turnaround → ship cadence (+) — fast reviews enable faster releases</li>
+</ul>
+<p>Edges for <strong>B1 — Ship-and-forget brake (balancing anti-pattern):</strong></p>
+<ul>
+<li>ship cadence → ship-and-forget frequency (+) — shipping without a feedback gate tempts "ship and move on"</li>
+<li>ship-and-forget frequency → reader feedback volume (−) — no feedback mechanism, no feedback</li>
+<li>ship-and-forget frequency → revision rate (−) — revisions never happen if feedback isn't collected</li>
+</ul>
+<p>Loop labels at each loop's geometric center:</p>
+<ul>
+<li><strong>R1 — Iteration flywheel (reinforcing, productive).</strong> Ship → feedback → revise → quality → trust → more ship. Peer review accelerates the inner portion of the loop.</li>
+<li><strong>B1 — Ship-and-forget brake (balancing, corrosive).</strong> Shipping without a feedback gate starves the flywheel.</li>
+</ul>
+<p>Visual treatment: R1 nodes in cool blue; the B1 anti-pattern in warm orange; delay marker ⧚ on the revision-rate-to-chapter-quality edge; every edge labeled with <code>+</code> or <code>−</code>.</p>
+<p>Implementation: Mermaid <code>flowchart LR</code> with <code>linkStyle</code> declarations for polarity coloring and <code>classDef</code> for loop grouping.</p>
+</details>
+<p>Read loop <strong>R1</strong> in plain English. Shipping a chapter produces readers; readers produce feedback; feedback seeds revisions; revisions compound, over time (the delay marker), into higher chapter quality; higher quality builds reader trust; trust makes the next ship easier. Peer review is the accelerator on the loop — it shortens the cycle between ship and feedback from weeks (public readers) to hours (a single reviewer). The loop runs on cadence: an author who ships once and never again doesn't get the compounding benefit, which is why ship-and-forget is an anti-pattern, not just a style preference.</p>
+<h2 id="mastery-demonstration">Mastery Demonstration<a class="headerlink" href="#mastery-demonstration" title="Permanent link">¶</a></h2>
+<p><strong><em>Mastery Demonstration</em></strong> is what the capstone is, formally, measuring — <em>Create</em>-level mastery in the Bloom 2001 sense. Create-level work is defined as putting elements together to form a coherent functional whole. Every earlier Bloom level shows up <em>inside</em> the capstone (the author remembers the Seven Domains, understands the research, applies cognitive-load theory to the MicroSim, analyzes the learning graph, evaluates against the rubric), but the whole is larger than the parts. A reader who could do each step in isolation but couldn't assemble the artifact would not have demonstrated Create-level mastery.</p>
+<p>One distinction matters at this stage: "finished" is not "ready to ship." A finished chapter is one where the author has stopped adding material. A ready-to-ship chapter is one that has passed the rubric, the accessibility audit, and at least one peer review, and whose author can point at the deployed URL. The gap between the two states is usually two to five days of iteration, and that gap is where mastery gets demonstrated.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">The Budget for the Last 10%</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/tip.png" data-desc-position="bottom"><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Bloom the elephant giving a tip"></a>
+Reserve at least 25% of your total capstone time for the work <em>after</em> the first draft is done — the rubric pass, the accessibility audit, the peer review cycle, and the iteration pass. Authors who spend 95% of their time on the first draft and 5% on the finish consistently ship chapters that feel almost-ready. Authors who budget for the last ten percent ship chapters that feel done.</p>
+</div>
+<h2 id="pre-flight-check-before-you-ship">Pre-Flight Check: Before You Ship<a class="headerlink" href="#pre-flight-check-before-you-ship" title="Permanent link">¶</a></h2>
+<p>Close the tab and try these from memory. They're the "pre-flight" items — the things to confirm before running <code>mkdocs gh-deploy</code> on your capstone. If you can't answer one, go find the section.</p>
+<ol>
+<li><strong>State</strong> the three commands in the CPD workflow and what each one verifies. (Level: Remember / Understand.)</li>
+<li><strong>Name</strong> the minimum artifact set every capstone must include — the four engagement artifacts plus the deployment target. (Level: Remember.)</li>
+<li><strong>Explain</strong> in one sentence why the rubric is a floor, not a ceiling, and give one example of how Goodhart's Law could corrupt rubric use. (Level: Understand / Evaluate.)</li>
+<li><strong>Identify</strong> which checks in the accessibility audit are best handled automatically and which require manual testing. State one failure mode that only manual testing catches. (Level: Analyze.)</li>
+<li><strong>Given</strong> a peer reviewer's comment — "Have you thought about adding a chapter on gamification?" — decide whether to act on it before shipping the capstone. Justify your answer using the four feedback types. (Level: Apply / Evaluate.)</li>
+<li><strong>Trace</strong> one full cycle of the iteration flywheel (R1) in your own words and name the anti-pattern (B1) that breaks it. (Level: Analyze.)</li>
+<li><strong>Distinguish</strong> between "finished" and "ready to ship" as states of a capstone, and name two things that happen in the gap between them. (Level: Understand / Evaluate.)</li>
+<li><strong>Critique</strong> this workflow: <em>write the chapter, run <code>mkdocs gh-deploy</code>, post the URL to colleagues, read whatever feedback arrives.</em> What's missing, and in what order should it be added? (Level: Evaluate.)</li>
+<li><strong>Decide</strong> whether a proposed capstone revision — replacing the MicroSim with an updated version — warrants a full regeneration of the chapter or a hand edit. Justify your choice. (Level: Apply.)</li>
+<li><strong>Evaluate</strong> your own capstone against items 19 and 20 of the rubric (clean deploy and accessibility pass). If either item is not yet a confident pass, name the specific next action you'll take before running the deploy command. (Level: Evaluate.)</li>
+</ol>
+<p>If question 10 produced real hesitation, stop before you ship. The hesitation is the signal.</p>
+<h2 id="the-books-closing-thought">The Book's Closing Thought<a class="headerlink" href="#the-books-closing-thought" title="Permanent link">¶</a></h2>
+<p>We started fourteen chapters ago with a claim: capability without principle produces noise. The fourteen chapters between there and here have been, in their entirety, the <em>principle</em> — the research from the Seven Domains, the architecture of the intelligent textbook, the craft of MicroSims and mascots and stories, the discipline of skills. The capstone is the first time all of it shows up in one artifact, running under your name, on a URL you control.</p>
+<p>Three things to carry forward after the capstone ships. First, the Seven Domains are a diagnostic lens for every piece of instruction you'll see for the rest of your career — someone else's course, a talk at a conference, a tutorial video, your own drafts. Use it. Second, the production pipeline is subject-neutral — you can point it at a new subject next month and get another capstone-sized chapter out the other end. The investment you just made is reusable. Third, the chapters that work aren't the ones with the most artifacts; they're the ones where the artifacts <em>serve the reader</em>, every mascot appearance changes what the reader does next, every MicroSim exercises a concept the chapter just defined, every quiz item measures something the prose actually taught. Coherence is the quality that separates a capstone from a pile.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Go Make Something</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/celebration.png" data-desc-position="bottom"><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Bloom the elephant celebrating with trunk raised"></a>
+You have the pipeline. You have the mascot. You have the mental models — the Seven Domains, the learning graph, cognitive load, retrieval practice, desirable difficulty, the iteration flywheel. Fifteen chapters ago, the gap between "content that exists" and "content that teaches" felt like a mystery; now it's a set of moves you know how to make. I'm not going to tell you what to build next. Pick a subject you care about, a reader you want to help, and a slice small enough to ship. Then ship it. The world already has enough content that looks like teaching. It could use more that actually is. Go make something. It's been a real pleasure walking the book with you.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../14-agent-skills/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 14. AI Agent Skills for Textbook Generation">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                14. AI Agent Skills for Textbook Generation
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../learning-graph/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Introduction
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Richard Tandler. All rights reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "content.action.edit", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

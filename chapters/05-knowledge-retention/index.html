@@ -1,0 +1,1979 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Covers the dynamics of retention over time — the forgetting curve, retrieval practice and the testing effect, spaced vs. massed practice, interleaving, Bjork's retrieval-strength/storage-strength distinction, desirable difficulty, and the Leitner and SM-family scheduling algorithms that turn these findings into software.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/learning-sciences/chapters/05-knowledge-retention/">
+      
+      
+        <link rel="prev" href="../04-cognitive-architecture/">
+      
+      
+        <link rel="next" href="../06-application-transfer/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Knowledge Retention - Learning Sciences</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="Knowledge Retention - Learning Sciences">
+      
+        <meta property="og:description" content="Covers the dynamics of retention over time — the forgetting curve, retrieval practice and the testing effect, spaced vs. massed practice, interleaving, Bjork's retrieval-strength/storage-strength distinction, desirable difficulty, and the Leitner and SM-family scheduling algorithms that turn these findings into software.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/learning-sciences/assets/images/social/chapters/05-knowledge-retention/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/learning-sciences/chapters/05-knowledge-retention/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="Knowledge Retention - Learning Sciences">
+      
+        <meta name="twitter:description" content="Covers the dynamics of retention over time — the forgetting curve, retrieval practice and the testing effect, spaced vs. massed practice, interleaving, Bjork's retrieval-strength/storage-strength distinction, desirable difficulty, and the Leitner and SM-family scheduling algorithms that turn these findings into software.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/learning-sciences/assets/images/social/chapters/05-knowledge-retention/index.png">
+      
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#knowledge-retention" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Learning Sciences" class="md-header__button md-logo" aria-label="Learning Sciences" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learning Sciences
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Knowledge Retention
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/learning-sciences.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Learning Sciences" class="md-nav__button md-logo" aria-label="Learning Sciences" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Learning Sciences
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/learning-sciences.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundations of Learning Sciences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-seven-domains/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. The Seven Domains Framework
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-motivation-engagement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Motivation and Engagement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-cognitive-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Cognitive Architecture and Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    5. Knowledge Retention
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    5. Knowledge Retention
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-highlighter-illusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Highlighter Illusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ebbinghaus-and-the-forgetting-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ebbinghaus and the Forgetting Curve
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ebbinghaus and the Forgetting Curve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-forgetting-curve-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Forgetting Curve Simulator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-strength-vs-storage-strength" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval Strength vs. Storage Strength
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Retrieval Strength vs. Storage Strength">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-retrieval-strength-vs-storage-strength" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Retrieval Strength vs. Storage Strength
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-practice-and-the-testing-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval Practice and the Testing Effect
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recall-vs-recognition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recall vs. Recognition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desirable-difficulty" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desirable Difficulty
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spaced-repetition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spaced Repetition
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spaced Repetition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-spaced-retrieval-schedule-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Spaced Retrieval Schedule Timeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interleaving" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interleaving
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-leitner-system-spaced-repetition-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Leitner System: Spaced Repetition by Hand
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Leitner System: Spaced Repetition by Hand">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-leitner-box-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Leitner Box Simulator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spaced-retrieval-scheduling-in-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spaced Retrieval Scheduling in Software
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-storage-strength-dynamics-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Storage-Strength Dynamics Loop
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Storage-Strength Dynamics Loop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-bjorks-storage-dynamics-flywheel-and-ease-trap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Bjork's Storage Dynamics — Flywheel and Ease Trap
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-implications-for-quiz-glossary-and-faq-generators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Implications for Quiz, Glossary, and FAQ Generators
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-thinking-what-the-evidence-does-and-does-not-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Critical Thinking: What the Evidence Does and Does Not Support
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-misconceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Misconceptions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval Check
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bridge-to-chapter-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bridge to Chapter 6
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-application-transfer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Application and Transfer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-expertise-mastery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Expertise and Mastery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-measurement-feedback/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Measurement and Feedback
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-learning-conditions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Learning Conditions and Environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-textbook-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Intelligent Textbook Architecture and AI Tooling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-microsims/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. MicroSims and Interactive Visualizations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-mascots-admonitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Pedagogical Mascots and Admonitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-graphic-novels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Graphic Novels and Short-Form Stories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-agent-skills/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. AI Agent Skills for Textbook Generation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-capstone-deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Capstone and Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/graph-viewer/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-highlighter-illusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Highlighter Illusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ebbinghaus-and-the-forgetting-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ebbinghaus and the Forgetting Curve
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ebbinghaus and the Forgetting Curve">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-forgetting-curve-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Forgetting Curve Simulator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-strength-vs-storage-strength" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval Strength vs. Storage Strength
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Retrieval Strength vs. Storage Strength">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-retrieval-strength-vs-storage-strength" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Retrieval Strength vs. Storage Strength
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-practice-and-the-testing-effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval Practice and the Testing Effect
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recall-vs-recognition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recall vs. Recognition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#desirable-difficulty" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desirable Difficulty
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spaced-repetition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spaced Repetition
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spaced Repetition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-spaced-retrieval-schedule-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Spaced Retrieval Schedule Timeline
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interleaving" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interleaving
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-leitner-system-spaced-repetition-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Leitner System: Spaced Repetition by Hand
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Leitner System: Spaced Repetition by Hand">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-leitner-box-simulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Leitner Box Simulator
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spaced-retrieval-scheduling-in-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spaced Retrieval Scheduling in Software
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-storage-strength-dynamics-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Storage-Strength Dynamics Loop
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Storage-Strength Dynamics Loop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-bjorks-storage-dynamics-flywheel-and-ease-trap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Bjork's Storage Dynamics — Flywheel and Ease Trap
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-implications-for-quiz-glossary-and-faq-generators" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Implications for Quiz, Glossary, and FAQ Generators
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#critical-thinking-what-the-evidence-does-and-does-not-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Critical Thinking: What the Evidence Does and Does Not Support
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-misconceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Misconceptions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval Check
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bridge-to-chapter-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bridge to Chapter 6
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/learning-sciences.git/blob/master/docs/chapters/05-knowledge-retention/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+    </a>
+  
+  
+
+
+<h1 id="knowledge-retention">Knowledge Retention<a class="headerlink" href="#knowledge-retention" title="Permanent link">¶</a></h1>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome — Memory That Isn't Retrieved Fades</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/welcome.png" data-desc-position="bottom"><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Bloom the elephant waving welcome"></a>
+Last chapter we built the architecture — the stages of memory, the working-memory bottleneck, the schemas that organize long-term storage. This chapter is about what happens <em>after</em> encoding: how a fresh trace either hardens into durable knowledge or quietly fades. The engine of durability turns out to be counterintuitive — effortful retrieval, not more reading. Let's build a mental model.</p>
+</div>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
+<p>Memory that isn't retrieved is memory that fades. This chapter is about making learning durable: the testing effect, retrieval practice, spaced repetition, the forgetting curve, interleaving vs. massed practice, desirable difficulty, and scheduling systems like Leitner. We tie every finding back to the quiz, glossary, and FAQ generators readers will use in later chapters.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
+<p>This chapter covers the following 14 concepts from the learning graph:</p>
+<ol>
+<li>Retrieval Practice</li>
+<li>Testing Effect</li>
+<li>Spaced Repetition</li>
+<li>Massed Practice</li>
+<li>Distributed Practice</li>
+<li>Interleaving</li>
+<li>Forgetting Curve</li>
+<li>Retrieval Cue</li>
+<li>Recall vs Recognition</li>
+<li>Retrieval Strength</li>
+<li>Storage Strength</li>
+<li>Desirable Difficulty</li>
+<li>Leitner System</li>
+<li>Spaced Retrieval Scheduling</li>
+</ol>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-foundations/">Chapter 1: Foundations of Learning Sciences</a></li>
+<li><a href="../02-seven-domains/">Chapter 2: The Seven Domains Framework</a></li>
+<li><a href="../04-cognitive-architecture/">Chapter 4: Cognitive Architecture and Load</a></li>
+</ul>
+<hr>
+<h2 id="the-highlighter-illusion">The Highlighter Illusion<a class="headerlink" href="#the-highlighter-illusion" title="Permanent link">¶</a></h2>
+<p>A student re-reads a chapter with a yellow highlighter. The important passages turn bright. Running a finger down the page, they nod — this feels familiar, this feels known, this feels learned. Close the book an hour later and ask for the three central claims from memory, and the answer is often a fog of half-remembered phrases.</p>
+<p>Something is off. The student did not waste the hour; they genuinely spent attention on the material. But the <em>kind</em> of attention they spent — recognition of previously-seen words — is not the kind that builds durable memory. The warm feeling that the highlighter produces is what we'll call the <strong>highlighter illusion</strong>: the sense of learning that comes from fluent re-reading, uncoupled from the actual storage of knowledge. The illusion is not a character flaw. It is a predictable consequence of how memory signals its own strength, and getting past it is the central move of this chapter.</p>
+<p>By the end of this chapter you will be able to:</p>
+<ul>
+<li>Sketch the forgetting curve and name two interventions that bend it upward.</li>
+<li>Distinguish <em>retrieval strength</em> from <em>storage strength</em> and explain why high retrieval strength can paradoxically predict low long-term retention gain.</li>
+<li>Predict when interleaving will outperform blocked practice, and when it will not.</li>
+<li>Design a spaced-retrieval schedule for a quiz bank using Leitner-style intervals or a software scheduler.</li>
+<li>Critique a learning claim on evidence-base grounds — including the specific case of the "learning pyramid."</li>
+</ul>
+<h2 id="ebbinghaus-and-the-forgetting-curve">Ebbinghaus and the Forgetting Curve<a class="headerlink" href="#ebbinghaus-and-the-forgetting-curve" title="Permanent link">¶</a></h2>
+<p>The first systematic study of forgetting is also one of the oldest empirical results in psychology. In 1885, Hermann Ebbinghaus memorized lists of nonsense syllables — strings like <code>DAX</code>, <code>BOK</code>, <code>ZUR</code> chosen precisely because they carried no prior meaning — then tested how much he could relearn at intervals ranging from twenty minutes to a month. Plotting retention against time produced the <strong><em>forgetting curve</em></strong> — a now-classic descending curve showing that memory for unreviewed material drops steeply at first and then more slowly, approaching a low but non-zero floor.</p>
+<p>The curve has a compact mathematical form that later researchers fit to Ebbinghaus's data. If we write retention (the fraction of the original material still accessible) as <span class="arithmatex">\( R \)</span>, elapsed time as <span class="arithmatex">\( t \)</span>, and memory strength as <span class="arithmatex">\( S \)</span>, then</p>
+<div class="arithmatex">\[ R = e^{-t/S} \]</div>
+<p>captures the basic shape: an exponential decay whose rate is set by the strength of the underlying trace. Larger <span class="arithmatex">\( S \)</span> flattens the curve; smaller <span class="arithmatex">\( S \)</span> steepens it. The equation is a description, not a mechanism — it predicts the <em>shape</em> of forgetting without committing to the neural story underneath — and that humility is appropriate, because a hundred and forty years later the exact mechanism of forgetting is still an open research area.</p>
+<p>Two features of the curve matter for instructional design. First, <strong>most of the forgetting happens fast</strong>. For unrehearsed material, a large fraction of what the learner could recall twenty minutes after study is gone within a day. Second, <strong>the curve flattens with every well-timed review</strong>. Each retrieval resets the effective strength <span class="arithmatex">\( S \)</span> upward, so the next decay is slower than the last. The shape of the curve is not a verdict on the learner; it is a prediction about what happens in the <em>absence</em> of intervention.</p>
+<h4 id="diagram-the-forgetting-curve-simulator">Diagram: The Forgetting Curve Simulator<a class="headerlink" href="#diagram-the-forgetting-curve-simulator" title="Permanent link">¶</a></h4>
+<details>
+<summary>MicroSim: interactive forgetting curve with review intervals to demonstrate the spacing effect</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> forgetting-curve-simulator<br>
+<strong>Library:</strong> p5.js<br>
+<strong>Status:</strong> Specified</p>
+<p>An interactive p5.js MicroSim that plots the Ebbinghaus retention curve <span class="arithmatex">\( R = e^{-t/S} \)</span> over a configurable time horizon. The canvas shows a horizontal axis in days (0 to 60), a vertical axis in retention (0.0 to 1.0), and two superimposed curves: a baseline "no review" curve and a "with review" curve whose <span class="arithmatex">\( S \)</span> value increases at each scheduled review, producing the characteristic sawtooth that rises above the baseline over time.</p>
+<p>Controls (using built-in p5.js controls per project convention):</p>
+<ul>
+<li><strong>Initial strength slider</strong> — <span class="arithmatex">\( S \)</span> at encoding, 1 to 10 days.</li>
+<li><strong>Review-interval dropdown</strong> — presets: {none, daily, SM-2 expanding (1, 3, 7, 14, 30 days), Leitner-style doubling}.</li>
+<li><strong>Strength-gain-per-review slider</strong> — multiplicative factor by which <span class="arithmatex">\( S \)</span> increases at each successful retrieval (1.5× to 3×).</li>
+<li><strong>Show-area-under-curve checkbox</strong> — shades the integral of retention over time to visualize <em>total</em> knowledge held across the period.</li>
+<li><strong>Reset button</strong> — restores default values.</li>
+</ul>
+<p>Learning objective (Bloom level: Analyze): <em>Given a review schedule, predict whether the resulting retention trajectory will beat a no-review baseline at day 30.</em></p>
+<p>Canvas responsive via <code>updateCanvasSize()</code> as first line of <code>setup()</code>; parented to the standard <code>&lt;main&gt;&lt;/main&gt;</code> element.</p>
+<p>Implementation: p5.js sketch in <code>/docs/sims/forgetting-curve-simulator/</code> with <code>main.html</code>, <code>script.js</code>, <code>local.css</code>, and <code>index.md</code>. Generated via the <code>microsim-generator</code> skill.</p>
+</details>
+<p>A careful caveat about Ebbinghaus. His data come from a single subject (himself), memorizing artificial material, in controlled conditions. The <em>shape</em> of the curve replicates well across modern experiments; the <em>parameters</em> vary dramatically with material, learner, and testing conditions. Quoting the curve as "we forget 80% in a day" treats a shape as a number — a move this book tries not to make.</p>
+<h2 id="retrieval-strength-vs-storage-strength">Retrieval Strength vs. Storage Strength<a class="headerlink" href="#retrieval-strength-vs-storage-strength" title="Permanent link">¶</a></h2>
+<p>If the forgetting curve described everything, retention would be a single-dimension quantity: how much is left. Robert and Elizabeth Bjork's <strong><em>New Theory of Disuse</em></strong>, developed through the 1990s and refined since, proposes that memory has <em>two</em> dimensions, and that conflating them is the root cause of the highlighter illusion.</p>
+<ul>
+<li><strong><em>Retrieval strength</em></strong> is the current accessibility of a memory — how easily it can be pulled up <em>right now</em>, given the current cues. Retrieval strength fluctuates rapidly: it spikes right after you see the answer, it falls as time passes, and it depends on context.</li>
+<li><strong><em>Storage strength</em></strong> is the durability of the memory — how well it is learned in a sense that persists across time. Storage strength changes slowly and, crucially, <em>only increases</em> in the Bjork framework. It never decreases; what decreases is retrieval strength relative to it.</li>
+</ul>
+<p>The distinction matters because the <em>feeling</em> of knowing corresponds to retrieval strength, while what we actually care about corresponds to storage strength. A phone number you just looked up has high retrieval strength (you can rattle it off) and low storage strength (tomorrow it's gone). Your childhood address has low retrieval strength (you have to dig) and high storage strength (once retrieved, it's rock-solid). A studied vocabulary word with a well-designed review schedule sits in the middle of both.</p>
+<p>Bjork's deepest prediction is counterintuitive and well-supported: <strong>the <em>gain</em> in storage strength from a study event is an inverse function of the current retrieval strength</strong>. When retrieval strength is already high — when the answer is right there — re-studying produces almost no storage gain. When retrieval strength is low but the answer is still recoverable with effort, re-studying produces a large storage gain. The practical upshot: <em>difficulty at retrieval time is a feature, not a bug</em>. It is the very thing that signals the brain that this memory is worth strengthening.</p>
+<h4 id="diagram-retrieval-strength-vs-storage-strength">Diagram: Retrieval Strength vs. Storage Strength<a class="headerlink" href="#diagram-retrieval-strength-vs-storage-strength" title="Permanent link">¶</a></h4>
+<details>
+<summary>Interactive infographic: 2D plot of memory items along the retrieval-strength and storage-strength axes</summary>
+<p>Type: interactive-infographic
+<strong>sim-id:</strong> retrieval-vs-storage-strength<br>
+<strong>Library:</strong> p5.js<br>
+<strong>Status:</strong> Specified</p>
+<p>An interactive infographic built with the <code>interactive-infographic-overlay</code> skill. Base image: a 2D plot with "Retrieval Strength" on the x-axis (low to high) and "Storage Strength" on the y-axis (low to high), divided into four labeled quadrants — "fleeting" (high RS, low SS), "durable but dormant" (low RS, high SS), "unlearned" (low RS, low SS), and "well-learned" (high RS, high SS). The base image is annotation-free; item dots are placed by the overlay layer.</p>
+<p>Modes (standard for this skill):</p>
+<ul>
+<li><strong>Explore mode:</strong> Hovering each pre-placed dot (a looked-up phone number, a childhood address, a word studied last week, an overlearned multiplication fact, a novel technical term seen once) reveals its RS and SS rationale and the instructional move appropriate to that quadrant.</li>
+<li><strong>Quiz mode:</strong> A short scenario is described ("you crammed this for a test yesterday and aced it; the retest is in a month"); the student clicks the matching quadrant.</li>
+<li><strong>Edit mode (authors only):</strong> Drag dots to recalibrate positions; export updated <code>data.json</code>.</li>
+</ul>
+<p>Learning objective (Bloom level: Analyze): <em>Given a description of a learner's relationship to a piece of material, classify its retrieval and storage strengths and propose the appropriate next instructional move.</em></p>
+<p>Responsive via <code>updateCanvasSize()</code> as first line of <code>setup()</code>; marker anchors preserved on resize.</p>
+<p>Implementation: Generated with the <code>interactive-infographic-overlay</code> skill. Directory <code>/docs/sims/retrieval-vs-storage-strength/</code> contains the standard five files.</p>
+</details>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Why Re-Reading Feels So Productive</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/thinking.png" data-desc-position="bottom"><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Bloom the elephant thinking, one hoof raised"></a>
+Re-reading spikes retrieval strength — the words look familiar, the sentences feel smooth. The brain reports back "I know this." But the storage-strength gain from that event is tiny, because there was no retrieval effort for the system to register as worth strengthening. The <em>feeling</em> of knowing and the <em>fact</em> of knowing have come apart. Chapter 5's whole project is noticing when that's happening and doing something about it.</p>
+</div>
+<h2 id="retrieval-practice-and-the-testing-effect">Retrieval Practice and the Testing Effect<a class="headerlink" href="#retrieval-practice-and-the-testing-effect" title="Permanent link">¶</a></h2>
+<p>If the theoretical move is the RS/SS distinction, the practical move is <strong><em>retrieval practice</em></strong> — the deliberate act of pulling information <em>out</em> of memory rather than reading it back in. A flashcard you try to answer from memory is retrieval practice. A free-response question you attempt before checking the key is retrieval practice. Highlighting, re-reading, and passive review are not.</p>
+<p>The <strong><em>testing effect</em></strong> is the empirical finding that taking a test on material produces better long-term retention than re-studying that material for the same amount of time — even when the test has no feedback. The effect was documented as early as the 1910s, but the modern evidence base comes from a sustained experimental program by Henry Roediger, Jeffrey Karpicke, and collaborators beginning in the early 2000s. In their 2006 paper <em>Test-Enhanced Learning</em>, students who read a prose passage once and then took a free-recall test on it outperformed students who read the passage four times, on a delayed criterion test one week later. The re-readers reported <em>feeling</em> better prepared. The tested group did not, and yet they retained more.</p>
+<p>The testing effect is one of the most robustly replicated findings in the learning sciences. Roediger and Karpicke's work has been reproduced across ages from elementary school through medical residents, across material from word lists to integrated scientific texts, and across delay intervals from minutes to months. Meta-analyses consistently show moderate-to-large effect sizes in controlled conditions. The experimental evidence is strong; the causal direction is clear. When a textbook says "retrieval practice beats re-reading," it is saying something that has been tested hard enough to trust.</p>
+<p>A note on what <em>kind</em> of test produces the effect. Both open-ended and multiple-choice formats yield benefits, but free-recall and short-answer formats — ones that require the learner to <em>generate</em> the answer — produce larger gains than recognition formats. The mechanism matters: it is the retrieval effort that strengthens the trace. A test that delivers the answer in the question stem generates less effort, and therefore less gain.</p>
+<h2 id="recall-vs-recognition">Recall vs. Recognition<a class="headerlink" href="#recall-vs-recognition" title="Permanent link">¶</a></h2>
+<p>Not all retrieval tasks are equivalent. <strong><em>Recall</em></strong> is the generation of an answer from memory with minimal cueing — a fill-in-the-blank, a free-response essay, a "what's the capital of France?" prompt with no answer choices. <strong><em>Recognition</em></strong> is the identification of a correct answer from a set of candidates — a multiple-choice question, a true/false prompt, a matching task.</p>
+<p>Recall is harder than recognition at the moment of retrieval, and that asymmetry is exactly what makes it more diagnostically valuable. Recognition piggybacks on the <strong><em>retrieval cue</em></strong> — the specific context, phrasing, or options that trigger access to a stored memory — which is why a multiple-choice question can return a "correct" answer that the learner could not have generated unprompted. The <strong><em>encoding specificity principle</em></strong> (Tulving and Thomson, 1973) sharpens this further: retrieval is best when the cues at test match the cues at encoding. A learner who studied with one set of cues can fail on a recognition test with different cues, and succeed on a recall test where the cues come from their own generated context.</p>
+<p>The table below compares the three main retrieval formats on the three dimensions that matter for chapter design.</p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Cue strength at test</th>
+<th>Retrieval effort</th>
+<th>Diagnostic value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Free recall ("What are the three stages of memory?")</td>
+<td>Minimal — only the prompt</td>
+<td>High; learner generates the entire answer</td>
+<td>High; distinguishes real retention from familiarity</td>
+</tr>
+<tr>
+<td>Cued recall ("The brief buffer for visual input is called _____.")</td>
+<td>Moderate — stem narrows the space</td>
+<td>Medium; learner completes a partial answer</td>
+<td>Medium-high; more sensitive than recognition but easier to grade</td>
+</tr>
+<tr>
+<td>Recognition ("Which is the visual sensory register? (a) iconic (b) echoic © haptic (d) phonological")</td>
+<td>High — answer present among options</td>
+<td>Low; select rather than generate</td>
+<td>Low-medium; false positives from familiarity inflate apparent knowledge</td>
+</tr>
+</tbody>
+</table>
+<p>The design implication is pointed. A chapter whose only retention check is multiple-choice will <em>over-report</em> student knowledge, because recognition masks fragile traces that would fail a recall prompt. When the quiz generator produces assessment items in later chapters, we will deliberately include free-recall prompts — they are harder to author and harder to grade, and they are the format that actually bends the forgetting curve.</p>
+<h2 id="desirable-difficulty">Desirable Difficulty<a class="headerlink" href="#desirable-difficulty" title="Permanent link">¶</a></h2>
+<p>The Bjorks coined the term <strong><em>desirable difficulty</em></strong> for the family of instructional manipulations that <em>feel</em> harder during study but produce better long-term retention. Spacing, interleaving, free recall over recognition, variable practice conditions, and reduced feedback frequency are all desirable difficulties. The word "desirable" is doing real work: these manipulations are not virtuous because they are hard; they are hard because they are the signatures of genuine retrieval effort, which is what the storage system responds to.</p>
+<p>The catch is the word "desirable." Not all difficulty is desirable. Difficulty that comes from confusing instructions, broken diagrams, or impossible prerequisites is <strong><em>extraneous difficulty</em></strong> (in the Chapter 4 sense) and does nothing for retention — it just consumes working memory. The distinction is sometimes subtle: an interleaved practice set that mixes two topics is desirable difficulty if the learner has the schemas to separate them, and it is extraneous difficulty if they don't. Dosing matters.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">A Field Test for Desirable Difficulty</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/tip.png" data-desc-position="bottom"><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Bloom the elephant giving a tip"></a>
+If a difficulty produces effort that <em>does eventually resolve into an answer</em> — even a wrong one followed by a corrective — it is likely desirable. If it produces effort that hits a wall the learner cannot climb, it is extraneous. The test is whether the struggle is generative or terminal.</p>
+</div>
+<h2 id="spaced-repetition">Spaced Repetition<a class="headerlink" href="#spaced-repetition" title="Permanent link">¶</a></h2>
+<p>The second load-bearing intervention in this chapter, alongside retrieval practice, is <strong><em>spaced repetition</em></strong> — the scheduling of reviews at increasing intervals across time, rather than clustered into a single session.</p>
+<p>Two opposing patterns are worth defining together. <strong><em>Massed practice</em></strong> concentrates all study of a topic into a single contiguous block — the all-nighter, the cram session, the "one long practice set" pattern. <strong><em>Distributed practice</em></strong> (also called <strong><em>spaced practice</em></strong>) spreads the same total study time across multiple sessions separated by rest intervals. The <strong><em>spacing effect</em></strong> is the robust empirical finding that distributed practice produces better long-term retention than massed practice when total study time is held constant.</p>
+<p>The spacing effect has been documented across more than a century of experimental work — Ebbinghaus himself noted it — and reproduced across topics from vocabulary to surgical skills to second-language grammar. Cepeda, Pashler, and colleagues' 2006 meta-analysis integrated hundreds of studies and found a consistent advantage for distributed over massed practice, with effect sizes that grow as the retention interval lengthens. The finding is one of the small set of learning-science results strong enough to be treated as design constraint rather than design preference.</p>
+<p>Why does spacing work? The dominant account is that each retrieval attempt after a delay is <em>harder</em> than a retrieval at short delay — retrieval strength has fallen — which by Bjork's principle produces a larger storage-strength gain per event. Massed practice keeps retrieval strength artificially high, which makes every restudy feel successful and each one contribute almost nothing to storage. Spacing introduces the desirable difficulty that massed practice suppresses.</p>
+<p>The table below summarizes the tradeoffs between three practice schedules on four dimensions that matter for textbook design.</p>
+<table>
+<thead>
+<tr>
+<th>Schedule</th>
+<th>Pattern</th>
+<th>Short-term performance</th>
+<th>Long-term retention</th>
+<th>Learner preference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Massed</td>
+<td>All practice in one block</td>
+<td>High — feels fluent</td>
+<td>Low — decays fast</td>
+<td>Preferred (feels easy, feels productive)</td>
+</tr>
+<tr>
+<td>Distributed (blocked)</td>
+<td>Same topic repeated across sessions with gaps</td>
+<td>Moderate during practice</td>
+<td>High</td>
+<td>Less preferred</td>
+</tr>
+<tr>
+<td>Interleaved</td>
+<td>Multiple topics mixed across and within sessions</td>
+<td>Low during practice — confusing</td>
+<td>Highest (for discrimination)</td>
+<td>Least preferred</td>
+</tr>
+</tbody>
+</table>
+<p>The learner-preference column is the one to watch. Learners consistently rate <em>less effective</em> schedules as <em>more effective</em>, because short-term fluency is what the metacognitive system monitors. This inversion — the regret with which experienced learners discover that what felt best was not best — is the single strongest reason for a textbook to make its scheduling decisions <em>for</em> the learner rather than leaving them to intuition.</p>
+<h4 id="diagram-spaced-retrieval-schedule-timeline">Diagram: Spaced Retrieval Schedule Timeline<a class="headerlink" href="#diagram-spaced-retrieval-schedule-timeline" title="Permanent link">¶</a></h4>
+<details>
+<summary>Diagram: SM-2-style expanding review intervals on a calendar timeline</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> spaced-retrieval-timeline<br>
+<strong>Library:</strong> Mermaid<br>
+<strong>Status:</strong> Specified</p>
+<p>A horizontal Mermaid timeline (using the <code>gantt</code> or custom <code>flowchart LR</code> layout) showing a single flashcard's review schedule across a 60-day window. Initial encoding at day 0, first review at day 1, then day 3, then day 7, then day 14, then day 30, then day 60 — the classic SM-2 expanding interval pattern. Each review event is marked by a colored tick; successful reviews extend the next interval by the SM-2 ease factor, while a failed review resets the card to day-1 interval (shown as a dashed secondary track).</p>
+<p>Annotations on each interval call out the ratio to the previous interval (1 day → 3 days is 3×; 3 → 7 is ~2.3×; 7 → 14 is 2×; 14 → 30 is ~2.1×) and the observation that the ratio approaches a constant as the schedule matures. A small inset shows the alternative Leitner-box schedule (1, 2, 4, 8, 16 days) for comparison, with each box labeled by its promotion rule.</p>
+<p>Implementation: Mermaid <code>flowchart LR</code> with custom <code>linkStyle</code> for the failure-reset track, embedded in the chapter markdown. Responsive via MkDocs Material's native Mermaid rendering.</p>
+</details>
+<h2 id="interleaving">Interleaving<a class="headerlink" href="#interleaving" title="Permanent link">¶</a></h2>
+<p><strong><em>Interleaving</em></strong> is the scheduling pattern in which multiple topics or problem types are mixed within a single practice session, rather than blocked into same-topic runs. A blocked math practice set does twenty problems of type A, then twenty of type B, then twenty of type C. An interleaved set shuffles them — AABBCABACC and so on. The interleaved pattern is harder during practice, and produces better long-term performance when the learner later has to <em>discriminate</em> between the types in novel contexts.</p>
+<p>Doug Rohrer's 2007 studies on mathematics learning are the standard reference. Students in the interleaved condition scored lower on the practice exercises themselves; on the delayed test, they outperformed the blocked-practice group by substantial margins. The effect generalizes to categorization tasks (distinguishing artists' styles), to medical diagnosis training, and to motor-skill learning where distinct movement patterns must be selected on the fly.</p>
+<p>The mechanism has two parts. First, interleaving forces the learner to <em>identify which type of problem this is</em> before applying a procedure — a discrimination step that blocked practice bypasses entirely. Second, interleaving spaces successive encounters with any one type, so interleaving and spacing partly overlap. The two effects are separable but correlated; most practical schedules bundle them together.</p>
+<p>An important qualification: interleaving works when the topics are <em>confusable</em> and the learner needs to discriminate between them. Interleaving unrelated topics (Spanish vocabulary and Calculus limits in the same set) does not produce the discrimination benefit; it just introduces task-switching cost. The design rule is <em>interleave within a family, block across families</em>.</p>
+<h2 id="the-leitner-system-spaced-repetition-by-hand">The Leitner System: Spaced Repetition by Hand<a class="headerlink" href="#the-leitner-system-spaced-repetition-by-hand" title="Permanent link">¶</a></h2>
+<p>Long before software, the German journalist Sebastian Leitner described a physical flashcard scheduling system in his 1972 book <em>So lernt man lernen</em> that encodes both retrieval practice and spacing in cardboard. The <strong><em>Leitner system</em></strong> uses a series of boxes — typically five — with progressively longer review intervals. A new card starts in Box 1 (reviewed daily); a correct answer promotes the card to the next box (reviewed every few days, then weekly, then biweekly, then monthly); an incorrect answer demotes the card all the way back to Box 1.</p>
+<p>The scheme is a discrete approximation of Bjork's principle: cards the learner reliably retrieves move toward less frequent review, concentrating effort on weak items; cards the learner fails reset to high frequency until they stabilize. A well-run Leitner deck approaches steady state in which most cards live in the long-interval boxes and only a small working set cycles through Box 1.</p>
+<h4 id="diagram-leitner-box-simulator">Diagram: Leitner Box Simulator<a class="headerlink" href="#diagram-leitner-box-simulator" title="Permanent link">¶</a></h4>
+<details>
+<summary>MicroSim: animated Leitner system with five boxes, promotion and demotion rules, and a population view over review sessions</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> leitner-box-simulator<br>
+<strong>Library:</strong> p5.js<br>
+<strong>Status:</strong> Specified</p>
+<p>An interactive p5.js MicroSim that visualizes a five-box Leitner system over many simulated review sessions. The canvas shows five labeled boxes from left to right with their review intervals (1d, 2d, 4d, 8d, 16d), a deck of cards drawn as stacked rectangles with the fraction in each box, and a time cursor that advances by day. On each review day, the cards due from that box are drawn; for each card a per-card "true retention probability" (set by a slider) determines correct/incorrect, which promotes or demotes it accordingly.</p>
+<p>Controls (using built-in p5.js controls per project convention):</p>
+<ul>
+<li><strong>Deck size slider</strong> — 20 to 500 cards.</li>
+<li><strong>Baseline retention slider</strong> — per-review probability a card in Box <span class="arithmatex">\( k \)</span> is answered correctly; defaults to rise with box index to approximate mastery.</li>
+<li><strong>Forgetting-rate slider</strong> — probability per day that a card in a high box decays enough to fail at next review.</li>
+<li><strong>Speed slider</strong> — simulation days per second.</li>
+<li><strong>Play / Pause / Reset buttons</strong>.</li>
+<li><strong>Show-histogram checkbox</strong> — toggles a live histogram of the card population across boxes over time.</li>
+</ul>
+<p>Learning objective (Bloom level: Apply): <em>Given a Leitner configuration, predict the steady-state distribution of cards across boxes.</em></p>
+<p>Canvas responsive via <code>updateCanvasSize()</code> as first line of <code>setup()</code>; parented to the standard <code>&lt;main&gt;&lt;/main&gt;</code> element.</p>
+<p>Implementation: p5.js sketch in <code>/docs/sims/leitner-box-simulator/</code> with <code>main.html</code>, <code>script.js</code>, <code>local.css</code>, and <code>index.md</code>. Generated via the <code>microsim-generator</code> skill.</p>
+</details>
+<p>The Leitner system is worth building once by hand even if the reader will later use software. The cardboard version makes visible what software hides: the growing imbalance between the short-interval and long-interval boxes, the way new cards cluster in Box 1 until they stabilize, and the way a single bad review day floods Box 1 with demoted cards. That visibility is pedagogically useful.</p>
+<h2 id="spaced-retrieval-scheduling-in-software">Spaced Retrieval Scheduling in Software<a class="headerlink" href="#spaced-retrieval-scheduling-in-software" title="Permanent link">¶</a></h2>
+<p>Software schedulers generalize the Leitner idea by letting the interval be a continuous function of the learner's history with each card, rather than a fixed step up or down. <strong><em>Spaced retrieval scheduling</em></strong> is the broad term for algorithms that compute, for each item, the next review time that will best balance retention against study cost.</p>
+<p>The classical algorithm is <strong><em>SM-2</em></strong>, introduced by Piotr Wozniak in SuperMemo in 1987 and still embedded in widely-used tools like Anki. SM-2 tracks an "ease factor" per card that adjusts based on the learner's graded response (easy, good, hard, again). On a successful review, the next interval is multiplied by the ease factor, producing the classic expanding schedule (1 day, 3 days, 7 days, roughly doubling from there). On a failure, the card resets and the ease factor decreases.</p>
+<p>More recent schedulers — <strong><em>FSRS</em></strong> (Free Spaced Repetition Scheduler, published openly beginning in 2022) is the current state of the art — replace SM-2's hand-tuned formula with a memory model fit to empirical review data, producing per-card retention predictions that are substantially more accurate than SM-2's. FSRS and its descendants treat retention as a probabilistic function of elapsed time, prior reviews, and card-specific difficulty, and they schedule each review to land at a user-chosen target retention probability (e.g., review when predicted retention drops to 0.9).</p>
+<p>For a chapter author, the implementation details matter less than the design principle: <strong>a good scheduler concentrates the learner's effort on the items most likely to decay next</strong>, letting mastered items drift toward very long intervals and bringing weak items back quickly. The principle is the same as Leitner's — it is just expressed as a continuous function rather than a discrete ladder.</p>
+<h2 id="the-storage-strength-dynamics-loop">The Storage-Strength Dynamics Loop<a class="headerlink" href="#the-storage-strength-dynamics-loop" title="Permanent link">¶</a></h2>
+<p>The Bjork framework is easiest to hold onto as a system with two coupled loops. One loop — the storage flywheel — produces durable learning when retrieval is effortful. The other loop — the ease trap — produces the highlighter illusion when retrieval is too easy.</p>
+<p>Before the diagram, one vocabulary note we'll reuse. A <strong><em>reinforcing loop</em></strong> is one whose sign product around the loop is positive: an increase anywhere eventually comes back as a further increase. A <strong><em>balancing loop</em></strong> tends toward a steady state. The storage dynamics combine a reinforcing loop that builds learning with a second reinforcing loop that <em>looks</em> like it's building learning but actually starves it — two engines running in the same machine, one productive, one corrosive.</p>
+<h4 id="diagram-bjorks-storage-dynamics-flywheel-and-ease-trap">Diagram: Bjork's Storage Dynamics — Flywheel and Ease Trap<a class="headerlink" href="#diagram-bjorks-storage-dynamics-flywheel-and-ease-trap" title="Permanent link">¶</a></h4>
+<details>
+<summary>Causal loop diagram showing Bjork's retrieval-effort flywheel and the counterintuitive ease-trap loop that starves storage gain</summary>
+<p>Type: causal-loop-diagram
+<strong>sim-id:</strong> bjork-storage-dynamics<br>
+<strong>Library:</strong> Mermaid<br>
+<strong>Status:</strong> Specified</p>
+<p>A causal loop diagram rendered with Mermaid <code>flowchart LR</code> showing seven variable-nodes and two named loops. Nodes, written as noun phrases: "retrieval effort at study", "storage strength", "durability of memory", "retrieval strength at next study", "perceived fluency", "restudy frequency", "storage gain per study event".</p>
+<p>Edges and polarities:</p>
+<ul>
+<li>retrieval effort at study → storage gain per study event (+) — effortful retrieval produces large storage gains (Bjork's principle)</li>
+<li>storage gain per study event → storage strength (+) — gains accumulate as storage</li>
+<li>storage strength → durability of memory (+, with delay marker ⧚) — storage translates into long-term durability</li>
+<li>durability of memory → retrieval effort at study (+) — durable memory recovered after a delay requires real effort to retrieve, feeding the flywheel on the <em>next</em> spaced review</li>
+<li>retrieval strength at next study → perceived fluency (+) — easy retrieval feels fluent</li>
+<li>perceived fluency → restudy frequency (−) — fluent material feels learned and is restudied less</li>
+<li>perceived fluency → retrieval effort at study (−) — fluent material produces low-effort retrievals</li>
+<li>retrieval effort at study → storage gain per study event (+) (repeated for clarity; this is the effort → gain link)</li>
+<li>high retrieval strength → storage gain per study event (−) — when retrieval is easy, the gain is small (the counterintuitive Bjork prediction)</li>
+</ul>
+<p>Loop labels placed at each loop's geometric center:</p>
+<ul>
+<li><strong>R1 — Storage flywheel (reinforcing, productive).</strong> retrieval effort → storage gain → storage strength → durability → (after delay, on next spaced review) renewed retrieval effort → more gain. Spinning this loop is the whole purpose of spaced retrieval practice.</li>
+<li><strong>R2 — Ease trap (reinforcing, corrosive).</strong> High retrieval strength → low perceived effort → low storage gain → low durability → but <em>also</em> high perceived fluency → "I know this" → less restudy, or restudy at short intervals that preserve high retrieval strength, which keeps the gain low. The loop feels like learning and is not.</li>
+</ul>
+<p>Visual treatment: R1 nodes in cool blue; R2 nodes in warm red-orange; the shared node "retrieval effort at study" drawn with a dual border to signal that both loops pass through it and that effort is the lever that switches between them. Delay marker ⧚ on the storage strength → durability edge. Every edge labeled with <code>+</code> or <code>−</code>.</p>
+<p>Implementation: Mermaid <code>flowchart LR</code> with <code>linkStyle</code> declarations for polarity coloring and <code>classDef</code> for loop grouping. A one-paragraph walkthrough of R1 in plain English accompanies the diagram in the prose that follows.</p>
+</details>
+<p>Read loop <strong>R1</strong> — the storage flywheel — in plain English. A study event that requires effortful retrieval produces a large gain in storage strength; accumulated storage strength translates (with delay) into durability; durability, when combined with a spacing interval that lets retrieval strength fall, means the <em>next</em> scheduled review will again require real effort, which again produces a large gain. Each trip around the loop makes the memory more durable and the next review more productive. Now read <strong>R2</strong> — the ease trap. A restudy schedule that preserves high retrieval strength (short intervals, re-reading, highlighting) produces small storage gains per event; small storage gains means low durability; but fluent restudy also <em>feels</em> like learning, so the learner repeats the pattern. The loop is self-sustaining and quietly unproductive.</p>
+<p>The practical design move is to push every quiz, glossary-review prompt, and practice exercise toward R1 and away from R2. That means: generate free-recall over recognition where possible, schedule reviews at intervals that let retrieval strength fall before restudy, and resist the learner's (and the author's!) preference for patterns that feel fluent.</p>
+<h2 id="design-implications-for-quiz-glossary-and-faq-generators">Design Implications for Quiz, Glossary, and FAQ Generators<a class="headerlink" href="#design-implications-for-quiz-glossary-and-faq-generators" title="Permanent link">¶</a></h2>
+<p>The research in this chapter translates directly into constraints on the artifact generators we build in later chapters. The table below captures the rules we'll hold ourselves to.</p>
+<table>
+<thead>
+<tr>
+<th>Generator</th>
+<th>Design rule</th>
+<th>Learning-science basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quiz generator</td>
+<td>Include free-recall and short-answer items, not only multiple choice</td>
+<td>Recall &gt; recognition for retrieval effort and diagnostic value</td>
+</tr>
+<tr>
+<td>Quiz generator</td>
+<td>Tag each item with a recommended review interval for spaced scheduling</td>
+<td>Spacing effect; enables SM-2 / FSRS-style scheduling downstream</td>
+</tr>
+<tr>
+<td>Quiz generator</td>
+<td>Interleave items from related chapters within a review session</td>
+<td>Interleaving for discrimination between confusable concepts</td>
+</tr>
+<tr>
+<td>Glossary generator</td>
+<td>Support "test me" mode that hides the definition and prompts recall</td>
+<td>Testing effect; converts glossary from reference into retrieval practice</td>
+</tr>
+<tr>
+<td>Glossary generator</td>
+<td>Track per-term review history (without storing personal identifiers)</td>
+<td>Enables Leitner-style spacing at Level 2 intelligent-textbook scope</td>
+</tr>
+<tr>
+<td>FAQ generator</td>
+<td>Prefer questions that require explanation over questions that require identification</td>
+<td>Elaboration; deeper encoding produces richer retrieval cues</td>
+</tr>
+<tr>
+<td>Chapter content</td>
+<td>Close every section with one retrieval prompt the reader can attempt without re-reading</td>
+<td>Embeds the testing effect in the prose, not only in the assessment</td>
+</tr>
+<tr>
+<td>Chapter content</td>
+<td>Schedule revisits of prior-chapter concepts at expanding intervals across the book</td>
+<td>Distributed practice across the reading timeline, not only within a chapter</td>
+</tr>
+<tr>
+<td>Chapter content</td>
+<td>Name the desirable difficulty explicitly when it appears</td>
+<td>Reduces learner resistance by normalizing the effortful experience</td>
+</tr>
+</tbody>
+</table>
+<p>Notice that most of these rules sit inside the generators rather than inside the prose. The author does not have to remember to apply the testing effect on every page; the <em>tools</em> enforce it.</p>
+<h2 id="critical-thinking-what-the-evidence-does-and-does-not-support">Critical Thinking: What the Evidence Does and Does Not Support<a class="headerlink" href="#critical-thinking-what-the-evidence-does-and-does-not-support" title="Permanent link">¶</a></h2>
+<p>A short exercise in evidence-base discipline. Three of the claims below are strongly supported by experimental evidence; one is not, despite its popularity. Read each and decide which is which before reading the verdict.</p>
+<ol>
+<li>"Taking a test on material produces better long-term retention than re-studying the material for the same duration, even without feedback."</li>
+<li>"Spacing reviews across multiple sessions produces better retention than the same total study time in a single block."</li>
+<li>"People retain about 10% of what they read, 20% of what they hear, 30% of what they see, and 90% of what they do." (The <strong>learning pyramid</strong>, widely circulated with various percentages and attributed — incorrectly — to NTL Institute or to Edgar Dale.)</li>
+<li>"Interleaving related problem types produces better discrimination performance on delayed tests than blocking."</li>
+</ol>
+<p>Claims 1, 2, and 4 are supported by large experimental literatures with replicated effects across populations, materials, and retention intervals. Roediger and Karpicke on testing, Cepeda and colleagues on spacing, Rohrer and colleagues on interleaving — all controlled experiments with clear causal designs.</p>
+<p>Claim 3 is not supported. The learning pyramid percentages trace back to no identifiable primary study; the numbers appear to have been fabricated or drastically misattributed in corporate-training materials during the 1960s and 70s, and have been propagated since in countless blog posts, slide decks, and textbooks without anyone producing the original data. Will Thalheimer and others have documented the provenance problem in detail: there is no dataset behind the numbers. The claim <em>feels</em> plausible because it has the shape of a real finding — active engagement does tend to produce better outcomes than passive reading — but that shape has been laundered through invented precision into something the evidence does not support.</p>
+<p>This is the pattern the book trains against. An AI-authored chapter that repeats the learning pyramid because it appears frequently in training data would launder folk belief as authority. The discipline is: <strong>check the primary source, name the study design, and flag claims whose precision exceeds their evidence</strong>.</p>
+<p>For your own practice, extend the analysis: <em>pick one learning-related claim you've seen repeated recently — in a blog post, a LinkedIn post, a colleague's presentation — and trace it to its primary source. What is the study design? What is the effect size? What is the population? Where would you expect the effect to fail?</em> That single habit, applied routinely, will protect you from the majority of folk-pedagogy claims that circulate in the wild.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">The Learning Pyramid Is Not Evidence</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/warning.png" data-desc-position="bottom"><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Bloom the elephant flagging a warning"></a>
+Whenever you see "people remember X% of what they…" in a training deck, mentally flag it as unsourced. The <em>shape</em> of the claim (active beats passive) reflects real findings. The <em>numbers</em> attached to it do not. Treat the precision as a tell: real effect sizes vary by population and material; invented ones are always tidy.</p>
+</div>
+<h2 id="common-misconceptions">Common Misconceptions<a class="headerlink" href="#common-misconceptions" title="Permanent link">¶</a></h2>
+<p>A few retention-related misreadings are common enough to address head-on.</p>
+<ul>
+<li><strong>"I know it when I see it, so I know it."</strong> Recognition can be intact while recall has faded. The "I know it" feeling comes from retrieval-strength cues the multiple-choice options provide. Without the options, the learner may not produce the answer. Test with recall before trusting the feeling.</li>
+<li><strong>"Re-reading is productive because it feels productive."</strong> Fluency of re-reading produces the highlighter illusion. The feeling of familiarity does not translate into long-term retention at rates remotely comparable to retrieval practice.</li>
+<li><strong>"Cramming works — I got an A on the test."</strong> Cramming produces high retrieval strength briefly. A test held the next day will often yield the A and a week later yield almost nothing. Short-term performance and long-term retention are different quantities, and massed practice optimizes the first at the cost of the second.</li>
+<li><strong>"Spaced practice means studying less."</strong> Spaced practice redistributes the same total study time across more sessions. The total time is held constant; only the schedule changes.</li>
+<li><strong>"Interleaving always helps."</strong> Interleaving helps when the topics are confusable and discrimination matters. Interleaving unrelated topics just adds task-switching cost without the discrimination benefit.</li>
+<li><strong>"The forgetting curve proves we forget 80% in a day."</strong> The curve is a shape, not a number; its parameters depend heavily on material, learner, and testing conditions.</li>
+<li><strong>"The learning pyramid percentages are established science."</strong> They are not. See the previous section.</li>
+</ul>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">This Chapter Inverts Something Important</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/encouraging.png" data-desc-position="bottom"><img src="../../img/mascot/encouraging.png" class="mascot-admonition-img" alt="Bloom the elephant offering encouragement"></a>
+A lot of what this chapter asks you to believe runs against the subjective experience of studying. Effortful retrieval feels worse than re-reading; spacing feels less productive than cramming; interleaving feels slower than blocking. If those inversions feel uncomfortable on a first read, that's not a bug in the chapter — it's the desirable difficulty working. The payoff is that the next time you design a quiz or a review schedule, you'll have a principled reason to make the choice that <em>feels</em> harder.</p>
+</div>
+<h2 id="retrieval-check">Retrieval Check<a class="headerlink" href="#retrieval-check" title="Permanent link">¶</a></h2>
+<p>Close the tab and try these from memory. This section is itself an instance of retrieval practice — the whole chapter is an argument for why you should attempt these before looking back at the text, even when doing so feels harder than re-reading. That feeling is the point.</p>
+<ol>
+<li><strong>Sketch</strong> the forgetting curve and write down the exponential form that fits it. Name two interventions that flatten the curve. (Level: Remember / Understand.)</li>
+<li><strong>Explain</strong> Bjork's distinction between retrieval strength and storage strength, and use it to explain why re-reading feels productive but produces little long-term gain. (Level: Understand.)</li>
+<li><strong>Given</strong> a study plan that allocates ten hours to exam preparation, design two schedules — one massed, one distributed — for the same total time, and predict which will produce higher retention at a four-week delay. (Level: Apply.)</li>
+<li><strong>Analyze</strong> the difference between desirable difficulty and extraneous difficulty. Give one example of each from your own learning experience, and name the feature that distinguishes them. (Level: Analyze.)</li>
+<li><strong>Critique</strong> the claim: "Our tutoring app uses spaced repetition, which research shows improves retention by 200%." What study-design details would you need to see before trusting the 200% figure? What does the spacing literature actually support? (Level: Evaluate.)</li>
+<li><strong>Design</strong> a Leitner-style review schedule for a 100-card glossary deck, specifying the number of boxes, the interval per box, and the promotion and demotion rules. Defend your choices. (Level: Create.)</li>
+</ol>
+<p>Stumbling on any of these is diagnostic — it tells you which section to revisit. The struggle is the learning, not a sign that learning failed.</p>
+<h2 id="bridge-to-chapter-6">Bridge to Chapter 6<a class="headerlink" href="#bridge-to-chapter-6" title="Permanent link">¶</a></h2>
+<p>We now have the retention story — the forgetting curve, the Bjork distinction, retrieval practice, the testing effect, the spacing effect, interleaving, and the scheduling algorithms that turn those findings into software. What this story does not yet give us is <em>usefulness</em>. A learner who retains the Pythagorean theorem perfectly but cannot apply it to a new problem has achieved storage without <strong><em>transfer</em></strong> — the ability to deploy knowledge in situations different from the ones in which it was learned. Chapter 6 is about the conditions under which retained knowledge transfers, why transfer is harder than it looks, and how worked examples, variable practice, and scaffolded application can nudge a learner from <em>knowing</em> to <em>doing</em>.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">Durability Is Not the Finish Line</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/celebration.png" data-desc-position="bottom"><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Bloom the elephant celebrating with trunk raised"></a>
+You now have the retention toolkit — retrieval practice, spacing, interleaving, Leitner, and the evidence base that separates real findings from folk claims. Hold onto the headline: retained knowledge isn't useful if it can't transfer to novel situations. Next up: Application and Transfer — how we move from durable storage to fluent use. See you in Chapter 6.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../04-cognitive-architecture/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4. Cognitive Architecture and Load">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                4. Cognitive Architecture and Load
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../06-application-transfer/" class="md-footer__link md-footer__link--next" aria-label="Next: 6. Application and Transfer">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                6. Application and Transfer
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Richard Tandler. All rights reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "content.action.edit", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

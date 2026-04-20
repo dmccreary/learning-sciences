@@ -1,0 +1,2278 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Examines formative and summative assessment, feedback timing and specificity, rubrics, Item Response Theory, diagnostic assessment, metacognition, self-regulated learning, learning analytics, learning dashboards, A/B testing, and the regulatory inflection point that measurement at scale creates (FERPA, COPPA, GDPR, CCPA/CPRA, data minimization, xAPI, Learning Record Store).">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/learning-sciences/chapters/08-measurement-feedback/">
+      
+      
+        <link rel="prev" href="../07-expertise-mastery/">
+      
+      
+        <link rel="next" href="../09-learning-conditions/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Measurement and Feedback - Learning Sciences</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="Measurement and Feedback - Learning Sciences">
+      
+        <meta property="og:description" content="Examines formative and summative assessment, feedback timing and specificity, rubrics, Item Response Theory, diagnostic assessment, metacognition, self-regulated learning, learning analytics, learning dashboards, A/B testing, and the regulatory inflection point that measurement at scale creates (FERPA, COPPA, GDPR, CCPA/CPRA, data minimization, xAPI, Learning Record Store).">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/learning-sciences/assets/images/social/chapters/08-measurement-feedback/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/learning-sciences/chapters/08-measurement-feedback/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="Measurement and Feedback - Learning Sciences">
+      
+        <meta name="twitter:description" content="Examines formative and summative assessment, feedback timing and specificity, rubrics, Item Response Theory, diagnostic assessment, metacognition, self-regulated learning, learning analytics, learning dashboards, A/B testing, and the regulatory inflection point that measurement at scale creates (FERPA, COPPA, GDPR, CCPA/CPRA, data minimization, xAPI, Learning Record Store).">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/learning-sciences/assets/images/social/chapters/08-measurement-feedback/index.png">
+      
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#measurement-and-feedback" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Learning Sciences" class="md-header__button md-logo" aria-label="Learning Sciences" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learning Sciences
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Measurement and Feedback
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/learning-sciences.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Learning Sciences" class="md-nav__button md-logo" aria-label="Learning Sciences" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Learning Sciences
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/learning-sciences.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-foundations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundations of Learning Sciences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-seven-domains/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. The Seven Domains Framework
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-motivation-engagement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Motivation and Engagement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-cognitive-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Cognitive Architecture and Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-knowledge-retention/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Knowledge Retention
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-application-transfer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Application and Transfer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-expertise-mastery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Expertise and Mastery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    8. Measurement and Feedback
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    8. Measurement and Feedback
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-content-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Content Directives
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Required Content Directives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#privacy-reinforcement-mascot-warning-admonition-on-student-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Privacy Reinforcement — Mascot-Warning Admonition on Student Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forward-pointer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forward Pointer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concepts-to-handle-with-care" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts to Handle with Care
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-students-one-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two Students, One Score
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formative-and-summative-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formative and Summative Assessment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-feedback-loop-as-the-unifying-frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Feedback Loop as the Unifying Frame
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Feedback Loop as the Unifying Frame">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-feedback-dynamics-formative-flywheel-vs-summative-pressure-trap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Feedback Dynamics — Formative Flywheel vs. Summative Pressure Trap
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feedback-types-immediate-delayed-corrective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feedback Types: Immediate, Delayed, Corrective
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assessment-rubrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment Rubrics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assessment Rubrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-analytic-vs-holistic-rubric-structure-and-signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Analytic vs. Holistic Rubric — Structure and Signal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#item-response-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Item Response Theory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Item Response Theory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-irt-ability-vs-difficulty-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: IRT Ability-vs-Difficulty Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnostic-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagnostic Assessment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metacognition-and-self-regulated-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metacognition and Self-Regulated Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metacognition and Self-Regulated Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-zimmermans-self-regulated-learning-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Zimmerman's Self-Regulated Learning Cycle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Analytics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Dashboards
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Dashboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-aggregate-quality-metrics-dashboard-synthetic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Aggregate Quality-Metrics Dashboard (Synthetic)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ab-testing-in-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      A/B Testing in Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-metrics-for-intelligent-textbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Metrics for Intelligent Textbooks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-privacy-inflection-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Privacy Inflection Point
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Privacy Inflection Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-minimization-as-a-first-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Minimization as a First Principle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xapi-and-the-learning-record-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      xAPI and the Learning Record Store
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval Check
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bridge-to-chapter-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bridge to Chapter 9
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-learning-conditions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Learning Conditions and Environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-textbook-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Intelligent Textbook Architecture and AI Tooling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-microsims/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. MicroSims and Interactive Visualizations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-mascots-admonitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Pedagogical Mascots and Admonitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-graphic-novels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Graphic Novels and Short-Form Stories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-agent-skills/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. AI Agent Skills for Textbook Generation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-capstone-deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Capstone and Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/graph-viewer/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-content-directives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Content Directives
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Required Content Directives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#privacy-reinforcement-mascot-warning-admonition-on-student-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Privacy Reinforcement — Mascot-Warning Admonition on Student Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forward-pointer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forward Pointer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concepts-to-handle-with-care" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts to Handle with Care
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-students-one-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two Students, One Score
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formative-and-summative-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formative and Summative Assessment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-feedback-loop-as-the-unifying-frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Feedback Loop as the Unifying Frame
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Feedback Loop as the Unifying Frame">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-feedback-dynamics-formative-flywheel-vs-summative-pressure-trap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Feedback Dynamics — Formative Flywheel vs. Summative Pressure Trap
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feedback-types-immediate-delayed-corrective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feedback Types: Immediate, Delayed, Corrective
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assessment-rubrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assessment Rubrics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assessment Rubrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-analytic-vs-holistic-rubric-structure-and-signal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Analytic vs. Holistic Rubric — Structure and Signal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#item-response-theory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Item Response Theory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Item Response Theory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-irt-ability-vs-difficulty-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: IRT Ability-vs-Difficulty Explorer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnostic-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagnostic Assessment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metacognition-and-self-regulated-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metacognition and Self-Regulated Learning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Metacognition and Self-Regulated Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-zimmermans-self-regulated-learning-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Zimmerman's Self-Regulated Learning Cycle
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Analytics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-dashboards" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Dashboards
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Dashboards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-aggregate-quality-metrics-dashboard-synthetic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Aggregate Quality-Metrics Dashboard (Synthetic)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ab-testing-in-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      A/B Testing in Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-metrics-for-intelligent-textbooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quality Metrics for Intelligent Textbooks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-privacy-inflection-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Privacy Inflection Point
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Privacy Inflection Point">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-minimization-as-a-first-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Minimization as a First Principle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xapi-and-the-learning-record-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      xAPI and the Learning Record Store
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval Check
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bridge-to-chapter-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bridge to Chapter 9
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/learning-sciences.git/blob/master/docs/chapters/08-measurement-feedback/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+    </a>
+  
+  
+
+
+<h1 id="measurement-and-feedback">Measurement and Feedback<a class="headerlink" href="#measurement-and-feedback" title="Permanent link">¶</a></h1>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
+<p>You cannot improve what you cannot see. We cover formative and summative assessment, feedback types (immediate, delayed, corrective), rubrics, Item Response Theory, diagnostic assessment, metacognition, self-regulated learning, learning dashboards, A/B testing, and quality metrics. The chapter closes the loop between what a learner does and how instruction responds.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
+<p>This chapter covers the following 23 concepts from the learning graph:</p>
+<ol>
+<li>Formative Assessment</li>
+<li>Summative Assessment</li>
+<li>Learning Analytics</li>
+<li>Feedback Loop</li>
+<li>Immediate Feedback</li>
+<li>Delayed Feedback</li>
+<li>Corrective Feedback</li>
+<li>Assessment Rubric</li>
+<li>Item Response Theory</li>
+<li>Diagnostic Assessment</li>
+<li>Metacognition</li>
+<li>Self-Regulated Learning</li>
+<li>Learning Dashboard</li>
+<li>A/B Testing in Learning</li>
+<li>Quality Metrics</li>
+<li>Privacy Inflection Point</li>
+<li>FERPA</li>
+<li>COPPA</li>
+<li>GDPR</li>
+<li>CCPA / CPRA</li>
+<li>Data Minimization</li>
+<li>xAPI</li>
+<li>Learning Record Store</li>
+</ol>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
+<p>This chapter builds on concepts from:</p>
+<ul>
+<li><a href="../01-foundations/">Chapter 1: Foundations of Learning Sciences</a></li>
+<li><a href="../02-seven-domains/">Chapter 2: The Seven Domains Framework</a></li>
+<li><a href="../04-cognitive-architecture/">Chapter 4: Cognitive Architecture and Load</a></li>
+<li><a href="../06-application-transfer/">Chapter 6: Application and Transfer</a></li>
+<li><a href="../07-expertise-mastery/">Chapter 7: Expertise and Mastery</a></li>
+</ul>
+<h2 id="required-content-directives">Required Content Directives<a class="headerlink" href="#required-content-directives" title="Permanent link">¶</a></h2>
+<p>When the <code>chapter-content-generator</code> skill generates this chapter, it MUST include the following in addition to the concepts listed above. These directives are durable and should be respected on every regeneration.</p>
+<h3 id="privacy-reinforcement-mascot-warning-admonition-on-student-data">Privacy Reinforcement — Mascot-Warning Admonition on Student Data<a class="headerlink" href="#privacy-reinforcement-mascot-warning-admonition-on-student-data" title="Permanent link">¶</a></h3>
+<p>Learning analytics, learning dashboards, and A/B testing are the points in this course where authors are most likely to be tempted to collect, store, or analyze <strong>individual student data</strong> — moving their work from Level 2 (Interactive) to Level 3+ (Adaptive and beyond) on the five-level intelligent-textbook classification introduced in <a href="../01-foundations/">Chapter 1</a> and detailed in <a href="../10-textbook-architecture/">Chapter 10</a>.</p>
+<p>A prominent <code>!!! mascot-warning</code> admonition must appear in or immediately before the Learning Analytics subsection. It must include the mascot image (<code>&lt;img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Bloom warning about regulated student data"&gt;</code>) and communicate, in Bloom's voice:</p>
+<ul>
+<li>The moment an author begins <strong>storing individual student data</strong> — goals, progress, click trails, dashboard interactions, quiz attempts tied to a named learner — the work has crossed into a <strong>highly regulated domain</strong>. Name the regulations explicitly: <strong>FERPA</strong> (US K-12 and higher ed), <strong>COPPA</strong> (US children under 13), <strong>GDPR</strong> (EU residents), and state-level laws such as <strong>CCPA / CPRA</strong> in California.</li>
+<li>The obligations that attach at that moment — <strong>data minimization, informed (often parental) consent, explicit purpose limitation, retention limits, access and deletion rights, encryption at rest and in transit, audit logging, third-party processor agreements,</strong> and <strong>algorithmic bias auditing</strong> when automated decisions affect the learner — are <strong>real, auditable, and outside the scope of this course</strong>.</li>
+<li>Anonymized, aggregate analytics (course-level completion rates, chapter-level average quiz scores, no per-student records) remain inside Level 2 and are safe to use. Anything with a <code>student_id</code> attached is not.</li>
+<li>Actionable guidance: if a project genuinely needs Level 3+ capabilities, partner with an institution that has existing data-governance infrastructure, and adopt open standards like <strong>xAPI</strong> and a <strong>Learning Record Store (LRS)</strong> so that students retain control and portability of their own records.</li>
+<li>Close with the principled framing: <em>we do not collect student data because we have not earned the right to handle it.</em></li>
+</ul>
+<h3 id="forward-pointer">Forward Pointer<a class="headerlink" href="#forward-pointer" title="Permanent link">¶</a></h3>
+<p>A forward pointer to <a href="../10-textbook-architecture/">Chapter 10: Intelligent Textbook Architecture and AI Tooling</a> must appear in the warning, noting that the full five-level classification and its architectural implications are treated there.</p>
+<h3 id="concepts-to-handle-with-care">Concepts to Handle with Care<a class="headerlink" href="#concepts-to-handle-with-care" title="Permanent link">¶</a></h3>
+<p>When discussing the following three concepts in this chapter, the generator MUST keep all examples and diagrams at the <strong>aggregate/anonymized</strong> level (no per-student identifiers, no simulated named-student records):</p>
+<ul>
+<li><em>Learning Analytics</em> — use cohort-level signals in all examples.</li>
+<li><em>Learning Dashboard</em> — show teacher/admin views of aggregate metrics, not individual student timelines with PII.</li>
+<li><em>A/B Testing in Learning</em> — show variant-level outcomes, never individual-learner rosters.</li>
+</ul>
+<p>If a MicroSim is generated for any of these concepts, its data must be synthetic and clearly labeled as such.</p>
+<hr>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome — You Cannot Improve What You Cannot See</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/welcome.png" data-desc-position="bottom"><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Bloom the elephant waving welcome"></a>
+Every mechanism we've studied so far — deliberate practice, retrieval, spacing, transfer, expertise — depends on <em>seeing what is working and what is not</em>. This chapter is about the seeing. We'll cover the assessment types, the feedback shapes, the analytics surfaces, and — crucially — the regulatory line that separates safe aggregate measurement from the highly regulated world of individual student data. The line matters. Let's build a mental model.</p>
+</div>
+<h2 id="two-students-one-score">Two Students, One Score<a class="headerlink" href="#two-students-one-score" title="Permanent link">¶</a></h2>
+<p>Imagine two graduate students, both of whom score 72% on the same ten-item statistics quiz. On the surface, the measurement system has done its job: a number exists, a gradebook cell is populated, a cohort-level average can be computed. Look underneath, though, and the two 72s tell very different stories.</p>
+<p>The first student answered the six easiest items correctly and the four hardest incorrectly. Her profile is textbook: mastery of foundational material, gaps in the harder extensions. The remediation move is obvious — spaced retrieval on the harder extensions, with worked examples.</p>
+<p>The second student answered three of the easiest items wrong and three of the hardest correct. His profile is peculiar and revealing — he has pockets of advanced understanding and pockets of missing foundation. Treating him as "72% of the way there" and sending him into the next unit will almost certainly fail; his advanced pockets will paper over the foundational gaps until a later chapter collapses under their weight.</p>
+<p>A single summary number is, in a real sense, <em>below the resolution</em> at which learning happens. It is an average over a distribution the instructor cannot see. Measurement that stops at the summary is not measurement in the sense this chapter will use the word. The rest of the chapter is about the resolution that makes a feedback loop actually close.</p>
+<p>By the end of this chapter you will be able to:</p>
+<ul>
+<li>Distinguish formative from summative assessment and place each in its pedagogical role.</li>
+<li>Compare immediate, delayed, and corrective feedback by mechanism, timing, and cognitive-load cost.</li>
+<li>Write an analytic rubric whose criteria do not leak ambiguity.</li>
+<li>Explain the Rasch model and why Item Response Theory improves on raw percent-correct scoring.</li>
+<li>Design a diagnostic assessment that pinpoints misconceptions rather than ranking learners.</li>
+<li>Describe Zimmerman's self-regulated-learning cycle and its role in metacognitive growth.</li>
+<li>Recognize the Level 2 / Level 3 privacy inflection point, name the four major regulations that attach at it, and articulate the obligations that follow.</li>
+<li>Decide when xAPI and a Learning Record Store are the principled path for a project that genuinely needs Level 3+ capabilities.</li>
+</ul>
+<h2 id="formative-and-summative-assessment">Formative and Summative Assessment<a class="headerlink" href="#formative-and-summative-assessment" title="Permanent link">¶</a></h2>
+<p>Two kinds of assessment do two different jobs, and conflating them is one of the most common structural errors in course design.</p>
+<p><strong><em>Formative assessment</em></strong> is assessment <em>for</em> learning — measurement performed while instruction is still in motion, whose purpose is to feed information back into the instruction so that the learner's next move is better than their last. Michael Scriven introduced the term in 1967; Paul Black and Dylan Wiliam's 1998 review, <em>Inside the Black Box</em>, is the canonical synthesis of its classroom evidence base, reporting effect sizes in the 0.4–0.7 range on standardized measures when formative practices are taken seriously.</p>
+<p><strong><em>Summative assessment</em></strong> is assessment <em>of</em> learning — measurement performed at the end of a unit, course, or program, whose purpose is to certify what the learner has attained. The exit exam, the final project, the licensing test. Summative assessment answers a different question (<em>what did this learner achieve?</em>) than formative assessment does (<em>what should this learner do next?</em>), and it carries different consequences (certification vs. adjustment).</p>
+<p>The two are not opposed — a well-designed course uses both, and the same assessment item can play either role depending on how its results are used. A quiz graded, returned, and never revisited is summative, regardless of what its author called it. The same quiz returned with item-level remediation prompts and a re-take allowed after spaced review is formative.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Formative assessment</th>
+<th>Summative assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary question</td>
+<td><em>What should the learner do next?</em></td>
+<td><em>What has the learner achieved?</em></td>
+</tr>
+<tr>
+<td>Timing</td>
+<td>During instruction, frequently</td>
+<td>At the end of a unit or course</td>
+</tr>
+<tr>
+<td>Stakes</td>
+<td>Low — the result feeds the next teaching move</td>
+<td>High — the result certifies or ranks</td>
+</tr>
+<tr>
+<td>Feedback</td>
+<td>Rich, diagnostic, often qualitative</td>
+<td>Often reduced to a single score or grade</td>
+</tr>
+<tr>
+<td>Cognitive load for author</td>
+<td>High — item design must expose misconception</td>
+<td>Moderate — items must discriminate overall</td>
+</tr>
+<tr>
+<td>Typical artifact</td>
+<td>Ungraded quiz, exit ticket, concept-map critique</td>
+<td>Final exam, capstone, licensing test</td>
+</tr>
+<tr>
+<td>Compatible Bloom levels</td>
+<td>All six, especially Analyze and Evaluate</td>
+<td>All six, but tends to bias toward Remember and Understand in large-scale testing</td>
+</tr>
+</tbody>
+</table>
+<p>A practical design heuristic for intelligent textbooks follows from the table: <em>default formative, use summative deliberately</em>. Most of the assessment embedded in a chapter should be formative, because most of the time what the author wants is the next teaching move. Summative assessment is expensive to design well and has consequences that formative instruments do not carry; it should be reserved for moments when certification is actually required.</p>
+<h2 id="the-feedback-loop-as-the-unifying-frame">The Feedback Loop as the Unifying Frame<a class="headerlink" href="#the-feedback-loop-as-the-unifying-frame" title="Permanent link">¶</a></h2>
+<p>Every measurement-and-feedback mechanism in this chapter is, structurally, a <strong><em>feedback loop</em></strong> — a cycle in which output (learner performance) is measured, compared against a target (the criterion for mastery), and used to adjust input (the next instructional move). The loop is older than learning science — it is the shape of any control system, from a thermostat to a robot arm — but its application to instruction has a distinctive demand: the measurement has to be sharp enough to point at <em>what to change</em>, not just whether something is wrong.</p>
+<p>Before the diagram, the vocabulary refresh from Chapter 1. A reinforcing loop's polarity product is positive — increases propagate as further increases. A balancing loop drives toward a steady state. A productive learning loop is balancing on error (error shrinks toward zero) and reinforcing on capability (each successful adjustment builds the learner's capacity to close the next loop themselves).</p>
+<h4 id="diagram-feedback-dynamics-formative-flywheel-vs-summative-pressure-trap">Diagram: Feedback Dynamics — Formative Flywheel vs. Summative Pressure Trap<a class="headerlink" href="#diagram-feedback-dynamics-formative-flywheel-vs-summative-pressure-trap" title="Permanent link">¶</a></h4>
+<details>
+<summary>Causal loop diagram contrasting the formative-feedback flywheel (R1) with the summative-only pressure trap (R2) where high-stakes testing degrades signal quality</summary>
+<p>Type: causal-loop-diagram
+<strong>sim-id:</strong> feedback-flywheel-pressure-trap<br>
+<strong>Library:</strong> Mermaid<br>
+<strong>Status:</strong> Specified</p>
+<p>A causal loop diagram rendered with Mermaid <code>flowchart LR</code> showing ten variable-nodes and two named reinforcing loops. Nodes, all noun phrases: "formative assessment frequency", "diagnostic signal quality", "instructional adjustment", "learner performance", "metacognitive calibration", "summative stakes", "perceived test pressure", "test-wise behavior", "effort on genuine learning", "signal-to-noise ratio of scores".</p>
+<p>Edges and polarities for R1 (formative flywheel, productive):</p>
+<ul>
+<li>formative assessment frequency → diagnostic signal quality (+)</li>
+<li>diagnostic signal quality → instructional adjustment (+)</li>
+<li>instructional adjustment → learner performance (+, with delay marker ⧚)</li>
+<li>learner performance → metacognitive calibration (+)</li>
+<li>metacognitive calibration → formative assessment frequency (+) — calibrated learners seek more formative checkpoints, closing R1</li>
+</ul>
+<p>Edges and polarities for R2 (summative pressure trap, corrosive):</p>
+<ul>
+<li>summative stakes → perceived test pressure (+)</li>
+<li>perceived test pressure → test-wise behavior (+) — cramming, answer-pattern hunting, cue-matching</li>
+<li>test-wise behavior → effort on genuine learning (−)</li>
+<li>effort on genuine learning → learner performance (+)</li>
+<li>test-wise behavior → signal-to-noise ratio of scores (−)</li>
+<li>signal-to-noise ratio of scores → diagnostic signal quality (+)</li>
+<li>summative stakes → formative assessment frequency (−) — time-on-test crowds out time-on-feedback</li>
+</ul>
+<p>Loop labels at each loop's geometric center:</p>
+<ul>
+<li><strong>R1 — Formative flywheel (reinforcing, productive).</strong> Frequent formative checks produce sharp diagnostic signals, which drive instructional adjustments, which raise performance, which improves metacognitive calibration, which in turn motivates more formative checks.</li>
+<li><strong>R2 — Summative pressure trap (reinforcing, corrosive).</strong> High summative stakes raise perceived pressure, which produces test-wise behavior, which crowds out genuine learning <em>and</em> degrades the signal quality of the test itself — the test becomes less informative the more it is optimized against. This is Goodhart's Law rendered as a loop.</li>
+</ul>
+<p>Visual treatment: R1 nodes in cool blue; R2 nodes in warm red-orange; "diagnostic signal quality" drawn with a dual border to signal that it is the pivot variable — the lever that determines whether the system runs in R1 (signal-preserving) or R2 (signal-eroding). Delay marker ⧚ on the instructional adjustment → learner performance edge because pedagogical changes take time to register in performance. Every edge labeled with <code>+</code> or <code>−</code>.</p>
+<p>Implementation: Mermaid <code>flowchart LR</code> with <code>linkStyle</code> declarations for polarity coloring and <code>classDef</code> for loop grouping. A one-paragraph walkthrough of R1 and R2 in plain English accompanies the diagram in the prose that follows.</p>
+</details>
+<p>Read loop <strong>R1</strong> — the formative flywheel — in plain English. Frequent, low-stakes formative checks produce a high-resolution diagnostic signal. That signal drives a specific instructional adjustment: the next problem set targets the concept the class misread, the next worked example narrates the step most learners missed, the next MicroSim scaffolds the sub-skill that was weak. Performance improves. The learner's metacognitive calibration — their sense of what they know and don't know — sharpens. Calibrated learners seek out more formative checkpoints, because they have learned that the checkpoints pay off. Each trip around R1 builds the capacity for the next trip.</p>
+<p>Read loop <strong>R2</strong> — the summative pressure trap. When summative stakes dominate, perceived test pressure rises. Pressure produces <em>test-wise behavior</em>: cramming, pattern-hunting on released items, cue-matching against prior exams. Two things happen at once. The effort that would have gone into genuine learning is redirected to the surface features of the test, which drops actual performance on any measure that is not the test itself. And — more subtly — the signal-to-noise ratio of the test <em>drops</em>, because the test is now being optimized against rather than being used. This is the structural form of Campbell's Law and Goodhart's Law, which we return to in the A/B Testing section. The higher the stakes, the less informative the measurement becomes.</p>
+<p>The lever in the system is the diagnostic signal quality. Designers of intelligent textbooks have real influence here: frequent low-stakes formative items, items written to expose misconceptions rather than to rank learners, and criterion-referenced rather than norm-referenced scoring are the moves that keep the signal sharp.</p>
+<h2 id="feedback-types-immediate-delayed-corrective">Feedback Types: Immediate, Delayed, Corrective<a class="headerlink" href="#feedback-types-immediate-delayed-corrective" title="Permanent link">¶</a></h2>
+<p>Three distinctions about feedback matter for design: <em>when</em> it arrives, <em>what</em> it contains, and <em>how much cognitive load</em> it imposes. The research literature names each distinction with a term of art.</p>
+<p><strong><em>Immediate feedback</em></strong> is feedback that arrives within seconds of the learner's response — the "red buzzer, green chime" of an interactive quiz, the compiler error that appears as the student finishes typing, the MicroSim that flags an incorrect slider setting before the learner moves on. <strong><em>Delayed feedback</em></strong> is feedback that arrives after a period of minutes, hours, or days — the returned exam, the graded essay, the end-of-week cumulative report. <strong><em>Corrective feedback</em></strong> is a content-focused category rather than a timing one: it is feedback that tells the learner not only <em>whether</em> their response was correct but <em>what the correct response would have been and why</em> — the reasoning step where their path diverged from the canonical solution.</p>
+<p>The evidence on timing is genuinely mixed, and the mix is instructive. James Kulik and Chen-Lin Kulik's 1988 meta-analysis found a modest advantage for immediate feedback in classroom studies (effect size around 0.28), and Valerie Shute's 2008 review <em>Focus on Formative Feedback</em> is the canonical narrative synthesis. Robert Bjork and colleagues, however, have shown that in some lab paradigms — particularly those involving retention over long intervals — a delay between response and feedback can <em>increase</em> long-term retention, apparently because the delay forces the learner to retrieve their own response and hold it in working memory until the feedback arrives, producing a second retrieval episode. The practical synthesis is that timing effects depend on what the learner is doing during the interval: a delay filled with guessing the answer is productive; a delay filled with moving on to unrelated tasks is not.</p>
+<table>
+<thead>
+<tr>
+<th>Feedback type</th>
+<th>Timing</th>
+<th>Best-use case</th>
+<th>Cognitive-load cost</th>
+<th>Typical intelligent-textbook surface</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Immediate</td>
+<td>Seconds</td>
+<td>Skill acquisition, procedural practice, MicroSim interactions, worked-example debrief</td>
+<td>Low (the response is still in working memory)</td>
+<td>Inline quiz, MicroSim overlay, step-level compiler feedback</td>
+</tr>
+<tr>
+<td>Delayed</td>
+<td>Hours to days</td>
+<td>Conceptual integration, metacognitive calibration, long-interval retention</td>
+<td>Moderate to high (re-loading the context costs working memory)</td>
+<td>Returned essays, weekly summaries, reflection prompts</td>
+</tr>
+<tr>
+<td>Corrective</td>
+<td>Any</td>
+<td>Any context where <em>why</em> matters more than <em>whether</em> — especially when an incorrect response reflects a misconception rather than a slip</td>
+<td>Higher (the feedback itself is content to be processed)</td>
+<td>Diagnostic item explanations, rubric criterion-level comments</td>
+</tr>
+</tbody>
+</table>
+<p>Three design heuristics follow. First, for <em>procedural</em> skills early in acquisition, favor immediate feedback — the response is still in working memory and the correction can attach there without re-loading context. Second, for <em>conceptual</em> skills and for long-interval retention, a delay is not necessarily bad, especially if the delay contains productive retrieval. Third, feedback that only reports correctness without naming the error is the least useful kind: a learner who already knew why they were wrong did not need the feedback, and a learner who didn't know still doesn't.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Feedback Is Content, Not Just Verdict</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/thinking.png" data-desc-position="bottom"><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Bloom the elephant thinking, one hoof raised"></a>
+A quiz that says "wrong — try again" is teaching almost nothing. A quiz that says "this step assumes the data are paired; when the samples are independent the denominator is different, which is the check that would have caught this" is teaching the concept itself. Corrective feedback turns the assessment item into a second instructional unit — a miniature worked example at the moment of maximum receptivity.</p>
+</div>
+<h2 id="assessment-rubrics">Assessment Rubrics<a class="headerlink" href="#assessment-rubrics" title="Permanent link">¶</a></h2>
+<p>Once feedback starts carrying content rather than just verdict, the content itself needs structure. An <strong><em>assessment rubric</em></strong> is a published set of criteria and performance-level descriptions that makes a judgment reproducible — the same work, scored by two readers against the same rubric, should land in the same performance band. The published-and-reproducible demand is what distinguishes a rubric from an individual grader's intuition.</p>
+<p>Two rubric architectures serve different needs. An <em>analytic rubric</em> scores multiple criteria independently — a writing assignment might score thesis, evidence, organization, and mechanics on separate scales of 1–4. A <em>holistic rubric</em> scores the work as a single judgment, often against a small number of descriptors ("meets expectations," "exceeds expectations"). Analytic rubrics produce richer diagnostic signal (you can see which dimension is weak) at the cost of more scoring time. Holistic rubrics are faster but collapse the diagnosis into a single number — which, as the two-student quiz scenario at the top of this chapter should remind us, can hide the structure underneath.</p>
+<p>Three properties separate useful rubrics from decorative ones.</p>
+<p><strong>Criteria must be independent.</strong> If "clarity" and "organization" always move together, one of them is doing no work, and the rubric is inflating the apparent granularity of the judgment. Run a small pilot: have two readers score five artifacts against the rubric, and look for criteria whose scores correlate so tightly that one could be dropped without loss.</p>
+<p><strong>Performance levels must be described, not just labeled.</strong> "Exceeds expectations" is not a level; it is a grade. A level description names the behavior that earns it: <em>"The thesis names the specific claim the essay defends and identifies the strongest objection to it in the same paragraph."</em> A reader who has not seen the rubric before should be able to apply it correctly.</p>
+<p><strong>Criteria must not leak ambiguity.</strong> The failure mode to watch for is criteria whose application hinges on an unstated standard — "uses appropriate vocabulary" leaves <em>appropriate</em> undefined; "demonstrates understanding" leaves <em>understanding</em> undefined. Replace every evaluative word in a criterion with an observable behavior, or acknowledge in the rubric's documentation that the criterion is holistic by design.</p>
+<h4 id="diagram-analytic-vs-holistic-rubric-structure-and-signal">Diagram: Analytic vs. Holistic Rubric — Structure and Signal<a class="headerlink" href="#diagram-analytic-vs-holistic-rubric-structure-and-signal" title="Permanent link">¶</a></h4>
+<details>
+<summary>Side-by-side diagram contrasting analytic and holistic rubric structures and the diagnostic signal each produces</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> rubric-analytic-vs-holistic<br>
+<strong>Library:</strong> Mermaid<br>
+<strong>Status:</strong> Specified</p>
+<p>A Mermaid <code>flowchart LR</code> diagram with two panels. Left panel shows an analytic rubric for a writing assignment with four independent criteria (Thesis, Evidence, Organization, Mechanics) each scored 1–4, feeding four separate score cells that flow into a profile chart. Right panel shows a holistic rubric with four performance-level bands (Emerging, Developing, Proficient, Exceeds) feeding a single score cell. Arrows from each structure point to a "Diagnostic Signal" label: left says "four-dimensional profile, per-criterion remediation possible"; right says "one-dimensional band, remediation requires re-reading the work."</p>
+<p>Nodes use the blue palette for analytic (signal-rich) and warm red-orange for holistic (signal-compressed). A footer note reads: "Neither is universally better — choose based on whether you need per-dimension remediation (analytic) or time-efficient end-of-course judgment (holistic)."</p>
+<p>Implementation: Mermaid <code>flowchart LR</code> with <code>classDef</code> for the two panels. Embedded directly in the chapter markdown.</p>
+</details>
+<p>A short heuristic for the chapter-author context: if the rubric is going to feed a feedback loop that adjusts instruction, go analytic. If the rubric is going to certify a final product, holistic is often enough. The two architectures are solving different problems; pick the one that matches the problem you have.</p>
+<h2 id="item-response-theory">Item Response Theory<a class="headerlink" href="#item-response-theory" title="Permanent link">¶</a></h2>
+<p>Raw percent-correct scoring has a quiet flaw: it treats every item as equally informative. A ten-item quiz on which Student A answers the three easiest items correctly and Student B answers the three hardest items correctly produces identical scores, and yet the two scores are not interchangeable — they reflect very different levels of ability. <strong><em>Item Response Theory</em></strong> (IRT) is the family of psychometric models that addresses this flaw by modeling the probability of a correct response as a joint function of the learner's ability and the item's characteristics.</p>
+<p>The simplest IRT model, introduced by Georg Rasch in 1960, is the <em>Rasch model</em> or <em>one-parameter logistic model</em>. It posits that the probability <span class="arithmatex">\(P\)</span> that a learner with ability <span class="arithmatex">\(\theta\)</span> answers correctly an item with difficulty <span class="arithmatex">\(b\)</span> is</p>
+<div class="arithmatex">\[ P(\theta, b) = \frac{1}{1 + e^{-(\theta - b)}} \]</div>
+<p>Both <span class="arithmatex">\(\theta\)</span> and <span class="arithmatex">\(b\)</span> live on the same logit scale. When <span class="arithmatex">\(\theta = b\)</span>, the probability of a correct response is exactly 0.5 — the item is calibrated to the learner's edge of ability. When <span class="arithmatex">\(\theta &gt; b\)</span>, the probability exceeds 0.5; when <span class="arithmatex">\(\theta &lt; b\)</span>, it drops below. The function is the standard logistic curve, which is why the model is called logistic.</p>
+<p>Three properties of this simple model explain why IRT has displaced raw percent-correct in serious measurement contexts. First, <em>item difficulty and learner ability are on the same scale</em>, which means we can ask "is this item well-matched to this learner?" in a principled way. Second, <em>scores from different test forms are comparable</em> once items are calibrated, so two learners who took different subsets of a calibrated item bank can be ranked on the same scale. Third, <em>the expected-information contribution of each item peaks when <span class="arithmatex">\(\theta = b\)</span></em> — which gives computerized adaptive testing its operational principle: choose the next item whose difficulty is closest to the current best estimate of the learner's ability. Each item you show costs time; choose the item that buys the most information per unit of time.</p>
+<p>Two-parameter and three-parameter extensions add an item-discrimination parameter <span class="arithmatex">\(a\)</span> (how sharply the probability curve rises around <span class="arithmatex">\(b\)</span>) and a guessing parameter <span class="arithmatex">\(c\)</span> (the probability of a correct response by a learner at <span class="arithmatex">\(\theta \to -\infty\)</span>, relevant for multiple-choice items). The three-parameter logistic is</p>
+<div class="arithmatex">\[ P(\theta; a, b, c) = c + (1 - c) \cdot \frac{1}{1 + e^{-a(\theta - b)}} \]</div>
+<p>For intelligent-textbook quiz design, the Rasch model is usually enough: it gives a principled calibration of item difficulty against learner ability, and the two-parameter extension can be added later if item discrimination varies enough to matter.</p>
+<h4 id="diagram-irt-ability-vs-difficulty-explorer">Diagram: IRT Ability-vs-Difficulty Explorer<a class="headerlink" href="#diagram-irt-ability-vs-difficulty-explorer" title="Permanent link">¶</a></h4>
+<details>
+<summary>MicroSim: interactive logistic curve with sliders for ability (θ) and difficulty (b); shows P(correct) at the intersection</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> irt-ability-difficulty-explorer<br>
+<strong>Library:</strong> p5.js<br>
+<strong>Status:</strong> Specified</p>
+<p>An interactive p5.js MicroSim that plots the Rasch one-parameter logistic curve. The canvas shows a logistic curve with ability <span class="arithmatex">\(\theta\)</span> on the x-axis (range −4 to +4) and probability of a correct response on the y-axis (range 0 to 1). A vertical line marks the current item difficulty <span class="arithmatex">\(b\)</span>; a horizontal line marks the probability at the current learner ability <span class="arithmatex">\(\theta\)</span>; their intersection is highlighted as a filled dot.</p>
+<p>Controls (using built-in p5.js controls per project convention):</p>
+<ul>
+<li><strong>Ability slider (θ)</strong> — −4 to +4, default 0.</li>
+<li><strong>Difficulty slider (b)</strong> — −4 to +4, default 0.</li>
+<li><strong>Show two-parameter toggle</strong> — adds a discrimination slider <span class="arithmatex">\(a\)</span> (0.2 to 2.5, default 1.0) and switches to the 2PL form.</li>
+<li><strong>Show information curve checkbox</strong> — overlays the item-information curve (which peaks at <span class="arithmatex">\(\theta = b\)</span> for Rasch), making the adaptive-testing principle visible.</li>
+<li><strong>Reset button</strong> — restores defaults.</li>
+</ul>
+<p>A caption below the canvas reports the current <span class="arithmatex">\(P(\theta, b)\)</span> value and labels three qualitative zones: <em>"too easy for this learner"</em> (<span class="arithmatex">\(P &gt; 0.85\)</span>), <em>"at the edge of ability"</em> (<span class="arithmatex">\(0.5 \le P \le 0.85\)</span>), and <em>"too hard"</em> (<span class="arithmatex">\(P &lt; 0.35\)</span>). No student data is used; the sim is purely a model visualizer.</p>
+<p>Learning objective (Bloom level: Understand): <em>Using the IRT explorer, explain why an item calibrated near the learner's ability yields the most information per unit of testing time.</em></p>
+<p>Canvas responsive via <code>updateCanvasSize()</code> as the first line of <code>setup()</code>; parented to the standard <code>&lt;main&gt;&lt;/main&gt;</code> element.</p>
+<p>Implementation: p5.js sketch in <code>/docs/sims/irt-ability-difficulty-explorer/</code> with <code>main.html</code>, <code>script.js</code>, <code>local.css</code>, and <code>index.md</code>. Generated via the <code>microsim-generator</code> skill.</p>
+</details>
+<p>Intelligent-textbook authors who tag quiz items with an estimated difficulty (on any consistent scale, even a rough 1–5) gain a real downstream capability: they can analyze aggregate item-level data to see which items learners find harder or easier than the author predicted, and recalibrate the difficulty estimates without ever touching individual student records. That recalibration is aggregate, anonymized, and entirely inside Level 2.</p>
+<h2 id="diagnostic-assessment">Diagnostic Assessment<a class="headerlink" href="#diagnostic-assessment" title="Permanent link">¶</a></h2>
+<p>Where summative assessment ranks and formative assessment adjusts, <strong><em>diagnostic assessment</em></strong> localizes — its purpose is to pinpoint <em>which specific misconception</em> a learner holds so that the next instructional move can target it. The defining move of a diagnostic item is that its <em>wrong answers</em> are informative: each distractor corresponds to a known misconception, so the pattern of wrong answers across a cohort tells the instructor not just <em>that</em> students are struggling but <em>how</em> they are struggling.</p>
+<p>A classic example from physics education, popularized by Paula Hestenes and David Halloun's <em>Force Concept Inventory</em>: a question about a ball tossed straight up asks what forces act on the ball at the top of its arc. A student who answers "gravity only" understands Newtonian mechanics. A student who answers "gravity and an upward force that keeps it going" holds the Aristotelian impetus misconception. A student who answers "no forces — it's at rest" has confused instantaneous velocity with acceleration. Three wrong answers, three different diagnoses, three different remediations.</p>
+<p>The design cost of good diagnostic items is substantial. Each distractor has to be authored against a documented misconception from the discipline's education-research literature — naive "plausible wrong answer" distractors do not diagnose anything. The payoff is that the cohort-level distribution of responses becomes a misconception map. The author can ask, in aggregate, <em>what fraction of the cohort is holding the impetus misconception?</em> without ever looking at a named student's record.</p>
+<p>A brief example of what an aggregate diagnostic readout looks like for a cohort of about 200 students, in a chapter-end quiz with a single three-distractor diagnostic item (synthetic data for illustration, clearly labeled):</p>
+<table>
+<thead>
+<tr>
+<th>Response (aggregate only)</th>
+<th>Percent of cohort</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A — canonical correct answer</td>
+<td>58%</td>
+<td>On-track</td>
+</tr>
+<tr>
+<td>B — impetus misconception</td>
+<td>27%</td>
+<td>Classic Aristotelian carryover; plan worked example on force-vs-motion distinction</td>
+</tr>
+<tr>
+<td>C — velocity/acceleration confusion</td>
+<td>11%</td>
+<td>Smaller subgroup; plan targeted MicroSim on instantaneous-vs-average quantities</td>
+</tr>
+<tr>
+<td>D — other / blank</td>
+<td>4%</td>
+<td>Within noise; no cohort-level action</td>
+</tr>
+</tbody>
+</table>
+<p>The readout tells the author <em>what to build next</em>: the misconception that 27% of the cohort holds is worth a dedicated worked example; the misconception that 11% holds is worth a MicroSim; the canonical answer at 58% says the chapter is working but has room to grow. No row in that table identifies a student.</p>
+<h2 id="metacognition-and-self-regulated-learning">Metacognition and Self-Regulated Learning<a class="headerlink" href="#metacognition-and-self-regulated-learning" title="Permanent link">¶</a></h2>
+<p><strong><em>Metacognition</em></strong> — a term introduced by John Flavell in 1979 — is thinking about thinking: the learner's awareness of their own cognitive processes, the accuracy of their self-assessment, and their ability to plan, monitor, and evaluate their own learning. Metacognition matters for measurement because a learner who cannot tell what they know from what they think they know will make systematically poor study decisions — re-reading the familiar, avoiding the unfamiliar, and mistaking fluency for mastery.</p>
+<p>The evidence here is specific enough to matter. Dunning and Kruger's 1999 paper <em>Unskilled and Unaware of It</em> documents the classic miscalibration pattern: the least-able performers in a domain tend to overestimate their ability most, because the skills required to perform the task and the skills required to evaluate one's performance on the task overlap substantially. The implication for instruction is that metacognitive calibration is not an automatic byproduct of skill growth — it has to be deliberately supported by assessment practices that compare self-prediction to actual performance and surface the gap.</p>
+<p><strong><em>Self-regulated learning</em></strong> (SRL) is the learner's active, goal-directed management of their own learning process — planning what to study, monitoring how well the study is going, and adjusting based on what the monitoring reveals. Barry Zimmerman's cyclical model (1989, refined through 2013) describes SRL as three phases that repeat around every learning episode: <em>forethought</em> (goal-setting, strategic planning, self-efficacy activation), <em>performance</em> (self-control, self-observation, self-instruction during the task), and <em>self-reflection</em> (self-judgment against the goal, self-reaction, attribution). The cycle is iterative: the reflection phase of one episode feeds into the forethought phase of the next.</p>
+<h4 id="diagram-zimmermans-self-regulated-learning-cycle">Diagram: Zimmerman's Self-Regulated Learning Cycle<a class="headerlink" href="#diagram-zimmermans-self-regulated-learning-cycle" title="Permanent link">¶</a></h4>
+<details>
+<summary>Interactive infographic overlay: Zimmerman's three-phase SRL cycle (forethought → performance → self-reflection) with clickable phase callouts</summary>
+<p>Type: interactive-infographic
+<strong>sim-id:</strong> zimmerman-srl-cycle<br>
+<strong>Library:</strong> p5.js<br>
+<strong>Status:</strong> Specified</p>
+<p>An interactive infographic overlay using the <code>interactive-infographic-overlay</code> skill. Base image: a three-sector circular cycle with arrows showing clockwise flow from <em>Forethought</em> (top) to <em>Performance</em> (lower right) to <em>Self-Reflection</em> (lower left) and back to Forethought. Each sector is a different color on a warm blue-to-orange gradient. The base image is annotation-free; all phase labels, sub-processes, and example prompts are delivered by overlay markers.</p>
+<p>Modes (standard for this skill):</p>
+<ul>
+<li><strong>Explore mode:</strong> Hovering over a sector shows a tooltip containing the phase name, one-sentence definition, the three classic sub-processes (e.g., Forethought: goal-setting, strategic planning, self-efficacy activation), and a sample metacognitive prompt the learner can run on themselves at that phase.</li>
+<li><strong>Quiz mode:</strong> A short description of a learner's behavior appears at the top (e.g., "Before starting the problem set, she wrote down what strategy she would try first and predicted how long it would take"); the learner clicks the SRL phase the behavior illustrates. Correct answers highlight the sector green; incorrect answers reveal the correct phase and a one-sentence explanation of the sub-process at play.</li>
+<li><strong>Edit mode (authors only):</strong> Drag markers to recalibrate positions on the base image; export updated <code>data.json</code>.</li>
+</ul>
+<p>Learning objective (Bloom level: Analyze): <em>Given a description of a learner's behavior, identify which SRL phase it illustrates and name the sub-process at play.</em></p>
+<p>Canvas responsive via <code>updateCanvasSize()</code> as the first line of <code>setup()</code>; marker anchors preserved on resize.</p>
+<p>Implementation: Generated with the <code>interactive-infographic-overlay</code> skill. The directory <code>/docs/sims/zimmerman-srl-cycle/</code> will contain <code>image-prompt.md</code>, <code>data.json</code>, <code>main.html</code>, <code>index.md</code>, and the cycle base image.</p>
+</details>
+<p>Two design implications for intelligent textbooks are concrete. First, prompt the forethought phase explicitly: <em>"Before starting this section, name one thing you already know about the topic and one thing you expect to find difficult."</em> Prompts like this cost about ten seconds and sharpen the entire reading episode that follows. Second, prompt the reflection phase with a <em>prediction comparison</em>: <em>"You predicted this would take twenty minutes — how long did it actually take, and what does the gap tell you about your planning accuracy?"</em> The gap between prediction and outcome is the metacognitive signal that closes the SRL loop. Retrieval prompts at the end of each chapter (see the Retrieval Check at the close of this one) are, in effect, forced reflection phases.</p>
+<h2 id="learning-analytics">Learning Analytics<a class="headerlink" href="#learning-analytics" title="Permanent link">¶</a></h2>
+<div class="admonition mascot-warning">
+<p class="admonition-title">Individual Student Data Is a Regulatory Line</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/warning.png" data-desc-position="bottom"><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Bloom warning about regulated student data"></a>
+The moment you start storing <em>individual student data</em> — goals, progress, click trails, dashboard interactions, quiz attempts tied to a named learner — your work crosses from Level 2 (Interactive) into Level 3+ on the five-level intelligent-textbook classification, and with that crossing it enters a <strong>highly regulated domain</strong>. In the United States, <strong>FERPA</strong> governs educational records for K-12 and higher education, and <strong>COPPA</strong> attaches additional requirements when any user is under 13. For residents of the European Union, <strong>GDPR</strong> applies with some of the strictest data-subject rights in the world. In California, <strong>CCPA / CPRA</strong> adds a state-level layer on top of federal law, and other states are following. The obligations that attach at that moment — <em>data minimization, informed (often parental) consent, explicit purpose limitation, retention limits, access and deletion rights, encryption at rest and in transit, audit logging, third-party processor agreements, and algorithmic bias auditing</em> when automated decisions affect the learner — are real, auditable, and outside the scope of this course. Anonymized, aggregate analytics (course-level completion rates, chapter-level average quiz scores, no per-student records) remain inside Level 2 and are safe to use. Anything with a <code>student_id</code> attached is not. If a project genuinely needs Level 3+ capabilities, partner with an institution that already has data-governance infrastructure, and adopt open standards like <strong>xAPI</strong> and a <strong>Learning Record Store</strong> so students retain control and portability of their own records. The full five-level classification and its architectural implications are treated in <a href="../10-textbook-architecture/">Chapter 10: Intelligent Textbook Architecture and AI Tooling</a>. The principled framing to carry into the rest of this chapter and every design decision that follows: <em>we do not collect student data because we have not earned the right to handle it.</em></p>
+</div>
+<p><strong><em>Learning analytics</em></strong> is the measurement, collection, analysis, and reporting of data about learners and their contexts to understand and optimize learning and the environments in which it occurs (the definition comes from the 2011 Society for Learning Analytics Research founding statement). The field is legitimate, active, and — at the institutional level, with appropriate governance — useful. This course's scope, however, stays firmly at the <em>cohort and aggregate</em> level. Every example, table, and MicroSim in this chapter that touches analytics uses synthetic data and is clearly labeled as such.</p>
+<p>The analytics that sit inside Level 2 are the aggregate signals that can be derived without per-student records. A chapter's completion rate across a cohort of 500 learners. The average quiz score on a diagnostic item, across learners who submitted. The drop-off rate between chapters 4 and 5. The fraction of learners who clicked into a given MicroSim. None of these require storing a named student's trail; all of them can be computed from server logs after aggregation and retention of the individual rows for the minimum time required to compute the aggregate, then discarded.</p>
+<p>A small synthetic example of a Level-2-safe analytics readout:</p>
+<table>
+<thead>
+<tr>
+<th>Metric (aggregate, synthetic cohort of 500)</th>
+<th>Value</th>
+<th>Signal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chapter 4 completion rate</td>
+<td>87%</td>
+<td>Within expected range</td>
+</tr>
+<tr>
+<td>Chapter 5 completion rate</td>
+<td>61%</td>
+<td>Drop-off; investigate Chapter 5 load</td>
+</tr>
+<tr>
+<td>Chapter 5 median time-on-page</td>
+<td>42 min (median), IQR 28–71 min</td>
+<td>Wide spread suggests uneven difficulty</td>
+</tr>
+<tr>
+<td>Quiz 5.3 average score</td>
+<td>54%</td>
+<td>Low; candidate for rewrite or added worked example</td>
+</tr>
+<tr>
+<td>Quiz 5.3 Item 4 distractor-B selection rate</td>
+<td>34%</td>
+<td>Suggests a specific misconception; author diagnostic follow-up</td>
+</tr>
+<tr>
+<td>MicroSim 5.2 interaction rate</td>
+<td>23%</td>
+<td>Low engagement; check whether discoverability is the issue</td>
+</tr>
+</tbody>
+</table>
+<p>Nothing in that table identifies a student. Every row drives an instructional decision. This is the analytics ceiling the course recommends authors stay under.</p>
+<h2 id="learning-dashboards">Learning Dashboards<a class="headerlink" href="#learning-dashboards" title="Permanent link">¶</a></h2>
+<p>A <strong><em>learning dashboard</em></strong> is an interface that visualizes aggregated learning-analytics signals for an instructor, author, or administrator, so that the signal-to-adjustment loop (R1 in the feedback-dynamics diagram above) can close at human speed. The design principles that separate useful dashboards from noisy ones are well-developed in the information-visualization literature — Edward Tufte, Stephen Few, and the education-specific work of Erik Duval and colleagues.</p>
+<p>Four design principles matter most for an intelligent-textbook dashboard that respects the aggregate-only constraint.</p>
+<p><strong>Show the signal, not the data.</strong> A dashboard is a layer of interpretation, not a dump of rows. Every chart should answer a specific question the viewer came to ask, and every chart should have a clear <em>next move</em> associated with it. "Chapter 5 has the lowest quiz average in the book" is a signal and prompts a next move; "here are the last 10,000 quiz submissions" is data and prompts nothing.</p>
+<p><strong>Aggregate first, drill down cautiously.</strong> A Level-2-safe dashboard lets a viewer drill down from "course-wide completion rate" to "chapter-level completion rate" to "quiz-level score distribution" without ever exposing a student identifier. If a drill-down path would require showing a single row tied to a named learner, the drill-down is a Level-3 feature and should not exist in the Level-2 surface.</p>
+<p><strong>Respect baselines and comparisons.</strong> A single number is rarely meaningful on its own. Pair every metric with its baseline — the cohort's historical average, the course's target, or the variance band — so the viewer can tell a signal from noise.</p>
+<p><strong>Annotate uncertainty.</strong> A 54% quiz average computed over 18 submissions is a very different signal than the same average computed over 1,800. Show the sample size and, where possible, a confidence band. The quietest failure mode of a dashboard is to display a small-sample estimate as if it were a reliable signal.</p>
+<h4 id="diagram-aggregate-quality-metrics-dashboard-synthetic">Diagram: Aggregate Quality-Metrics Dashboard (Synthetic)<a class="headerlink" href="#diagram-aggregate-quality-metrics-dashboard-synthetic" title="Permanent link">¶</a></h4>
+<details>
+<summary>Specification for an aggregate, synthetic, clearly labeled quality-metrics dashboard — no per-student rows</summary>
+<p>Type: dashboard-spec
+<strong>sim-id:</strong> aggregate-quality-dashboard<br>
+<strong>Library:</strong> Chart.js or Plotly<br>
+<strong>Status:</strong> Specified</p>
+<p>A static or lightly interactive dashboard page rendered with Chart.js or Plotly, populated from a synthetic dataset checked into the repository and clearly labeled <em>"SYNTHETIC — NO STUDENT DATA"</em> on every chart. The dashboard displays four panels:</p>
+<ol>
+<li><strong>Chapter completion funnel</strong> — horizontal bars showing completion rate per chapter, with the course target line overlaid.</li>
+<li><strong>Quiz item-difficulty scatter</strong> — scatter plot of estimated item difficulty (IRT <span class="arithmatex">\(b\)</span>) against observed percent-correct, one dot per item, with the diagonal reference line; dots that fall far from the diagonal are candidates for recalibration.</li>
+<li><strong>MicroSim engagement heatmap</strong> — grid of chapters × MicroSims showing engagement rate on a 0–1 color ramp.</li>
+<li><strong>Bloom-level distribution</strong> — stacked bar per chapter showing the count of quiz items at each of the six Bloom levels, so the author can see whether a chapter is over-indexed on Remember/Understand.</li>
+</ol>
+<p>Every panel carries a footer noting the sample size, the date range, and the synthetic-data disclaimer. No panel exposes a per-student row. Drill-down paths go from course → chapter → item, and stop at the item level — never to a named learner.</p>
+<p>Implementation: generated synthetic-data JSON file, Chart.js or Plotly rendering. Located at <code>/docs/sims/aggregate-quality-dashboard/</code> with <code>main.html</code>, <code>data.json</code> (synthetic), <code>script.js</code>, and <code>index.md</code>.</p>
+</details>
+<p>The dashboard is a useful surface for chapter authors working at Level 2. It is a <em>dangerous</em> surface for authors who have not internalized the Level 2 / Level 3 line. A dashboard that, for efficiency, caches a "view individual student" flag as a future feature is a dashboard one code review away from a FERPA violation. Build the Level-2-only version first, and architect so that crossing the line is a deliberate, documented, governed step rather than a feature flag.</p>
+<h2 id="ab-testing-in-learning">A/B Testing in Learning<a class="headerlink" href="#ab-testing-in-learning" title="Permanent link">¶</a></h2>
+<p><strong><em>A/B testing in learning</em></strong> is the controlled comparison of two instructional variants — two chapter openings, two MicroSim designs, two quiz sequences — where a cohort is split between the variants and outcomes are compared at the <em>variant level</em>. The core methodology is the randomized experiment, the same tool that made pharmaceutical and behavioral-science research cumulative; the application to instruction is legitimate and, done carefully, provides the strongest evidence any author can have about whether a design change helped.</p>
+<p>Two rules keep A/B testing inside Level 2. First, the unit of analysis is the <em>variant</em>, not the learner. Reports take the form "Variant A produced a mean post-quiz score of 71% across 247 learners; Variant B produced 76% across 253 learners; the difference is 5 points with a 95% confidence interval of [1.7, 8.3]." No per-learner row appears in the report. Second, consent and context matter: learners should know that the course contains variant-level experiments, and no experiment should expose learners to a known-worse variant in a high-stakes context. The bar for ethical A/B testing in education is higher than in e-commerce, and it should be.</p>
+<p>The structural trap to name is <strong>Goodhart's Law</strong>: <em>"When a measure becomes a target, it ceases to be a good measure."</em> Campbell's Law is the social-sciences formulation: <em>"The more any quantitative social indicator is used for social decision-making, the more subject it will be to corruption pressures and the more apt it will be to distort and corrupt the social processes it is intended to monitor."</em> Both describe the same structural pathology, and both apply directly to learning analytics.</p>
+<p>If a chapter author A/B-tests on "percent-correct on the end-of-chapter quiz" and relentlessly optimizes the chapter against that metric, one of two things will happen — both bad. Either the chapter will be rewritten to teach <em>to the quiz</em> specifically, in which case the quiz score will rise but the underlying learning will narrow (this is R2 — the summative pressure trap — from the feedback-dynamics diagram, reappearing one level up in the authoring loop). Or the quiz itself will drift toward easier items that produce higher scores, because the measurement instrument is being implicitly optimized alongside the instruction. In both cases, the measure becomes the target and ceases to be a good measure.</p>
+<p>The structural fix is to triangulate. Never optimize against a single metric; always pair a primary metric with at least one <em>guardrail</em> metric that would move in the wrong direction if the primary metric were being gamed. For a chapter A/B test, pair "end-of-chapter quiz score" (primary) with "transfer performance on a novel-context item at the end of the next chapter" (guardrail) and "time-on-page" (context). A variant that moves the primary metric up while moving the transfer guardrail down is not a win — it is a Goodhart pattern, and the instinct to ship the win is the instinct to discipline.</p>
+<table>
+<thead>
+<tr>
+<th>Metric role</th>
+<th>Example in chapter A/B test</th>
+<th>What it catches</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary</td>
+<td>End-of-chapter quiz score</td>
+<td>Direct effect of the variant</td>
+</tr>
+<tr>
+<td>Guardrail</td>
+<td>Transfer performance on next chapter's novel-context item</td>
+<td>Goodhart-style teaching-to-the-test</td>
+</tr>
+<tr>
+<td>Context</td>
+<td>Median time-on-page, completion rate</td>
+<td>Variants that trade time for score without genuine gain</td>
+</tr>
+<tr>
+<td>Counter-metric</td>
+<td>Reported confusion rate on a post-chapter self-report</td>
+<td>Variants that raise scores by mechanism of frustration</td>
+</tr>
+</tbody>
+</table>
+<p>A/B testing done well is one of the most powerful tools an intelligent-textbook author has. A/B testing done poorly — with a single primary metric, no guardrails, and no awareness of Goodhart — produces a chapter that is measurably better by the chosen number and measurably worse by every number the author did not choose to measure. The discipline is in the choice of numbers.</p>
+<h2 id="quality-metrics-for-intelligent-textbooks">Quality Metrics for Intelligent Textbooks<a class="headerlink" href="#quality-metrics-for-intelligent-textbooks" title="Permanent link">¶</a></h2>
+<p><strong><em>Quality metrics</em></strong> are the content-level measurements that describe the artifact itself — not the learners — and support continuous improvement of the book. Because quality metrics measure the <em>content</em>, they are entirely inside Level 2 and carry no privacy surface.</p>
+<p>The metrics that matter for an intelligent textbook fall into four families.</p>
+<p><strong>Coverage metrics.</strong> Does every concept in the learning graph appear in exactly one chapter? Does every concept have a glossary entry, a quiz item, and — for concepts where one is appropriate — a MicroSim? The coverage table is a structural audit; missing cells point at specific next authoring moves.</p>
+<p><strong>Distribution metrics.</strong> How are quiz items distributed across Bloom levels per chapter? If a chapter has twenty items all at the Remember level, its assessment is not measuring anything above recall, regardless of how rich the prose is. A healthy distribution typically has 20–30% at Remember/Understand, 30–40% at Apply/Analyze, and 10–20% at Evaluate/Create, though the exact shape depends on the chapter's role in the book.</p>
+<p><strong>Readability metrics.</strong> Average sentence length, paragraph length, Flesch-Kincaid grade level, term-density per page. These are proxies, not truths — a low grade-level number does not mean a chapter teaches well — but they flag outliers. A chapter whose average sentence is 40 words is probably hard to read for reasons the author can fix.</p>
+<p><strong>Structural metrics.</strong> Non-text-element density (a project heuristic: no more than three consecutive paragraphs without a diagram, table, list, or MicroSim). Mascot admonition count (project rule: ≤ 6 per chapter, exactly one welcome and one celebration). Equation count, code-block count, internal-link density. These are style-guide compliance checks, but they are also a signal of whether a chapter is serving multiple learning modalities or collapsing into wall-of-text.</p>
+<div class="admonition mascot-tip">
+<p class="admonition-title">Run Quality Metrics on Every Regeneration</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/tip.png" data-desc-position="bottom"><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Bloom the elephant giving a tip"></a>
+The cost of the metrics is small (a single skill invocation) and the cost of shipping a chapter with a distribution bug (say, 90% Remember-level items) is large. Treat quality metrics as you would a test suite — run them on every regeneration, fail the build on regressions.</p>
+</div>
+<h2 id="the-privacy-inflection-point">The Privacy Inflection Point<a class="headerlink" href="#the-privacy-inflection-point" title="Permanent link">¶</a></h2>
+<p>The <strong><em>privacy inflection point</em></strong> is the threshold at which an intelligent textbook transitions from manipulating <em>content-level</em> data (safe) to storing <em>individual student data</em> (regulated). It is the most consequential architectural decision a textbook author will make, and it is often made accidentally — a dashboard caches a session ID, a quiz engine logs a click trail to aid debugging, a chatbot remembers a student's name across sessions, and the system has crossed the line without anyone noticing.</p>
+<p>The five-level classification introduced in <a href="../01-foundations/">Chapter 1</a> and developed in <a href="../10-textbook-architecture/">Chapter 10</a> names the architectural consequence of the line. Levels 1 and 2 sit below it; Levels 3, 4, and 5 sit above it. The simplified summary for this chapter:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Name</th>
+<th>Per-student data stored?</th>
+<th>Regulatory surface</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Static</td>
+<td>None</td>
+<td>Minimal — copyright and accessibility</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Interactive</td>
+<td>None (aggregate analytics only)</td>
+<td>Minimal — accessibility, cookie notices, standard-site obligations</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Adaptive</td>
+<td>Yes — progress, goals, behavioral history</td>
+<td>FERPA, COPPA (if under 13), GDPR, CCPA/CPRA; data minimization, consent, retention limits, access/deletion rights, encryption, audit logging</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Chatbot</td>
+<td>Yes — conversational history, often across sessions</td>
+<td>All of Level 3 plus algorithmic-accountability obligations for AI-driven feedback and decisions</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Autonomous</td>
+<td>Yes — real-time per-learner generation state</td>
+<td>All of Level 4 plus heightened scrutiny around automated decision-making affecting the learner</td>
+</tr>
+</tbody>
+</table>
+<p>Four regulations dominate the Level 3+ surface in practice. Authors and educational technologists should recognize each by name and know which protections it attaches.</p>
+<table>
+<thead>
+<tr>
+<th>Regulation</th>
+<th>Jurisdiction</th>
+<th>Who it protects</th>
+<th>Key obligations that attach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FERPA</strong> (Family Educational Rights and Privacy Act, 1974)</td>
+<td>United States, federally funded educational institutions</td>
+<td>Students and, while minors, their parents</td>
+<td>Limits disclosure of education records; requires consent for non-directory information; grants students and parents rights to access and correct records</td>
+</tr>
+<tr>
+<td><strong>COPPA</strong> (Children's Online Privacy Protection Act, 1998)</td>
+<td>United States, commercial operators of online services directed at children under 13</td>
+<td>Children under 13</td>
+<td>Requires verifiable parental consent before collecting personal information; imposes data minimization, retention limits, and deletion obligations</td>
+</tr>
+<tr>
+<td><strong>GDPR</strong> (General Data Protection Regulation, 2018)</td>
+<td>European Union, and any organization processing EU residents' personal data</td>
+<td>All EU data subjects, with heightened protections for children</td>
+<td>Lawful-basis requirement (consent, contract, legitimate interest, etc.); purpose limitation; data minimization; storage limitation; right of access; right to erasure; right to portability; data protection by design and by default; data protection impact assessments</td>
+</tr>
+<tr>
+<td><strong>CCPA / CPRA</strong> (California Consumer Privacy Act / Privacy Rights Act, 2020 / 2023)</td>
+<td>California, businesses meeting revenue or data thresholds</td>
+<td>California residents</td>
+<td>Right to know, right to delete, right to correct, right to opt out of sale or sharing of personal information; sensitive-personal-information category with additional protections; enforcement by the California Privacy Protection Agency</td>
+</tr>
+</tbody>
+</table>
+<p>The list is not exhaustive — Illinois' BIPA, Virginia's VCDPA, Colorado's CPA, and a growing number of state and national laws add layers — but these four cover most of the regulatory surface an intelligent-textbook project will encounter in its first year of operation.</p>
+<h3 id="data-minimization-as-a-first-principle">Data Minimization as a First Principle<a class="headerlink" href="#data-minimization-as-a-first-principle" title="Permanent link">¶</a></h3>
+<p><strong><em>Data minimization</em></strong> is the principle that personal data should be adequate, relevant, and limited to what is necessary for the purpose for which it is processed. It is written explicitly into GDPR (Article 5(1)©), implicit in FERPA and COPPA, and reinforced by CCPA/CPRA's purpose-limitation requirements. For an intelligent-textbook author, data minimization is not a legal footnote — it is a design principle that short-circuits most of the downstream regulatory load.</p>
+<p>The practical move is <em>default to not collecting</em>. If a feature does not genuinely require a per-student record, do not collect the record. If a feature can be served by an aggregated anonymized signal, serve it that way. If a feature needs a per-student record for operational reasons (say, resuming a session), narrow the record to the minimum fields needed, retain it for the minimum time required, and delete it on a schedule the author can describe precisely. Every per-student field is a future compliance obligation; every per-student record retained past its operational need is a future breach.</p>
+<h3 id="xapi-and-the-learning-record-store">xAPI and the Learning Record Store<a class="headerlink" href="#xapi-and-the-learning-record-store" title="Permanent link">¶</a></h3>
+<p>For projects that <em>genuinely</em> require Level 3+ capabilities — and some do, particularly in institutional corporate learning, regulated professional training, and adaptive programs at institutions with existing data-governance infrastructure — there is a principled path that respects student agency: <strong><em>xAPI</em></strong> (also written <em>Experience API</em> or <em>Tin Can API</em>) is an open specification, originally developed by ADL in 2013, for recording and retrieving statements about learning experiences in a structured <em>actor-verb-object</em> form ("Alex completed Chapter 5 Quiz"). A <strong><em>Learning Record Store</em></strong> (LRS) is a conforming system that stores xAPI statements and supports queries, exports, and deletions against them.</p>
+<p>The architectural advantage of the xAPI / LRS pattern is that the learning record becomes <em>portable</em> and <em>student-controlled</em>. A learner can, in principle, export their full record from one LRS and import it into another, or delete it entirely, without the textbook author's system becoming the single immutable keeper of that record. Combined with appropriate governance — consent flows, purpose limitation, retention policies, access and deletion endpoints — xAPI and an LRS are the ethically principled substrate on which Level 3+ systems can be built.</p>
+<p>The honest caveat is that running an LRS responsibly is a substantial technical and governance undertaking — encryption at rest and in transit, audit logging, third-party processor agreements, periodic algorithmic-bias auditing if automated decisions affect the learner, data protection impact assessments, breach-notification workflows. It is not a feature a solo author bolts onto a Level 2 textbook. It is an institutional capability that justifies its existence only when the pedagogical benefit of Level 3+ personalization is large enough to warrant the compliance overhead.</p>
+<p>The framing to carry out of this chapter and into the rest of the book is simple: <em>we do not collect student data because we have not earned the right to handle it.</em> If and when a project earns the right — through institutional partnership, governance infrastructure, consent flows, and operational discipline — xAPI and an LRS are the principled paths. Until then, aggregate analytics at Level 2 is where the work happens, and the work is plenty.</p>
+<h2 id="retrieval-check">Retrieval Check<a class="headerlink" href="#retrieval-check" title="Permanent link">¶</a></h2>
+<p>Close the tab and try these from memory. Stumbling is diagnostic — it tells you which section to revisit. Resist the urge to scroll up before attempting each one; the effort of retrieval is itself the learning.</p>
+<ol>
+<li><strong>Name</strong> the two dimensions that distinguish formative from summative assessment, and give an example of a single assessment item that could play either role depending on how its results are used. (Level: Remember / Apply.)</li>
+<li><strong>Compare</strong> immediate and delayed feedback by timing, best-use case, and cognitive-load cost. Under what conditions does delayed feedback <em>help</em> long-term retention? (Level: Understand / Analyze.)</li>
+<li><strong>Write</strong> the Rasch one-parameter logistic model from memory. For <span class="arithmatex">\(\theta = 0.5\)</span> and <span class="arithmatex">\(b = 1.0\)</span>, is the probability of a correct response greater or less than 0.5, and why? (Level: Remember / Apply.)</li>
+<li><strong>Design</strong> a three-distractor diagnostic item for a concept of your choice. For each distractor, name the misconception it is designed to detect. (Level: Create.)</li>
+<li><strong>Apply</strong> Zimmerman's SRL phases to your own study of this chapter: what did you do in forethought, what did you monitor during performance, and what are you about to do in self-reflection? (Level: Apply / Evaluate.)</li>
+<li><strong>Critique</strong> this design: <em>"Our intelligent textbook tracks every click each student makes, uses it to personalize the reading path, and emails weekly progress reports to each student's instructor."</em> Name the level this design sits at, at least three regulations that attach, and one structural redesign that would preserve most of the pedagogical benefit at Level 2. (Level: Evaluate.)</li>
+<li><strong>Evaluate</strong> the claim that A/B testing a chapter against end-of-chapter quiz score is a sufficient measurement of whether the chapter is improving. Name at least two guardrail metrics the claim ignores, and describe the Goodhart-style failure mode that single-metric optimization produces. (Level: Evaluate.)</li>
+<li><strong>Explain</strong> why data minimization short-circuits most of the Level 3+ regulatory load, and identify one feature you have been tempted to build into a Level 2 textbook that would cross the line. (Level: Analyze / Evaluate.)</li>
+</ol>
+<p>If question 6, 7, or 8 produced discomfort, that discomfort is the right kind. It is the instinct that separates a designer who handles student data well from one who handles it at all.</p>
+<h2 id="bridge-to-chapter-9">Bridge to Chapter 9<a class="headerlink" href="#bridge-to-chapter-9" title="Permanent link">¶</a></h2>
+<p>We now have the measurement-and-feedback machinery that every earlier chapter of this book implicitly relies on — formative and summative assessment in their proper roles, feedback shaped by timing and content, rubrics that do not leak ambiguity, IRT as the principled upgrade to raw percent-correct, diagnostic items whose wrong answers are informative, the self-regulated-learning cycle that builds metacognitive calibration, and the aggregate-analytics ceiling that keeps an intelligent textbook inside Level 2. What measurement alone cannot do is guarantee that the conditions around the learner support the mechanisms it measures. A learner in a noisy classroom, under sleep deprivation, without psychological safety, or without agency over their own learning path will underperform every measurement instrument we have described in this chapter — not because the measurements are wrong, but because the conditions have already decided what the measurements will find. Chapter 9 is where we turn to those conditions: attention, environment, psychological safety, learner agency, and the classroom and platform features that determine whether the measurement-and-feedback machinery of this chapter has anything real to measure.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">The Loop Only Closes in the Right Conditions</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/celebration.png" data-desc-position="bottom"><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Bloom the elephant celebrating with trunk raised"></a>
+You now have the full measurement-and-feedback toolkit — formative and summative, immediate and delayed, rubric and IRT, diagnostic and metacognitive, dashboard and A/B test, Level 2 and the regulatory line beyond it. Hold onto two headlines: <em>the measure that becomes the target ceases to be a good measure</em>, and <em>we do not collect student data because we have not earned the right to handle it</em>. Next up: Learning Conditions — because measurement is only meaningful within an environment that supports the learner it measures. See you in Chapter 9.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../07-expertise-mastery/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 7. Expertise and Mastery">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                7. Expertise and Mastery
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../09-learning-conditions/" class="md-footer__link md-footer__link--next" aria-label="Next: 9. Learning Conditions and Environment">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                9. Learning Conditions and Environment
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Richard Tandler. All rights reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "content.action.edit", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

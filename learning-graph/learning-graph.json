@@ -1225,6 +1225,60 @@
       "id": 221,
       "label": "Image Generation Costs",
       "group": "AIST"
+    },
+    {
+      "id": 222,
+      "label": "Intelligent Textbook Level",
+      "group": "FOUND",
+      "shape": "box"
+    },
+    {
+      "id": 223,
+      "label": "Privacy Inflection Point",
+      "group": "PRIV",
+      "shape": "box"
+    },
+    {
+      "id": 224,
+      "label": "FERPA",
+      "group": "PRIV",
+      "shape": "box"
+    },
+    {
+      "id": 225,
+      "label": "COPPA",
+      "group": "PRIV",
+      "shape": "box"
+    },
+    {
+      "id": 226,
+      "label": "GDPR",
+      "group": "PRIV",
+      "shape": "box"
+    },
+    {
+      "id": 227,
+      "label": "CCPA CPRA",
+      "group": "PRIV",
+      "shape": "box"
+    },
+    {
+      "id": 228,
+      "label": "Data Minimization",
+      "group": "PRIV",
+      "shape": "box"
+    },
+    {
+      "id": 229,
+      "label": "xAPI",
+      "group": "PRIV",
+      "shape": "box"
+    },
+    {
+      "id": 230,
+      "label": "Learning Record Store",
+      "group": "PRIV",
+      "shape": "box"
     }
   ],
   "edges": [
@@ -2587,6 +2641,50 @@
     {
       "from": 221,
       "to": 153
+    },
+    {
+      "from": 222,
+      "to": 9
+    },
+    {
+      "from": 223,
+      "to": 222
+    },
+    {
+      "from": 224,
+      "to": 223
+    },
+    {
+      "from": 225,
+      "to": 223
+    },
+    {
+      "from": 226,
+      "to": 223
+    },
+    {
+      "from": 227,
+      "to": 223
+    },
+    {
+      "from": 228,
+      "to": 223
+    },
+    {
+      "from": 229,
+      "to": 222
+    },
+    {
+      "from": 229,
+      "to": 108
+    },
+    {
+      "from": 230,
+      "to": 229
+    },
+    {
+      "from": 230,
+      "to": 223
     }
   ]
 }

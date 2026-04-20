@@ -2,50 +2,130 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dmccreary.github.io/learning-sciences/</loc>
-         <lastmod>2026-04-19</lastmod>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/about/</loc>
+         <lastmod>2026-04-20</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/learning-sciences/contact/</loc>
-         <lastmod>2026-04-19</lastmod>
+         <lastmod>2026-04-20</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/learning-sciences/course-description-notes/</loc>
-         <lastmod>2026-04-19</lastmod>
+         <lastmod>2026-04-20</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/learning-sciences/course-description/</loc>
-         <lastmod>2026-04-19</lastmod>
+         <lastmod>2026-04-20</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/learning-sciences/license/</loc>
-         <lastmod>2026-04-19</lastmod>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/references/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/chapters/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/chapters/01-foundations/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/chapters/02-seven-domains/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/chapters/03-motivation-engagement/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/chapters/04-cognitive-architecture/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/chapters/05-knowledge-retention/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/chapters/06-application-transfer/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/chapters/07-expertise-mastery/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/chapters/08-measurement-feedback/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/chapters/09-learning-conditions/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/chapters/10-textbook-architecture/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/chapters/11-microsims/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/chapters/12-mascots-admonitions/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/chapters/13-graphic-novels/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/chapters/14-agent-skills/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/chapters/15-capstone-deployment/</loc>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/img/mascot/image-prompts/</loc>
+         <lastmod>2026-04-20</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/learning-sciences/learning-graph/</loc>
-         <lastmod>2026-04-19</lastmod>
+         <lastmod>2026-04-20</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/learning-sciences/learning-graph/concept-list/</loc>
-         <lastmod>2026-04-19</lastmod>
+         <lastmod>2026-04-20</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/learning-sciences/learning-graph/concept-taxonomy/</loc>
-         <lastmod>2026-04-19</lastmod>
+         <lastmod>2026-04-20</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/learning-sciences/learning-graph/course-description-assessment/</loc>
-         <lastmod>2026-04-19</lastmod>
+         <lastmod>2026-04-20</lastmod>
+    </url>
+    <url>
+         <loc>https://dmccreary.github.io/learning-sciences/learning-graph/mascot-test/</loc>
+         <lastmod>2026-04-20</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/learning-sciences/learning-graph/quality-metrics/</loc>
-         <lastmod>2026-04-19</lastmod>
+         <lastmod>2026-04-20</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/learning-sciences/learning-graph/taxonomy-distribution/</loc>
-         <lastmod>2026-04-19</lastmod>
+         <lastmod>2026-04-20</lastmod>
     </url>
     <url>
          <loc>https://dmccreary.github.io/learning-sciences/sims/graph-viewer/</loc>
-         <lastmod>2026-04-19</lastmod>
+         <lastmod>2026-04-20</lastmod>
     </url>
 </urlset>

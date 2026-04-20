@@ -247,6 +247,29 @@ body {
     height: 100%;
 }
 
+#loading-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3rem;
+    color: #555;
+    pointer-events: none;
+    z-index: 20;
+}
+
+#viewer-version {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 0.75rem;
+    color: #999;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    pointer-events: none;
+    z-index: 20;
+    user-select: none;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .sidebar {

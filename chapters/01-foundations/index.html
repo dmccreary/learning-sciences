@@ -1,0 +1,1854 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introduces Learning Sciences as a field, its parent disciplines, Bloom's Taxonomy 2001, the idea of an intelligent textbook, and the Claude Code authoring stack that the rest of the book builds on.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/learning-sciences/chapters/01-foundations/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../02-seven-domains/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Foundations of Learning Sciences - Learning Sciences</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="Foundations of Learning Sciences - Learning Sciences">
+      
+        <meta property="og:description" content="Introduces Learning Sciences as a field, its parent disciplines, Bloom's Taxonomy 2001, the idea of an intelligent textbook, and the Claude Code authoring stack that the rest of the book builds on.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/learning-sciences/assets/images/social/chapters/01-foundations/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/learning-sciences/chapters/01-foundations/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="Foundations of Learning Sciences - Learning Sciences">
+      
+        <meta name="twitter:description" content="Introduces Learning Sciences as a field, its parent disciplines, Bloom's Taxonomy 2001, the idea of an intelligent textbook, and the Claude Code authoring stack that the rest of the book builds on.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/learning-sciences/assets/images/social/chapters/01-foundations/index.png">
+      
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#foundations-of-learning-sciences" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Learning Sciences" class="md-header__button md-logo" aria-label="Learning Sciences" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learning Sciences
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Foundations of Learning Sciences
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/learning-sciences.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Learning Sciences" class="md-nav__button md-logo" aria-label="Learning Sciences" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Learning Sciences
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/learning-sciences.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapters
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    1. Foundations of Learning Sciences
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    1. Foundations of Learning Sciences
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-authoring-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Authoring Gap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-learning-sciences" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is Learning Sciences?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Is Learning Sciences?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-parent-disciplines-of-learning-sciences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Parent Disciplines of Learning Sciences
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-principle-to-practice-evidence-based-pedagogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      From Principle to Practice: Evidence-Based Pedagogy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="From Principle to Practice: Evidence-Based Pedagogy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-evidence-loop-that-disciplines-ai-generated-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Evidence Loop That Disciplines AI-Generated Content
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-shared-vocabulary-for-learning-blooms-taxonomy-2001" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Shared Vocabulary for Learning: Bloom's Taxonomy 2001
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Shared Vocabulary for Learning: Bloom's Taxonomy 2001">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-interactive-blooms-taxonomy-pyramid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Interactive Bloom's Taxonomy Pyramid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-intelligent-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is an Intelligent Textbook?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Is an Intelligent Textbook?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-components-of-an-intelligent-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Components of an Intelligent Textbook
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#levels-of-intelligent-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Levels of Intelligent Textbook
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-ai-stack-beneath-the-book" class="md-nav__link">
+    <span class="md-ellipsis">
+      The AI Stack Beneath the Book
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-authoring-toolchain" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Authoring Toolchain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Authoring Toolchain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-note-on-the-word-harness" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Note on the Word "Harness"
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Note on the Word " harness"">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-authoring-pipeline-in-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Authoring Pipeline in Motion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval Check
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bridge-to-chapter-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bridge to Chapter 2
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-seven-domains/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. The Seven Domains Framework
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-motivation-engagement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Motivation and Engagement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-cognitive-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Cognitive Architecture and Load
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-knowledge-retention/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Knowledge Retention
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-application-transfer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. Application and Transfer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-expertise-mastery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. Expertise and Mastery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-measurement-feedback/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8. Measurement and Feedback
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-learning-conditions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9. Learning Conditions and Environment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-textbook-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Intelligent Textbook Architecture and AI Tooling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-microsims/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. MicroSims and Interactive Visualizations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-mascots-admonitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Pedagogical Mascots and Admonitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-graphic-novels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Graphic Novels and Short-Form Stories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-agent-skills/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. AI Agent Skills for Textbook Generation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-capstone-deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15. Capstone and Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../sims/graph-viewer/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concepts Covered
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-authoring-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Authoring Gap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-learning-sciences" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is Learning Sciences?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Is Learning Sciences?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-parent-disciplines-of-learning-sciences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Parent Disciplines of Learning Sciences
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-principle-to-practice-evidence-based-pedagogy" class="md-nav__link">
+    <span class="md-ellipsis">
+      From Principle to Practice: Evidence-Based Pedagogy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="From Principle to Practice: Evidence-Based Pedagogy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-evidence-loop-that-disciplines-ai-generated-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Evidence Loop That Disciplines AI-Generated Content
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-shared-vocabulary-for-learning-blooms-taxonomy-2001" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Shared Vocabulary for Learning: Bloom's Taxonomy 2001
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Shared Vocabulary for Learning: Bloom's Taxonomy 2001">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-interactive-blooms-taxonomy-pyramid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Interactive Bloom's Taxonomy Pyramid
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-intelligent-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is an Intelligent Textbook?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Is an Intelligent Textbook?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-components-of-an-intelligent-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: Components of an Intelligent Textbook
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#levels-of-intelligent-textbook" class="md-nav__link">
+    <span class="md-ellipsis">
+      Levels of Intelligent Textbook
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-ai-stack-beneath-the-book" class="md-nav__link">
+    <span class="md-ellipsis">
+      The AI Stack Beneath the Book
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-authoring-toolchain" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Authoring Toolchain
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Authoring Toolchain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-note-on-the-word-harness" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Note on the Word "Harness"
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A Note on the Word " harness"">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagram-the-authoring-pipeline-in-motion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagram: The Authoring Pipeline in Motion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval Check
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bridge-to-chapter-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bridge to Chapter 2
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/learning-sciences.git/blob/master/docs/chapters/01-foundations/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+    </a>
+  
+  
+
+
+<h1 id="foundations-of-learning-sciences">Foundations of Learning Sciences<a class="headerlink" href="#foundations-of-learning-sciences" title="Permanent link">¶</a></h1>
+<div class="admonition mascot-welcome">
+<p class="admonition-title">Welcome — Let's Build a Mental Model</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/welcome.png" data-desc-position="bottom"><img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Bloom the elephant waving welcome"></a>
+Hi — I'm Bloom, and I'll be walking through this book with you. You'll see me at the start of every chapter to introduce what we're about to cover and the question we're chasing. Along the way I'll drop in with <strong>tips</strong> when there's a small move that makes a big difference, <strong>think out loud</strong> with you when a concept has a subtle twist, and <strong>flag pitfalls</strong> before you step into them. When the material gets genuinely hard — and some of it will — I'll offer <strong>encouragement</strong> and remind you that the struggle is where the learning lives. And at the end of each chapter, I'll show up to <strong>celebrate</strong> what you've built so far, because noticing progress is itself a learning-science intervention. Our first job, right here, is to map the territory: what Learning Sciences actually <em>is</em>, and what tools we'll use to build intelligent textbooks with it. Let's build a mental model.</p>
+</div>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
+<p>We begin with the field-level definitions that everything else in this book assumes: what Learning Sciences is, the parent disciplines it draws from (cognitive science, educational psychology, neuroscience, instructional design), Bloom's Taxonomy as our shared vocabulary for learning outcomes, and the AI/authoring stack (Claude Code, Agent Skills, MkDocs Material, Markdown) that we'll use to build every artifact in the rest of the course. By the end of this chapter, readers will have a working mental model of the territory and the toolchain.</p>
+<h2 id="concepts-covered">Concepts Covered<a class="headerlink" href="#concepts-covered" title="Permanent link">¶</a></h2>
+<p>This chapter covers the following 16 concepts from the learning graph:</p>
+<ol>
+<li>Learning Sciences</li>
+<li>Instructional Design</li>
+<li>Cognitive Science</li>
+<li>Educational Psychology</li>
+<li>Neuroscience in Learning</li>
+<li>Evidence-Based Pedagogy</li>
+<li>Bloom Taxonomy 2001</li>
+<li>Learning Objective</li>
+<li>Intelligent Textbook</li>
+<li>Generative AI</li>
+<li>Large Language Model</li>
+<li>Claude Code</li>
+<li>Agent Skill</li>
+<li>MkDocs Material</li>
+<li>Markdown Authoring</li>
+<li>Intelligent Textbook Level</li>
+</ol>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
+<p>This chapter assumes only the prerequisites listed in the <a href="../../course-description/">course description</a>.</p>
+<hr>
+<h2 id="the-authoring-gap">The Authoring Gap<a class="headerlink" href="#the-authoring-gap" title="Permanent link">¶</a></h2>
+<p>Something has changed in the last few years that most educators still underestimate. A single author, working alone, can now produce interactive learning material that two years ago would have required a publishing-house team of six and a twelve-month timeline. The tools are on our laptops. The cost of an experiment is a cup of coffee. And yet most of what gets produced under this new capability is — charitably — mediocre. Why?</p>
+<p>The short answer is that <strong>capability is not principle</strong>. A large language model will happily generate ten thousand words of plausible-sounding chapter prose whether or not any of it serves the learner. It will produce a quiz that looks like a quiz without regard to whether the questions are too easy, too hard, or aimed at the wrong cognitive level. It will invent a mascot whose voice drifts from chapter to chapter. The gap between "content that exists" and "content that teaches" is the authoring gap — and closing it is what this course is about.</p>
+<p>By the end of this chapter you will be able to:</p>
+<ul>
+<li>Define Learning Sciences and name the four parent disciplines it draws on.</li>
+<li>Explain what makes pedagogy <em>evidence-based</em> and why that matters for AI-generated content.</li>
+<li>State the six levels of the 2001 revised Bloom's Taxonomy and give at least one verb for each.</li>
+<li>Describe what an <em>intelligent textbook</em> is and which pieces distinguish it from a static textbook.</li>
+<li>Identify the four layers of the authoring toolchain we'll use throughout the book.</li>
+</ul>
+<h2 id="what-is-learning-sciences">What Is Learning Sciences?<a class="headerlink" href="#what-is-learning-sciences" title="Permanent link">¶</a></h2>
+<p><strong><em>Learning Sciences</em></strong> is an interdisciplinary field that studies how people actually learn — in classrooms, online, on the job, and alone at midnight before an exam — and uses those findings to design environments, content, and feedback loops that make learning more effective. It is deliberately <em>interdisciplinary</em> because no single parent field has the whole picture. Three contributing disciplines matter most for this book, and a fourth sits alongside them as the translation layer.</p>
+<p><strong><em>Cognitive Science</em></strong> — the study of the mind as an information-processing system — contributes the architecture: how sensory memory hands off to working memory, how working memory hands off to long-term memory, and what limits each of those transfers. When we talk in later chapters about cognitive load, chunking, or dual coding, we are drawing on cognitive science.</p>
+<p><strong><em>Educational Psychology</em></strong> — the study of how people learn in educational settings — contributes the motivational and developmental layer: why a student engages or disengages, how prior knowledge shapes new learning, and how feedback changes future effort. Self-Determination Theory, growth mindset, and self-efficacy all live here.</p>
+<p><strong><em>Neuroscience in Learning</em></strong> — the study of the brain and nervous system as they relate to learning — contributes mechanism and constraint: what synaptic consolidation looks like under sleep, how attention networks compete, what the fMRI signature of retrieval looks like. We will treat neuroscience findings carefully in this book. Neural evidence corroborates behavioral evidence; it rarely overrides it. A finding that "light up region X" is not, by itself, an instructional recommendation.</p>
+<p>The fourth contributor, <strong><em>Instructional Design</em></strong>, is the translation layer — the applied discipline that turns findings from the three research fields into learning experiences. Where cognitive science asks <em>how does memory work?</em>, instructional design asks <em>given how memory works, what should this lesson look like?</em> Models like ADDIE (Analyze, Design, Develop, Implement, Evaluate), Backward Design, and the 4C/ID framework all sit inside instructional design.</p>
+<p>The relationships among these fields are easiest to see as a picture.</p>
+<h4 id="diagram-parent-disciplines-of-learning-sciences">Diagram: Parent Disciplines of Learning Sciences<a class="headerlink" href="#diagram-parent-disciplines-of-learning-sciences" title="Permanent link">¶</a></h4>
+<details>
+<summary>Confluence diagram showing how three research disciplines and one applied discipline converge into Learning Sciences</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> learning-sciences-confluence<br>
+<strong>Library:</strong> Mermaid<br>
+<strong>Status:</strong> Specified</p>
+<p>A top-down flowchart rendered with Mermaid showing four parent disciplines converging on Learning Sciences, which in turn feeds Intelligent Textbook Design. Three research disciplines (Cognitive Science, Educational Psychology, Neuroscience in Learning) sit on the top row with colored nodes; Instructional Design sits on a second row as the "translation layer" with a distinct color; Learning Sciences sits on the third row as the convergence node; Intelligent Textbook Design sits on the bottom row as the output. Each arrow from a parent discipline is labeled with the primary contribution (e.g., Cognitive Science → Learning Sciences labeled "memory and attention"; Educational Psychology → Learning Sciences labeled "motivation and development"; Neuroscience in Learning → Learning Sciences labeled "mechanism and constraint"; Instructional Design → Learning Sciences labeled "translation to practice"). Node colors use a blue palette on a white background; node width resizes with the container using Mermaid's responsive rendering.</p>
+<p>Implementation: Mermaid flowchart (<code>flowchart TD</code>) embedded directly in the chapter markdown via the <code>pymdownx.superfences</code> mermaid fence already configured in <code>mkdocs.yml</code>. Responsive sizing is native to Mermaid when rendered in MkDocs Material.</p>
+</details>
+<p>A quick critical-thinking prompt before we move on: the diagram above shows clean arrows from each parent discipline into Learning Sciences. In reality the flow is messier — findings get challenged, reinterpreted, and sometimes retracted. <em>What would you need to see to believe that a particular cognitive-science finding should change how a chapter is designed?</em> Hold that question; we'll return to it in the Measurement chapter.</p>
+<h2 id="from-principle-to-practice-evidence-based-pedagogy">From Principle to Practice: Evidence-Based Pedagogy<a class="headerlink" href="#from-principle-to-practice-evidence-based-pedagogy" title="Permanent link">¶</a></h2>
+<p>Most instructional decisions throughout history have been made by tradition, intuition, or market pressure. <strong><em>Evidence-Based Pedagogy</em></strong> is the commitment to choose instructional strategies on the basis of empirical research — ideally randomized or quasi-experimental — rather than on what the author happened to experience in school. It sounds obvious, and it is not.</p>
+<p>Evidence-based pedagogy has three practical consequences that shape every chapter of this book.</p>
+<p>First, <strong>we label our claims</strong>. When a chapter says "retrieval practice strengthens long-term memory," we note whether the supporting evidence comes from controlled experiments, classroom field studies, or meta-analyses. A finding from a lab study with undergraduates does not automatically generalize to fifth graders learning fractions. Naming the study type keeps us honest.</p>
+<p>Second, <strong>we flag plausible confounds</strong>. "Students who take more notes get higher grades" is a correlation. Does note-taking cause the grades? Or do conscientious students both take more notes <em>and</em> earn higher grades, with conscientiousness doing all the causal work? The second explanation is cheaper to believe. We train ourselves — and our readers — to ask <em>what else could explain this?</em> as a reflex.</p>
+<p>Third, <strong>we treat popular claims skeptically</strong>. Learning styles, the Mozart effect, and the left-brain/right-brain dichotomy are all widely believed and poorly supported. An AI-generated chapter that uncritically repeats these is worse than no chapter at all, because it launders folk belief as authority. Evidence-based pedagogy is our filter against that failure mode.</p>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">A Core Habit of Mind</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/thinking.png" data-desc-position="bottom"><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Bloom the elephant thinking, one hoof raised"></a>
+Whenever you read a claim about how people learn — in this book or anywhere else — make asking <em>"What's the evidence, and what else could explain it?"</em> your first move, not your last. That single habit separates durable knowledge from folk wisdom.</p>
+</div>
+<p>Instructional Design and Evidence-Based Pedagogy together form the <strong>principled loop</strong> that AI-assisted authoring needs. Without the loop, capable AI produces more content of unknown quality. With the loop, capable AI produces more content <em>whose quality we can check</em>. The loop has a shape worth seeing.</p>
+<h4 id="diagram-the-evidence-loop-that-disciplines-ai-generated-content">Diagram: The Evidence Loop That Disciplines AI-Generated Content<a class="headerlink" href="#diagram-the-evidence-loop-that-disciplines-ai-generated-content" title="Permanent link">¶</a></h4>
+<details>
+<summary>Causal loop diagram showing how evidence-based pedagogy balances AI content volume</summary>
+<p>Type: causal-loop-diagram
+<strong>sim-id:</strong> evidence-loop-authoring<br>
+<strong>Library:</strong> Mermaid<br>
+<strong>Status:</strong> Specified</p>
+<p>A causal loop diagram with 6 nodes, each written as a noun phrase (a variable that can go up or down). Rendered with Mermaid as a <code>flowchart LR</code> using styled edges for polarity. Nodes: "AI authoring capability", "content volume", "content quality", "learner outcomes", "evidence feedback", "instructional design adjustment". Edges with polarity labels:</p>
+<ul>
+<li>AI authoring capability → content volume (+) — more capable AI produces more material</li>
+<li>content volume → content quality (−) — without a filter, volume dilutes quality (this is the authoring gap)</li>
+<li>evidence feedback → instructional design adjustment (+) — evidence tells us what to change</li>
+<li>instructional design adjustment → content quality (+) — better design lifts quality</li>
+<li>content quality → learner outcomes (+) — better content produces better learning</li>
+<li>learner outcomes → evidence feedback (+, with delay) — outcomes become measurable evidence (delay marker shown as "⧚")</li>
+</ul>
+<p>Two loops are labeled at the center:</p>
+<ul>
+<li><strong>B1 — Authoring gap (balancing).</strong> AI capability → volume → quality-drop. Left alone, this loop is corrosive: more volume, less quality.</li>
+<li><strong>R1 — Evidence flywheel (reinforcing).</strong> Instructional design adjustment → quality → outcomes → evidence → adjustment. When the loop closes, quality reinforces itself.</li>
+</ul>
+<p>The delay marker "⧚" appears on the learner outcomes → evidence feedback edge because outcome data takes weeks-to-months to accumulate. Node colors: loop B1 nodes in a warm red-orange; loop R1 nodes in a cool blue; edges labeled with <code>+</code> or <code>−</code>.</p>
+<p>Implementation: Mermaid <code>flowchart LR</code> with <code>linkStyle</code> declarations for edge polarity coloring; embedded directly in the chapter markdown. A one-paragraph walkthrough of loop R1 in plain English accompanies the diagram (see the paragraph immediately following).</p>
+</details>
+<p>Here is how to read loop <strong>R1</strong> in plain English: an instructional design adjustment (say, adding retrieval prompts) raises content quality; higher quality raises learner outcomes; the outcomes, once measured, become evidence; the evidence suggests the next adjustment. Each trip around the loop makes the content better than the last. That is the engine this course is designed to plug readers into.</p>
+<h2 id="a-shared-vocabulary-for-learning-blooms-taxonomy-2001">A Shared Vocabulary for Learning: Bloom's Taxonomy 2001<a class="headerlink" href="#a-shared-vocabulary-for-learning-blooms-taxonomy-2001" title="Permanent link">¶</a></h2>
+<p>Before we can design content or assess it, we need a common language for <em>what kind of thinking we're asking a learner to do</em>. Recalling a definition is a different cognitive act than evaluating two research claims against each other. Treating them the same is a recipe for quizzes that feel hard but measure nothing useful.</p>
+<p>The <strong><em>Bloom Taxonomy 2001</em></strong> — the revision by Anderson, Krathwohl, and colleagues of Bloom's original 1956 framework — is the vocabulary we'll use. It organizes cognitive processes into six levels, from simpler to more complex: <em>Remember</em>, <em>Understand</em>, <em>Apply</em>, <em>Analyze</em>, <em>Evaluate</em>, and <em>Create</em>. Two things are worth noticing about the 2001 revision. First, the top two levels were reordered (Create is now above Evaluate). Second, the levels are named as verbs (processes) rather than nouns (static categories), which reflects the fact that learning is something a student <em>does</em>, not a state they occupy.</p>
+<p>A <strong><em>Learning Objective</em></strong> is a single sentence that names what a learner will be able to do after a unit of instruction, written as an observable verb at a specific Bloom level. "Understand photosynthesis" is not a learning objective — understanding is not observable. "Explain how light energy is converted to chemical energy in the Calvin cycle" is a learning objective at the <em>Understand</em> level. The verb determines the level; the content determines the scope.</p>
+<p>Before the table below, keep one thing in mind: the levels are not a strict ladder. A learner can <em>create</em> before they can fluently <em>evaluate</em> — good writers often produce work that outpaces their ability to critique it. The table summarizes the six levels, each with example verbs and a learning objective written at that level.</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Cognitive process</th>
+<th>Example verbs</th>
+<th>Example learning objective</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Remember</td>
+<td>Retrieve relevant knowledge from long-term memory</td>
+<td>list, recall, identify, name, define</td>
+<td><em>List the three stages of the memory model.</em></td>
+</tr>
+<tr>
+<td>2. Understand</td>
+<td>Construct meaning from instructional messages</td>
+<td>explain, summarize, describe, compare, classify</td>
+<td><em>Explain why retrieval practice strengthens memory more than re-reading.</em></td>
+</tr>
+<tr>
+<td>3. Apply</td>
+<td>Use a procedure in a given situation</td>
+<td>use, demonstrate, implement, solve, execute</td>
+<td><em>Use cognitive load theory to revise a MicroSim with too many controls.</em></td>
+</tr>
+<tr>
+<td>4. Analyze</td>
+<td>Break material into parts and determine how they relate</td>
+<td>differentiate, deconstruct, compare, examine, attribute</td>
+<td><em>Analyze a quiz bank and determine its distribution across Bloom levels.</em></td>
+</tr>
+<tr>
+<td>5. Evaluate</td>
+<td>Make judgments based on criteria and standards</td>
+<td>critique, judge, assess, justify, defend</td>
+<td><em>Critique a course description using the 100-point rubric.</em></td>
+</tr>
+<tr>
+<td>6. Create</td>
+<td>Put elements together to form a coherent whole</td>
+<td>design, compose, generate, construct, author</td>
+<td><em>Design an original pedagogical mascot with a documented voice guide.</em></td>
+</tr>
+</tbody>
+</table>
+<p>The six-level taxonomy is most useful when you can see all of it at once, with the cognitive demand of each level made concrete. The interactive pyramid below lets you hover on any level to see its defining characteristics and the kinds of items on a quiz that measure it. We'll return to it whenever we design assessments, which in this course is often.</p>
+<h4 id="diagram-interactive-blooms-taxonomy-pyramid">Diagram: Interactive Bloom's Taxonomy Pyramid<a class="headerlink" href="#diagram-interactive-blooms-taxonomy-pyramid" title="Permanent link">¶</a></h4>
+<details>
+<summary>Interactive infographic overlay: Bloom's Taxonomy 2001 pyramid with clickable level callouts</summary>
+<p>Type: interactive-infographic
+<strong>sim-id:</strong> bloom-taxonomy-pyramid<br>
+<strong>Library:</strong> p5.js<br>
+<strong>Status:</strong> Specified</p>
+<p>An interactive infographic overlay using the <code>interactive-infographic-overlay</code> skill pattern. Base image: a hand-drawn pyramid divided into six horizontal tiers labeled from bottom to top (Remember, Understand, Apply, Analyze, Evaluate, Create), each tier a different color in a warm blue-to-orange gradient. The base image is annotation-free — all labels are delivered by overlay markers at calibrated positions defined in <code>data.json</code>.</p>
+<p>Modes (standard for this skill):</p>
+<ul>
+<li><strong>Explore mode:</strong> Hovering over a tier shows a tooltip containing the level name, one-sentence definition, three example verbs, and one sample learning objective written at that level. The content for all six tiers is pre-authored in <code>data.json</code>.</li>
+<li><strong>Quiz mode:</strong> A randomly chosen learning objective appears at the top; the student clicks the tier that matches its Bloom level. Correct answers highlight the tier green; incorrect answers reveal the correct tier and a one-sentence explanation.</li>
+<li><strong>Edit mode (authors only):</strong> Drag markers to recalibrate their positions on the base image; export updated <code>data.json</code>.</li>
+</ul>
+<p>Learning objective (Bloom level: Apply — per the chapter's own taxonomy): <em>Given a learning objective sentence, identify the Bloom level it targets.</em></p>
+<p>Responsive: canvas width adapts to container using the standard <code>updateCanvasSize()</code> first-line call in <code>setup()</code>; the pyramid rescales while preserving marker anchor ratios.</p>
+<p>Implementation: Generated with the <code>interactive-infographic-overlay</code> skill. The directory <code>/docs/sims/bloom-taxonomy-pyramid/</code> will contain <code>image-prompt.md</code>, <code>data.json</code>, <code>main.html</code>, <code>index.md</code>, and the pyramid base image. The text-to-image prompt specifies an annotation-free pyramid so that overlay markers render cleanly over the image.</p>
+</details>
+<div class="admonition mascot-tip">
+<p class="admonition-title">A Working Rule for Writing Objectives</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/tip.png" data-desc-position="bottom"><img src="../../img/mascot/tip.png" class="mascot-admonition-img" alt="Bloom the elephant giving a tip"></a>
+If you can't decide whether a learning objective is at Apply or Analyze, ask: <em>does the learner need to break something into parts, or use it whole?</em> "Use cognitive load theory" is Apply. "Diagnose which kind of cognitive load is hurting this MicroSim" is Analyze.</p>
+</div>
+<h2 id="what-is-an-intelligent-textbook">What Is an Intelligent Textbook?<a class="headerlink" href="#what-is-an-intelligent-textbook" title="Permanent link">¶</a></h2>
+<p>An ordinary textbook is a frozen artifact. An <strong><em>Intelligent Textbook</em></strong> is a textbook with <em>structured machine-readable knowledge underneath the prose</em>, plus <em>interactive components</em> on top, plus <em>a production pipeline that can regenerate any part of it as understanding improves</em>. All three pieces matter. Prose alone is a static book; prose plus interactivity is a website with book-shaped content; prose plus interactivity plus a regeneration pipeline is the thing we will build.</p>
+<p>An intelligent textbook has a small number of required components. Before the diagram that shows them, here is the vocabulary we will use for each:</p>
+<ul>
+<li><strong>Learning graph</strong> — a directed acyclic graph of concepts with dependency edges. It is the structural spine of the book.</li>
+<li><strong>Chapters</strong> — prose generated against the learning graph, with every concept appearing in exactly one chapter, after all its prerequisites.</li>
+<li><strong>Glossary</strong> — a term-by-term definition list, one entry per concept node in the graph.</li>
+<li><strong>Quiz bank</strong> — questions aligned to specific concepts and tagged with Bloom levels.</li>
+<li><strong>MicroSims</strong> — small interactive simulations embedded inline in chapters.</li>
+<li><strong>FAQ</strong> — common questions, harvested from chapter content and reader feedback.</li>
+<li><strong>References</strong> — a curated reading list, pinned per chapter.</li>
+<li><strong>Mascot admonitions</strong> — recurring character callouts that deliver hints, warnings, and encouragement in a consistent voice.</li>
+<li><strong>Stories</strong> — short-form graphic novels about historical figures whose work intersects with the subject matter.</li>
+</ul>
+<p>The components do not stand alone — they reference each other. The diagram below shows how.</p>
+<h4 id="diagram-components-of-an-intelligent-textbook">Diagram: Components of an Intelligent Textbook<a class="headerlink" href="#diagram-components-of-an-intelligent-textbook" title="Permanent link">¶</a></h4>
+<details>
+<summary>Architecture diagram showing the components of an intelligent textbook and their dependencies</summary>
+<p>Type: diagram
+<strong>sim-id:</strong> intelligent-textbook-components<br>
+<strong>Library:</strong> Mermaid<br>
+<strong>Status:</strong> Specified</p>
+<p>A Mermaid <code>flowchart TD</code> diagram showing the learning graph at the center as the structural spine, with arrows radiating to each generated artifact. Nodes:</p>
+<ul>
+<li><strong>Learning Graph</strong> (central, larger node, highlighted): concepts and dependencies as a DAG.</li>
+<li><strong>Chapters</strong> — generated from the graph; each chapter lists its concepts.</li>
+<li><strong>Glossary</strong> — one entry per concept node.</li>
+<li><strong>Quiz Bank</strong> — questions tagged per concept and Bloom level.</li>
+<li><strong>MicroSims</strong> — embedded per concept or small concept cluster.</li>
+<li><strong>FAQ</strong> — derived from chapter content.</li>
+<li><strong>References</strong> — curated per chapter.</li>
+<li><strong>Mascot Admonitions</strong> — voice layer cutting across all chapters (shown as a side stripe rather than a child node).</li>
+<li><strong>Stories</strong> — graphic novels attached to chapters where a historical figure applies.</li>
+</ul>
+<p>Edges labeled with the dependency type ("tagged with concept", "defined for concept", "referenced in chapter"). The mascot-admonition stripe is rendered in a distinct color to signal that it is a cross-cutting concern, not a sibling artifact. Layout is top-down with the learning graph at the top, chapters on the second row, and the other artifacts on the third row hanging off chapters and concepts.</p>
+<p>Implementation: Mermaid <code>flowchart TD</code> with custom node styling via <code>classDef</code>. Rendered responsively via MkDocs Material's built-in Mermaid support.</p>
+</details>
+<p>Three things about this architecture are worth holding onto. <strong>The learning graph is the spine</strong>, not a nice-to-have. Every other artifact is generated against it; change a dependency and the downstream artifacts change too. <strong>The mascot is cross-cutting</strong> — it is not an artifact <em>next to</em> the book, it is a voice layer <em>through</em> the book, which is why Chapter 12 has a whole chapter on getting it right. And <strong>regeneration is the point</strong>. The production pipeline should let an author regenerate a chapter, a quiz, or a MicroSim without breaking anything else. That constraint shapes the tool choices below.</p>
+<h3 id="levels-of-intelligent-textbook">Levels of Intelligent Textbook<a class="headerlink" href="#levels-of-intelligent-textbook" title="Permanent link">¶</a></h3>
+<p>Not all intelligent textbooks sit at the same point on a capability spectrum. An <strong><em>Intelligent Textbook Level</em></strong> is a tier on a five-point capability classification that describes how much interactivity, personalization, and student-data handling a given textbook involves. Drawing an analogy to the Society of Automotive Engineers' J3016 classification of autonomous-vehicle automation, McCreary and colleagues have proposed the following five levels:</p>
+<ol>
+<li><strong>Level 1 — Static.</strong> Fixed content, no interactivity. The traditional printed or PDF textbook.</li>
+<li><strong>Level 2 — Interactive.</strong> Learning graphs, MicroSims, embedded simulations, and path recommendations generated from the graph, with <em>no storage of individual student records</em>.</li>
+<li><strong>Level 3 — Adaptive.</strong> Personalization driven by stored student goals, progress, and behavioral history.</li>
+<li><strong>Level 4 — Chatbot.</strong> Conversational tutoring via a large language model, typically on top of an adaptive substrate.</li>
+<li><strong>Level 5 — Autonomous.</strong> Real-time generation of fully personalized instruction for each learner.</li>
+</ol>
+<p><strong>This book teaches Level 2.</strong> Every skill, pattern, and artifact in the production pipeline we cover is designed to run without collecting individual student data. The jump from Level 2 to Level 3 is not only a technical step — it is a <em>regulatory inflection point</em>. Once a system stores learning histories, behavioral traces, or identifying signals about a named student, it enters a highly regulated domain governed by FERPA, COPPA, GDPR, and comparable regional laws, with requirements for data minimization, consent, retention limits, access controls, and auditability that are out of scope for this course. We return to the full taxonomy and to the privacy inflection point in <a href="../10-textbook-architecture/">Chapter 10</a>, and we reinforce the warning in <a href="../08-measurement-feedback/">Chapter 8</a> where learning analytics most naturally tempts authors to cross the threshold.</p>
+<h2 id="the-ai-stack-beneath-the-book">The AI Stack Beneath the Book<a class="headerlink" href="#the-ai-stack-beneath-the-book" title="Permanent link">¶</a></h2>
+<p>Two definitions frame everything we do with AI in this book.</p>
+<p><strong><em>Generative AI</em></strong> is the broad category of AI systems that produce new artifacts — text, images, audio, video, code — rather than classifying or predicting values for existing inputs. "Generative" is a statement about output type: the system creates something where before there was nothing.</p>
+<p>A <strong><em>Large Language Model (LLM)</em></strong> is a specific class of generative AI: a neural network, usually a decoder-only transformer, trained on very large text corpora to predict the next token given the preceding context. Modern LLMs — Claude among them — have parameter counts in the hundreds of billions and context windows measured in the hundreds of thousands of tokens. The technical specifics will evolve quickly. The two properties that matter for authoring will not: an LLM is a <em>text generator</em> (it produces sequences), and its behavior is <em>shaped by context</em> (what you put in front of it determines what comes out).</p>
+<p>The fact that LLM behavior is context-shaped has a direct consequence for this course: <em>how</em> we instruct an LLM matters as much as <em>which</em> LLM we use. We will spend real time on prompt engineering, context windows, and the SKILL.md format in Chapter 10, because those are the controls that turn a capable but unfocused text generator into a disciplined authoring partner.</p>
+<div class="admonition mascot-encourage">
+<p class="admonition-title">This Part Takes a Second Read</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/encouraging.png" data-desc-position="bottom"><img src="../../img/mascot/encouraging.png" class="mascot-admonition-img" alt="Bloom the elephant offering encouragement"></a>
+If the distinction between <em>generative AI</em> and <em>large language model</em> feels a little fuzzy right now, that's fine — the generic/specific relationship gets clearer once we start invoking actual LLMs through actual skills. The concept will sharpen with use.</p>
+</div>
+<h2 id="the-authoring-toolchain">The Authoring Toolchain<a class="headerlink" href="#the-authoring-toolchain" title="Permanent link">¶</a></h2>
+<p>This course's production pipeline has five layers, stacked from the model up to the published site. Each layer is a named tool; each tool does one job.</p>
+<ul>
+<li><strong><em>IDE Harness</em></strong> — the client-side software that sits between an author's prompt and a language model. A harness is responsible for routing the prompt to the appropriate model (fast vs. deep, small vs. large, local vs. hosted), running the <em>agent loop</em> (prompt → model → tool call → tool result → next prompt), dispatching tool calls to the filesystem and shell, managing conversation context and memory, and enforcing sandbox and permission policies. The widely-quoted shorthand, from Martin Fowler and the Anthropic engineering team, is <em>Agent = Model + Harness</em>. Without a harness, a language model is a chat window; with one, it becomes an autonomous coding and authoring partner.</li>
+<li><strong><em>Claude Code</em></strong> — Anthropic's IDE harness and command-line interface that runs Claude inside a local working directory. It can read files, edit files, run shell commands, and call skills. Claude Code is the specific harness this course uses, and it is where the author and the model meet.</li>
+<li><strong><em>Agent Skill</em></strong> — a modular, reusable capability that an IDE harness can invoke by name. A skill is a directory containing at minimum a <code>SKILL.md</code> file that describes when the skill applies and what it does. In this course we will use around fourteen skills: one to analyze the course description, one to generate the learning graph, one to design chapter structure, one per artifact type (glossary, FAQ, quiz, MicroSim, story, references, metrics), and a few more. Skills are how we turn "ask Claude to do this" into "invoke the thing that already knows how to do this."</li>
+<li><strong><em>MkDocs Material</em></strong> — a static-site generator built on MkDocs and the Material theme. It takes a directory of Markdown files, a configuration file, and a theme, and produces a polished, navigable, searchable website. Intelligent textbooks in this course deploy as MkDocs Material sites, typically on GitHub Pages.</li>
+<li><strong><em>Markdown Authoring</em></strong> — the source-text convention used by MkDocs, by Claude Code, and by authors. Markdown is deliberately minimal: headings, lists, links, emphasis, fenced code, and (via extensions) admonitions, tables, and embedded diagrams. Every chapter in this book is a Markdown file.</li>
+</ul>
+<h3 id="a-note-on-the-word-harness">A Note on the Word "Harness"<a class="headerlink" href="#a-note-on-the-word-harness" title="Permanent link">¶</a></h3>
+<p>The term <em>harness</em> is used consistently in some AI-coding-tool ecosystems and carefully avoided in others. The underlying concept — a client-side runtime that wraps a model so it can call tools and operate in a loop — is converging across products, but the vocabulary has not. The table below summarizes what each major product in this space calls the thing, as of April 2026.</p>
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Term used</th>
+<th>Approximate meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude Code (Anthropic)</td>
+<td><strong>Harness</strong> (explicit)</td>
+<td>Agent loop, tool dispatch, context compaction, and guardrails wrapping Claude. Anthropic's engineering blog uses "harness" as a first-class term.</td>
+</tr>
+<tr>
+<td>Codex CLI (OpenAI)</td>
+<td><strong>Harness</strong> (explicit)</td>
+<td>"The Codex harness" — the agent loop and execution logic shared across CLI, IDE extensions, and desktop. OpenAI's "harness engineering" posts popularized the phrase in early 2026.</td>
+</tr>
+<tr>
+<td>Cursor</td>
+<td><strong>Agent</strong> / background agent / shadow workspace</td>
+<td>Avoids "harness." The harness-equivalent features are branded as Agent and the shadow workspace execution environment.</td>
+</tr>
+<tr>
+<td>Windsurf (Codeium)</td>
+<td><strong>Cascade</strong> / Cascade Engine</td>
+<td>Avoids "harness." The runtime is called Cascade; its context state layer is called Flow.</td>
+</tr>
+<tr>
+<td>Google Antigravity</td>
+<td><strong>Agent-first platform</strong> / Manager / Artifacts</td>
+<td>Avoids "harness." The platform vocabulary is agent-first architecture, a Manager view, and Artifacts.</td>
+</tr>
+<tr>
+<td>Evaluation community (METR, EleutherAI)</td>
+<td><strong>Scaffolding</strong> (runtime) vs. <strong>evaluation harness</strong> (test runner)</td>
+<td>Older, narrower usage. "Evaluation harness" (e.g., <code>lm-evaluation-harness</code>) means test-running infrastructure, not an agent runtime.</td>
+</tr>
+</tbody>
+</table>
+<p>Two honest caveats about this table. First, the definitional spread is real: a Cursor user and a Claude Code user may be describing the same software pattern and not recognize each other's terms. Second, the harness-as-runtime sense popularized by Anthropic and OpenAI in early 2026 is not identical to the older evaluation-harness sense — they share a "scaffolding around a model" metaphor, but one runs agents and the other runs benchmarks. We use <em>IDE harness</em> in this book for the runtime sense and will reserve <em>evaluation harness</em> for the benchmarking sense when it appears in later chapters.</p>
+<div class="admonition info">
+<p class="admonition-title">How This Definition Was Built</p>
+<p>The definition of <em>IDE harness</em> above was not taken from a single source. We surveyed the official documentation and engineering blogs of Claude Code, OpenAI Codex CLI, Cursor, Windsurf, and Google Antigravity; cross-checked them against Martin Fowler and Simon Willison's independent write-ups; and checked the older evaluation-community usage (METR, EleutherAI's <code>lm-evaluation-harness</code>) to make sure we were not conflating two senses of the word. The synthesis — <em>client-side runtime that routes prompts, runs the agent loop, dispatches tool calls, manages context, and enforces sandboxing</em> — is the intersection of what the explicit-adopter sources say a harness is. The full research trail, including URLs, quoted definitions, and the reasoning for each caveat, is logged in <a href="https://github.com/dmccreary/learning-sciences/blob/main/logs/harness-definition.md"><code>logs/harness-definition.md</code></a>. Whenever a term in this book has contested meanings across a field, expect a note like this one. <em>What's the evidence, and what else could explain it?</em> applies to vocabulary too.</p>
+</div>
+<p>The five layers connect top-to-bottom, but the data flow has a shape worth seeing in motion.</p>
+<h4 id="diagram-the-authoring-pipeline-in-motion">Diagram: The Authoring Pipeline in Motion<a class="headerlink" href="#diagram-the-authoring-pipeline-in-motion" title="Permanent link">¶</a></h4>
+<details>
+<summary>MicroSim: interactive walkthrough of the authoring pipeline from prompt to published chapter</summary>
+<p>Type: microsim
+<strong>sim-id:</strong> authoring-pipeline-walkthrough<br>
+<strong>Library:</strong> p5.js<br>
+<strong>Status:</strong> Specified</p>
+<p>An interactive p5.js MicroSim that animates the flow of authoring work from prompt to published chapter. The canvas is divided into five horizontal lanes from top to bottom:</p>
+<ol>
+<li><strong>Author</strong> (types a natural-language request, e.g., "generate a chapter on retrieval practice")</li>
+<li><strong>Claude Code</strong> (receives the request, selects the matching skill)</li>
+<li><strong>Agent Skill</strong> (runs; reads shared context; generates Markdown)</li>
+<li><strong>Markdown Files</strong> (written to <code>docs/chapters/...</code>)</li>
+<li><strong>MkDocs Material</strong> (builds and serves the site)</li>
+</ol>
+<p>Controls (using built-in p5.js controls per project convention):</p>
+<ul>
+<li><strong>Play / Pause button</strong> — animate a request flowing through all five lanes with a glowing token that moves between lanes and leaves small artifacts (file icons, skill badges) where it lands.</li>
+<li><strong>Speed slider</strong> (0.5× to 3×) — animation speed.</li>
+<li><strong>Skill dropdown</strong> — pick one of: Chapter Content Generator, Glossary Generator, Quiz Generator, MicroSim Generator. Selection changes which artifacts appear in lane 4 and which chapter section lights up in lane 5.</li>
+<li><strong>Reset button</strong> — clear and restart.</li>
+</ul>
+<p>Learning objective (Bloom level: Understand): <em>Describe the flow of information from an author's natural-language request through Claude Code, an Agent Skill, and MkDocs to a published chapter.</em></p>
+<p>Visual style matches the project's other MicroSims: white background, warm blue primary with orange accent per <code>mkdocs.yml</code> theme; each lane labeled on the left; the moving token uses a soft-glow effect to signal motion. Canvas width is responsive via <code>updateCanvasSize()</code> as the first line of <code>setup()</code>, and the canvas is parented to the standard <code>&lt;main&gt;&lt;/main&gt;</code> element so the sketch can be copy-pasted into the p5.js editor without modification.</p>
+<p>Implementation: p5.js sketch in <code>/docs/sims/authoring-pipeline-walkthrough/</code> with <code>main.html</code>, <code>script.js</code>, <code>local.css</code>, and <code>index.md</code>. Generate via the <code>microsim-generator</code> skill after Chapter 11 introduces MicroSim design principles formally.</p>
+</details>
+<p>The toolchain is intentionally boring. We are not betting the book on exotic infrastructure. Markdown has been stable for twenty years; MkDocs has been stable for a decade; GitHub Pages predates them both. The novelty in this course is not the <em>stack</em> — it is what the stack lets an author do when a capable LLM sits on top of it, disciplined by Agent Skills that encode the learning-sciences findings we'll spend the next chapters unpacking.</p>
+<h2 id="retrieval-check">Retrieval Check<a class="headerlink" href="#retrieval-check" title="Permanent link">¶</a></h2>
+<p>Before moving on to Chapter 2, close the browser tab briefly and try to answer these from memory. Stumbling is the point — it tells you which section to revisit.</p>
+<ol>
+<li><strong>Name</strong> the four disciplines that contribute to Learning Sciences, and the one distinct contribution of each. (Level: Remember / Understand.)</li>
+<li><strong>State</strong> the six levels of Bloom's Taxonomy 2001 in order, and give one verb for each. (Level: Remember.)</li>
+<li><strong>Explain</strong> in your own words why evidence-based pedagogy matters <em>more</em> in an AI-authoring workflow than in a traditional one. (Level: Understand.)</li>
+<li><strong>Given</strong> the learning objective "Compare near and far transfer using two examples from your own teaching," identify the Bloom level. Defend your choice. (Level: Analyze / Evaluate.)</li>
+<li><strong>Critique</strong> this sentence: "Our learning platform uses AI to generate personalized content, which research shows dramatically improves outcomes." What would you need to know before believing it? (Level: Evaluate.)</li>
+</ol>
+<p>If question 5 made you uncomfortable, that discomfort is the instinct this whole book is trying to sharpen. Good.</p>
+<h2 id="bridge-to-chapter-2">Bridge to Chapter 2<a class="headerlink" href="#bridge-to-chapter-2" title="Permanent link">¶</a></h2>
+<p>We now have the territory (Learning Sciences and its parent disciplines), the vocabulary (Bloom's Taxonomy and learning objectives), the artifact (intelligent textbook), and the toolchain (Claude Code, Agent Skills, MkDocs Material, Markdown). What we do <em>not</em> yet have is the organizing framework for the six research chapters that follow. That framework is the Seven Domains — the spine that the next chapter builds and that every later chapter hangs off of.</p>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">One Foundation Down</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/celebration.png" data-desc-position="bottom"><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Bloom the elephant celebrating with trunk raised"></a>
+You now have the working mental map we'll build on for the rest of the book. Next up: the Seven Domains — the framework that will let us say <em>exactly</em> which part of learning each later chapter is about. See you there.</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: List of Chapters">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                List of Chapters
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../02-seven-domains/" class="md-footer__link md-footer__link--next" aria-label="Next: 2. The Seven Domains Framework">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                2. The Seven Domains Framework
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Richard Tandler. All rights reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "content.action.edit", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
