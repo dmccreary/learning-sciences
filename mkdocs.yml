@@ -7,6 +7,9 @@ site_url: 'https://dmccreary.github.io/learning-sciences/'
 repo_url: 'https://github.com/dmccreary/learning-sciences.git'
 edit_uri: 'blob/master/docs'
 
+# Files excluded from the build (MkDocs 1.6+)
+exclude_docs: |
+  img/mascot/image-prompts.md
 
 nav:
   - Home: index.md

@@ -18,7 +18,20 @@
       "Bash(tee -a /Users/dan/Documents/ws/learning-sciences/logs/ch-02-content-generation.md)",
       "Bash(awk '/^---$/{f=!f;next} !f' docs/chapters/06-application-transfer/index.md)",
       "Read(//Users/dan/.claude/skills/**)",
-      "Read(//Users/dan/Documents/ws/claude-skills/skills/**)"
+      "Read(//Users/dan/Documents/ws/claude-skills/skills/**)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Write(/Users/dan/Documents/ws/learning-sciences/**)",
+      "Edit(/Users/dan/Documents/ws/learning-sciences/**)",
+      "Bash(wc:*)",
+      "Bash(date:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(python3 -c \"import json; json.load\\(open\\('/Users/dan/Documents/ws/learning-sciences/.claude/settings.local.json'\\)\\)\")",
+      "Bash(md5 -q /Users/dan/Documents/ws/learning-sciences/docs/sims/graph-viewer/script.js ~/.claude/skills/book-installer/references/assets/script.js)",
+      "Bash(md5 -q /Users/dan/Documents/ws/learning-sciences/docs/sims/graph-viewer/main.html ~/.claude/skills/book-installer/references/assets/main.html)",
+      "Bash(md5 -q /Users/dan/Documents/ws/learning-sciences/docs/sims/graph-viewer/local.css ~/.claude/skills/book-installer/references/assets/local.css)",
+      "Bash(md5 -q /Users/dan/Documents/ws/learning-sciences/docs/sims/graph-viewer/index.md ~/.claude/skills/book-installer/references/assets/index.md)"
     ]
   }
 }
