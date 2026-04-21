@@ -88,7 +88,7 @@ function initDashboard() {
     options: {
       indexAxis: 'y',
       responsive: true,
-      maintainAspectRatio: false,
+      maintainAspectRatio: true,
       plugins: {
         title: { display: true, text: 'Chapter Completion Funnel' },
         legend: { display: false },
@@ -148,7 +148,7 @@ function initDashboard() {
     },
     options: {
       responsive: true,
-      maintainAspectRatio: false,
+      maintainAspectRatio: true,
       plugins: {
         title: { display: true, text: 'Quiz Item Difficulty vs. Percent Correct' }
       },
@@ -178,7 +178,7 @@ function initDashboard() {
     },
     options: {
       responsive: true,
-      maintainAspectRatio: false,
+      maintainAspectRatio: true,
       plugins: {
         title: { display: true, text: 'Bloom-Level Distribution per Chapter' },
         legend: { position: 'bottom' }
