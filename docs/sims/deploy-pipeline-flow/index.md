@@ -1,63 +1,34 @@
 ---
 title: The Deploy Pipeline from Source to Live Site
-description: The Deploy Pipeline from Source to Live Site
-status: scaffold
+description: A five-stage deployment flowchart from markdown source through MkDocs build, git push, gh-deploy, to GitHub Pages, with three failure-mode callouts.
+status: implemented
 library: Mermaid
-bloom_level: TBD
 ---
 
 # The Deploy Pipeline from Source to Live Site
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="600px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
-## Learning Objective
+[Run the Deploy Pipeline Flow Fullscreen](./main.html){ .md-button .md-button--primary }
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** Mermaid
+A Mermaid flowchart LR diagram with five stages from left to right: Markdown Source, MkDocs Build, Git Commit and Push, mkdocs gh-deploy, and GitHub Pages. Three failure-mode callouts (in red) attach to the stages where they originate: F1 (Build Error) and F2 (Broken Link) at the MkDocs Build stage, F3 (Deploy Cache Drift) at the gh-deploy and GitHub Pages stages. A dashed feedback arrow from GitHub Pages back to Markdown Source signals that deployment starts the next iteration.
 
-## Preview
+## Diagram Details
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+```mermaid
+flowchart LR
+    S1[Markdown Source\ndocs/ + mkdocs.yml] -->|source files| S2[MkDocs Build\nmkdocs build\nProduces site/ HTML]
+    S2 -->|built site| S3[Git Commit + Push\nto main branch]
+    S3 -->|triggers deploy| S4[mkdocs gh-deploy\nPushes to gh-pages]
+    S4 -->|published| S5[GitHub Pages\nPublic URL served]
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+    S5 -.->|reader feedback| S1
 
-## Specification
-
-The full specification below is extracted from
-[Chapter 15: Capstone and Deployment](../../chapters/15-capstone-deployment/index.md).
-
-```text
-Type: diagram
-**sim-id:** deploy-pipeline-flow<br/>
-**Library:** Mermaid<br/>
-**Status:** Specified
-
-A Mermaid `flowchart LR` diagram with five stages from left to right, each a named node with an inline status color, and three failure-mode callouts drawn as side nodes attached to the stage where they most often originate.
-
-Main path (left to right):
-
-1. **Markdown source** (`docs/`, `mkdocs.yml`) — author's working tree.
-2. **MkDocs build** (`mkdocs build`) — produces `site/` HTML.
-3. **Git commit and push** to `main` — triggers the publishing workflow.
-4. **`mkdocs gh-deploy`** — rebuilds and pushes built output to the `gh-pages` branch.
-5. **GitHub Pages** — serves the `gh-pages` branch at the project's public URL.
-
-Failure callouts (drawn as red-bordered side nodes):
-
-- **F1 — Build error** attached to stage 2. Missing plugin, malformed front matter, unresolved reference. Caught by the `mkdocs build` console output.
-- **F2 — Broken link** attached to stage 2. Relative path mismatch, chapter renamed without link update. Caught by the link-check plugin if configured; otherwise silent.
-- **F3 — Deploy cache drift** attached to stages 4 and 5. Browser serves a stale asset because the CDN TTL hasn't expired or a hashed filename wasn't bumped. Caught by a hard refresh and a second check in a private window.
-
-A dashed feedback arrow runs from stage 5 back to stage 1 labeled "reader feedback" to signal that deployment is not the end — it is the start of the next iteration.
-
-Visual treatment: main path in cool blue; failure callouts in warm red with a red border; feedback arrow in dashed orange. Nodes labeled with both the command and the artifact produced. Every edge labeled with the carrying artifact.
-
-Implementation: Mermaid `flowchart LR` with `classDef` per stage category. Embedded directly in the chapter markdown.
+    F1[F1: Build Error\nMissing plugin, malformed front matter] --- S2
+    F2[F2: Broken Link\nRelative path mismatch] --- S2
+    F3[F3: Deploy Cache Drift\nStale assets from CDN TTL] --- S4
 ```
 
 ## Related Resources

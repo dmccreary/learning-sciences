@@ -1,56 +1,24 @@
 ---
-title: Baddeley's Working-Memory Components
-description: Baddeley's Working-Memory Components
-status: scaffold
-library: p5.js
-bloom_level: TBD
+title: Baddeley's Working Memory Model
+description: Interactive diagram of Baddeley's working memory with Central Executive, Phonological Loop, Visuospatial Sketchpad, and Episodic Buffer.
 ---
 
-# Baddeley's Working-Memory Components
+# Baddeley's Working Memory Model
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="582px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
-## Learning Objective
+[Run the Working Memory Model Fullscreen](./main.html){ .md-button .md-button--primary }
+[Edit Using the p5.js Editor](https://editor.p5js.org/){ .md-button }
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** p5.js
+An interactive diagram of Baddeley's multi-component working memory model. The Central Executive hub connects to three subsystems: the Phonological Loop (verbal/acoustic information), the Visuospatial Sketchpad (images and spatial layouts), and the Episodic Buffer (integrated episodes bridging to Long-Term Memory).
 
-## Preview
+In **Explore mode**, hover each component to see its storage type, duration, refresh mechanism, and a concrete example.
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+In **Quiz mode**, a cognitive task appears and you click the subsystem primarily engaged. Test whether you can identify which component handles mental rotation, silent rehearsal, or multi-modal integration.
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
-
-## Specification
-
-The full specification below is extracted from
-[Chapter 4: Cognitive Architecture and Load](../../chapters/04-cognitive-architecture/index.md).
-
-```text
-Type: interactive-infographic
-**sim-id:** baddeley-working-memory<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
-
-An interactive infographic overlay built with the `interactive-infographic-overlay` skill. Base image: a central hub labeled "Central Executive" with three radiating slots — "Phonological Loop" on the left with a small ear icon, "Visuospatial Sketchpad" on the right with a small eye icon, and an "Episodic Buffer" beneath bridging to long-term memory shown as a distant container. Rendered in the project's blue-amber palette on a white background; base image annotation-free with overlay-driven labels.
-
-Modes (standard for this skill):
-
-- **Explore mode:** Hovering each component reveals its storage type, duration, refresh mechanism, and one concrete example (e.g., phonological loop: "holds the sentence you just read for ~2s; refreshed by silent rehearsal").
-- **Quiz mode:** A task description appears ("mentally rotate this shape"); the student clicks the subsystem primarily engaged.
-- **Edit mode (authors only):** Drag markers to recalibrate positions; export updated `data.json`.
-
-Learning objective (Bloom level: Analyze): *Given a cognitive task, identify which working-memory component(s) it primarily recruits.*
-
-Responsive via `updateCanvasSize()` as first line of `setup()`; marker anchors preserved.
-
-Implementation: Generated with the `interactive-infographic-overlay` skill. Directory `/docs/sims/baddeley-working-memory/` contains the standard five files.
-```
+**Learning Objective (Analyze):** Given a cognitive task, identify which working-memory component(s) it primarily recruits.
 
 ## Related Resources
 

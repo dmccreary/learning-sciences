@@ -1,47 +1,54 @@
 ---
 title: Skill Dependency Graph
-description: Skill Dependency Graph
-status: scaffold
+description: A flowchart showing all fourteen agent skills as nodes with edges where one skill's output is a required input of another, centered on the learning-graph-generator hub.
+status: implemented
 library: Mermaid
-bloom_level: TBD
 ---
 
 # Skill Dependency Graph
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="700px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
-## Learning Objective
+[Run the Skill Dependency Graph Fullscreen](./main.html){ .md-button .md-button--primary }
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** Mermaid
+A Mermaid flowchart LR diagram showing all fourteen agent skills as nodes, with edges where one skill's output is a required input of another. The learning-graph-generator sits as a central hub (warm orange) with outgoing edges to book-chapter-generator, glossary-generator, quiz-generator, faq-generator, and reference-generator. Skills are color-coded by category: foundation (blue), authoring (teal), derived (green), engagement (amber), and audit (orange). Edges are labeled with the carrying artifact type.
 
-## Preview
+## Diagram Details
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+```mermaid
+flowchart LR
+    CDA[course-description analyzer] -->|course description| LGG[learning-graph generator]
+    LGG -->|concept list| BCG[book-chapter generator]
+    LGG -->|concept list| GLO[glossary generator]
+    LGG -->|concept list| QUI[quiz generator]
+    LGG -->|concept list| FAQ[faq generator]
+    LGG -->|concept list| REF[reference generator]
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+    BCG -->|chapter outline| CCG[chapter-content generator]
+    BCG -->|chapter outline| REF
 
-## Specification
+    CCG -->|chapter prose| GLO
+    CCG -->|chapter prose| FAQ
+    CCG -->|chapter prose| QUI
+    CCG -->|sim briefs| MSG[microsim generator]
+    CCG -->|story briefs| STG[story generator]
+    CCG -->|quiz briefs| CCL[concept classifier]
 
-The full specification below is extracted from
-[Chapter 14: AI Agent Skills for Textbook Generation](../../chapters/14-agent-skills/index.md).
+    GLO --> BMG[book-metrics generator]
+    QUI --> BMG
+    FAQ --> BMG
+    MSG --> BMG
+    STG --> BMG
+    CCL --> BMG
+    CCG --> BMG
 
-```text
-Type: diagram
-**sim-id:** skill-dependency-graph<br/>
-**Library:** Mermaid<br/>
-**Status:** Specified
+    GLO --> DRG[diagram-reports generator]
+    MSG --> DRG
 
-A Mermaid `flowchart LR` diagram showing all fourteen skills as nodes, with edges where one skill's output is a required input of another. The *learning-graph-generator* node sits as a central hub with outgoing edges to *book-chapter-generator*, *glossary-generator*, *quiz-generator*, *faq-generator*, and *reference-generator*. The *course-description-analyzer* has a single outgoing edge to *learning-graph-generator*. The *book-chapter-generator* has outgoing edges to *chapter-content-generator* and *reference-generator*. The *chapter-content-generator* has outgoing edges to *glossary-generator*, *faq-generator*, *quiz-generator*, *microsim-generator*, *story-generator*, and *concept-classifier* (each via chapter-level sim/story briefs). All thirteen other skills have outgoing edges to *book-metrics-generator* and *diagram-reports-generator*, which then both feed *linkedin-announcement-generator*.
-
-Visual treatment: `learning-graph-generator` is drawn as a larger, highlighted hub node in warm orange; foundation skills in cool blue; authoring skills in teal; derived skills in soft green; engagement skills in amber; audit skills in warm orange. `classDef` per category. Edges labeled with the carrying artifact type (e.g., "chapter outline", "concept list", "chapter prose").
-
-Implementation: Mermaid `flowchart LR` with `classDef` styling per skill category. Embedded directly in the chapter markdown.
+    BMG -->|metrics| LIN[linkedin-announcement generator]
+    DRG -->|report| LIN
 ```
 
 ## Related Resources
