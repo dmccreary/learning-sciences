@@ -31,7 +31,9 @@
       "Bash(md5 -q /Users/dan/Documents/ws/learning-sciences/docs/sims/graph-viewer/script.js ~/.claude/skills/book-installer/references/assets/script.js)",
       "Bash(md5 -q /Users/dan/Documents/ws/learning-sciences/docs/sims/graph-viewer/main.html ~/.claude/skills/book-installer/references/assets/main.html)",
       "Bash(md5 -q /Users/dan/Documents/ws/learning-sciences/docs/sims/graph-viewer/local.css ~/.claude/skills/book-installer/references/assets/local.css)",
-      "Bash(md5 -q /Users/dan/Documents/ws/learning-sciences/docs/sims/graph-viewer/index.md ~/.claude/skills/book-installer/references/assets/index.md)"
+      "Bash(md5 -q /Users/dan/Documents/ws/learning-sciences/docs/sims/graph-viewer/index.md ~/.claude/skills/book-installer/references/assets/index.md)",
+      "Bash(python ~/.claude/skills/book-installer/scripts/generate-feature-checklist.py .)",
+      "Bash(python3 -c \"import json; json.load\\(open\\('/Users/dan/.claude/settings.json'\\)\\)\")"
     ]
   }
 }

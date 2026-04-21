@@ -10,6 +10,7 @@ edit_uri: 'blob/master/docs'
 # Files excluded from the build (MkDocs 1.6+)
 exclude_docs: |
   img/mascot/image-prompts.md
+  course-description-notes.md
 
 nav:
   - Home: index.md
@@ -17,8 +18,12 @@ nav:
   - Course Description: course-description.md
   - Chapters:
       - List of Chapters: chapters/index.md
-      - 1. Foundations of Learning Sciences: chapters/01-foundations/index.md
-      - 2. The Seven Domains Framework: chapters/02-seven-domains/index.md
+      - 1. Foundations of Learning Sciences:
+          - Content: chapters/01-foundations/index.md
+          - Slides: chapters/01-foundations/slides.md
+      - 2. The Seven Domains Framework:
+          - Content: chapters/02-seven-domains/index.md
+          - Slides: chapters/02-seven-domains/slides.md
       - 3. Motivation and Engagement: chapters/03-motivation-engagement/index.md
       - 4. Cognitive Architecture and Load: chapters/04-cognitive-architecture/index.md
       - 5. Knowledge Retention: chapters/05-knowledge-retention/index.md
@@ -42,6 +47,11 @@ nav:
       - Mascot Style Guide: learning-graph/mascot-test.md
   - MicroSims:
       - Learning Graph Viewer: sims/graph-viewer/index.md
+      - Slide Viewer: sims/slide-viewer/index.md
+  - FAQ: faq.md
+  - Glossary: glossary.md
+  - References: references.md
+  - Feature Checklist: feature-checklist.md
   - License: license.md
   - Contact: contact.md
 
@@ -158,7 +168,7 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 # Copyright
-copyright: Copyright &copy; 2026 Richard Tandler. All rights reserved.
+copyright: Copyright &copy; 2026 Dan McCreary. All rights reserved.
 
 
 # Extra configuration

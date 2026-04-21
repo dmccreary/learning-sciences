@@ -8,6 +8,8 @@ version: 0.07
 
 # The Seven Domains Framework
 
+[Content](./){ .md-button .md-button--primary } [Slides](slides/){ .md-button } [Slides in Viewer](../../sims/slide-viewer/main.html?src=../../chapters/02-seven-domains/slides/){ .md-button }
+
 !!! mascot-welcome "Welcome — The Spine of the Whole Book"
     <img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Bloom the elephant waving welcome">
     This chapter is short on purpose. Our job here is to install one mental model — the Seven Domains — that every later chapter will hang off of. Once you can see the whole system at a glance, the rest of the book will feel less like a list of findings and more like a map.
