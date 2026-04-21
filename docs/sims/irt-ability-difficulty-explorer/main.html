@@ -4,110 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IRT Ability-vs-Difficulty Explorer</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="irt-ability-difficulty-explorer.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>IRT Ability-vs-Difficulty Explorer</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> irt-ability-difficulty-explorer</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> TBD</p>
-            <p><strong>Learning Objective:</strong> TBD</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** irt-ability-difficulty-explorer<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    An interactive p5.js MicroSim that plots the Rasch one-parameter logistic curve. The canvas shows a logistic curve with ability \(\theta\) on the x-axis (range −4 to +4) and probability of a correct response on the y-axis (range 0 to 1). A vertical line marks the current item difficulty \(b\); a horizontal line marks the probability at the current learner ability \(\theta\); their intersection is highlighted as a filled dot.
-    
-    Controls (using built-in p5.js controls per project convention):
-    
-    - **Ability slider (θ)** — −4 to +4, default 0.
-    - **Difficulty slider (b)** — −4 to +4, default 0.
-    - **Show two-parameter toggle** — adds a discrimination slider \(a\) (0.2 to 2.5, default 1.0) and switches to the 2PL form.
-    - **Show information curve checkbox** — overlays the item-information curve (which peaks at \(\theta = b\) for Rasch), making the adaptive-testing principle visible.
-    - **Reset button** — restores defaults.
-    
-    A caption below the canvas reports the current \(P(\theta, b)\) value and labels three qualitative zones: *"too easy for this learner"* (\(P > 0.85\)), *"at the edge of ability"* (\(0.5 \le P \le 0.85\)), and *"too hard"* (\(P < 0.35\)). No student data is used; the sim is purely a model visualizer.
-    
-    Learning objective (Bloom level: Understand): *Using the IRT explorer, explain why an item calibrated near the learner's ability yields the most information per unit of testing time.*
-    
-    Canvas responsive via `updateCanvasSize()` as the first line of `setup()`; parented to the standard `<main></main>` element.
-    
-    Implementation: p5.js sketch in `/docs/sims/irt-ability-difficulty-explorer/` with `main.html`, `script.js`, `local.css`, and `index.md`. Generated via the `microsim-generator` skill.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Documentation</a>
 </body>
 </html>
