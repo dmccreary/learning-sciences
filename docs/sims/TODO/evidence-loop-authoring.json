@@ -1,0 +1,14 @@
+{
+  "sim_id": "evidence-loop-authoring",
+  "diagram_name": "The Evidence Loop That Disciplines AI-Generated Content",
+  "chapter_number": 1,
+  "chapter_title": "Foundations of Learning Sciences",
+  "chapter_dir": "01-foundations",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: causal-loop-diagram\n**sim-id:** evidence-loop-authoring<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA causal loop diagram with 6 nodes, each written as a noun phrase (a variable that can go up or down). Rendered with Mermaid as a `flowchart LR` using styled edges for polarity. Nodes: \"AI authoring capability\", \"content volume\", \"content quality\", \"learner outcomes\", \"evidence feedback\", \"instructional design adjustment\". Edges with polarity labels:\n\n- AI authoring capability → content volume (+) — more capable AI produces more material\n- content volume → content quality (−) — without a filter, volume dilutes quality (this is the authoring gap)\n- evidence feedback → instructional design adjustment (+) — evidence tells us what to change\n- instructional design adjustment → content quality (+) — better design lifts quality\n- content quality → learner outcomes (+) — better content produces better learning\n- learner outcomes → evidence feedback (+, with delay) — outcomes become measurable evidence (delay marker shown as \"⧚\")\n\nTwo loops are labeled at the center:\n\n- **B1 — Authoring gap (balancing).** AI capability → volume → quality-drop. Left alone, this loop is corrosive: more volume, less quality.\n- **R1 — Evidence flywheel (reinforcing).** Instructional design adjustment → quality → outcomes → evidence → adjustment. When the loop closes, quality reinforces itself.\n\nThe delay marker \"⧚\" appears on the learner outcomes → evidence feedback edge because outcome data takes weeks-to-months to accumulate. Node colors: loop B1 nodes in a warm red-orange; loop R1 nodes in a cool blue; edges labeled with `+` or `−`.\n\nImplementation: Mermaid `flowchart LR` with `linkStyle` declarations for edge polarity coloring; embedded directly in the chapter markdown. A one-paragraph walkthrough of loop R1 in plain English accompanies the diagram (see the paragraph immediately following)."
+}

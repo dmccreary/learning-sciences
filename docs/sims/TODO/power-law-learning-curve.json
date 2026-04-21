@@ -1,0 +1,14 @@
+{
+  "sim_id": "power-law-learning-curve",
+  "diagram_name": "The Power-Law Learning Curve",
+  "chapter_number": 7,
+  "chapter_title": "Expertise and Mastery",
+  "chapter_dir": "07-expertise-mastery",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: microsim\n**sim-id:** power-law-learning-curve<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive p5.js MicroSim that plots the power-law equation \\(T = a N^{-b}\\) on a configurable canvas. Two curves are shown simultaneously: a *raw-practice* curve with a small exponent (say \\(b = 0.2\\)) and a *deliberate-practice* curve with a larger exponent (say \\(b = 0.4\\)). A vertical line marks a chosen number of practice hours; the canvas reports the ratio of time-per-trial under the two curves at that point, making the compounded advantage of higher-quality practice visible.\n\nControls (using built-in p5.js controls per project convention):\n\n- **Exponent-raw slider** — 0.1 to 0.6, default 0.2.\n- **Exponent-deliberate slider** — 0.1 to 0.6, default 0.4.\n- **Hours marker slider** — 1 to 10000; moves the vertical line across the log-scaled x-axis.\n- **Log-log toggle** — switches between linear and log-log axes; on log-log, both curves become straight lines with slopes \\(-b\\), visually confirming the power-law form.\n- **Reset button** — restores defaults.\n\nLearning objective (Bloom level: Understand): *Using the power-law curve, explain why the rate of improvement per additional hour depends more on the exponent than on the total hour count.*\n\nCanvas responsive via `updateCanvasSize()` as first line of `setup()`; parented to the standard `<main></main>` element.\n\nImplementation: p5.js sketch in `/docs/sims/power-law-learning-curve/` with `main.html`, `script.js`, `local.css`, and `index.md`. Generated via the `microsim-generator` skill."
+}

@@ -8,7 +8,7 @@ version: 0.07
 
 # The Seven Domains Framework
 
-[Content](./){ .md-button .md-button--primary } [Slides](slides/){ .md-button } [Slides in Viewer](../../sims/slide-viewer/main.html?src=../../chapters/02-seven-domains/slides/){ .md-button }
+[Slides](slides/){ .md-button } [Slides in Viewer](../../sims/slide-viewer/main.html?src=../../chapters/02-seven-domains/slides/){ .md-button .md-button--primary }
 
 !!! mascot-welcome "Welcome — The Spine of the Whole Book"
     <img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Bloom the elephant waving welcome">

@@ -1,0 +1,14 @@
+{
+  "sim_id": "zpd-three-zones",
+  "diagram_name": "The Zone of Proximal Development as Three Concentric Zones",
+  "chapter_number": 9,
+  "chapter_title": "Learning Conditions and Environment",
+  "chapter_dir": "09-learning-conditions",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: interactive-infographic\n**sim-id:** zpd-three-zones<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive infographic overlay using the `interactive-infographic-overlay` skill. Base image: three concentric circles, with the innermost labeled *\"What the learner can do independently,\"* the middle ring labeled *\"Zone of Proximal Development — with support,\"* and the outer ring labeled *\"Currently out of reach.\"* Small illustrated figures show an adult or peer standing in the middle ring, offering a scaffold (depicted as a ladder or hand) that reaches into the outer edge of the ZPD. A slider control, exposed in the overlay, lets the viewer fade the scaffold from \"full support\" to \"no support,\" and the boundary between the inner circle and the ZPD expands outward as the scaffold fades — visualizing the core claim that today's supported task becomes tomorrow's independent task.\n\nModes (standard for this skill):\n\n- **Explore mode:** Hovering over any zone shows a tooltip with the zone's definition, a classroom example, and the design implication for intelligent textbooks (e.g., \"ZPD zone: worked examples with fading prompts; MicroSims with graduated hint levels\").\n- **Quiz mode:** A learning task is described; the learner clicks the zone that best matches where the task sits for a hypothetical student described in the prompt.\n- **Edit mode (authors only):** Drag markers to recalibrate positions on the base image; export updated `data.json`.\n\nLearning objective (Bloom level: Apply): *Given a description of a learner and a task, identify whether the task sits inside the learner's independent zone, ZPD, or out-of-reach region, and name the scaffold that would move it into the ZPD.*\n\nCanvas responsive via `updateCanvasSize()` as the first line of `setup()`; parented to the standard `<main></main>` element.\n\nImplementation: Generated with the `interactive-infographic-overlay` skill. The directory `/docs/sims/zpd-three-zones/` will contain `image-prompt.md`, `data.json`, `main.html`, `index.md`, and the zone base image."
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expertise Dynamics — Practice Flywheel and Automaticity Plateau</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Expertise Dynamics — Practice Flywheel and Automaticity Plateau</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> expertise-flywheel-plateau</p>
+            <p><strong>Library:</strong> Mermaid</p>
+            <p><strong>Bloom Level:</strong> TBD</p>
+            <p><strong>Learning Objective:</strong> TBD</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: causal-loop-diagram
+    **sim-id:** expertise-flywheel-plateau<br/>
+    **Library:** Mermaid<br/>
+    **Status:** Specified
+    
+    A causal loop diagram rendered with Mermaid `flowchart LR` showing eight variable-nodes and two named reinforcing loops. Nodes, all written as noun phrases (variables that can go up or down): "deliberate practice volume", "feedback quality", "pattern library size", "automaticity of routine sub-tasks", "working memory freed for refinement", "edge-of-ability challenge", "perceived effortlessness", "willingness to seek harder problems".
+    
+    Edges and polarities:
+    
+    - deliberate practice volume → pattern library size (+) — each deliberate-practice session adds or strengthens patterns
+    - feedback quality → pattern library size (+) — informative feedback shapes correct patterns; poor feedback shapes noise
+    - pattern library size → automaticity of routine sub-tasks (+, with delay marker ⧚) — routines automatize over repeated correct practice
+    - automaticity of routine sub-tasks → working memory freed for refinement (+) — automatized sub-tasks stop consuming working-memory slots
+    - working memory freed for refinement → edge-of-ability challenge (+) — freed capacity makes harder sub-tasks tractable
+    - edge-of-ability challenge → deliberate practice volume (+) — harder challenge re-opens the deliberate-practice loop at a new level, closing R1
+    - automaticity of routine sub-tasks → perceived effortlessness (+) — fluid performance feels easy
+    - perceived effortlessness → willingness to seek harder problems (−) — ease reduces perceived need for harder work
+    - willingness to seek harder problems → edge-of-ability challenge (+) — without willingness, the challenge variable drops
+    - perceived effortlessness → feedback quality (−) — easy performance rarely triggers informative feedback, because there's nothing to correct
+    
+    Loop labels placed at each loop's geometric center:
+    
+    - **R1 — Practice flywheel (reinforcing, productive).** deliberate practice → pattern library → automaticity → freed working memory → edge-of-ability challenge → more deliberate practice. Each trip around the loop builds the capacity for the next, harder, trip.
+    - **R2 — Automaticity plateau (reinforcing, corrosive).** automaticity → perceived effortlessness → less willingness to seek harder problems → less challenge → less deliberate practice → library stops growing, yet automaticity of existing routines keeps the performance feeling fluid. The loop feels like mastery and starves further growth. This is the classic *intermediate plateau* in skill acquisition — the point at which many learners stop improving and stay where they are.
+    
+    Visual treatment: R1 nodes in cool blue; R2 nodes in warm red-orange; the node "edge-of-ability challenge" drawn with a dual border to signal that it is the pivot variable — the lever that determines whether the system runs in R1 or R2. Delay marker ⧚ on the pattern library → automaticity edge because automatization is a slow consequence of repeated correct practice. Every edge labeled with `+` or `−`.
+    
+    Implementation: Mermaid `flowchart LR` with `linkStyle` declarations for polarity coloring and `classDef` for loop grouping. A one-paragraph walkthrough of R1 in plain English accompanies the diagram in the prose that follows.
+    -->
+</body>
+</html>

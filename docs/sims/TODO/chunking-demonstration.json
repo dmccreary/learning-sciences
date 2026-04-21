@@ -1,0 +1,14 @@
+{
+  "sim_id": "chunking-demonstration",
+  "diagram_name": "Chunking Demonstration",
+  "chapter_number": 4,
+  "chapter_title": "Cognitive Architecture and Load",
+  "chapter_dir": "04-cognitive-architecture",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: microsim\n**sim-id:** chunking-demonstration<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive p5.js MicroSim that demonstrates the chunking effect on effective working-memory span. The canvas shows a two-panel layout. In each trial, a string of 12 letters is flashed for a fixed duration (configurable 500–2000 ms) and then hidden; the learner types what they recall. The left panel draws strings from a random-letter source (`XQNTRPKVLYBF`); the right panel draws from a chunked source where letters form familiar acronyms (`FBIIBMCIANASA` shown as `FBI IBM CIA NASA`). A running tally shows the proportion correct in each condition.\n\nControls (using built-in p5.js controls per project convention):\n\n- **Flash-duration slider** (500–2000 ms) — how long the string is visible.\n- **Condition dropdown** — {random only, chunked only, alternating, random pairs}.\n- **Show-chunk-boundaries checkbox** — when on, the chunked condition inserts visible spaces; when off, the learner must find the chunks.\n- **Reset button** — clears the tally.\n\nLearning objective (Bloom level: Apply): *Demonstrate that perceived working-memory capacity depends on the chunk structure of the material, not on the raw number of elements.*\n\nCanvas responsive via `updateCanvasSize()` as first line of `setup()`; parented to the standard `<main></main>` element.\n\nImplementation: p5.js sketch in `/docs/sims/chunking-demonstration/` with `main.html`, `script.js`, `local.css`, and `index.md`. Generated via the `microsim-generator` skill."
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "learning-environment-nested-layers",
+  "diagram_name": "Three Nested Layers of a Learning Environment",
+  "chapter_number": 9,
+  "chapter_title": "Learning Conditions and Environment",
+  "chapter_dir": "09-learning-conditions",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: diagram\n**sim-id:** learning-environment-nested-layers<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA Mermaid diagram rendered as a set of three concentric rectangles (or as a `flowchart TD` with containment styling via `subgraph` blocks). The innermost rectangle is labeled *Physical / Digital* and contains example design-lever nodes: *seating*, *lighting*, *screen readability*, *keyboard navigation*, *MicroSim responsiveness*. The middle rectangle is labeled *Social* and contains *talk-move repertoire*, *turn-taking norms*, *error-response scripts*, *forum moderation*. The outermost rectangle is labeled *Institutional* and contains *grading policy*, *accessibility mandate*, *privacy regulation*, *curricular scope*. Arrows between the layers show *upward* influence (physical choices shape the social layer; social norms are constrained by institutional rules) and *downward* influence (institutional mandates cascade into social norms and physical features).\n\nEach layer is colored distinctly on a warm blue-to-orange palette — innermost in cool blue, middle in a mid-tone teal, outermost in warm orange — so the containment is immediately visible. A caption underneath reads: *\"Small changes in one layer cascade through the others. When a learner underperforms, the explanation usually lives at a layer outside the learner's control.\"*\n\nImplementation: Mermaid `flowchart TD` with nested `subgraph` blocks and `classDef` for the per-layer coloring. Embedded directly in the chapter markdown via the `pymdownx.superfences` mermaid fence already configured in `mkdocs.yml`."
+}

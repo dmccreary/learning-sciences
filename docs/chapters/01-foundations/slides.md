@@ -1,4 +1,4 @@
-[Content](./){ .md-button } [Slides in Viewer](../../sims/slide-viewer/main.html?src=../../chapters/01-foundations/slides/){ .md-button .md-button--primary }
+[Content](../){ .md-button } [Slides in Viewer](../../../sims/slide-viewer/main.html?src=../../chapters/01-foundations/slides/){ .md-button .md-button--primary }
 
 # Foundations of Learning Sciences
 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental-Model Probe Interview Flow</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: white; }
+        .mermaid { max-width: 100%; }
+        h2 { color: #333; }
+    </style>
+</head>
+<body>
+    <h2>Mental-Model Probe Interview Flow</h2>
+    <div class="mermaid">
+graph TD
+    START["Prediction Prompt: What will happen if...?"]:::prompt --> CORRECT{"Correct Prediction?"}:::decision
+    CORRECT -->|"Yes"| MECH["Mechanism Probe: Why does that happen?"]:::prompt
+    CORRECT -->|"No"| COUNTER["Counterfactual Probe: What would change if...?"]:::prompt
+    CORRECT -->|"Hedged / Uncertain"| BOUND["Boundary Probe: When would this not apply?"]:::prompt
+
+    MECH --> RUNNABLE["Runnable Correct Model"]:::diagnosis
+    MECH --> VERBAL["Verbal Rule Without Model"]:::diagnosis
+
+    COUNTER --> STABLE["Stable Misconception"]:::diagnosis
+    COUNTER --> FRAGILE["Fragile Partial Model"]:::diagnosis
+
+    BOUND --> FRAGILE2["Fragile Partial Model"]:::diagnosis
+    BOUND --> NOMODEL["No Model"]:::diagnosis
+
+    RUNNABLE --> MOVE1["Next: More retrieval practice"]:::move
+    VERBAL --> MOVE2["Next: Worked example"]:::move
+    STABLE --> MOVE3["Next: Dissonance-producing counterexample"]:::move
+    FRAGILE --> MOVE4["Next: Direct conceptual-change intervention"]:::move
+    FRAGILE2 --> MOVE4B["Next: Direct conceptual-change intervention"]:::move
+    NOMODEL --> MOVE5["Next: Foundational re-teaching with worked example"]:::move
+
+    classDef prompt fill:#4A90D9,stroke:#2C5F8A,color:#fff
+    classDef decision fill:#F0C75E,stroke:#D4A017,color:#333
+    classDef diagnosis fill:#E8795A,stroke:#C0392B,color:#fff
+    classDef move fill:#2D9C6F,stroke:#1E7A55,color:#fff
+    </div>
+    <script>mermaid.initialize({startOnLoad: true, theme: 'default', securityLevel: 'loose'});</script>
+    <br/>
+    <a href=".">Back to Documentation</a>
+</body>
+</html>

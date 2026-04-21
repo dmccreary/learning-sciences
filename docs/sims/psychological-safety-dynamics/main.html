@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychological Safety Dynamics — Two Opposed Loops</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Psychological Safety Dynamics — Two Opposed Loops</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> psychological-safety-dynamics</p>
+            <p><strong>Library:</strong> Mermaid</p>
+            <p><strong>Bloom Level:</strong> TBD</p>
+            <p><strong>Learning Objective:</strong> TBD</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: causal-loop-diagram
+    **sim-id:** psychological-safety-dynamics<br/>
+    **Library:** Mermaid<br/>
+    **Status:** Specified
+    
+    A causal loop diagram rendered with Mermaid `flowchart LR` showing ten variable-nodes and two named reinforcing loops. All nodes are noun phrases naming variables that can go up or down.
+    
+    Nodes for R1 (safety flywheel, productive): "perceived psychological safety", "willingness to speak up", "error exposure in discourse", "group error-correction opportunity", "learning outcome quality".
+    
+    Nodes for R2 (stereotype-threat trap, corrosive): "group-membership salience", "threat concern", "working-memory load", "performance on task", "confirmation of stereotype belief".
+    
+    Edges and polarities for R1:
+    
+    - perceived psychological safety → willingness to speak up (+)
+    - willingness to speak up → error exposure in discourse (+)
+    - error exposure in discourse → group error-correction opportunity (+)
+    - group error-correction opportunity → learning outcome quality (+, with delay marker ⧚)
+    - learning outcome quality → perceived psychological safety (+) — visible learning reinforces the belief that speaking up pays off, closing R1
+    
+    Edges and polarities for R2:
+    
+    - group-membership salience → threat concern (+)
+    - threat concern → working-memory load (+)
+    - working-memory load → performance on task (−)
+    - performance on task → confirmation of stereotype belief (−) — lower performance *raises* confirmation
+    - confirmation of stereotype belief → threat concern (+), closing R2 with an additional cross-link
+    - confirmation of stereotype belief → perceived psychological safety (−) — cross-loop link showing how the trap corrodes safety
+    
+    Loop labels at each loop's geometric center:
+    
+    - **R1 — Safety flywheel (reinforcing, productive).** Safety → speaking → error exposure → correction opportunity → learning → more safety.
+    - **R2 — Threat-load-underperformance trap (reinforcing, corrosive).** Salience → threat → cognitive-load burden → underperformance → confirmation → more threat.
+    
+    Visual treatment: R1 nodes in cool blue; R2 nodes in warm red-orange; the cross-link from R2 back into R1 (confirmation of stereotype belief → perceived psychological safety, negative) rendered in a distinct warning color to highlight how the corrosive loop can starve the productive one. Delay marker ⧚ on the group error-correction opportunity → learning outcome quality edge. Every edge labeled with `+` or `−`.
+    
+    Implementation: Mermaid `flowchart LR` with `linkStyle` declarations for polarity coloring and `classDef` for loop grouping. A two-paragraph walkthrough of R1 and R2 in plain English accompanies the diagram in the prose that follows.
+    -->
+</body>
+</html>

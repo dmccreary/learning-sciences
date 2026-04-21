@@ -1,0 +1,14 @@
+{
+  "sim_id": "bloom-poses-gallery",
+  "diagram_name": "The Seven Bloom Poses and When to Use Each",
+  "chapter_number": 12,
+  "chapter_title": "Pedagogical Mascots and Admonitions",
+  "chapter_dir": "12-mascots-admonitions",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: interactive-infographic\n**sim-id:** bloom-poses-gallery<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive infographic overlay built with the `interactive-infographic-overlay` skill. Base image: a three-by-three grid of cream-backgrounded cells (the last two cells empty) showing the seven Bloom poses — neutral, welcome, thinking, tip, warning, encouraging, celebration — in a consistent drawing style with transparent per-cell backgrounds. Each cell has a labeled border in the admonition color corresponding to the pose (primary blue for welcome, warm brown for thinking, teal for tip, red for warning, deep purple for celebration, accent orange for encourage, slate gray for neutral). The base image is annotation-free; pose names, use-cases, and admonition-type pairings come from overlay markers positioned via `data.json`.\n\nModes (standard for this skill):\n\n- **Explore mode:** Hovering any pose reveals a tooltip with (a) the pose name, (b) the admonition type it pairs with, (c) one concrete learning moment where it fits best, and (d) the reason — in SDT or cognitive-load terms — that it's the right pose for that moment.\n- **Quiz mode:** A short scenario appears (for example, *\"The reader has just encountered a claim that contradicts their intuition and may feel defensive\"*) and the reader clicks the pose that best fits. Correct answers highlight green; incorrect answers reveal the correct pose and a one-sentence explanation.\n- **Edit mode (authors only):** Drag markers to recalibrate positions on the base image; export updated `data.json`.\n\nLearning objective (Bloom level: Apply): *Given a learning moment in a chapter, select the mascot pose whose pedagogical function fits best.*\n\nResponsive: canvas width adapts to container via `updateCanvasSize()` as the first line of `setup()`; marker anchor ratios preserved on resize.\n\nImplementation: Generated with the `interactive-infographic-overlay` skill. Directory `/docs/sims/bloom-poses-gallery/` contains `image-prompt.md`, `data.json`, `main.html`, `index.md`, and the annotation-free base image."
+}

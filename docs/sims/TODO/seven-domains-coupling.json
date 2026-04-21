@@ -1,0 +1,14 @@
+{
+  "sim_id": "seven-domains-coupling",
+  "diagram_name": "The Seven Domains as a Coupled System",
+  "chapter_number": 2,
+  "chapter_title": "The Seven Domains Framework",
+  "chapter_dir": "02-seven-domains",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: causal-loop-diagram\n**sim-id:** seven-domains-coupling<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA causal loop diagram rendered with Mermaid `flowchart LR` that shows the seven domains as nodes with polarity-labeled edges. Nodes are written as noun phrases (variables that can go up or down): \"motivation\", \"understanding\", \"retention\", \"application\", \"expertise\", \"measurement signal\", \"learning conditions quality\". Edges and loop labels:\n\n**Forward chain (R1 — Learning flywheel, reinforcing):**\n\n- motivation → understanding (+) — motivation gates attention, which gates encoding\n- understanding → retention (+) — well-constructed schemas retain better\n- retention → application (+) — you cannot apply what you cannot retrieve\n- application → expertise (+, with delay marker ⧚) — repeated successful application, over time, reorganizes knowledge into expert chunks\n- expertise → motivation (+, with delay marker ⧚) — visible progress and growing competence feed Self-Determination Theory's competence need, renewing motivation\n\n**Measurement loop (R2 — Evidence flywheel, reinforcing):**\n\n- understanding → measurement signal (+) — understanding produces observable behavior\n- retention → measurement signal (+)\n- application → measurement signal (+)\n- measurement signal → instructional design (+) — evidence suggests the next adjustment\n- instructional design → understanding (+) — adjustments flow back into chapter design\n\n**Substrate (B1 — Conditions brake, balancing):**\n\n- learning conditions quality → motivation (+) — safe, accessible, scaffolded environments lift motivation\n- learning conditions quality → measurement signal (+) — healthy conditions produce honest signal\n- poor learning conditions act as a ceiling on every other variable (shown by negative edges from \"learning conditions deficit\" where deficit = 1 − quality)\n\nVisual treatment: R1 nodes in warm blue, R2 nodes in cool green, substrate in earth-tone tan. Delay markers ⧚ on the two long-latency edges (application → expertise, expertise → motivation). Every edge labeled with `+` or `−`. Loop labels R1, R2, B1 placed at each loop's geometric center.\n\nImplementation: Mermaid `flowchart LR` with custom `linkStyle` declarations for polarity coloring and `classDef` for node grouping. Embedded directly in the chapter via the existing `pymdownx.superfences` mermaid fence."
+}

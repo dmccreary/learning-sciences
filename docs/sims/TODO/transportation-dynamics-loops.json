@@ -1,0 +1,14 @@
+{
+  "sim_id": "transportation-dynamics-loops",
+  "diagram_name": "Transportation Dynamics — Identification Flywheel and Accuracy-Erosion Trap",
+  "chapter_number": 13,
+  "chapter_title": "Graphic Novels and Short-Form Stories",
+  "chapter_dir": "13-graphic-novels",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: causal-loop-diagram\n**sim-id:** transportation-dynamics-loops<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA causal loop diagram rendered with Mermaid `flowchart LR` showing nine variable-nodes and two named loops. All nodes are noun phrases naming variables that can go up or down.\n\nNodes: *vividness of panels*, *identification with figure*, *narrative transportation*, *reduced counterarguing*, *retention of embedded concept*, *re-engagement with chapter*, *historical accuracy check rigor*, *fidelity of embedded claims*, *risk of laundered inaccuracy*.\n\nEdges and polarities:\n\n- vividness of panels → narrative transportation (+)\n- identification with figure → narrative transportation (+)\n- narrative transportation → reduced counterarguing (+)\n- reduced counterarguing → retention of embedded concept (+) — when claims are true\n- reduced counterarguing → risk of laundered inaccuracy (+) — when claims are false\n- retention of embedded concept → re-engagement with chapter (+, with delay ⧚)\n- re-engagement with chapter → identification with figure (+) — returning readers identify more deeply on re-read\n- historical accuracy check rigor → fidelity of embedded claims (+)\n- fidelity of embedded claims → risk of laundered inaccuracy (−) — accuracy brakes the trap\n- historical accuracy check rigor → narrative transportation (slight −) — extra disclosure text can dampen immersion marginally\n\nLoop labels placed at each loop's geometric center:\n\n- **R1 — Identification flywheel (reinforcing, productive).** vividness and identification → transportation → reduced counterarguing → retention → re-engagement → deeper identification. The loop that makes graphic novels worth the effort.\n- **B1 — Accuracy-erosion trap (reinforcing, corrosive).** transportation → reduced counterarguing → laundered inaccuracy → false beliefs retained. Structurally a reinforcing loop running in the bad direction. Historical accuracy check rigor is the brake.\n\nVisual treatment: R1 nodes in cool blue; B1 nodes in warm red-orange; the shared node *reduced counterarguing* drawn in a neutral tone with dual borders to signal it belongs to both loops. Delay marker ⧚ on the retention → re-engagement edge. Every edge labeled with `+` or `−`.\n\nImplementation: Mermaid `flowchart LR` with `linkStyle` declarations for polarity coloring and `classDef` for loop grouping. A one-paragraph walkthrough of R1 in plain English accompanies the diagram in the prose that follows."
+}

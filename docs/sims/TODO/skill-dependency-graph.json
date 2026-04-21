@@ -1,0 +1,14 @@
+{
+  "sim_id": "skill-dependency-graph",
+  "diagram_name": "Skill Dependency Graph",
+  "chapter_number": 14,
+  "chapter_title": "AI Agent Skills for Textbook Generation",
+  "chapter_dir": "14-agent-skills",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: diagram\n**sim-id:** skill-dependency-graph<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA Mermaid `flowchart LR` diagram showing all fourteen skills as nodes, with edges where one skill's output is a required input of another. The *learning-graph-generator* node sits as a central hub with outgoing edges to *book-chapter-generator*, *glossary-generator*, *quiz-generator*, *faq-generator*, and *reference-generator*. The *course-description-analyzer* has a single outgoing edge to *learning-graph-generator*. The *book-chapter-generator* has outgoing edges to *chapter-content-generator* and *reference-generator*. The *chapter-content-generator* has outgoing edges to *glossary-generator*, *faq-generator*, *quiz-generator*, *microsim-generator*, *story-generator*, and *concept-classifier* (each via chapter-level sim/story briefs). All thirteen other skills have outgoing edges to *book-metrics-generator* and *diagram-reports-generator*, which then both feed *linkedin-announcement-generator*.\n\nVisual treatment: `learning-graph-generator` is drawn as a larger, highlighted hub node in warm orange; foundation skills in cool blue; authoring skills in teal; derived skills in soft green; engagement skills in amber; audit skills in warm orange. `classDef` per category. Edges labeled with the carrying artifact type (e.g., \"chapter outline\", \"concept list\", \"chapter prose\").\n\nImplementation: Mermaid `flowchart LR` with `classDef` styling per skill category. Embedded directly in the chapter markdown."
+}

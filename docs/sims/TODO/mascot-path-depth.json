@@ -1,0 +1,14 @@
+{
+  "sim_id": "mascot-path-depth",
+  "diagram_name": "Path Depth for the Mascot Image `src`",
+  "chapter_number": 12,
+  "chapter_title": "Pedagogical Mascots and Admonitions",
+  "chapter_dir": "12-mascots-admonitions",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: diagram\n**sim-id:** mascot-path-depth<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA Mermaid `flowchart TD` diagram showing three representative rendered URLs and the path each must use for the mascot image. Each node lists a page location and its required `src` prefix.\n\nNodes:\n\n- Top-level page (`docs/index.md` → `/`) uses `img/mascot/tip.png` (zero `../`).\n- Learning-graph page (`docs/learning-graph/mascot-test.md` → `/learning-graph/mascot-test/`) uses `../../img/mascot/tip.png` (two `../`, one to leave the page slug directory and one to leave the section directory).\n- Chapter page (`docs/chapters/12-mascots-admonitions/index.md` → `/chapters/12-mascots-admonitions/`) uses `../../img/mascot/tip.png` (two `../`).\n- MicroSim index page (`docs/sims/bloom-poses-gallery/index.md` → `/sims/bloom-poses-gallery/`) uses `../../img/mascot/tip.png` (two `../`).\n\nEdges connect each page location to a \"count the rendered URL depth\" decision node labeled \"one `../` per URL path segment after the site root\".\n\nVisual treatment: page nodes in light blue; decision node in amber; the correct-path nodes in green. A small inset box shows the failure mode: too few `../` produces a broken image with no build-log warning.\n\nImplementation: Mermaid `flowchart TD` with `classDef` for node styling; embedded directly in the chapter markdown."
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "dag-topological-reduction",
+  "diagram_name": "A Small Learning Graph, Its Topological Ordering, and Its Transitive Reduction",
+  "chapter_number": 10,
+  "chapter_title": "Intelligent Textbook Architecture and AI Tooling",
+  "chapter_dir": "10-textbook-architecture",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: diagram\n**sim-id:** dag-topological-reduction<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA Mermaid `flowchart TD` diagram composed of two side-by-side panels sharing the same eight-concept graph. Nodes: *Working Memory*, *Chunking*, *Schema*, *Retrieval Practice*, *Spacing Effect*, *Desirable Difficulty*, *Deliberate Practice*, *Transfer*. Edges (from dependent to prerequisite, per project convention): *Chunking → Working Memory*; *Schema → Chunking*; *Retrieval Practice → Working Memory*; *Spacing Effect → Retrieval Practice*; *Desirable Difficulty → Spacing Effect*; *Desirable Difficulty → Retrieval Practice*; *Deliberate Practice → Desirable Difficulty*; *Deliberate Practice → Schema*; *Transfer → Schema*; *Transfer → Deliberate Practice*.\n\nLeft panel: the full graph with every edge shown. A numbered list along the left margin shows one valid topological ordering — *Working Memory (1), Chunking (2), Schema (3), Retrieval Practice (4), Spacing Effect (5), Desirable Difficulty (6), Deliberate Practice (7), Transfer (8)* — with the note \"one of several valid orderings.\"\n\nRight panel: the same graph with transitively redundant edges de-emphasized (rendered as dashed gray lines). The candidate for reduction is the *Desirable Difficulty → Retrieval Practice* edge, which is already implied by *Desirable Difficulty → Spacing Effect → Retrieval Practice*. A caption explains that the transitive reduction preserves reachability with fewer edges and is what the graph viewer renders by default.\n\nImplementation: Mermaid `flowchart TD` with two `subgraph` blocks and `classDef` styling for the dashed reduced edges. Embedded directly in the chapter markdown."
+}

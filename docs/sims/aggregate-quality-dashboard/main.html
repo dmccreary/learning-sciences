@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aggregate Quality-Metrics Dashboard (Synthetic)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Aggregate Quality-Metrics Dashboard (Synthetic)</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> aggregate-quality-dashboard</p>
+            <p><strong>Library:</strong> Chart.js or Plotly</p>
+            <p><strong>Bloom Level:</strong> TBD</p>
+            <p><strong>Learning Objective:</strong> TBD</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: dashboard-spec
+    **sim-id:** aggregate-quality-dashboard<br/>
+    **Library:** Chart.js or Plotly<br/>
+    **Status:** Specified
+    
+    A static or lightly interactive dashboard page rendered with Chart.js or Plotly, populated from a synthetic dataset checked into the repository and clearly labeled *"SYNTHETIC — NO STUDENT DATA"* on every chart. The dashboard displays four panels:
+    
+    1. **Chapter completion funnel** — horizontal bars showing completion rate per chapter, with the course target line overlaid.
+    2. **Quiz item-difficulty scatter** — scatter plot of estimated item difficulty (IRT \(b\)) against observed percent-correct, one dot per item, with the diagonal reference line; dots that fall far from the diagonal are candidates for recalibration.
+    3. **MicroSim engagement heatmap** — grid of chapters × MicroSims showing engagement rate on a 0–1 color ramp.
+    4. **Bloom-level distribution** — stacked bar per chapter showing the count of quiz items at each of the six Bloom levels, so the author can see whether a chapter is over-indexed on Remember/Understand.
+    
+    Every panel carries a footer noting the sample size, the date range, and the synthetic-data disclaimer. No panel exposes a per-student row. Drill-down paths go from course → chapter → item, and stop at the item level — never to a named learner.
+    
+    Implementation: generated synthetic-data JSON file, Chart.js or Plotly rendering. Located at `/docs/sims/aggregate-quality-dashboard/` with `main.html`, `data.json` (synthetic), `script.js`, and `index.md`.
+    -->
+</body>
+</html>

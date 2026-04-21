@@ -1,0 +1,21 @@
+{
+  "title": "The Barnett and Ceci Transfer Taxonomy",
+  "description": "The Barnett and Ceci Transfer Taxonomy",
+  "creator": "Dementia Education Project",
+  "date": "2026-04-20",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "barnett-ceci-transfer-taxonomy",
+  "library": "p5.js",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 6,
+  "chapter_title": "Application and Transfer",
+  "chapter_dir": "06-application-transfer"
+}

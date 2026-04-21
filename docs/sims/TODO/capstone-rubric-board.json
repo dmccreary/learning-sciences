@@ -1,0 +1,14 @@
+{
+  "sim_id": "capstone-rubric-board",
+  "diagram_name": "The Interactive Capstone Rubric",
+  "chapter_number": 15,
+  "chapter_title": "Capstone and Deployment",
+  "chapter_dir": "15-capstone-deployment",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: interactive-infographic\n**sim-id:** capstone-rubric-board<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive infographic overlay using the `interactive-infographic-overlay` skill. Base image: a 5 x 4 grid representing the twenty rubric items, grouped into five color bands for Structure, Seven-Domain coverage, Engagement artifacts, Measurement, and Systems thinking and evidence. Each cell contains the rubric item's short name. The bottom of the image holds two larger \"Shippability\" cells in a distinct color.\n\nModes (standard for this skill):\n\n- **Explore mode:** Hovering a cell shows the rubric item's full text, the tool or skill that checks it automatically (if any), and a one-sentence example of what passing and failing look like.\n- **Self-audit mode:** The author clicks each cell to mark it pass, partial, or fail for their current draft; the board colors update and a summary bar reports the count of each.\n- **Edit mode (authors only):** Drag cells to recalibrate positions; export updated `data.json`.\n\nLearning objective (Bloom level: Evaluate): *Given a chapter draft, judge its readiness to ship by applying the 20-item rubric and identifying the two or three items most likely to fail.*\n\nImplementation: Generated with the `interactive-infographic-overlay` skill. The directory `/docs/sims/capstone-rubric-board/` contains `image-prompt.md`, `data.json`, `main.html`, `index.md`, and the grid base image. Canvas width is responsive via `updateCanvasSize()` as the first line of `setup()`."
+}

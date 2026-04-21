@@ -6,6 +6,7 @@ A lightweight slide viewer for Markdown slide decks authored as MkDocs pages. Pa
 
 - [Chapter 1 — Foundations of Learning Sciences](main.html?src=../../chapters/01-foundations/slides/){target=_blank}
 - [Chapter 2 — The Seven Domains Framework](main.html?src=../../chapters/02-seven-domains/slides/){target=_blank}
+- [Chapter 3 — Motivation and Engagement](main.html?src=../../chapters/03-motivation-engagement/slides/){target=_blank}
 
 ## How It Works
 

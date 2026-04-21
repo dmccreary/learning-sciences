@@ -1,0 +1,14 @@
+{
+  "sim_id": "rubric-analytic-vs-holistic",
+  "diagram_name": "Analytic vs. Holistic Rubric — Structure and Signal",
+  "chapter_number": 8,
+  "chapter_title": "Measurement and Feedback",
+  "chapter_dir": "08-measurement-feedback",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: diagram\n**sim-id:** rubric-analytic-vs-holistic<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA Mermaid `flowchart LR` diagram with two panels. Left panel shows an analytic rubric for a writing assignment with four independent criteria (Thesis, Evidence, Organization, Mechanics) each scored 1–4, feeding four separate score cells that flow into a profile chart. Right panel shows a holistic rubric with four performance-level bands (Emerging, Developing, Proficient, Exceeds) feeding a single score cell. Arrows from each structure point to a \"Diagnostic Signal\" label: left says \"four-dimensional profile, per-criterion remediation possible\"; right says \"one-dimensional band, remediation requires re-reading the work.\"\n\nNodes use the blue palette for analytic (signal-rich) and warm red-orange for holistic (signal-compressed). A footer note reads: \"Neither is universally better — choose based on whether you need per-dimension remediation (analytic) or time-efficient end-of-course judgment (holistic).\"\n\nImplementation: Mermaid `flowchart LR` with `classDef` for the two panels. Embedded directly in the chapter markdown."
+}

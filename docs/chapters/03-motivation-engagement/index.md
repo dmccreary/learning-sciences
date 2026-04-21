@@ -8,6 +8,8 @@ version: 0.07
 
 # Motivation and Engagement
 
+[Slides](slides/){ .md-button } [Slides in Viewer](../../sims/slide-viewer/main.html?src=../../chapters/03-motivation-engagement/slides/){ .md-button .md-button--primary }
+
 !!! mascot-welcome "Welcome — The Gate Before Every Other Gate"
     <img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Bloom the elephant waving welcome">
     Every chapter that follows this one assumes a learner who has already decided to show up and try. That decision is not automatic — it is the outcome of a small, quiet cluster of processes that the learning sciences have studied for half a century. In this chapter we map that cluster. By the end you will know the levers a textbook author can pull to earn the learner's engagement, and the footguns that make motivation evaporate without anyone noticing. Let's build a mental model.

@@ -1,0 +1,14 @@
+{
+  "sim_id": "skill-quality-flywheel",
+  "diagram_name": "The Skill-Quality Flywheel",
+  "chapter_number": 14,
+  "chapter_title": "AI Agent Skills for Textbook Generation",
+  "chapter_dir": "14-agent-skills",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: causal-loop-diagram\n**sim-id:** skill-quality-flywheel<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA causal loop diagram rendered with Mermaid `flowchart LR` with six variable-nodes and one named reinforcing loop. All nodes are noun phrases naming variables that can go up or down.\n\nNodes: *skill invocation rate*, *edge cases surfaced*, *skill description precision*, *trigger accuracy*, *author trust in the skill*, *maintenance burden*.\n\nEdges and polarities:\n\n- skill invocation rate → edge cases surfaced (+) — more runs surface more edge cases\n- edge cases surfaced → skill description precision (+, with delay ⧚) — each edge case prompts a description tightening\n- skill description precision → trigger accuracy (+) — a precise description routes the harness correctly\n- trigger accuracy → author trust in the skill (+) — the skill is invoked when it should be, not otherwise\n- author trust in the skill → skill invocation rate (+) — trusted skills get used\n- skill invocation rate → maintenance burden (+) — more use means more bug reports and feature requests\n- maintenance burden → skill description precision (−, if unmanaged) — neglected maintenance lets the description drift\n\nLoop label at the loop's geometric center:\n\n- **R1 — Skill-quality flywheel (reinforcing, productive).** Invocation → edge cases → description precision → trigger accuracy → trust → more invocation. Each trip around makes the next one easier. Maintenance burden is the drag variable that can stall the loop if left unattended.\n\nVisual treatment: R1 nodes in cool blue; the maintenance-burden node in warm orange to signal the drag variable; delay marker ⧚ on the edge-case-to-description-precision edge. Every edge labeled with `+` or `−`.\n\nImplementation: Mermaid `flowchart LR` with `linkStyle` declarations for polarity coloring and `classDef` for loop grouping. A one-paragraph walkthrough of R1 accompanies the diagram in the prose that follows."
+}

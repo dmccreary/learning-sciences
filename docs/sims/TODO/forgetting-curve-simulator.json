@@ -1,0 +1,14 @@
+{
+  "sim_id": "forgetting-curve-simulator",
+  "diagram_name": "The Forgetting Curve Simulator",
+  "chapter_number": 5,
+  "chapter_title": "Knowledge Retention",
+  "chapter_dir": "05-knowledge-retention",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: microsim\n**sim-id:** forgetting-curve-simulator<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive p5.js MicroSim that plots the Ebbinghaus retention curve \\( R = e^{-t/S} \\) over a configurable time horizon. The canvas shows a horizontal axis in days (0 to 60), a vertical axis in retention (0.0 to 1.0), and two superimposed curves: a baseline \"no review\" curve and a \"with review\" curve whose \\( S \\) value increases at each scheduled review, producing the characteristic sawtooth that rises above the baseline over time.\n\nControls (using built-in p5.js controls per project convention):\n\n- **Initial strength slider** — \\( S \\) at encoding, 1 to 10 days.\n- **Review-interval dropdown** — presets: {none, daily, SM-2 expanding (1, 3, 7, 14, 30 days), Leitner-style doubling}.\n- **Strength-gain-per-review slider** — multiplicative factor by which \\( S \\) increases at each successful retrieval (1.5× to 3×).\n- **Show-area-under-curve checkbox** — shades the integral of retention over time to visualize *total* knowledge held across the period.\n- **Reset button** — restores default values.\n\nLearning objective (Bloom level: Analyze): *Given a review schedule, predict whether the resulting retention trajectory will beat a no-review baseline at day 30.*\n\nCanvas responsive via `updateCanvasSize()` as first line of `setup()`; parented to the standard `<main></main>` element.\n\nImplementation: p5.js sketch in `/docs/sims/forgetting-curve-simulator/` with `main.html`, `script.js`, `local.css`, and `index.md`. Generated via the `microsim-generator` skill."
+}

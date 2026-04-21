@@ -1,0 +1,14 @@
+{
+  "sim_id": "cognitive-load-budget",
+  "diagram_name": "The Cognitive Load Budget",
+  "chapter_number": 4,
+  "chapter_title": "Cognitive Architecture and Load",
+  "chapter_dir": "04-cognitive-architecture",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: microsim\n**sim-id:** cognitive-load-budget<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive p5.js MicroSim that visualizes the cognitive-load budget inequality. The canvas displays a horizontal capacity bar labeled \"Working Memory Capacity\" filled with three stacked regions colored to represent intrinsic (blue), extraneous (red), and germane (green) load. A performance indicator on the right shows one of {learning, on the edge, overloaded}; the state transitions as total load approaches and exceeds capacity.\n\nControls (using built-in p5.js controls per project convention):\n\n- **Intrinsic-load slider** (0–10) — material difficulty relative to learner prior knowledge.\n- **Extraneous-load slider** (0–10) — presentation-driven load.\n- **Germane-load slider** (0–10) — schema-construction effort.\n- **Capacity slider** (5–15) — the learner's available capacity, illustrating individual differences.\n- **Scenario dropdown** — preset configurations: {novice with bad diagram, expert with clean diagram, overloaded learner, well-designed chapter}.\n- **Reset button** — returns to default values.\n\nLearning objective (Bloom level: Apply): *Given a lesson description, decompose its cognitive load and predict whether the learner will overflow.*\n\nCanvas responsive via `updateCanvasSize()` as first line of `setup()`; parented to the standard `<main></main>` element.\n\nImplementation: p5.js sketch in `/docs/sims/cognitive-load-budget/` with `main.html`, `script.js`, `local.css`, and `index.md`. Generated via the `microsim-generator` skill."
+}

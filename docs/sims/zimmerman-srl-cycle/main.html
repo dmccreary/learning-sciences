@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zimmerman's Self-Regulated Learning Cycle</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Zimmerman's Self-Regulated Learning Cycle</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> zimmerman-srl-cycle</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> TBD</p>
+            <p><strong>Learning Objective:</strong> TBD</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: interactive-infographic
+    **sim-id:** zimmerman-srl-cycle<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified
+    
+    An interactive infographic overlay using the `interactive-infographic-overlay` skill. Base image: a three-sector circular cycle with arrows showing clockwise flow from *Forethought* (top) to *Performance* (lower right) to *Self-Reflection* (lower left) and back to Forethought. Each sector is a different color on a warm blue-to-orange gradient. The base image is annotation-free; all phase labels, sub-processes, and example prompts are delivered by overlay markers.
+    
+    Modes (standard for this skill):
+    
+    - **Explore mode:** Hovering over a sector shows a tooltip containing the phase name, one-sentence definition, the three classic sub-processes (e.g., Forethought: goal-setting, strategic planning, self-efficacy activation), and a sample metacognitive prompt the learner can run on themselves at that phase.
+    - **Quiz mode:** A short description of a learner's behavior appears at the top (e.g., "Before starting the problem set, she wrote down what strategy she would try first and predicted how long it would take"); the learner clicks the SRL phase the behavior illustrates. Correct answers highlight the sector green; incorrect answers reveal the correct phase and a one-sentence explanation of the sub-process at play.
+    - **Edit mode (authors only):** Drag markers to recalibrate positions on the base image; export updated `data.json`.
+    
+    Learning objective (Bloom level: Analyze): *Given a description of a learner's behavior, identify which SRL phase it illustrates and name the sub-process at play.*
+    
+    Canvas responsive via `updateCanvasSize()` as the first line of `setup()`; marker anchors preserved on resize.
+    
+    Implementation: Generated with the `interactive-infographic-overlay` skill. The directory `/docs/sims/zimmerman-srl-cycle/` will contain `image-prompt.md`, `data.json`, `main.html`, `index.md`, and the cycle base image.
+    -->
+</body>
+</html>

@@ -8,7 +8,7 @@ version: 0.07
 
 # Foundations of Learning Sciences
 
-[Content](./){ .md-button .md-button--primary } [Slides](slides/){ .md-button } [Slides in Viewer](../../sims/slide-viewer/main.html?src=../../chapters/01-foundations/slides/){ .md-button }
+[Slides](slides/){ .md-button } [Slides in Viewer](../../sims/slide-viewer/main.html?src=../../chapters/01-foundations/slides/){ .md-button .md-button--primary }
 
 !!! mascot-welcome "Welcome — Let's Build a Mental Model"
     <img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Bloom the elephant waving welcome">

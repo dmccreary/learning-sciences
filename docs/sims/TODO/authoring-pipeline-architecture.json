@@ -1,0 +1,14 @@
+{
+  "sim_id": "authoring-pipeline-architecture",
+  "diagram_name": "The Authoring Pipeline — Prompt to Published Site",
+  "chapter_number": 10,
+  "chapter_title": "Intelligent Textbook Architecture and AI Tooling",
+  "chapter_dir": "10-textbook-architecture",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: diagram\n**sim-id:** authoring-pipeline-architecture<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA Mermaid `flowchart LR` diagram showing six horizontal stages, each labeled and colored distinctly on a blue-to-orange palette.\n\n1. *Author* — prompt or natural-language request.\n2. *IDE Harness (Claude Code)* — receives request, reads `SKILL.md` files, selects a matching skill.\n3. *Agent Skill* — runs its Steps; reads shared inputs (learning graph, style guide, prior chapters); writes Markdown.\n4. *Markdown Files* — the chapter, glossary entry, quiz file, reference list.\n5. *MkDocs Material Build* — converts Markdown to HTML, builds the search index, renders navigation, applies the print stylesheet.\n6. *Deployed Site* — GitHub Pages URL served from the `gh-pages` branch.\n\nSecondary arrows show:\n\n- *Author → Harness* (primary request)\n- *Harness → Skill* (invocation)\n- *Skill ↔ Shared Inputs* (learning graph, style guide)\n- *Skill → Markdown* (write)\n- *Markdown → Build → Site* (deployment)\n- *Site → Author* (preview loop at `http://127.0.0.1:8000/learning-sciences/` during development; deployed URL in production)\n\nA side panel labels the three control surfaces we have discussed — *Prompt*, *Context Window*, *Token Budget* — and draws arrows from them into the Harness and Skill stages to indicate where each control lands in the flow.\n\nImplementation: Mermaid `flowchart LR` with `classDef` for the stage colors and a `subgraph` for the control-surface side panel. Embedded directly in the chapter markdown."
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "intelligent-textbook-components",
+  "diagram_name": "Components of an Intelligent Textbook",
+  "chapter_number": 1,
+  "chapter_title": "Foundations of Learning Sciences",
+  "chapter_dir": "01-foundations",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: diagram\n**sim-id:** intelligent-textbook-components<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA Mermaid `flowchart TD` diagram showing the learning graph at the center as the structural spine, with arrows radiating to each generated artifact. Nodes:\n\n- **Learning Graph** (central, larger node, highlighted): concepts and dependencies as a DAG.\n- **Chapters** — generated from the graph; each chapter lists its concepts.\n- **Glossary** — one entry per concept node.\n- **Quiz Bank** — questions tagged per concept and Bloom level.\n- **MicroSims** — embedded per concept or small concept cluster.\n- **FAQ** — derived from chapter content.\n- **References** — curated per chapter.\n- **Mascot Admonitions** — voice layer cutting across all chapters (shown as a side stripe rather than a child node).\n- **Stories** — graphic novels attached to chapters where a historical figure applies.\n\nEdges labeled with the dependency type (\"tagged with concept\", \"defined for concept\", \"referenced in chapter\"). The mascot-admonition stripe is rendered in a distinct color to signal that it is a cross-cutting concern, not a sibling artifact. Layout is top-down with the learning graph at the top, chapters on the second row, and the other artifacts on the third row hanging off chapters and concepts.\n\nImplementation: Mermaid `flowchart TD` with custom node styling via `classDef`. Rendered responsively via MkDocs Material's built-in Mermaid support."
+}

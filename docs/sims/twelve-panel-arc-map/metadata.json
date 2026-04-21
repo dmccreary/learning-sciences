@@ -1,0 +1,21 @@
+{
+  "title": "The Twelve-Panel Story Arc Map",
+  "description": "The Twelve-Panel Story Arc Map",
+  "creator": "Dementia Education Project",
+  "date": "2026-04-20",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "twelve-panel-arc-map",
+  "library": "p5.js",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 13,
+  "chapter_title": "Graphic Novels and Short-Form Stories",
+  "chapter_dir": "13-graphic-novels"
+}

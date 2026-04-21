@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Three-Stage Memory Model</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        #container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a3a6c;
+        }
+        .placeholder {
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #6c757d;
+            margin: 20px 0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .placeholder .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #212529;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .placeholder h2 {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .placeholder p {
+            font-size: 14px;
+            max-width: 480px;
+        }
+        .meta {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+            padding-top: 12px;
+        }
+        .meta strong { color: #495057; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>The Three-Stage Memory Model</h1>
+        <div class="placeholder">
+            <span class="badge">SCAFFOLD</span>
+            <h2>MicroSim Not Yet Implemented</h2>
+            <p>This MicroSim has been scaffolded from its specification but the
+            interactive content has not been built yet. See the chapter source
+            and the <code>index.md</code> in this directory for the full spec.</p>
+        </div>
+        <div class="meta">
+            <p><strong>Sim ID:</strong> three-stage-memory-model</p>
+            <p><strong>Library:</strong> p5.js</p>
+            <p><strong>Bloom Level:</strong> TBD</p>
+            <p><strong>Learning Objective:</strong> TBD</p>
+        </div>
+    </div>
+
+    <!--
+    SPECIFICATION (from chapter index.md):
+
+    Type: interactive-infographic
+    **sim-id:** three-stage-memory-model<br/>
+    **Library:** p5.js<br/>
+    **Status:** Specified
+    
+    An interactive infographic overlay built with the `interactive-infographic-overlay` skill. Base image: a left-to-right flow with three labeled containers — a thin blue "Sensory Memory" funnel, a narrow amber "Working Memory" workspace with a small stage in the middle, and a wide deep-blue "Long-Term Memory" library to the right — connected by arrows labeled "attention" (sensory → working) and "encoding" / "retrieval" (working ↔ long-term). A thin dashed arrow from long-term back into working memory shows retrieval. Base image is annotation-free; labels come from overlay markers in `data.json`.
+    
+    Modes (standard for this skill):
+    
+    - **Explore mode:** Hovering each container reveals a tooltip with (a) capacity estimate, (b) duration estimate, (c) example content, and (d) the mechanism that moves information to the next stage.
+    - **Quiz mode:** A fact about memory appears (e.g., "Holds roughly 4 items for about 20 seconds without rehearsal"); the student clicks the matching container. Incorrect clicks reveal the correct container and a one-sentence explanation.
+    - **Edit mode (authors only):** Drag markers to recalibrate positions; export updated `data.json`.
+    
+    Learning objective (Bloom level: Understand): *Given a memory property, identify which of the three stages it describes.*
+    
+    Responsive: canvas width adapts via `updateCanvasSize()` as the first line of `setup()`; marker anchors preserved on resize.
+    
+    Implementation: Generated with the `interactive-infographic-overlay` skill. Directory `/docs/sims/three-stage-memory-model/` contains `image-prompt.md`, `data.json`, `main.html`, `index.md`, and the annotation-free base image.
+    -->
+</body>
+</html>

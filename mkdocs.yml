@@ -24,7 +24,9 @@ nav:
       - 2. The Seven Domains Framework:
           - Content: chapters/02-seven-domains/index.md
           - Slides: chapters/02-seven-domains/slides.md
-      - 3. Motivation and Engagement: chapters/03-motivation-engagement/index.md
+      - 3. Motivation and Engagement:
+          - Content: chapters/03-motivation-engagement/index.md
+          - Slides: chapters/03-motivation-engagement/slides.md
       - 4. Cognitive Architecture and Load: chapters/04-cognitive-architecture/index.md
       - 5. Knowledge Retention: chapters/05-knowledge-retention/index.md
       - 6. Application and Transfer: chapters/06-application-transfer/index.md
@@ -46,8 +48,69 @@ nav:
       - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
       - Mascot Style Guide: learning-graph/mascot-test.md
   - MicroSims:
-      - Learning Graph Viewer: sims/graph-viewer/index.md
+      - List of MicroSims: sims/index.md
+      - Aggregate Quality Dashboard: sims/aggregate-quality-dashboard/index.md
+      - Analogical Mapping Explorer: sims/analogical-mapping-explorer/index.md
+      - ARCS Four Pillars: sims/arcs-four-pillars/index.md
+      - Authoring Pipeline Architecture: sims/authoring-pipeline-architecture/index.md
+      - Authoring Pipeline Dynamics: sims/authoring-pipeline-dynamics/index.md
+      - Authoring Pipeline Walkthrough: sims/authoring-pipeline-walkthrough/index.md
+      - Baddeley Working Memory: sims/baddeley-working-memory/index.md
+      - Barnett-Ceci Transfer Taxonomy: sims/barnett-ceci-transfer-taxonomy/index.md
+      - Bjork Storage Dynamics: sims/bjork-storage-dynamics/index.md
+      - Bloom Poses Gallery: sims/bloom-poses-gallery/index.md
+      - Bloom Taxonomy Pyramid: sims/bloom-taxonomy-pyramid/index.md
+      - Capstone Rubric Board: sims/capstone-rubric-board/index.md
+      - Chunking Board Recall: sims/chunking-board-recall/index.md
+      - Chunking Demonstration: sims/chunking-demonstration/index.md
+      - Cognitive Load Budget: sims/cognitive-load-budget/index.md
+      - DAG Topological Reduction: sims/dag-topological-reduction/index.md
+      - Deploy Pipeline Flow: sims/deploy-pipeline-flow/index.md
+      - Dreyfus Skill Model: sims/dreyfus-skill-model/index.md
+      - Evidence Loop Authoring: sims/evidence-loop-authoring/index.md
+      - Expertise Flywheel Plateau: sims/expertise-flywheel-plateau/index.md
+      - Feedback Flywheel Pressure Trap: sims/feedback-flywheel-pressure-trap/index.md
+      - Flow Channel Explorer: sims/flow-channel-explorer/index.md
+      - Forgetting Curve Simulator: sims/forgetting-curve-simulator/index.md
+      - Graph Viewer: sims/graph-viewer/index.md
+      - Graphic Novel Pipeline: sims/graphic-novel-pipeline/index.md
+      - Intelligent Textbook Architecture: sims/intelligent-textbook-architecture/index.md
+      - Intelligent Textbook Components: sims/intelligent-textbook-components/index.md
+      - IRT Ability-Difficulty Explorer: sims/irt-ability-difficulty-explorer/index.md
+      - Iteration Flywheel: sims/iteration-flywheel/index.md
+      - Learning Environment Nested Layers: sims/learning-environment-nested-layers/index.md
+      - Learning Sciences Confluence: sims/learning-sciences-confluence/index.md
+      - Leitner Box Simulator: sims/leitner-box-simulator/index.md
+      - Library Decision Tree: sims/library-decision-tree/index.md
+      - Load Dynamics Loops: sims/load-dynamics-loops/index.md
+      - Mascot Design Pipeline: sims/mascot-design-pipeline/index.md
+      - Mascot Path Depth: sims/mascot-path-depth/index.md
+      - Mascot Voice Consistency Loops: sims/mascot-voice-consistency-loops/index.md
+      - Mental Model Probe Interview: sims/mental-model-probe-interview/index.md
+      - MicroSim Control Complexity Loops: sims/microsim-control-complexity-loops/index.md
+      - Motivation Loops Competence Frustration: sims/motivation-loops-competence-frustration/index.md
+      - Power Law Learning Curve: sims/power-law-learning-curve/index.md
+      - Psychological Safety Dynamics: sims/psychological-safety-dynamics/index.md
+      - Retrieval vs Storage Strength: sims/retrieval-vs-storage-strength/index.md
+      - Rubric Analytic vs Holistic: sims/rubric-analytic-vs-holistic/index.md
+      - Scaffold Fading Trainer: sims/scaffold-fading-trainer/index.md
+      - SDT Three Needs Venn: sims/sdt-three-needs-venn/index.md
+      - Seven Domains Coupling: sims/seven-domains-coupling/index.md
+      - Seven Domains Wheel: sims/seven-domains-wheel/index.md
+      - Skill Dependency Graph: sims/skill-dependency-graph/index.md
+      - Skill Quality Flywheel: sims/skill-quality-flywheel/index.md
       - Slide Viewer: sims/slide-viewer/index.md
+      - Spaced Retrieval Timeline: sims/spaced-retrieval-timeline/index.md
+      - Talk Moves Decision Tree: sims/talk-moves-decision-tree/index.md
+      - Textbook Production Pipeline: sims/textbook-production-pipeline/index.md
+      - Three Stage Memory Model: sims/three-stage-memory-model/index.md
+      - Token Budget Explorer: sims/token-budget-explorer/index.md
+      - Transfer Dynamics Flywheel Trap: sims/transfer-dynamics-flywheel-trap/index.md
+      - Transportation Dynamics Loops: sims/transportation-dynamics-loops/index.md
+      - Twelve Panel Arc Map: sims/twelve-panel-arc-map/index.md
+      - UDL Three Principles: sims/udl-three-principles/index.md
+      - Zimmerman SRL Cycle: sims/zimmerman-srl-cycle/index.md
+      - ZPD Three Zones: sims/zpd-three-zones/index.md
   - FAQ: faq.md
   - Glossary: glossary.md
   - References: references.md

@@ -1,0 +1,14 @@
+{
+  "sim_id": "baddeley-working-memory",
+  "diagram_name": "Baddeley's Working-Memory Components",
+  "chapter_number": 4,
+  "chapter_title": "Cognitive Architecture and Load",
+  "chapter_dir": "04-cognitive-architecture",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: interactive-infographic\n**sim-id:** baddeley-working-memory<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive infographic overlay built with the `interactive-infographic-overlay` skill. Base image: a central hub labeled \"Central Executive\" with three radiating slots — \"Phonological Loop\" on the left with a small ear icon, \"Visuospatial Sketchpad\" on the right with a small eye icon, and an \"Episodic Buffer\" beneath bridging to long-term memory shown as a distant container. Rendered in the project's blue-amber palette on a white background; base image annotation-free with overlay-driven labels.\n\nModes (standard for this skill):\n\n- **Explore mode:** Hovering each component reveals its storage type, duration, refresh mechanism, and one concrete example (e.g., phonological loop: \"holds the sentence you just read for ~2s; refreshed by silent rehearsal\").\n- **Quiz mode:** A task description appears (\"mentally rotate this shape\"); the student clicks the subsystem primarily engaged.\n- **Edit mode (authors only):** Drag markers to recalibrate positions; export updated `data.json`.\n\nLearning objective (Bloom level: Analyze): *Given a cognitive task, identify which working-memory component(s) it primarily recruits.*\n\nResponsive via `updateCanvasSize()` as first line of `setup()`; marker anchors preserved.\n\nImplementation: Generated with the `interactive-infographic-overlay` skill. Directory `/docs/sims/baddeley-working-memory/` contains the standard five files."
+}
