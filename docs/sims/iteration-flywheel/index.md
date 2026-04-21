@@ -1,70 +1,35 @@
 ---
 title: The Iteration Flywheel
-description: The Iteration Flywheel
-status: scaffold
+description: A causal loop diagram showing how ship cadence, reader feedback, peer review, revision rate, chapter quality, and reader trust form a reinforcing flywheel, with the ship-and-forget brake as the anti-pattern.
+status: implemented
 library: Mermaid
-bloom_level: TBD
 ---
 
 # The Iteration Flywheel
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="600px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
-## Learning Objective
+[Run the Iteration Flywheel Fullscreen](./main.html){ .md-button .md-button--primary }
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** Mermaid
+A causal loop diagram with seven variable-nodes and two named loops. **R1 (Iteration flywheel):** Ship cadence produces reader feedback, which seeds revision. Peer review turnaround accelerates revision. Revisions compound into chapter quality, which builds reader trust, enabling more confident shipping. **B1 (Ship-and-forget brake):** Shipping without a feedback gate tempts skipping feedback collection and revision, starving the flywheel. The negative edges from the anti-pattern node are highlighted in red.
 
-## Preview
+## Diagram Details
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+```mermaid
+flowchart LR
+    SC[Ship Cadence] -->|+| RFV[Reader Feedback Volume]
+    RFV -->|+| RR[Revision Rate]
+    PRT[Peer Review Turnaround] -->|+| RR
+    RR -->|+ delay| CQ[Chapter Quality]
+    CQ -->|+| RT[Reader Trust]
+    RT -->|+| SC
+    PRT -->|+| SC
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
-
-## Specification
-
-The full specification below is extracted from
-[Chapter 15: Capstone and Deployment](../../chapters/15-capstone-deployment/index.md).
-
-```text
-Type: causal-loop-diagram
-**sim-id:** iteration-flywheel<br/>
-**Library:** Mermaid<br/>
-**Status:** Specified
-
-A causal loop diagram rendered with Mermaid `flowchart LR` showing seven variable-nodes and one reinforcing loop plus one balancing anti-pattern. All nodes are noun phrases naming variables that can go up or down.
-
-Nodes: *ship cadence*, *reader feedback volume*, *peer review turnaround*, *revision rate*, *chapter quality*, *reader trust*, *ship-and-forget frequency*.
-
-Edges and polarities for **R1 — Iteration flywheel (reinforcing):**
-
-- ship cadence → reader feedback volume (+) — shipping produces readers, readers produce feedback
-- peer review turnaround → revision rate (+) — faster reviews mean faster revisions
-- reader feedback volume → revision rate (+) — feedback seeds revision
-- revision rate → chapter quality (+, with delay ⧚) — revisions compound into quality
-- chapter quality → reader trust (+) — good chapters build trust
-- reader trust → ship cadence (+) — trusted authors ship more confidently
-- peer review turnaround → ship cadence (+) — fast reviews enable faster releases
-
-Edges for **B1 — Ship-and-forget brake (balancing anti-pattern):**
-
-- ship cadence → ship-and-forget frequency (+) — shipping without a feedback gate tempts "ship and move on"
-- ship-and-forget frequency → reader feedback volume (−) — no feedback mechanism, no feedback
-- ship-and-forget frequency → revision rate (−) — revisions never happen if feedback isn't collected
-
-Loop labels at each loop's geometric center:
-
-- **R1 — Iteration flywheel (reinforcing, productive).** Ship → feedback → revise → quality → trust → more ship. Peer review accelerates the inner portion of the loop.
-- **B1 — Ship-and-forget brake (balancing, corrosive).** Shipping without a feedback gate starves the flywheel.
-
-Visual treatment: R1 nodes in cool blue; the B1 anti-pattern in warm orange; delay marker ⧚ on the revision-rate-to-chapter-quality edge; every edge labeled with `+` or `−`.
-
-Implementation: Mermaid `flowchart LR` with `linkStyle` declarations for polarity coloring and `classDef` for loop grouping.
+    SC -->|+| SAF[Ship-and-Forget Frequency]
+    SAF -->|minus| RFV
+    SAF -->|minus| RR
 ```
 
 ## Related Resources

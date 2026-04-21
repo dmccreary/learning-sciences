@@ -4,106 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Dreyfus Five-Stage Skill Model</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="dreyfus-skill-model.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>Interactive Dreyfus Five-Stage Skill Model</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> dreyfus-skill-model</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> TBD</p>
-            <p><strong>Learning Objective:</strong> TBD</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: interactive-infographic
-    **sim-id:** dreyfus-skill-model<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    An interactive infographic overlay using the `interactive-infographic-overlay` skill. Base image: a horizontal five-stage progression from *Novice* to *Expert* rendered as a gradient band, with one icon per stage (abstract shapes — a small cube, a growing tree, a plan diagram, a radar sweep, a flowing ribbon) and a secondary axis running above the band that shows the balance of *rule-following* on the left and *intuitive recognition* on the right. The base image is annotation-free; all stage labels, definitions, and example behaviors are delivered by overlay markers.
-    
-    Modes (standard for this skill):
-    
-    - **Explore mode:** Hovering over a stage shows a tooltip containing the stage name, a one-sentence definition, three behavioral markers observable in practice, the rule-vs-intuition balance at that stage, and the preferred form of feedback (e.g., rule-correction at novice, boundary-case discussion at expert).
-    - **Quiz mode:** A short description of a learner's current performance appears at the top (e.g., "She follows the checklist precisely but is thrown by any case where the checklist's assumptions are violated"); the learner clicks the stage that best fits. Correct answers highlight the stage green; incorrect answers reveal the correct stage and a one-sentence explanation of the marker that would have been diagnostic.
-    - **Edit mode (authors only):** Drag markers to recalibrate positions on the base image; export updated `data.json`.
-    
-    Learning objective (Bloom level: Analyze): *Given a description of a learner's performance, place the learner on the Dreyfus skill model and name the transition they are currently approaching.*
-    
-    Canvas responsive via `updateCanvasSize()` as the first line of `setup()`; marker anchors preserved on resize.
-    
-    Implementation: Generated with the `interactive-infographic-overlay` skill. The directory `/docs/sims/dreyfus-skill-model/` will contain `image-prompt.md`, `data.json`, `main.html`, `index.md`, and the stage-progression base image.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Documentation</a>
 </body>
 </html>
