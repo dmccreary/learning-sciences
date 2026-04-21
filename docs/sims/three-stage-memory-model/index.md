@@ -1,56 +1,26 @@
 ---
 title: The Three-Stage Memory Model
-description: The Three-Stage Memory Model
-status: scaffold
-library: p5.js
-bloom_level: TBD
+description: An interactive flow diagram of the Atkinson-Shiffrin three-stage memory model with sensory, working, and long-term memory.
 ---
 
 # The Three-Stage Memory Model
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="562px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
-## Learning Objective
+[Run the Three-Stage Memory Model Fullscreen](./main.html){ .md-button .md-button--primary }
+[Edit Using the p5.js Editor](https://editor.p5js.org/){ .md-button }
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** p5.js
+A left-to-right flow diagram showing the Atkinson-Shiffrin three-stage memory model. Sensory Memory (a funnel shape representing its vast but fleeting capacity) feeds into Working Memory through attention, which connects to Long-Term Memory through encoding and retrieval arrows.
 
-## Preview
+In **Explore mode**, hover each stage to see its capacity, duration, example content, and the mechanism that moves information to the next stage. Press **Send Info** to animate a glowing particle flowing from sensory through working to long-term memory.
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+In **Quiz mode**, a memory fact appears and you click the matching stage. Test whether you can identify which stage holds four chunks, which lasts fractions of a second, and which stores knowledge for a lifetime.
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+A duration comparison bar at the bottom shows the dramatic differences in how long each stage retains information.
 
-## Specification
-
-The full specification below is extracted from
-[Chapter 4: Cognitive Architecture and Load](../../chapters/04-cognitive-architecture/index.md).
-
-```text
-Type: interactive-infographic
-**sim-id:** three-stage-memory-model<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
-
-An interactive infographic overlay built with the `interactive-infographic-overlay` skill. Base image: a left-to-right flow with three labeled containers — a thin blue "Sensory Memory" funnel, a narrow amber "Working Memory" workspace with a small stage in the middle, and a wide deep-blue "Long-Term Memory" library to the right — connected by arrows labeled "attention" (sensory → working) and "encoding" / "retrieval" (working ↔ long-term). A thin dashed arrow from long-term back into working memory shows retrieval. Base image is annotation-free; labels come from overlay markers in `data.json`.
-
-Modes (standard for this skill):
-
-- **Explore mode:** Hovering each container reveals a tooltip with (a) capacity estimate, (b) duration estimate, (c) example content, and (d) the mechanism that moves information to the next stage.
-- **Quiz mode:** A fact about memory appears (e.g., "Holds roughly 4 items for about 20 seconds without rehearsal"); the student clicks the matching container. Incorrect clicks reveal the correct container and a one-sentence explanation.
-- **Edit mode (authors only):** Drag markers to recalibrate positions; export updated `data.json`.
-
-Learning objective (Bloom level: Understand): *Given a memory property, identify which of the three stages it describes.*
-
-Responsive: canvas width adapts via `updateCanvasSize()` as the first line of `setup()`; marker anchors preserved on resize.
-
-Implementation: Generated with the `interactive-infographic-overlay` skill. Directory `/docs/sims/three-stage-memory-model/` contains `image-prompt.md`, `data.json`, `main.html`, `index.md`, and the annotation-free base image.
-```
+**Learning Objective (Understand):** Given a memory property, identify which of the three stages it describes.
 
 ## Related Resources
 

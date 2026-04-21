@@ -1,60 +1,32 @@
 ---
 title: Token Budget Explorer
-description: Token Budget Explorer
-status: scaffold
+description: Interactive budget calculator showing token costs, context window usage, and prompt cache timing.
+status: implemented
 library: p5.js
-bloom_level: TBD
+bloom_level: Apply
 ---
 
 # Token Budget Explorer
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="650px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
-## Learning Objective
+[Run the Token Budget Explorer Fullscreen](./main.html){ .md-button .md-button--primary }
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** p5.js
+An interactive token budget visualizer that makes context-window usage visible. A horizontal bar shows colored segments for each part of the prompt: System Role, Style Guide, Outline, Prior Chapters, Graph Subgraph, and In-Flight Response. A secondary panel shows the prompt-cache timer (300-second TTL) and whether scheduled runs land inside or outside the cache window.
 
-## Preview
+**Controls:**
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+- **Instruction Depth** (1-10): Scales the Style Guide and Prior Chapters segments.
+- **Output Length** (500-15,000 tokens): Sets the In-Flight Response segment size.
+- **Context Window** (200K / 400K / 1M): Changes the budget bar scale.
+- **Run Cadence** (60s-3600s): Shows whether runs hit or miss the prompt cache.
+- **Reset**: Restores default values.
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+No real API calls are made — this is purely a budget visualizer.
 
-## Specification
-
-The full specification below is extracted from
-[Chapter 10: Intelligent Textbook Architecture and AI Tooling](../../chapters/10-textbook-architecture/index.md).
-
-```text
-Type: microsim
-**sim-id:** token-budget-explorer<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
-
-An interactive p5.js MicroSim that makes token budgeting visible. The canvas shows a horizontal budget bar representing the context window (default 1,000,000 tokens), filled from left to right by colored segments: *system role*, *style guide*, *outline*, *prior-chapter summary*, *learning-graph subgraph*, *in-flight response*. A secondary panel shows the prompt-cache timer (a shrinking bar with a 300-second TTL) and a cost-per-run readout.
-
-Controls (using built-in p5.js controls per project convention):
-
-- **Instruction-depth slider** — 1 (minimal) to 10 (full style guide + full prior chapters). Moves the *style guide* and *prior-chapter summary* segments wider or narrower.
-- **Output-length slider** — 500 to 15,000 tokens. Moves the *in-flight response* segment.
-- **Context-window dropdown** — 200k, 400k, 1M. Redraws the bar scale.
-- **Run-cadence slider** — 60s to 3600s. The cache-timer panel shows whether each scheduled run lands inside the 5-minute cache window or outside it; outside-window runs get a warning icon.
-- **Reset button** — restore defaults.
-
-A caption reports the total token usage, the remaining budget, the estimated cost per run (at a sample rate), and whether the run is a cache hit or a cache miss. The MicroSim uses no real API calls — it is purely a budget visualizer.
-
-Learning objective (Bloom level: Apply): *Given a target chapter length and a style-guide size, choose a run cadence that keeps the pipeline inside the prompt-cache window and the context-window bound.*
-
-Canvas responsive via `updateCanvasSize()` as the first line of `setup()`; parented to the standard `<main></main>` element so the sketch can be pasted into the p5.js editor.
-
-Implementation: p5.js sketch in `/docs/sims/token-budget-explorer/` with `main.html`, `script.js`, `local.css`, and `index.md`. Generated via the `microsim-generator` skill.
-```
+**Learning Objective** (Bloom level: Apply): *Given a target chapter length and a style-guide size, choose a run cadence that keeps the pipeline inside the prompt-cache window and the context-window bound.*
 
 ## Related Resources
 

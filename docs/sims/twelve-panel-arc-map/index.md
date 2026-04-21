@@ -1,56 +1,26 @@
 ---
-title: The Twelve-Panel Story Arc Map
-description: The Twelve-Panel Story Arc Map
-status: scaffold
+title: Twelve-Panel Story Arc Map
+description: Interactive 4x3 grid showing the 12-panel story arc structure for graphic novel narratives.
+status: implemented
 library: p5.js
-bloom_level: TBD
+bloom_level: Apply
 ---
 
-# The Twelve-Panel Story Arc Map
+# Twelve-Panel Story Arc Map
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="640px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
-## Learning Objective
+[Run the Story Arc Map Fullscreen](./main.html){ .md-button .md-button--primary }
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** p5.js
+A four-by-three grid showing the 12-panel story arc structure used in graphic novel narratives. Panels are color-coded by arc stage: **Setup** (blue, panels 1-4), **Rising Action** (amber, panels 5-8), **Climax** (red, panels 9-10), and **Resolution** (green, panels 11-12). Each panel has a named job in the story structure.
 
-## Preview
+**Explore Mode:** Hover over any panel to see its number, arc stage, the job it does in the story, and a concrete example from Ada Lovelace's Note G story.
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+**Quiz Mode:** A panel job description appears. Click the panel position where it belongs in the arc.
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
-
-## Specification
-
-The full specification below is extracted from
-[Chapter 13: Graphic Novels and Short-Form Stories](../../chapters/13-graphic-novels/index.md).
-
-```text
-Type: interactive-infographic
-**sim-id:** twelve-panel-arc-map<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
-
-An interactive infographic overlay built with the `interactive-infographic-overlay` skill. Base image: a four-by-three grid (four columns, three rows) of panel placeholders on a cream background, each placeholder a lightly sketched comic-panel rectangle with panel number in the upper-left corner. The top row (panels 1–4) is tinted setup-blue; the middle row (panels 5–8, shifted slightly for rising-action pacing) is tinted rising-action amber; panels 9–10 are tinted climax-red; panels 11–12 are tinted resolution-green. The base image is annotation-free — all labels are delivered by overlay markers positioned via `data.json`.
-
-Modes (standard for this skill):
-
-- **Explore mode:** Hovering any panel reveals a tooltip with (a) the panel number, (b) the arc stage, (c) the job the panel does, (d) a one-sentence example of that job drawn from a canonical story such as Ada Lovelace's Note G.
-- **Quiz mode:** A panel job description appears (for example, *"The moment the conceptual turn crystallizes — the insight"*) and the reader clicks the panel position it belongs in. Correct answers highlight green; incorrect answers reveal the correct panel and a one-sentence explanation.
-- **Edit mode (authors only):** Drag markers to recalibrate positions on the base image; export updated `data.json`.
-
-Learning objective (Bloom level: Apply): *Given a beat description from a historical-figure story, identify the panel number where it belongs in the twelve-panel arc.*
-
-Responsive: canvas width adapts to container via `updateCanvasSize()` as the first line of `setup()`; marker anchor ratios preserved on resize.
-
-Implementation: Generated with the `interactive-infographic-overlay` skill. Directory `/docs/sims/twelve-panel-arc-map/` contains `image-prompt.md`, `data.json`, `main.html`, `index.md`, and the annotation-free base image.
-```
+**Learning Objective** (Bloom level: Apply): *Given a beat description from a historical-figure story, identify the panel number where it belongs in the twelve-panel arc.*
 
 ## Related Resources
 

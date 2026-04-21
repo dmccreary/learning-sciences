@@ -1,53 +1,30 @@
 ---
-title: Aggregate Quality-Metrics Dashboard (Synthetic)
-description: Aggregate Quality-Metrics Dashboard (Synthetic)
-status: scaffold
-library: Chart.js or Plotly
-bloom_level: TBD
+title: Aggregate Quality-Metrics Dashboard
+description: Chart.js dashboard with four panels showing synthetic quality metrics across chapters.
+status: implemented
+library: Chart.js
+bloom_level: Analyze
 ---
 
-# Aggregate Quality-Metrics Dashboard (Synthetic)
+# Aggregate Quality-Metrics Dashboard
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="850px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
-## Learning Objective
+[Run the Quality Dashboard Fullscreen](./main.html){ .md-button .md-button--primary }
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** Chart.js or Plotly
+A four-panel Chart.js dashboard populated with synthetic data (clearly labeled on every chart). All data is simulated — no real student data is used or displayed.
 
-## Preview
+**Panel 1 — Chapter Completion Funnel:** Horizontal bars showing completion rate per chapter with a 70% course target line.
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+**Panel 2 — Quiz Item Difficulty Scatter:** IRT difficulty parameter (b) plotted against observed percent-correct. Items far from the IRT reference curve are candidates for recalibration.
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+**Panel 3 — MicroSim Engagement Heatmap:** A grid of chapters by MicroSims showing engagement rate on a 0-1 color ramp.
 
-## Specification
+**Panel 4 — Bloom-Level Distribution:** Stacked bars per chapter showing quiz item counts at each of the six Bloom taxonomy levels.
 
-The full specification below is extracted from
-[Chapter 8: Measurement and Feedback](../../chapters/08-measurement-feedback/index.md).
-
-```text
-Type: dashboard-spec
-**sim-id:** aggregate-quality-dashboard<br/>
-**Library:** Chart.js or Plotly<br/>
-**Status:** Specified
-
-A static or lightly interactive dashboard page rendered with Chart.js or Plotly, populated from a synthetic dataset checked into the repository and clearly labeled *"SYNTHETIC — NO STUDENT DATA"* on every chart. The dashboard displays four panels:
-
-1. **Chapter completion funnel** — horizontal bars showing completion rate per chapter, with the course target line overlaid.
-2. **Quiz item-difficulty scatter** — scatter plot of estimated item difficulty (IRT \(b\)) against observed percent-correct, one dot per item, with the diagonal reference line; dots that fall far from the diagonal are candidates for recalibration.
-3. **MicroSim engagement heatmap** — grid of chapters × MicroSims showing engagement rate on a 0–1 color ramp.
-4. **Bloom-level distribution** — stacked bar per chapter showing the count of quiz items at each of the six Bloom levels, so the author can see whether a chapter is over-indexed on Remember/Understand.
-
-Every panel carries a footer noting the sample size, the date range, and the synthetic-data disclaimer. No panel exposes a per-student row. Drill-down paths go from course → chapter → item, and stop at the item level — never to a named learner.
-
-Implementation: generated synthetic-data JSON file, Chart.js or Plotly rendering. Located at `/docs/sims/aggregate-quality-dashboard/` with `main.html`, `data.json` (synthetic), `script.js`, and `index.md`.
-```
+Every panel carries a footer noting the sample size, date range, and synthetic-data disclaimer. Drill-down stops at the item level — never to a named learner.
 
 ## Related Resources
 

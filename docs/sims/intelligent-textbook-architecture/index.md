@@ -1,56 +1,26 @@
 ---
-title: Intelligent Textbook Component Architecture (Level 2)
-description: Intelligent Textbook Component Architecture (Level 2)
-status: scaffold
+title: Intelligent Textbook Architecture
+description: Layered architecture diagram showing the components of an intelligent textbook from learning graph to deployment.
+status: implemented
 library: p5.js
-bloom_level: TBD
+bloom_level: Apply
 ---
 
-# Intelligent Textbook Component Architecture (Level 2)
+# Intelligent Textbook Architecture
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="670px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
-## Learning Objective
+[Run the Architecture Diagram Fullscreen](./main.html){ .md-button .md-button--primary }
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** p5.js
+A layered architecture diagram showing how an intelligent textbook is built. The **Learning Graph** (a DAG of concepts) sits at the core. From it radiate generated artifacts: Chapter Outlines, Chapter Content, Glossary, FAQ, Quiz Bank, References, MicroSims, and Stories. Below these is the **Site Build** layer (Table of Contents, Navigation, Search Index, Print Output). Cross-cutting concerns include the **Mascot Voice Layer** and the **Authoring Pipeline** (Harness, Skills, Prompts).
 
-## Preview
+**Explore Mode:** Hover over any component to see what it owns, its definition, and which chapter covers it.
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+**Quiz Mode:** A design decision is described. Click the component that owns the change.
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
-
-## Specification
-
-The full specification below is extracted from
-[Chapter 10: Intelligent Textbook Architecture and AI Tooling](../../chapters/10-textbook-architecture/index.md).
-
-```text
-Type: interactive-infographic
-**sim-id:** intelligent-textbook-architecture<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
-
-An interactive infographic overlay using the `interactive-infographic-overlay` skill. Base image: a labeled architecture illustration with the *Learning Graph* rendered as a large central node (a small concept-node cluster with arrows between concepts suggests its DAG nature). Radiating outward from the graph are the generated artifacts: *Chapter Outlines*, *Chapter Content*, *Glossary*, *FAQ*, *Quiz Bank*, *Reference List*, *MicroSims*, *Stories*. Beneath these is a packaging layer labeled *Site Build*, which decomposes into *Table of Contents*, *Site Navigation*, *Search Index*, and *Print-Friendly Output*. A vertical stripe down one side is labeled *Mascot Voice Layer* to indicate the cross-cutting concern. A second vertical stripe, clearly separated, is labeled *Authoring Pipeline* with sub-nodes *Harness*, *Skills*, *Prompts*. The base image is annotation-free; all labels are delivered by overlay markers defined in `data.json`.
-
-Modes (standard for this skill):
-
-- **Explore mode:** Hovering over any component shows a tooltip with the component's one-sentence definition, the concept or artifact it owns, and a pointer to the chapter where it is treated in detail.
-- **Quiz mode:** A design decision is posed (e.g., "You need to add a new concept that every Chapter 6 quiz item depends on"); the learner clicks the component that owns the change. Correct answers highlight the component green; incorrect answers reveal the correct component and a one-sentence explanation of the ownership rule.
-- **Edit mode (authors only):** Drag markers to recalibrate their positions on the base image; export updated `data.json`.
-
-Learning objective (Bloom level: Understand / Apply): *Given a proposed change to an intelligent textbook, identify the component whose ownership the change respects, and explain which other components the change cascades into.*
-
-Canvas responsive via `updateCanvasSize()` as the first line of `setup()`; marker anchors preserved on resize.
-
-Implementation: Generated with the `interactive-infographic-overlay` skill. The directory `/docs/sims/intelligent-textbook-architecture/` will contain `image-prompt.md`, `data.json`, `main.html`, `index.md`, and the architecture base image.
-```
+**Learning Objective** (Bloom level: Apply): *Given a proposed change to an intelligent textbook, identify the component whose ownership the change respects.*
 
 ## Related Resources
 
