@@ -1,64 +1,40 @@
 ---
-title: Transfer Dynamics — Schema Flywheel and Surface-Match Trap
-description: Transfer Dynamics — Schema Flywheel and Surface-Match Trap
-status: scaffold
-library: Mermaid
-bloom_level: TBD
+title: Transfer Dynamics -- Schema Flywheel and Surface-Match Trap
+description: A causal loop diagram showing how varied practice builds schema strength for far transfer, while surface-feature reliance creates a corrosive trap that starves transfer.
 ---
 
-# Transfer Dynamics — Schema Flywheel and Surface-Match Trap
+# Transfer Dynamics -- Schema Flywheel and Surface-Match Trap
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="600px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
-## Learning Objective
+[Run the Transfer Dynamics Diagram Fullscreen](./main.html){ .md-button .md-button--primary }
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** Mermaid
+This causal loop diagram shows two reinforcing loops that compete for control of transfer capability. R1 (Schema Flywheel) is the productive loop: varied practice surfaces force structural abstraction, which builds schema strength, which enables far-transfer capability (with delay), which motivates more varied practice. R2 (Surface-Match Trap) is the corrosive loop: near-transfer success trains surface-feature reliance, which produces perceived competence that reduces the motivation to seek harder problems, and simultaneously suppresses structural abstraction. Practice on varied problems is the shared pivot node -- the lever that determines which loop dominates.
 
-## Preview
+## Diagram Details
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+```mermaid
+graph LR
+    VPS["Variety of Practice Surfaces"]:::r1 -->|"+"| SA["Structural Abstraction"]:::r1
+    SA -->|"+"| SST["Schema Strength"]:::r1
+    SST -->|"+ with delay"| FTC["Far-Transfer Capability"]:::r1
+    FTC -->|"+"| PVP["Practice on Varied Problems"]:::shared
+    PVP -->|"+"| VPS
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+    NTS["Near-Transfer Success"]:::r2 -->|"+"| SFR["Surface-Feature Reliance"]:::r2
+    SFR -->|"+"| PCO["Perceived Competence"]:::r2
+    PCO -->|"−"| PVP
+    SFR -->|"−"| SA
 
-## Specification
+    R1[" R1: Schema Flywheel -- reinforcing, productive "]:::looplabel
+    R2[" R2: Surface-Match Trap -- reinforcing, corrosive "]:::looplabel
 
-The full specification below is extracted from
-[Chapter 6: Application and Transfer](../../chapters/06-application-transfer/index.md).
-
-```text
-Type: causal-loop-diagram
-**sim-id:** transfer-dynamics-flywheel-trap<br/>
-**Library:** Mermaid<br/>
-**Status:** Specified
-
-A causal loop diagram rendered with Mermaid `flowchart LR` showing eight variable-nodes and two named loops. Nodes, all written as noun phrases (variables that can go up or down): "variety of practice surfaces", "structural abstraction", "schema strength", "far-transfer capability", "near-transfer success", "surface-feature reliance", "perceived competence", "practice on varied problems".
-
-Edges and polarities:
-
-- variety of practice surfaces → structural abstraction (+) — varied surface features force extraction of deep structure
-- structural abstraction → schema strength (+) — abstraction consolidates into schemas
-- schema strength → far-transfer capability (+, with delay marker ⧚) — schemas enable performance on structurally similar but superficially different problems
-- far-transfer capability → practice on varied problems (+) — successful far transfer reinforces the habit of attempting varied problems
-- practice on varied problems → variety of practice surfaces (+) — closes the flywheel
-- near-transfer success → surface-feature reliance (+) — repeated success on matched surfaces trains reliance on surface cues
-- surface-feature reliance → perceived competence (+) — easy retrieval feels like mastery
-- perceived competence → practice on varied problems (−) — feeling competent reduces the motivation to seek harder, structurally different problems
-- surface-feature reliance → structural abstraction (−) — the learner stops extracting structure because surface features are doing the work
-
-Loop labels placed at each loop's geometric center:
-
-- **R1 — Schema flywheel (reinforcing, productive).** variety → abstraction → schema → far transfer → more varied practice → more variety. Each trip around the loop builds the capacity for the next structurally novel problem.
-- **R2 — Surface-match trap (reinforcing, corrosive).** Near-transfer success → surface-feature reliance → perceived competence → less varied practice → less structural abstraction → and yet near-transfer performance keeps looking fine because the practice problems keep matching surface features. The loop feels like learning and starves transfer.
-
-Visual treatment: R1 nodes in cool blue; R2 nodes in warm red-orange; the node "practice on varied problems" drawn with a dual border to signal that it is the lever that switches between the two loops. Delay marker ⧚ on the schema strength → far-transfer capability edge because schema-based transfer shows up most distinctly at delayed assessment, not immediately. Every edge labeled with `+` or `−`.
-
-Implementation: Mermaid `flowchart LR` with `linkStyle` declarations for polarity coloring and `classDef` for loop grouping. A one-paragraph walkthrough of R1 in plain English accompanies the diagram in the prose that follows.
+    classDef r1 fill:#4A90D9,stroke:#2C5F8A,color:#fff
+    classDef r2 fill:#E8795A,stroke:#C0392B,color:#fff
+    classDef shared fill:#7B8D8E,stroke:#4A6163,color:#fff
+    classDef looplabel fill:none,stroke:none,color:#555,font-size:12px
 ```
 
 ## Related Resources

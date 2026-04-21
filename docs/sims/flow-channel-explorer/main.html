@@ -3,108 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Flow Channel — Challenge vs. Skill</title>
+    <title>The Flow Channel Explorer</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="flow-channel-explorer.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>The Flow Channel — Challenge vs. Skill</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> flow-channel-explorer</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> TBD</p>
-            <p><strong>Learning Objective:</strong> TBD</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: microsim
-    **sim-id:** flow-channel-explorer<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    An interactive p5.js MicroSim that lets a learner manipulate perceived challenge and perceived skill and observe which region of the flow diagram they land in. The canvas shows a two-dimensional plot with "skill" on the x-axis and "challenge" on the y-axis; the diagonal band between them is shaded as the flow channel, the region above the diagonal is labeled "anxiety," and the region below is labeled "boredom." A marker labeled "learner" moves as the sliders change; the label updates to one of {flow, mild anxiety, panic, mild boredom, apathy} depending on the quadrant.
-    
-    Controls (using built-in p5.js controls per project convention):
-    
-    - **Challenge slider** (0–100) — task difficulty as the learner perceives it.
-    - **Skill slider** (0–100) — current ability as the learner perceives it.
-    - **Show-trajectory checkbox** — when on, a fading trail shows how the marker has moved; useful for simulating a learner whose skill grows during a session.
-    - **Reset button** — returns both sliders to 50.
-    
-    Learning objective (Bloom level: Apply): *Given a learner profile, adjust task challenge so that the learner lands in the flow channel rather than anxiety or boredom.*
-    
-    Canvas responsive via `updateCanvasSize()` as the first line of `setup()`; sketch parented to the standard `<main></main>` element so it can be copy-pasted into the p5.js editor.
-    
-    Implementation: p5.js sketch in `/docs/sims/flow-channel-explorer/` with `main.html`, `script.js`, `local.css`, and `index.md`. Generated via the `microsim-generator` skill.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Documentation</a>
 </body>
 </html>
