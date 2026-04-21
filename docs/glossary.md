@@ -64,10 +64,6 @@ The ARCS model gives textbook designers a systematic checklist for each chapter:
 
 **Example:** A chapter that opens with a surprising finding (Attention), connects it to the reader's teaching practice (Relevance), includes a scaffolded exercise (Confidence), and ends with a successful MicroSim build (Satisfaction).
 
----
-
-## Cognitive Architecture and Understanding
-
 #### Assessment Rubric
 
 A scoring guide that defines the criteria and performance levels for evaluating learner work, providing transparency about expectations and consistency across evaluations.
@@ -115,10 +111,6 @@ An instructional approach that combines face-to-face classroom instruction with 
 Blended learning lets the intelligent textbook handle what it does best — content delivery, retrieval practice, personalized pacing — while preserving face-to-face time for discussion, collaboration, and mentorship.
 
 **Example:** Students reading the textbook and completing MicroSim activities online, then meeting in person to discuss applications and work through case studies collaboratively.
-
----
-
-## Intelligent Textbook Architecture
 
 #### Bloom Taxonomy 2001
 
@@ -264,10 +256,6 @@ Cognitive load theory is the single most actionable framework in this textbook. 
 
 **Example:** The expertise reversal effect — where instructional scaffolding that helps novices actually hinders experts — predicted and explained by cognitive load theory.
 
----
-
-## Knowledge Retention
-
 #### Cognitive Science
 
 The scientific study of mental processes including perception, attention, memory, language, reasoning, and problem solving, drawing on psychology, neuroscience, linguistics, and artificial intelligence.
@@ -299,10 +287,6 @@ An AI skill that categorizes concepts by domain, Bloom's Taxonomy level, prerequ
 The concept classifier enriches the raw concept list with metadata that drives downstream decisions — which domain a concept belongs to, what cognitive level it targets, and how deep its prerequisite chain runs.
 
 **Example:** Classifying "retrieval practice" as Retention domain, Bloom's Apply level, prerequisite depth 3 (depends on long-term memory, encoding, and consolidation).
-
----
-
-## MicroSims
 
 #### Concept Dependency
 
@@ -447,10 +431,6 @@ A design pattern in which interactive markers, labels, or hotspots are layered o
 The diagram overlay pattern is the implementation technique behind interactive infographics. It separates the visual content (the illustration) from the interactive layer (the markers and quiz logic).
 
 **Example:** A base illustration of the human brain with overlay markers for the prefrontal cortex, hippocampus, and amygdala that reveal descriptions on hover and test recall on click.
-
----
-
-## Pedagogical Mascots and Admonitions
 
 #### Diagram Reports Generator
 
@@ -916,10 +896,6 @@ Even well-designed content fails in a hostile or inaccessible environment. This 
 
 **Example:** Applying universal design for learning principles to ensure that MicroSims are usable by learners with visual impairments through alternative text descriptions and keyboard navigation.
 
----
-
-## Motivation and Engagement
-
 #### Learning Dashboard
 
 A visual interface that displays aggregated learning analytics — progress, performance, time on task, and mastery indicators — to learners, instructors, or both, supporting data-informed decision making.
@@ -997,10 +973,6 @@ The practice of writing content using Markdown syntax — a lightweight markup l
 Markdown is the lingua franca of the intelligent textbook pipeline: authors, AI skills, and the build system all read and write Markdown, making the content portable, version-controlled, and human-readable.
 
 **Example:** Using `#### Term Name` headers and `**bold**` for key terms to produce consistent glossary formatting across hundreds of entries.
-
----
-
-## Seven Domains Overview
 
 #### Mascot Admonition
 
@@ -1186,10 +1158,6 @@ Voice consistency is what makes a textbook feel authored rather than assembled. 
 
 **Example:** Every chapter using "we" for shared thinking, "you" for reader actions, present tense by default, contractions welcome, and no instances of "obviously" or "simply."
 
----
-
-## Graphic Novels and Stories
-
 #### Near Transfer
 
 The application of learned knowledge or skills to a new situation that closely resembles the original learning context in surface features, structure, or required procedures.
@@ -1300,10 +1268,6 @@ A formatted version of the textbook optimized for physical printing or PDF gener
 
 Print-friendly output ensures the textbook remains usable for learners who prefer physical reading or who lack reliable internet access, extending the reach of the intelligent textbook.
 
----
-
-## AI Skills and Tooling
-
 #### Problem-Based Learning
 
 An instructional approach in which learners encounter an authentic, ill-structured problem before receiving direct instruction, using the problem to drive inquiry, knowledge seeking, and collaborative reasoning.
@@ -1351,10 +1315,6 @@ Quantitative measures used to evaluate the effectiveness, efficiency, and user e
 Quality metrics provide the evidence base for iterative textbook improvement. Without them, revision decisions rely on intuition; with them, revision targets the sections that actually underperform.
 
 **Example:** Tracking that Chapter 7 has a 40% completion rate compared to 85% for other chapters, signaling a design problem that needs investigation.
-
----
-
-## Learning Conditions and Environment
 
 #### Quiz Bank
 
@@ -1447,10 +1407,6 @@ An evaluation method that presents learners with realistic situations requiring 
 Scenario-based assessments measure transfer and application rather than recognition or recall. They reveal whether learners can use their knowledge in context, not report it.
 
 **Example:** "A colleague shows you a textbook chapter with 15 new terms introduced in two pages. Using cognitive load theory, identify two specific problems and propose redesigns."
-
----
-
-## Expertise and Mastery
 
 #### Schema
 
@@ -1588,10 +1544,6 @@ Spaced retrieval scheduling is where learning science meets computation. Algorit
 
 **Example:** An intelligent textbook's quiz engine scheduling a review of "cognitive load theory" for five days after the learner's last successful retrieval, based on their response time and accuracy pattern.
 
----
-
-## Knowledge Application and Transfer
-
 #### Speech Bubble Design
 
 The visual formatting of character dialogue in graphic novel panels, including bubble shape, tail direction, font choice, and text length, designed to guide reading order and manage cognitive load.
@@ -1623,10 +1575,6 @@ Deliberate narrative strategies — cliffhangers, emotional stakes, humor, fores
 Engagement techniques are the means by which narrative transportation is achieved. Each technique has a pedagogical rationale: cliffhangers create information gaps, relatable characters build identification, and humor reduces anxiety.
 
 **Example:** Ending a graphic novel panel with a cliffhanger — "But when Ebbinghaus tested himself the next day, something unexpected happened..." — to sustain curiosity across the page turn.
-
----
-
-## Capstone and Deployment
 
 #### Story Generator
 
@@ -1673,10 +1621,6 @@ The popular claim, derived from Anders Ericsson's research on deliberate practic
 The rule is a useful heuristic for appreciating the scale of expert development, but it oversimplifies: the quality, structure, and feedback conditions of practice matter as much as the quantity. Not all hours are equal.
 
 **Example:** Two musicians each practice for 10,000 hours, but the one who engaged in deliberate practice with expert feedback reaches a higher level than the one who repeated comfortable pieces.
-
----
-
-## Measurement and Feedback
 
 #### Testing Effect
 
@@ -1797,4 +1741,3 @@ The range of tasks that a learner cannot yet perform independently but can accom
 The ZPD is the sweet spot for instruction: tasks below it are too easy to produce learning, and tasks above it are too hard to benefit from guidance. The intelligent textbook must calibrate difficulty to stay within this zone.
 
 **Example:** A learner who cannot design a MicroSim from scratch but can complete one when given a partially built template with guiding comments — the gap between those two levels is the ZPD.
-

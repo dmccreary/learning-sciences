@@ -11,7 +11,7 @@
   "language": "en-US",
   "rights": "CC BY 4.0",
   "identifier": "learning-sciences-confluence",
-  "library": "Mermaid",
+  "library": "p5.js",
   "bloomLevel": "TBD",
   "bloomVerb": "TBD",
   "completion_status": "scaffold",

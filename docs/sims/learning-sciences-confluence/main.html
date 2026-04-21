@@ -4,30 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parent Disciplines of Learning Sciences</title>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.2/p5.min.js"></script>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background: white; }
-        .mermaid { max-width: 100%; }
-        h2 { color: #333; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: white; overflow: hidden; }
+        main { max-width: 900px; margin: 0 auto; }
     </style>
 </head>
 <body>
-    <h2>Parent Disciplines of Learning Sciences</h2>
-    <div class="mermaid">
-graph TD
-    CS["Cognitive Science"]:::research -->|"memory and attention"| LS["Learning Sciences"]:::convergence
-    EP["Educational Psychology"]:::research -->|"motivation and development"| LS
-    NL["Neuroscience in Learning"]:::research -->|"mechanism and constraint"| LS
-    ID["Instructional Design"]:::translation -->|"translation to practice"| LS
-    LS -->|"applied to"| ITD["Intelligent Textbook Design"]:::output
-
-    classDef research fill:#4A90D9,stroke:#2C5F8A,color:#fff
-    classDef translation fill:#6BAED6,stroke:#3182BD,color:#fff
-    classDef convergence fill:#2171B5,stroke:#08519C,color:#fff
-    classDef output fill:#08306B,stroke:#041733,color:#fff
-    </div>
-    <script>mermaid.initialize({startOnLoad: true, theme: 'default', securityLevel: 'loose'});</script>
-    <br/>
-    <a href=".">Back to Documentation</a>
+    <main></main>
+    <script src="sketch.js"></script>
 </body>
 </html>
