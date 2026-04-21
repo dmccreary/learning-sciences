@@ -10,6 +10,8 @@ let canvasHeight = drawHeight + controlHeight;
 let modeSelect;
 let mode = 'explore';
 let hoveredPose = -1;
+let mascotImages = [];
+let imagesLoaded = false;
 
 // Quiz state
 let quizIndex = 0;
@@ -110,11 +112,19 @@ const quizQuestions = [
   }
 ];
 
+function preload() {
+  const imageFiles = ['neutral', 'welcome', 'thinking', 'tip', 'warning', 'encouraging', 'celebration'];
+  for (let name of imageFiles) {
+    mascotImages.push(loadImage('../../img/mascot/' + name + '.png'));
+  }
+}
+
 function setup() {
   updateCanvasSize();
   const canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.parent(document.querySelector('main'));
   textFont('Arial');
+  imagesLoaded = true;
 
   modeSelect = createSelect();
   modeSelect.parent(document.querySelector('main'));
@@ -204,14 +214,22 @@ function drawGrid() {
     noStroke();
     rect(cx, cy, cellW, 6, 8, 8, 0, 0);
 
-    // Emoji placeholder for pose
-    textSize(36);
+    // Mascot image
+    if (imagesLoaded && mascotImages[i]) {
+      let imgSize = min(cellW * 0.55, cellH * 0.38);
+      let imgX = cx + (cellW - imgSize) / 2;
+      let imgY = cy + 10;
+      image(mascotImages[i], imgX, imgY, imgSize, imgSize);
+    }
+
+    // Emoji below the image
+    textSize(24);
     textAlign(CENTER, CENTER);
-    text(p.emoji, cx + cellW / 2, cy + cellH * 0.38);
+    text(p.emoji, cx + cellW / 2, cy + cellH * 0.58);
 
     // Pose name
     fill('#333');
-    textSize(12);
+    textSize(16);
     textStyle(BOLD);
     text(p.name, cx + cellW / 2, cy + cellH * 0.70);
     textStyle(NORMAL);

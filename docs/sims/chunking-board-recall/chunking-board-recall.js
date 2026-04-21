@@ -2,8 +2,8 @@
 // Chase & Simon (1973) simplified replication
 
 let canvasWidth = 600;
-let drawHeight = 500;
-let controlHeight = 50;
+let drawHeight = 470;
+let controlHeight = 80;
 let canvasHeight = drawHeight + controlHeight;
 
 let conditionSelect, piecesSlider, showTimeSlider, startBtn, submitBtn, resetBtn;
@@ -45,60 +45,55 @@ function setup() {
   canvas.parent(document.querySelector('main'));
   textFont('Arial');
 
-  let lbl1 = createDiv('Condition: ');
-  lbl1.parent(document.querySelector('main'));
-  lbl1.style('font-size', '13px');
-  lbl1.style('display', 'inline-block');
-  lbl1.style('margin-left', '10px');
-  lbl1.style('margin-top', '6px');
+  // Control container positioned over the canvas control region
+  let controlBox = createDiv('');
+  controlBox.parent(document.querySelector('main'));
+  controlBox.style('position', 'relative');
+  controlBox.style('margin-top', '-' + controlHeight + 'px');
+  controlBox.style('height', controlHeight + 'px');
+  controlBox.style('display', 'flex');
+  controlBox.style('flex-wrap', 'wrap');
+  controlBox.style('align-items', 'center');
+  controlBox.style('gap', '6px');
+  controlBox.style('padding', '4px 10px');
+  controlBox.style('font-family', 'Arial, sans-serif');
+  controlBox.style('font-size', '13px');
+
+  // Row 1: Condition, Pieces, Show Time
+  let lbl1 = createSpan('Condition:');
+  lbl1.parent(controlBox);
 
   conditionSelect = createSelect();
-  conditionSelect.parent(document.querySelector('main'));
+  conditionSelect.parent(controlBox);
   conditionSelect.option('Meaningful');
   conditionSelect.option('Random');
   conditionSelect.selected('Meaningful');
 
-  let lbl2 = createDiv('Pieces: ');
-  lbl2.parent(document.querySelector('main'));
-  lbl2.style('font-size', '13px');
-  lbl2.style('display', 'inline-block');
-  lbl2.style('margin-left', '15px');
+  let lbl2 = createSpan('Pieces:');
+  lbl2.parent(controlBox);
 
   piecesSlider = createSlider(8, 16, 12, 1);
-  piecesSlider.parent(document.querySelector('main'));
+  piecesSlider.parent(controlBox);
   piecesSlider.style('width', '80px');
-  piecesSlider.style('display', 'inline-block');
-  piecesSlider.style('vertical-align', 'middle');
 
-  let lbl3 = createDiv('Show Time: ');
-  lbl3.parent(document.querySelector('main'));
-  lbl3.style('font-size', '13px');
-  lbl3.style('display', 'inline-block');
-  lbl3.style('margin-left', '15px');
+  let lbl3 = createSpan('Show Time:');
+  lbl3.parent(controlBox);
 
   showTimeSlider = createSlider(2, 10, 5, 1);
-  showTimeSlider.parent(document.querySelector('main'));
+  showTimeSlider.parent(controlBox);
   showTimeSlider.style('width', '80px');
-  showTimeSlider.style('display', 'inline-block');
-  showTimeSlider.style('vertical-align', 'middle');
 
-  let br1 = createDiv('');
-  br1.parent(document.querySelector('main'));
-  br1.style('height', '4px');
-
+  // Row 2: Buttons
   startBtn = createButton('Start Trial');
-  startBtn.parent(document.querySelector('main'));
-  startBtn.style('margin-left', '10px');
+  startBtn.parent(controlBox);
   startBtn.mousePressed(startTrial);
 
   submitBtn = createButton('Submit');
-  submitBtn.parent(document.querySelector('main'));
-  submitBtn.style('margin-left', '5px');
+  submitBtn.parent(controlBox);
   submitBtn.mousePressed(scoreTrial);
 
   resetBtn = createButton('Reset Scores');
-  resetBtn.parent(document.querySelector('main'));
-  resetBtn.style('margin-left', '5px');
+  resetBtn.parent(controlBox);
   resetBtn.mousePressed(() => {
     trialResults = { meaningful: [], random: [] };
     phase = 'ready';
@@ -157,12 +152,15 @@ function scoreTrial() {
 }
 
 function draw() {
-  background(255);
-
   fill('aliceblue');
   stroke('silver');
   strokeWeight(1);
+  // Background for the drawing area
   rect(0, 0, canvasWidth, drawHeight);
+  // Background for the control area
+  fill('white');
+  noStroke();
+  rect(0, drawHeight, canvasWidth, controlHeight);
 
   // Title
   noStroke();

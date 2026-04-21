@@ -18,27 +18,46 @@ A causal loop diagram with ten variable-nodes and two named loops. **R1 (Graph-Q
 ## Diagram Details
 
 ```mermaid
-flowchart LR
-    subgraph R1 [R1: Graph-Quality Flywheel]
-        GQ[Learning-Graph Quality]:::r1 -->|+| AQ[Generated-Artifact Quality]:::r1
-        AQ -->|+| AIR[Author-Iteration Rate]:::r1
-        AIR -->|+| GRR[Graph-Refinement Rate]:::r1
-        GRR -->|+ delay| GQ
-        AQ -->|+| PC[Pipeline Confidence]:::r1
-    end
+---
+config:
+  themeVariables:
+    fontSize: 16px
+  flowchart:
+    nodeSpacing: 30
+    rankSpacing: 60
+    padding: 8
+---
+graph LR
+    GQ["Learning-Graph
+    Quality"]:::r1 -->|+| AQ["Generated-Artifact
+    Quality"]:::r1
+    AQ -->|+| AIR["Author-Iteration
+    Rate"]:::r1
+    AIR -->|+| GRR["Graph-Refinement
+    Rate"]:::r1
+    GRR -->|"+ with delay"| GQ
+    AQ -->|+| PC["Pipeline
+    Confidence"]:::r1
 
-    subgraph B1 [B1: Token-Pressure Trap]
-        CCS[Chapter-Content Size]:::b1 -->|+| TBP[Token-Budget Pressure]:::b1
-        TBP -->|+| CWT[Context-Window Truncation]:::b1
-        CWT -->|+| GI[Generation Inconsistency]:::b1
-        GI -->|+| RC[Rework Cost]:::b1
-    end
+    CCS["Chapter-Content
+    Size"]:::b1 -->|+| TBP["Token-Budget
+    Pressure"]:::b1
+    TBP -->|+| CWT["Context-Window
+    Truncation"]:::b1
+    CWT -->|+| GI["Generation
+    Inconsistency"]:::b1
+    GI -->|+| RC["Rework
+    Cost"]:::b1
 
-    RC -->|minus| AIR
-    TBP -->|minus| AIR
+    RC -->|"-"| AIR
+    TBP -->|"-"| AIR
+
+    R1n["R1: Graph-Quality Flywheel"]:::label
+    B1n["B1: Token-Pressure Trap"]:::label
 
     classDef r1 fill:#4A90D9,stroke:#2C5F8A,color:#fff
     classDef b1 fill:#E87D2A,stroke:#B55D15,color:#fff
+    classDef label fill:#f9f9f9,stroke:#ccc,color:#555
 ```
 
 ## Related Resources

@@ -5,7 +5,7 @@ description: Interactive replication of the Chase and Simon board recall experim
 
 # Chunking -- Novice vs. Expert Board Recall
 
-<iframe src="main.html" height="600px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
+<iframe src="main.html" height="550px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
 [Run the Board Recall Task Fullscreen](./main.html){ .md-button .md-button--primary }
 [Edit Using the p5.js Editor](https://editor.p5js.org/){ .md-button }

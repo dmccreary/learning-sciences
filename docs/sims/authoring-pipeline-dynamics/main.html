@@ -14,32 +14,39 @@
 <body>
     <h2>Authoring Pipeline Dynamics - Graph-Quality Flywheel vs. Token-Pressure Trap</h2>
     <div class="mermaid">
-flowchart LR
-    subgraph R1 [R1: Graph-Quality Flywheel - Reinforcing, Productive]
-        GQ[Learning-Graph\nQuality]:::r1 -->|+| AQ[Generated-Artifact\nQuality]:::r1
-        AQ -->|+| AIR[Author-Iteration\nRate]:::r1
-        AIR -->|+| GRR[Graph-Refinement\nRate]:::r1
-        GRR -->|"+ delay &#10710;"| GQ
-        AQ -->|+| PC[Pipeline\nConfidence]:::r1
-    end
+graph LR
+    GQ["Learning-Graph
+    Quality"]:::r1 -->|+| AQ["Generated-Artifact
+    Quality"]:::r1
+    AQ -->|+| AIR["Author-Iteration
+    Rate"]:::r1
+    AIR -->|+| GRR["Graph-Refinement
+    Rate"]:::r1
+    GRR -->|"+ with delay"| GQ
+    AQ -->|+| PC["Pipeline
+    Confidence"]:::r1
 
-    subgraph B1 [B1: Token-Pressure Trap - Balancing, Corrosive]
-        CCS[Chapter-Content\nSize]:::b1 -->|+| TBP[Token-Budget\nPressure]:::b1
-        TBP -->|+| CWT[Context-Window\nTruncation]:::b1
-        CWT -->|+| GI[Generation\nInconsistency]:::b1
-        GI -->|+| RC[Rework\nCost]:::b1
-    end
+    CCS["Chapter-Content
+    Size"]:::b1 -->|+| TBP["Token-Budget
+    Pressure"]:::b1
+    TBP -->|+| CWT["Context-Window
+    Truncation"]:::b1
+    CWT -->|+| GI["Generation
+    Inconsistency"]:::b1
+    GI -->|+| RC["Rework
+    Cost"]:::b1
 
-    RC -->|"&#8722;"| AIR
-    TBP -->|"&#8722;"| AIR
+    RC -->|"-"| AIR
+    TBP -->|"-"| AIR
+
+    R1n["R1: Graph-Quality Flywheel"]:::label
+    B1n["B1: Token-Pressure Trap"]:::label
 
     classDef r1 fill:#4A90D9,stroke:#2C5F8A,color:#fff
     classDef b1 fill:#E87D2A,stroke:#B55D15,color:#fff
-
-    linkStyle 10 stroke:#E53935,stroke-width:3px
-    linkStyle 11 stroke:#E53935,stroke-width:3px
+    classDef label fill:#f9f9f9,stroke:#ccc,color:#555,font-size:11px
     </div>
-    <script>mermaid.initialize({startOnLoad: true, theme: 'default', securityLevel: 'loose'});</script>
+    <script>mermaid.initialize({startOnLoad: true, theme: 'default', securityLevel: 'loose', flowchart: { nodeSpacing: 30, rankSpacing: 60, padding: 8 }, themeVariables: { fontSize: '16px' }});</script>
     <br/>
     <a href=".">Back to Documentation</a>
 </body>
