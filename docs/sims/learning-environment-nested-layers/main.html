@@ -4,98 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Three Nested Layers of a Learning Environment</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { font-family: Arial, sans-serif; margin: 20px; background: white; }
+        .mermaid { max-width: 100%; }
+        h2 { color: #333; }
+        .caption { color: #555; font-size: 14px; margin-top: 10px; font-style: italic; }
     </style>
 </head>
 <body>
-    <div id="container">
-        <h1>Three Nested Layers of a Learning Environment</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> learning-environment-nested-layers</p>
-            <p><strong>Library:</strong> Mermaid</p>
-            <p><strong>Bloom Level:</strong> TBD</p>
-            <p><strong>Learning Objective:</strong> TBD</p>
-        </div>
+    <h2>Three Nested Layers of a Learning Environment</h2>
+    <div class="mermaid">
+graph TD
+    subgraph INST["Institutional Layer"]
+        GP["Grading Policy"]:::institutional
+        AM["Accessibility Mandate"]:::institutional
+        PR["Privacy Regulation"]:::institutional
+        CS["Curricular Scope"]:::institutional
+
+        subgraph SOC["Social Layer"]
+            TM["Talk-Move Repertoire"]:::social
+            TT["Turn-Taking Norms"]:::social
+            ER["Error-Response Scripts"]:::social
+            FM["Forum Moderation"]:::social
+
+            subgraph PHYS["Physical / Digital Layer"]
+                SE["Seating"]:::physical
+                LI["Lighting"]:::physical
+                SR["Screen Readability"]:::physical
+                KN["Keyboard Navigation"]:::physical
+                MR["MicroSim Responsiveness"]:::physical
+            end
+        end
+    end
+
+    PHYS -.->|"shapes"| SOC
+    SOC -.->|"constrained by"| INST
+    INST -.->|"cascades into"| SOC
+    SOC -.->|"cascades into"| PHYS
+
+    classDef physical fill:#4A90D9,stroke:#2C5F8A,color:#fff
+    classDef social fill:#3A9B8F,stroke:#2A7B6F,color:#fff
+    classDef institutional fill:#D4A76A,stroke:#A67D3D,color:#fff
     </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: diagram
-    **sim-id:** learning-environment-nested-layers<br/>
-    **Library:** Mermaid<br/>
-    **Status:** Specified
-    
-    A Mermaid diagram rendered as a set of three concentric rectangles (or as a `flowchart TD` with containment styling via `subgraph` blocks). The innermost rectangle is labeled *Physical / Digital* and contains example design-lever nodes: *seating*, *lighting*, *screen readability*, *keyboard navigation*, *MicroSim responsiveness*. The middle rectangle is labeled *Social* and contains *talk-move repertoire*, *turn-taking norms*, *error-response scripts*, *forum moderation*. The outermost rectangle is labeled *Institutional* and contains *grading policy*, *accessibility mandate*, *privacy regulation*, *curricular scope*. Arrows between the layers show *upward* influence (physical choices shape the social layer; social norms are constrained by institutional rules) and *downward* influence (institutional mandates cascade into social norms and physical features).
-    
-    Each layer is colored distinctly on a warm blue-to-orange palette — innermost in cool blue, middle in a mid-tone teal, outermost in warm orange — so the containment is immediately visible. A caption underneath reads: *"Small changes in one layer cascade through the others. When a learner underperforms, the explanation usually lives at a layer outside the learner's control."*
-    
-    Implementation: Mermaid `flowchart TD` with nested `subgraph` blocks and `classDef` for the per-layer coloring. Embedded directly in the chapter markdown via the `pymdownx.superfences` mermaid fence already configured in `mkdocs.yml`.
-    -->
+    <p class="caption">Small changes in one layer cascade through the others. When a learner underperforms, the explanation usually lives at a layer outside the learner's control.</p>
+    <script>mermaid.initialize({startOnLoad: true, theme: 'default', securityLevel: 'loose'});</script>
+    <br/>
+    <a href=".">Back to Documentation</a>
 </body>
 </html>

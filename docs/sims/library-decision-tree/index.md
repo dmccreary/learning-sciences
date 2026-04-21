@@ -1,57 +1,46 @@
 ---
 title: Which Library Should I Use for This Visualization?
-description: Which Library Should I Use for This Visualization?
-status: scaffold
+description: A decision tree that routes visualization needs to the correct JavaScript library based on data type and interaction requirements.
+status: implemented
 library: Mermaid
-bloom_level: TBD
 ---
 
 # Which Library Should I Use for This Visualization?
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="700px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
-## Learning Objective
+[Run the Library Decision Tree Fullscreen](./main.html){ .md-button .md-button--primary }
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** Mermaid
+A Mermaid flowchart TD decision tree starting from the root question "What do I need to show?" with seven branches, each routing to one of the project's visualization libraries: Leaflet for geographic data, vis-network for interactive node-link graphs, Mermaid for read-only diagrams, Venn.js for set intersections, Chart.js for standard 2D charts, Plotly for higher-dimensional or 3D data, and p5.js for bespoke or generative visualizations. Each leaf is colored by library.
 
-## Preview
+## Diagram Details
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+```mermaid
+flowchart TD
+    ROOT{What do I need to show?}
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+    ROOT -->|Geographic data?| Q1{Is the data geographic?}
+    Q1 -->|Yes| LEAFLET[Leaflet - Interactive map with tile rendering]
 
-## Specification
+    ROOT -->|Interactive graph?| Q2{Should readers manipulate nodes and edges?}
+    Q2 -->|Yes| VISNET[vis-network - Interactive node-link diagram]
 
-The full specification below is extracted from
-[Chapter 11: MicroSims and Interactive Visualizations](../../chapters/11-microsims/index.md).
+    ROOT -->|Read-only graph?| Q3{Read-only diagram?}
+    Q3 -->|Yes| MERMAID[Mermaid - Text-authored diagram]
 
-```text
-Type: diagram
-**sim-id:** library-decision-tree<br/>
-**Library:** Mermaid<br/>
-**Status:** Specified
+    ROOT -->|Set overlap?| Q4{Set intersection picture?}
+    Q4 -->|Yes| VENN[Venn.js - Venn and Euler diagrams]
 
-A Mermaid `flowchart TD` decision tree. Starting from the root *"What do I need to show?"*, the first split asks whether the data is spatial, temporal, quantitative, relational, categorical-overlap, or bespoke. Subsequent splits route each branch to one of the seven libraries with a one-sentence justification label on each leaf.
+    ROOT -->|Standard chart?| Q5{Standard 2D chart: bar, line, pie?}
+    Q5 -->|Yes| CHARTJS[Chart.js - Lightweight standard charts]
 
-Branches:
+    ROOT -->|Rich or 3D?| Q6{Higher-dimensional, hover-detail, or 3D?}
+    Q6 -->|Yes| PLOTLY[Plotly - Richer interactive charting]
 
-- *Is the data geographic?* → Yes → **Leaflet** (interactive map with tile rendering).
-- *Is the data a graph of nodes and edges the reader should manipulate?* → Yes → **vis-network** (interactive node-link).
-- *Is the data a graph the reader only needs to read?* → Yes → **Mermaid** (text-authored diagram).
-- *Is the visualization a set-intersection picture?* → Yes → **Venn.js** (specialized Venn/Euler rendering).
-- *Is the data a standard 2D chart (bar, line, pie, scatter)?* → Yes → **Chart.js** (lightweight standard charts).
-- *Is the data higher-dimensional, hover-detailed, or 3D?* → Yes → **Plotly** (richer interactive charting).
-- *Is the visualization bespoke, generative, or custom-interactive?* → Yes → **p5.js** (creative-coding canvas).
-
-Leaves colored by library with the project's blue-amber palette. The tree is rendered top-down so that the root reads first and the leaves are visually grouped by shape.
-
-Implementation: Mermaid `flowchart TD` with labeled edges and `classDef` per library. Embedded directly in the chapter markdown.
+    ROOT -->|Bespoke?| Q7{Bespoke, generative, or custom-interactive?}
+    Q7 -->|Yes| P5[p5.js - Creative-coding canvas]
 ```
 
 ## Related Resources

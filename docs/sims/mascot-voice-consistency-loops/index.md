@@ -1,67 +1,35 @@
 ---
-title: Voice-Consistency Dynamics — Flywheel and Drift Trap
-description: Voice-Consistency Dynamics — Flywheel and Drift Trap
-status: scaffold
+title: Voice-Consistency Dynamics
+description: A causal loop diagram showing the Voice-Consistency Flywheel and Voice-Drift Trap that govern mascot effectiveness across chapters.
+status: implemented
 library: Mermaid
-bloom_level: TBD
 ---
 
-# Voice-Consistency Dynamics — Flywheel and Drift Trap
+# Voice-Consistency Dynamics - Flywheel and Drift Trap
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="600px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
-## Learning Objective
+[Run the Voice-Consistency Dynamics Fullscreen](./main.html){ .md-button .md-button--primary }
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** Mermaid
+A causal loop diagram with eight variable-nodes and two named loops. **R1 (Voice-consistency flywheel):** Enforcement builds consistency, which lowers orienting cognitive load, freeing germane capacity to notice mascot signals, strengthening reader identification, driving re-engagement, which reinforces enforcement. **B1 (Voice-drift trap):** Drift erodes consistency, raises orienting load, crowds germane capacity, muddling signals and weakening identification -- a corrosive reinforcing loop running in the bad direction. The shared variable "Voice Consistency" belongs to both loops.
 
-## Preview
+## Diagram Details
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+```mermaid
+flowchart LR
+    VGE[Voice-Guide Enforcement] -->|+| VC[Voice Consistency]
+    VC -->|minus| OCL[Orienting Cognitive Load]
+    OCL -->|minus| AGC[Available Germane Capacity]
+    AGC -->|+| MSP[Mascot-Signal Predictability]
+    MSP -->|+| RIM[Reader Identification with Mascot]
+    RIM -->|+ delay| REH[Re-engagement on Hard Pages]
+    REH -->|+| VGE
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
-
-## Specification
-
-The full specification below is extracted from
-[Chapter 12: Pedagogical Mascots and Admonitions](../../chapters/12-mascots-admonitions/index.md).
-
-```text
-Type: causal-loop-diagram
-**sim-id:** mascot-voice-consistency-loops<br/>
-**Library:** Mermaid<br/>
-**Status:** Specified
-
-A causal loop diagram rendered with Mermaid `flowchart LR` showing eight variable-nodes and two named loops. All nodes are noun phrases naming variables that can go up or down.
-
-Nodes: *voice-guide enforcement*, *voice consistency*, *orienting cognitive load*, *available germane capacity*, *mascot-signal predictability*, *reader identification with mascot*, *re-engagement on hard pages*, *voice drift*.
-
-Edges and polarities:
-
-- voice-guide enforcement → voice consistency (+) — the guide is what holds the line
-- voice consistency → orienting cognitive load (−) — a predictable voice costs less to parse
-- orienting cognitive load → available germane capacity (−) — load is a zero-sum budget
-- available germane capacity → mascot-signal predictability (+) — freed capacity is what notices the signal
-- mascot-signal predictability → reader identification with mascot (+) — predictable signals build relatedness
-- reader identification with mascot → re-engagement on hard pages (+, with delay ⧚) — identified readers come back
-- re-engagement on hard pages → voice-guide enforcement (+) — successful outcomes reinforce the practice of enforcing the guide
-- voice drift → voice consistency (−) — drift erodes the consistency directly
-- voice drift → orienting cognitive load (+) — inconsistent voice costs orienting attention
-- voice-guide enforcement → voice drift (−) — enforcement is the brake on drift
-
-Loop labels placed at each loop's geometric center:
-
-- **R1 — Voice-consistency flywheel (reinforcing, productive).** enforcement → consistency → lower orienting load → more germane capacity → clearer signal → stronger identification → re-engagement → more enforcement.
-- **B1 — Voice-drift trap (reinforcing, corrosive).** drift → inconsistency → higher orienting load → crowded germane capacity → muddled signals → weaker identification → disengagement on hard pages → less enforcement → more drift. Structurally a reinforcing loop running in the bad direction.
-
-Visual treatment: R1 nodes in cool blue; B1 nodes in warm red-orange; the shared variable *voice consistency* drawn in a neutral tone with dual borders to signal it belongs to both loops. Delay marker ⧚ on the identification → re-engagement edge. Every edge labeled with `+` or `−`.
-
-Implementation: Mermaid `flowchart LR` with `linkStyle` declarations for polarity coloring and `classDef` for loop grouping. A one-paragraph walkthrough of R1 in plain English accompanies the diagram in the prose that follows.
+    VD[Voice Drift] -->|minus| VC
+    VD -->|+| OCL
+    VGE -->|minus| VD
 ```
 
 ## Related Resources

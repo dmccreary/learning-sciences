@@ -1,73 +1,41 @@
 ---
-title: Psychological Safety Dynamics — Two Opposed Loops
-description: Psychological Safety Dynamics — Two Opposed Loops
-status: scaffold
-library: Mermaid
-bloom_level: TBD
+title: Psychological Safety Dynamics -- Two Opposed Loops
+description: A causal loop diagram showing how perceived psychological safety creates a productive flywheel for learning, while stereotype threat creates a corrosive trap that corrodes safety.
 ---
 
-# Psychological Safety Dynamics — Two Opposed Loops
+# Psychological Safety Dynamics -- Two Opposed Loops
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="600px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
-## Learning Objective
+[Run the Psychological Safety Dynamics Diagram Fullscreen](./main.html){ .md-button .md-button--primary }
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** Mermaid
+This causal loop diagram shows two opposing reinforcing loops. R1 (Safety Flywheel) is the productive loop: perceived psychological safety increases willingness to speak up, which exposes errors in discourse, which creates group error-correction opportunities, which raises learning outcome quality (with delay), which reinforces the belief that speaking up pays off. R2 (Threat-Load-Underperformance Trap) is the corrosive loop: group-membership salience raises threat concern, which loads working memory, which lowers performance, which confirms stereotype beliefs, which raises more threat concern. The cross-link from confirmation of stereotype belief to perceived psychological safety (negative) shows how the corrosive loop starves the productive one.
 
-## Preview
+## Diagram Details
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+```mermaid
+graph LR
+    PPS["Perceived Psychological Safety"]:::r1 -->|"+"| WSU["Willingness to Speak Up"]:::r1
+    WSU -->|"+"| EED["Error Exposure in Discourse"]:::r1
+    EED -->|"+"| GEC["Group Error-Correction Opportunity"]:::r1
+    GEC -->|"+ with delay"| LOQ["Learning Outcome Quality"]:::r1
+    LOQ -->|"+"| PPS
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+    GMS["Group-Membership Salience"]:::r2 -->|"+"| TC["Threat Concern"]:::r2
+    TC -->|"+"| WML["Working-Memory Load"]:::r2
+    WML -->|"−"| POT["Performance on Task"]:::r2
+    POT -->|"−"| CSB["Confirmation of Stereotype Belief"]:::r2
+    CSB -->|"+"| TC
+    CSB -->|"−"| PPS
 
-## Specification
+    R1[" R1: Safety Flywheel -- reinforcing, productive "]:::looplabel
+    R2[" R2: Threat-Load-Underperformance Trap -- reinforcing, corrosive "]:::looplabel
 
-The full specification below is extracted from
-[Chapter 9: Learning Conditions and Environment](../../chapters/09-learning-conditions/index.md).
-
-```text
-Type: causal-loop-diagram
-**sim-id:** psychological-safety-dynamics<br/>
-**Library:** Mermaid<br/>
-**Status:** Specified
-
-A causal loop diagram rendered with Mermaid `flowchart LR` showing ten variable-nodes and two named reinforcing loops. All nodes are noun phrases naming variables that can go up or down.
-
-Nodes for R1 (safety flywheel, productive): "perceived psychological safety", "willingness to speak up", "error exposure in discourse", "group error-correction opportunity", "learning outcome quality".
-
-Nodes for R2 (stereotype-threat trap, corrosive): "group-membership salience", "threat concern", "working-memory load", "performance on task", "confirmation of stereotype belief".
-
-Edges and polarities for R1:
-
-- perceived psychological safety → willingness to speak up (+)
-- willingness to speak up → error exposure in discourse (+)
-- error exposure in discourse → group error-correction opportunity (+)
-- group error-correction opportunity → learning outcome quality (+, with delay marker ⧚)
-- learning outcome quality → perceived psychological safety (+) — visible learning reinforces the belief that speaking up pays off, closing R1
-
-Edges and polarities for R2:
-
-- group-membership salience → threat concern (+)
-- threat concern → working-memory load (+)
-- working-memory load → performance on task (−)
-- performance on task → confirmation of stereotype belief (−) — lower performance *raises* confirmation
-- confirmation of stereotype belief → threat concern (+), closing R2 with an additional cross-link
-- confirmation of stereotype belief → perceived psychological safety (−) — cross-loop link showing how the trap corrodes safety
-
-Loop labels at each loop's geometric center:
-
-- **R1 — Safety flywheel (reinforcing, productive).** Safety → speaking → error exposure → correction opportunity → learning → more safety.
-- **R2 — Threat-load-underperformance trap (reinforcing, corrosive).** Salience → threat → cognitive-load burden → underperformance → confirmation → more threat.
-
-Visual treatment: R1 nodes in cool blue; R2 nodes in warm red-orange; the cross-link from R2 back into R1 (confirmation of stereotype belief → perceived psychological safety, negative) rendered in a distinct warning color to highlight how the corrosive loop can starve the productive one. Delay marker ⧚ on the group error-correction opportunity → learning outcome quality edge. Every edge labeled with `+` or `−`.
-
-Implementation: Mermaid `flowchart LR` with `linkStyle` declarations for polarity coloring and `classDef` for loop grouping. A two-paragraph walkthrough of R1 and R2 in plain English accompanies the diagram in the prose that follows.
+    classDef r1 fill:#4A90D9,stroke:#2C5F8A,color:#fff
+    classDef r2 fill:#E8795A,stroke:#C0392B,color:#fff
+    classDef looplabel fill:none,stroke:none,color:#555,font-size:12px
 ```
 
 ## Related Resources

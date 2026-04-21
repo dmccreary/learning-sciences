@@ -3,107 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Barnett and Ceci Transfer Taxonomy</title>
+    <title>Barnett and Ceci Transfer Taxonomy</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="barnett-ceci-transfer-taxonomy.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>The Barnett and Ceci Transfer Taxonomy</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> barnett-ceci-transfer-taxonomy</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> TBD</p>
-            <p><strong>Learning Objective:</strong> TBD</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: interactive-infographic
-    **sim-id:** barnett-ceci-transfer-taxonomy<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    An interactive infographic built with the `interactive-infographic-overlay` skill. Base image: a hexagonal radar diagram with six labeled axes, one per Barnett and Ceci dimension — *knowledge domain*, *physical context*, *temporal context*, *functional context*, *social context*, and *modality* — each axis extending from "near" at the center to "far" at the outer edge. The base image is annotation-free; dimension labels, definitions, and worked examples are delivered by the overlay layer.
-    
-    Modes (standard for this skill):
-    
-    - **Explore mode:** Hovering over any axis shows a tooltip containing the dimension name, a one-sentence definition, two example training-to-transfer pairs (one that is close on that axis, one that is distant), and a note on how designers typically underestimate distance on that axis.
-    - **Quiz mode:** A short training-to-transfer pair is described ("trained on paper algebra, tested orally on a word problem a month later"); the student clicks each axis and rates near/far. The system scores how many dimensions the student classified correctly.
-    - **Edit mode (authors only):** Drag axis-label anchors to recalibrate marker positions; export updated `data.json`.
-    
-    Learning objective (Bloom level: Analyze): *Given a training context and a transfer task, identify which Barnett and Ceci dimensions of distance the transfer crosses and rate each as near or far.*
-    
-    Canvas responsive via `updateCanvasSize()` as first line of `setup()`; marker anchors preserved on resize.
-    
-    Implementation: Generated with the `interactive-infographic-overlay` skill. Directory `/docs/sims/barnett-ceci-transfer-taxonomy/` contains the standard five files (`image-prompt.md`, `data.json`, `main.html`, `index.md`, and the base image).
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Documentation</a>
 </body>
 </html>

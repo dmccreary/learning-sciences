@@ -1,63 +1,51 @@
 ---
-title: The Authoring Pipeline — Prompt to Published Site
-description: The Authoring Pipeline — Prompt to Published Site
-status: scaffold
+title: The Authoring Pipeline - Prompt to Published Site
+description: A flowchart showing the six stages of the authoring pipeline from author prompt through IDE harness, agent skill, markdown files, MkDocs build, to deployed site, with control surfaces labeled.
+status: implemented
 library: Mermaid
-bloom_level: TBD
 ---
 
-# The Authoring Pipeline — Prompt to Published Site
+# The Authoring Pipeline - Prompt to Published Site
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="600px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
-## Learning Objective
+[Run the Authoring Pipeline Architecture Fullscreen](./main.html){ .md-button .md-button--primary }
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** Mermaid
+A Mermaid flowchart LR diagram showing six horizontal stages of the intelligent textbook authoring pipeline, each labeled and colored distinctly on a blue-to-orange palette. The stages are: Author, IDE Harness (Claude Code), Agent Skill, Markdown Files, MkDocs Material Build, and Deployed Site (GitHub Pages). A side panel labels the three control surfaces -- Prompt, Context Window, and Token Budget -- with arrows showing where each lands in the flow. A feedback arrow from the deployed site back to the author completes the preview loop.
 
-## Preview
+## Diagram Details
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+```mermaid
+flowchart LR
+    A[Author\nPrompt / NL Request]:::stage1 -->|primary request| B[IDE Harness\nClaude Code]:::stage2
+    B -->|invocation| C[Agent Skill\nRuns Steps]:::stage3
+    C -->|write| D[Markdown Files\nChapter, Glossary,\nQuiz, References]:::stage4
+    D -->|build input| E[MkDocs Material\nBuild]:::stage5
+    E -->|deploy| F[Deployed Site\nGitHub Pages]:::stage6
+    F -->|preview loop| A
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+    C <-->|read/write| SI[Shared Inputs\nLearning Graph,\nStyle Guide,\nPrior Chapters]:::shared
 
-## Specification
+    subgraph Controls [Control Surfaces]
+        P[Prompt]:::ctrl
+        CW[Context Window]:::ctrl
+        TB[Token Budget]:::ctrl
+    end
 
-The full specification below is extracted from
-[Chapter 10: Intelligent Textbook Architecture and AI Tooling](../../chapters/10-textbook-architecture/index.md).
+    P -->|shapes request| B
+    CW -->|limits context| C
+    TB -->|constrains output| C
 
-```text
-Type: diagram
-**sim-id:** authoring-pipeline-architecture<br/>
-**Library:** Mermaid<br/>
-**Status:** Specified
-
-A Mermaid `flowchart LR` diagram showing six horizontal stages, each labeled and colored distinctly on a blue-to-orange palette.
-
-1. *Author* — prompt or natural-language request.
-2. *IDE Harness (Claude Code)* — receives request, reads `SKILL.md` files, selects a matching skill.
-3. *Agent Skill* — runs its Steps; reads shared inputs (learning graph, style guide, prior chapters); writes Markdown.
-4. *Markdown Files* — the chapter, glossary entry, quiz file, reference list.
-5. *MkDocs Material Build* — converts Markdown to HTML, builds the search index, renders navigation, applies the print stylesheet.
-6. *Deployed Site* — GitHub Pages URL served from the `gh-pages` branch.
-
-Secondary arrows show:
-
-- *Author → Harness* (primary request)
-- *Harness → Skill* (invocation)
-- *Skill ↔ Shared Inputs* (learning graph, style guide)
-- *Skill → Markdown* (write)
-- *Markdown → Build → Site* (deployment)
-- *Site → Author* (preview loop at `http://127.0.0.1:8000/learning-sciences/` during development; deployed URL in production)
-
-A side panel labels the three control surfaces we have discussed — *Prompt*, *Context Window*, *Token Budget* — and draws arrows from them into the Harness and Skill stages to indicate where each control lands in the flow.
-
-Implementation: Mermaid `flowchart LR` with `classDef` for the stage colors and a `subgraph` for the control-surface side panel. Embedded directly in the chapter markdown.
+    classDef stage1 fill:#4A90D9,stroke:#2C5F8A,color:#fff
+    classDef stage2 fill:#5BA3E6,stroke:#3575A8,color:#fff
+    classDef stage3 fill:#7BB8E8,stroke:#4A8ABF,color:#fff
+    classDef stage4 fill:#D4A84B,stroke:#A67F2E,color:#fff
+    classDef stage5 fill:#E0943A,stroke:#B06E1E,color:#fff
+    classDef stage6 fill:#E87D2A,stroke:#B55D15,color:#fff
+    classDef shared fill:#F0E6D2,stroke:#C4A87A,color:#333
+    classDef ctrl fill:#F5F5F5,stroke:#999,color:#333
 ```
 
 ## Related Resources

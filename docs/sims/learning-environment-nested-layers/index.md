@@ -1,47 +1,52 @@
 ---
 title: Three Nested Layers of a Learning Environment
-description: Three Nested Layers of a Learning Environment
-status: scaffold
-library: Mermaid
-bloom_level: TBD
+description: A nested subgraph diagram showing the physical/digital, social, and institutional layers of a learning environment with bidirectional influence arrows.
 ---
 
 # Three Nested Layers of a Learning Environment
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="700px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
-## Learning Objective
+[Run the Nested Layers Diagram Fullscreen](./main.html){ .md-button .md-button--primary }
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** Mermaid
+This diagram uses nested subgraphs to show the three concentric layers of a learning environment. The innermost layer (Physical/Digital) contains design levers like seating, lighting, screen readability, and MicroSim responsiveness. The middle layer (Social) contains talk-move repertoire, turn-taking norms, error-response scripts, and forum moderation. The outermost layer (Institutional) contains grading policy, accessibility mandates, privacy regulation, and curricular scope. Arrows between layers show both upward influence (physical choices shape the social layer) and downward influence (institutional mandates cascade into social norms and physical features).
 
-## Preview
+## Diagram Details
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+```mermaid
+graph TD
+    subgraph INST["Institutional Layer"]
+        GP["Grading Policy"]:::institutional
+        AM["Accessibility Mandate"]:::institutional
+        PR["Privacy Regulation"]:::institutional
+        CS["Curricular Scope"]:::institutional
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+        subgraph SOC["Social Layer"]
+            TM["Talk-Move Repertoire"]:::social
+            TT["Turn-Taking Norms"]:::social
+            ER["Error-Response Scripts"]:::social
+            FM["Forum Moderation"]:::social
 
-## Specification
+            subgraph PHYS["Physical / Digital Layer"]
+                SE["Seating"]:::physical
+                LI["Lighting"]:::physical
+                SR["Screen Readability"]:::physical
+                KN["Keyboard Navigation"]:::physical
+                MR["MicroSim Responsiveness"]:::physical
+            end
+        end
+    end
 
-The full specification below is extracted from
-[Chapter 9: Learning Conditions and Environment](../../chapters/09-learning-conditions/index.md).
+    PHYS -.->|"shapes"| SOC
+    SOC -.->|"constrained by"| INST
+    INST -.->|"cascades into"| SOC
+    SOC -.->|"cascades into"| PHYS
 
-```text
-Type: diagram
-**sim-id:** learning-environment-nested-layers<br/>
-**Library:** Mermaid<br/>
-**Status:** Specified
-
-A Mermaid diagram rendered as a set of three concentric rectangles (or as a `flowchart TD` with containment styling via `subgraph` blocks). The innermost rectangle is labeled *Physical / Digital* and contains example design-lever nodes: *seating*, *lighting*, *screen readability*, *keyboard navigation*, *MicroSim responsiveness*. The middle rectangle is labeled *Social* and contains *talk-move repertoire*, *turn-taking norms*, *error-response scripts*, *forum moderation*. The outermost rectangle is labeled *Institutional* and contains *grading policy*, *accessibility mandate*, *privacy regulation*, *curricular scope*. Arrows between the layers show *upward* influence (physical choices shape the social layer; social norms are constrained by institutional rules) and *downward* influence (institutional mandates cascade into social norms and physical features).
-
-Each layer is colored distinctly on a warm blue-to-orange palette — innermost in cool blue, middle in a mid-tone teal, outermost in warm orange — so the containment is immediately visible. A caption underneath reads: *"Small changes in one layer cascade through the others. When a learner underperforms, the explanation usually lives at a layer outside the learner's control."*
-
-Implementation: Mermaid `flowchart TD` with nested `subgraph` blocks and `classDef` for the per-layer coloring. Embedded directly in the chapter markdown via the `pymdownx.superfences` mermaid fence already configured in `mkdocs.yml`.
+    classDef physical fill:#4A90D9,stroke:#2C5F8A,color:#fff
+    classDef social fill:#3A9B8F,stroke:#2A7B6F,color:#fff
+    classDef institutional fill:#D4A76A,stroke:#A67D3D,color:#fff
 ```
 
 ## Related Resources

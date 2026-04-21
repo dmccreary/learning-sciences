@@ -1,53 +1,43 @@
 ---
 title: Talk-Moves Decision Tree for Classroom Discourse
-description: Talk-Moves Decision Tree for Classroom Discourse
-status: scaffold
-library: Mermaid
-bloom_level: TBD
+description: A decision tree showing how an instructor can choose the right accountable-talk move based on the current state of classroom discussion.
 ---
 
 # Talk-Moves Decision Tree for Classroom Discourse
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="800px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
-## Learning Objective
+[Run the Talk-Moves Decision Tree Fullscreen](./main.html){ .md-button .md-button--primary }
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** Mermaid
+This decision tree helps instructors choose the right talk move after a student contribution. It branches through four questions: Was the contribution clear? Does the reasoning need to be surfaced? Have other students engaged? Have you waited long enough? Each branch leads to a specific accountable-talk move -- Revoicing, Pressing for Reasoning, Restating/Adding On, or Wait Time -- with a sample teacher prompt and a note on the cognitive work the move is doing. Yellow diamonds are decision points, blue nodes are talk moves, and gray nodes explain the purpose.
 
-## Preview
+## Diagram Details
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+```mermaid
+graph TD
+    ROOT["A student has just contributed to the discussion"]:::root --> Q1{"Was the contribution clear to the rest of the class?"}:::decision
+    Q1 -->|"No"| REVOICE["Revoicing: So you are saying that...?"]:::move
+    REVOICE --> NOTE1["Ensures the idea is public and accurately represented"]:::note
+    Q1 -->|"Yes"| Q2{"Does the reasoning behind the contribution need to be surfaced?"}:::decision
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+    Q2 -->|"Yes"| PRESS["Pressing for Reasoning: Why do you think that? What is your evidence?"]:::move
+    PRESS --> NOTE2["Makes the thinking visible, not just the answer"]:::note
+    Q2 -->|"No"| Q3{"Have other students had the chance to engage with this idea?"}:::decision
 
-## Specification
+    Q3 -->|"No"| RESTATE["Restate or Add On: Can someone put that in their own words? Who can add to this?"]:::move
+    RESTATE --> NOTE3["Distributes cognitive work across the group"]:::note
+    Q3 -->|"Yes"| Q4{"Have you waited long enough for a thoughtful answer?"}:::decision
 
-The full specification below is extracted from
-[Chapter 9: Learning Conditions and Environment](../../chapters/09-learning-conditions/index.md).
+    Q4 -->|"No"| WAIT["Wait Time: Pause 3-5 seconds before calling on anyone"]:::move
+    WAIT --> NOTE4["Gives all students time to formulate a response"]:::note
+    Q4 -->|"Yes"| NEXT["Move to the next discussion prompt"]:::root
 
-```text
-Type: decision-tree
-**sim-id:** talk-moves-decision-tree<br/>
-**Library:** Mermaid<br/>
-**Status:** Specified
-
-A Mermaid `flowchart TD` decision tree. Root node: *"A student has just contributed to the discussion."* First branch: *"Was the contribution clear to the rest of the class?"* — if No, route to **Revoicing** with an example prompt; if Yes, continue.
-
-Second branch: *"Does the reasoning behind the contribution need to be surfaced?"* — if Yes, route to **Pressing for reasoning**; if No, continue.
-
-Third branch: *"Have other students had the chance to engage with this idea?"* — if No, route to **Asking students to restate others' reasoning** or **Adding on**; if Yes, continue.
-
-Fourth branch: *"Was the question just asked, and have you waited long enough for a thoughtful answer?"* — if No, route to **Wait time**; if Yes, the discourse can move to the next prompt.
-
-Each terminal node carries one sample teacher prompt in the accountable-talk style, and a short note on the cognitive work the move is doing. Colors: root in neutral blue; decision nodes in warm yellow; terminal talk-move nodes in cool blue with the move name in bold.
-
-Implementation: Mermaid `flowchart TD` with `classDef` for decision vs. terminal nodes. Embedded directly in the chapter markdown.
+    classDef root fill:#4A90D9,stroke:#2C5F8A,color:#fff
+    classDef decision fill:#F0C75E,stroke:#D4A017,color:#333
+    classDef move fill:#4A90D9,stroke:#2C5F8A,color:#fff
+    classDef note fill:#E8E8E8,stroke:#999,color:#333,font-size:12px
 ```
 
 ## Related Resources

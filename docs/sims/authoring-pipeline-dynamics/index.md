@@ -1,73 +1,44 @@
 ---
-title: Authoring Pipeline Dynamics — Graph-Quality Flywheel vs. Token-Pressure Trap
-description: Authoring Pipeline Dynamics — Graph-Quality Flywheel vs. Token-Pressure Trap
-status: scaffold
+title: Authoring Pipeline Dynamics
+description: A causal loop diagram showing the Graph-Quality Flywheel and Token-Pressure Trap that govern authoring pipeline behavior.
+status: implemented
 library: Mermaid
-bloom_level: TBD
 ---
 
-# Authoring Pipeline Dynamics — Graph-Quality Flywheel vs. Token-Pressure Trap
+# Authoring Pipeline Dynamics - Graph-Quality Flywheel vs. Token-Pressure Trap
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="600px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
-## Learning Objective
+[Run the Authoring Pipeline Dynamics Fullscreen](./main.html){ .md-button .md-button--primary }
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** Mermaid
+A causal loop diagram with ten variable-nodes and two named loops. **R1 (Graph-Quality Flywheel)** shows how learning-graph quality raises artifact quality, which raises iteration rate, which raises graph-refinement rate, which raises graph quality -- a reinforcing productive loop. **B1 (Token-Pressure Trap)** shows how chapter-content size raises token-budget pressure, forcing context-window truncation, creating generation inconsistency and rework cost, which throttles iteration and starves R1. The cross-links from B1 into R1 are highlighted in red.
 
-## Preview
+## Diagram Details
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+```mermaid
+flowchart LR
+    subgraph R1 [R1: Graph-Quality Flywheel]
+        GQ[Learning-Graph Quality]:::r1 -->|+| AQ[Generated-Artifact Quality]:::r1
+        AQ -->|+| AIR[Author-Iteration Rate]:::r1
+        AIR -->|+| GRR[Graph-Refinement Rate]:::r1
+        GRR -->|+ delay| GQ
+        AQ -->|+| PC[Pipeline Confidence]:::r1
+    end
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
+    subgraph B1 [B1: Token-Pressure Trap]
+        CCS[Chapter-Content Size]:::b1 -->|+| TBP[Token-Budget Pressure]:::b1
+        TBP -->|+| CWT[Context-Window Truncation]:::b1
+        CWT -->|+| GI[Generation Inconsistency]:::b1
+        GI -->|+| RC[Rework Cost]:::b1
+    end
 
-## Specification
+    RC -->|minus| AIR
+    TBP -->|minus| AIR
 
-The full specification below is extracted from
-[Chapter 10: Intelligent Textbook Architecture and AI Tooling](../../chapters/10-textbook-architecture/index.md).
-
-```text
-Type: causal-loop-diagram
-**sim-id:** authoring-pipeline-dynamics<br/>
-**Library:** Mermaid<br/>
-**Status:** Specified
-
-A causal loop diagram rendered with Mermaid `flowchart LR` showing ten variable-nodes and two named loops. All nodes are noun phrases naming variables that can go up or down.
-
-Nodes for R1 (graph-quality flywheel, productive): *learning-graph quality*, *generated-artifact quality*, *author-iteration rate*, *graph-refinement rate*, *pipeline confidence*.
-
-Nodes for B1 (token-pressure trap, balancing-but-corrosive): *chapter-content size*, *token-budget pressure*, *context-window truncation*, *generation inconsistency*, *rework cost*.
-
-Edges and polarities for R1:
-
-- learning-graph quality → generated-artifact quality (+) — a clearer graph produces clearer artifacts
-- generated-artifact quality → author-iteration rate (+) — an author who trusts the artifacts iterates more
-- author-iteration rate → graph-refinement rate (+) — each iteration surfaces a graph improvement
-- graph-refinement rate → learning-graph quality (+, with delay marker ⧚) — refinements accumulate
-- generated-artifact quality → pipeline confidence (+) — visible quality reinforces the author's willingness to trust the pipeline
-
-Edges and polarities for B1:
-
-- chapter-content size → token-budget pressure (+) — longer chapters cost more tokens per run
-- token-budget pressure → context-window truncation (+) — pressure forces the pipeline to drop prior-chapter context
-- context-window truncation → generation inconsistency (+) — dropped context produces style, voice, and schema drift
-- generation inconsistency → rework cost (+) — drift is caught on review and fixed by hand
-- rework cost → author-iteration rate (−) — time spent on rework is time not spent on refinement, starving R1
-- token-budget pressure → author-iteration rate (−) — expensive runs are run less often
-
-Loop labels at each loop's geometric center:
-
-- **R1 — Graph-quality flywheel (reinforcing, productive).** Graph quality raises artifact quality, which raises iteration rate, which raises graph-refinement rate, which raises graph quality.
-- **B1 — Token-pressure trap (balancing, corrosive).** Chapter size raises token pressure, which forces truncation, which creates inconsistency, which creates rework, which throttles iteration — starving R1.
-
-The cross-link *rework cost → author-iteration rate (−)* is rendered in a distinct warning color to show how B1 leaks into R1. Delay marker ⧚ on the graph-refinement-rate → learning-graph-quality edge. Every edge labeled with `+` or `−`.
-
-Implementation: Mermaid `flowchart LR` with `linkStyle` declarations for polarity coloring and `classDef` for loop grouping. A two-paragraph walkthrough accompanies the diagram in the prose that follows.
+    classDef r1 fill:#4A90D9,stroke:#2C5F8A,color:#fff
+    classDef b1 fill:#E87D2A,stroke:#B55D15,color:#fff
 ```
 
 ## Related Resources
