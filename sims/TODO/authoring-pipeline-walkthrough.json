@@ -1,0 +1,14 @@
+{
+  "sim_id": "authoring-pipeline-walkthrough",
+  "diagram_name": "The Authoring Pipeline in Motion",
+  "chapter_number": 1,
+  "chapter_title": "Foundations of Learning Sciences",
+  "chapter_dir": "01-foundations",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: microsim\n**sim-id:** authoring-pipeline-walkthrough<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive p5.js MicroSim that animates the flow of authoring work from prompt to published chapter. The canvas is divided into five horizontal lanes from top to bottom:\n\n1. **Author** (types a natural-language request, e.g., \"generate a chapter on retrieval practice\")\n2. **Claude Code** (receives the request, selects the matching skill)\n3. **Agent Skill** (runs; reads shared context; generates Markdown)\n4. **Markdown Files** (written to `docs/chapters/...`)\n5. **MkDocs Material** (builds and serves the site)\n\nControls (using built-in p5.js controls per project convention):\n\n- **Play / Pause button** — animate a request flowing through all five lanes with a glowing token that moves between lanes and leaves small artifacts (file icons, skill badges) where it lands.\n- **Speed slider** (0.5× to 3×) — animation speed.\n- **Skill dropdown** — pick one of: Chapter Content Generator, Glossary Generator, Quiz Generator, MicroSim Generator. Selection changes which artifacts appear in lane 4 and which chapter section lights up in lane 5.\n- **Reset button** — clear and restart.\n\nLearning objective (Bloom level: Understand): *Describe the flow of information from an author's natural-language request through Claude Code, an Agent Skill, and MkDocs to a published chapter.*\n\nVisual style matches the project's other MicroSims: white background, warm blue primary with orange accent per `mkdocs.yml` theme; each lane labeled on the left; the moving token uses a soft-glow effect to signal motion. Canvas width is responsive via `updateCanvasSize()` as the first line of `setup()`, and the canvas is parented to the standard `<main></main>` element so the sketch can be copy-pasted into the p5.js editor without modification.\n\nImplementation: p5.js sketch in `/docs/sims/authoring-pipeline-walkthrough/` with `main.html`, `script.js`, `local.css`, and `index.md`. Generate via the `microsim-generator` skill after Chapter 11 introduces MicroSim design principles formally."
+}

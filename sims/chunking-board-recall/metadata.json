@@ -1,0 +1,21 @@
+{
+  "title": "Chunking — Novice vs. Expert Board Recall",
+  "description": "Chunking — Novice vs. Expert Board Recall",
+  "creator": "Dementia Education Project",
+  "date": "2026-04-20",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "chunking-board-recall",
+  "library": "p5.js",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 7,
+  "chapter_title": "Expertise and Mastery",
+  "chapter_dir": "07-expertise-mastery"
+}

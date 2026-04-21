@@ -1,0 +1,14 @@
+{
+  "sim_id": "seven-domains-wheel",
+  "diagram_name": "The Seven Domains Wheel",
+  "chapter_number": 2,
+  "chapter_title": "The Seven Domains Framework",
+  "chapter_dir": "02-seven-domains",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: interactive-infographic\n**sim-id:** seven-domains-wheel<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive infographic overlay built with the `interactive-infographic-overlay` skill. Base image: a seven-segment pie-wheel showing the seven domains in an order that matches the forward chain (Motivation at 12 o'clock, then clockwise Understanding, Retention, Application, Expertise, Measurement, Learning Conditions at 10 o'clock — returning to Motivation at the top). Each segment a different color in a warm-to-cool palette. Learning Conditions is drawn with a dashed border to signal its substrate role. The base image is annotation-free; domain labels come from overlay markers.\n\nModes (standard for this skill):\n\n- **Explore mode:** Hovering a segment reveals a tooltip with (1) the one-sentence domain definition, (2) two to three example design decisions the domain drives, and (3) the chapter link.\n- **Diagnose mode:** The student reads a short chapter draft excerpt and clicks the domain(s) that the excerpt most directly serves. Multiple correct answers are allowed; correct selections light green, missing domains light amber.\n- **Edit mode (authors only):** Drag markers to recalibrate segment positions on the base image; export updated `data.json`.\n\nLearning objective (Bloom level: Analyze — given a piece of instruction, identify which domains it serves well and which it under-serves).\n\nResponsive: canvas width adapts to container via `updateCanvasSize()` as the first line of `setup()`; segment anchors scale with the canvas.\n\nImplementation: Generated with the `interactive-infographic-overlay` skill. Directory `/docs/sims/seven-domains-wheel/` contains `image-prompt.md`, `data.json`, `main.html`, `index.md`, and the base wheel image. The text-to-image prompt specifies an annotation-free wheel with dashed-border treatment on the Learning Conditions segment."
+}

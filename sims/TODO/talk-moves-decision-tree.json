@@ -1,0 +1,14 @@
+{
+  "sim_id": "talk-moves-decision-tree",
+  "diagram_name": "Talk-Moves Decision Tree for Classroom Discourse",
+  "chapter_number": 9,
+  "chapter_title": "Learning Conditions and Environment",
+  "chapter_dir": "09-learning-conditions",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: decision-tree\n**sim-id:** talk-moves-decision-tree<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA Mermaid `flowchart TD` decision tree. Root node: *\"A student has just contributed to the discussion.\"* First branch: *\"Was the contribution clear to the rest of the class?\"* — if No, route to **Revoicing** with an example prompt; if Yes, continue.\n\nSecond branch: *\"Does the reasoning behind the contribution need to be surfaced?\"* — if Yes, route to **Pressing for reasoning**; if No, continue.\n\nThird branch: *\"Have other students had the chance to engage with this idea?\"* — if No, route to **Asking students to restate others' reasoning** or **Adding on**; if Yes, continue.\n\nFourth branch: *\"Was the question just asked, and have you waited long enough for a thoughtful answer?\"* — if No, route to **Wait time**; if Yes, the discourse can move to the next prompt.\n\nEach terminal node carries one sample teacher prompt in the accountable-talk style, and a short note on the cognitive work the move is doing. Colors: root in neutral blue; decision nodes in warm yellow; terminal talk-move nodes in cool blue with the move name in bold.\n\nImplementation: Mermaid `flowchart TD` with `classDef` for decision vs. terminal nodes. Embedded directly in the chapter markdown."
+}

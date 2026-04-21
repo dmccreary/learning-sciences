@@ -1,0 +1,14 @@
+{
+  "sim_id": "load-dynamics-loops",
+  "diagram_name": "Load Dynamics — The Extraneous Brake and the Germane Flywheel",
+  "chapter_number": 4,
+  "chapter_title": "Cognitive Architecture and Load",
+  "chapter_dir": "04-cognitive-architecture",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: causal-loop-diagram\n**sim-id:** load-dynamics-loops<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA causal loop diagram rendered with Mermaid `flowchart LR` showing six variable-nodes connected by polarity-labeled edges. Nodes, written as noun phrases: \"extraneous load\", \"germane-load capacity\", \"schema construction\", \"effective working-memory capacity\", \"intrinsic load of next task\", \"learner performance\".\n\nEdges and polarities:\n\n- extraneous load → germane-load capacity (−) — extraneous load crowds out germane capacity\n- germane-load capacity → schema construction (+) — germane processing builds schemas\n- schema construction → effective working-memory capacity (+, with delay marker ⧚) — schemas enable chunking, which effectively expands capacity (delayed)\n- effective working-memory capacity → intrinsic load of next task (−) — better chunking lowers perceived intrinsic load of related material\n- intrinsic load of next task → germane-load capacity (−) — higher intrinsic load leaves less room for germane processing\n- germane-load capacity → learner performance (+) — germane processing produces learning\n- extraneous load → learner performance (−) — extraneous load directly hurts performance\n\nLoop labels placed at each loop's geometric center:\n\n- **B1 — Extraneous brake (balancing, corrosive).** extraneous load → crowded germane capacity → weak schema construction → small effective capacity → high intrinsic load → even less germane capacity. A design-quality failure that compounds.\n- **R1 — Germane flywheel (reinforcing).** germane-load capacity → schema construction → effective capacity → lower intrinsic load on related material → more germane-load capacity available → more schema construction. When this loop spins, learning compounds.\n\nVisual treatment: B1 nodes in warm red-orange; R1 nodes in cool blue; the shared node \"germane-load capacity\" drawn in a neutral tone with dual borders to signal that it belongs to both loops. Delay marker ⧚ on the schema-construction → effective-capacity edge. Every edge labeled with `+` or `−`.\n\nImplementation: Mermaid `flowchart LR` with `linkStyle` declarations for polarity coloring and `classDef` for loop grouping. A one-paragraph walkthrough of loop R1 in plain English accompanies the diagram in the prose that follows."
+}

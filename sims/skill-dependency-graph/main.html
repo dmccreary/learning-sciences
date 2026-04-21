@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Dependency Graph</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: white; }
+        .mermaid { max-width: 100%; }
+        h2 { color: #333; }
+    </style>
+</head>
+<body>
+    <h2>Skill Dependency Graph</h2>
+    <div class="mermaid">
+flowchart LR
+    CDA[course-description\nanalyzer]:::foundation -->|course description| LGG[learning-graph\ngenerator]:::hub
+    LGG -->|concept list| BCG[book-chapter\ngenerator]:::foundation
+    LGG -->|concept list| GLO[glossary\ngenerator]:::derived
+    LGG -->|concept list| QUI[quiz\ngenerator]:::derived
+    LGG -->|concept list| FAQ[faq\ngenerator]:::derived
+    LGG -->|concept list| REF[reference\ngenerator]:::derived
+
+    BCG -->|chapter outline| CCG[chapter-content\ngenerator]:::authoring
+    BCG -->|chapter outline| REF
+
+    CCG -->|chapter prose| GLO
+    CCG -->|chapter prose| FAQ
+    CCG -->|chapter prose| QUI
+    CCG -->|sim briefs| MSG[microsim\ngenerator]:::engage
+    CCG -->|story briefs| STG[story\ngenerator]:::engage
+    CCG -->|quiz briefs| CCL[concept\nclassifier]:::engage
+
+    GLO --> BMG[book-metrics\ngenerator]:::audit
+    QUI --> BMG
+    FAQ --> BMG
+    REF --> BMG
+    MSG --> BMG
+    STG --> BMG
+    CCL --> BMG
+    CCG --> BMG
+
+    GLO --> DRG[diagram-reports\ngenerator]:::audit
+    QUI --> DRG
+    FAQ --> DRG
+    REF --> DRG
+    MSG --> DRG
+    STG --> DRG
+    CCL --> DRG
+    CCG --> DRG
+
+    BMG -->|metrics| LIN[linkedin-announcement\ngenerator]:::audit
+    DRG -->|report| LIN
+
+    classDef hub fill:#E87D2A,stroke:#B55D15,color:#fff
+    classDef foundation fill:#4A90D9,stroke:#2C5F8A,color:#fff
+    classDef authoring fill:#26A69A,stroke:#00796B,color:#fff
+    classDef derived fill:#66BB6A,stroke:#2E7D32,color:#fff
+    classDef engage fill:#FFB300,stroke:#FF8F00,color:#333
+    classDef audit fill:#E87D2A,stroke:#B55D15,color:#fff
+    </div>
+    <script>mermaid.initialize({startOnLoad: true, theme: 'default', securityLevel: 'loose'});</script>
+    <br/>
+    <a href=".">Back to Documentation</a>
+</body>
+</html>

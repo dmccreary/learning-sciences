@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transportation Dynamics</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: white; }
+        .mermaid { max-width: 100%; }
+        h2 { color: #333; }
+    </style>
+</head>
+<body>
+    <h2>Transportation Dynamics - Identification Flywheel and Accuracy-Erosion Trap</h2>
+    <div class="mermaid">
+flowchart LR
+    VP[Vividness\nof Panels]:::r1 -->|+| NT[Narrative\nTransportation]:::r1
+    IF[Identification\nwith Figure]:::r1 -->|+| NT
+    NT -->|+| RC[Reduced\nCounterarguing]:::shared
+    RC -->|+| RET[Retention of\nEmbedded Concept]:::r1
+    RC -->|+| RLA[Risk of Laundered\nInaccuracy]:::b1
+    RET -->|"+ delay &#10710;"| REG[Re-engagement\nwith Chapter]:::r1
+    REG -->|+| IF
+
+    HAR[Historical Accuracy\nCheck Rigor]:::b1 -->|+| FEC[Fidelity of\nEmbedded Claims]:::b1
+    FEC -->|"&#8722;"| RLA
+    HAR -->|"slight &#8722;"| NT
+
+    classDef r1 fill:#4A90D9,stroke:#2C5F8A,color:#fff
+    classDef b1 fill:#E87D2A,stroke:#B55D15,color:#fff
+    classDef shared fill:#9E9E9E,stroke:#616161,color:#fff
+    </div>
+    <p><strong>R1 - Identification flywheel:</strong> Vivid panels and identification drive narrative transportation, which reduces counterarguing and improves retention. Re-engagement deepens identification, spinning the loop.</p>
+    <p><strong>B1 - Accuracy-erosion trap:</strong> Transportation also reduces counterarguing against false claims, laundering inaccuracy. Historical accuracy check rigor is the brake that keeps fidelity high and risk low.</p>
+    <script>mermaid.initialize({startOnLoad: true, theme: 'default', securityLevel: 'loose'});</script>
+    <br/>
+    <a href=".">Back to Documentation</a>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "sim_id": "mascot-design-pipeline",
+  "diagram_name": "The Mascot Design Pipeline",
+  "chapter_number": 12,
+  "chapter_title": "Pedagogical Mascots and Admonitions",
+  "chapter_dir": "12-mascots-admonitions",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: diagram\n**sim-id:** mascot-design-pipeline<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA Mermaid `flowchart TD` diagram showing the six-step procedure as a pipeline. Each step is a rounded-rectangle node; each inter-step arrow is labeled with the artifact that carries forward; each step has a side-note showing the audit question that must pass before the next step begins.\n\nNodes (top-down):\n\n1. Persona One-Pager — produces the character sheet.\n2. Visual Identity — produces the seven pose images.\n3. Voice Guide — produces the prohibited-word list and on-voice examples.\n4. Admonition Library — produces the type-to-class-to-pose mapping.\n5. CSS Implementation — produces the stylesheet.\n6. Consistency Audit — produces the review checklist.\n\nEdges labeled with artifacts: \"character sheet\" between 1 and 2, \"seven poses\" between 2 and 3, \"voice guide\" between 3 and 4, \"admonition types\" between 4 and 5, \"stylesheet\" between 5 and 6, and an audit feedback edge from 6 back to 3 (strengthen the voice guide when drift is detected).\n\nVisual treatment: nodes in cool blue; audit feedback arrow in warm orange to signal that the audit is a loop, not a dead end. Each node annotated with its audit gate in a smaller secondary font.\n\nImplementation: Mermaid `flowchart TD` with `classDef` for node styling and `linkStyle` for the audit feedback arrow coloring."
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "bloom-taxonomy-pyramid",
+  "diagram_name": "Interactive Bloom's Taxonomy Pyramid",
+  "chapter_number": 1,
+  "chapter_title": "Foundations of Learning Sciences",
+  "chapter_dir": "01-foundations",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: interactive-infographic\n**sim-id:** bloom-taxonomy-pyramid<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive infographic overlay using the `interactive-infographic-overlay` skill pattern. Base image: a hand-drawn pyramid divided into six horizontal tiers labeled from bottom to top (Remember, Understand, Apply, Analyze, Evaluate, Create), each tier a different color in a warm blue-to-orange gradient. The base image is annotation-free — all labels are delivered by overlay markers at calibrated positions defined in `data.json`.\n\nModes (standard for this skill):\n\n- **Explore mode:** Hovering over a tier shows a tooltip containing the level name, one-sentence definition, three example verbs, and one sample learning objective written at that level. The content for all six tiers is pre-authored in `data.json`.\n- **Quiz mode:** A randomly chosen learning objective appears at the top; the student clicks the tier that matches its Bloom level. Correct answers highlight the tier green; incorrect answers reveal the correct tier and a one-sentence explanation.\n- **Edit mode (authors only):** Drag markers to recalibrate their positions on the base image; export updated `data.json`.\n\nLearning objective (Bloom level: Apply — per the chapter's own taxonomy): *Given a learning objective sentence, identify the Bloom level it targets.*\n\nResponsive: canvas width adapts to container using the standard `updateCanvasSize()` first-line call in `setup()`; the pyramid rescales while preserving marker anchor ratios.\n\nImplementation: Generated with the `interactive-infographic-overlay` skill. The directory `/docs/sims/bloom-taxonomy-pyramid/` will contain `image-prompt.md`, `data.json`, `main.html`, `index.md`, and the pyramid base image. The text-to-image prompt specifies an annotation-free pyramid so that overlay markers render cleanly over the image."
+}

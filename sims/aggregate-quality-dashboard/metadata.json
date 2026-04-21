@@ -1,0 +1,21 @@
+{
+  "title": "Aggregate Quality-Metrics Dashboard (Synthetic)",
+  "description": "Aggregate Quality-Metrics Dashboard (Synthetic)",
+  "creator": "Dementia Education Project",
+  "date": "2026-04-20",
+  "subject": [
+    "dementia"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "aggregate-quality-dashboard",
+  "library": "Chart.js or Plotly",
+  "bloomLevel": "TBD",
+  "bloomVerb": "TBD",
+  "completion_status": "scaffold",
+  "chapter_number": 8,
+  "chapter_title": "Measurement and Feedback",
+  "chapter_dir": "08-measurement-feedback"
+}

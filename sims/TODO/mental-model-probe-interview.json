@@ -1,0 +1,14 @@
+{
+  "sim_id": "mental-model-probe-interview",
+  "diagram_name": "Mental-Model Probe Interview Flow",
+  "chapter_number": 6,
+  "chapter_title": "Application and Transfer",
+  "chapter_dir": "06-application-transfer",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: diagram\n**sim-id:** mental-model-probe-interview<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA Mermaid `flowchart TD` showing a branching interview protocol that an instructor (or an LLM tutor) can use to diagnose a learner's mental model of a target concept. The root node is a prediction prompt (\"What will happen if...?\"). Three children branch based on the learner's answer: *correct prediction*, *incorrect prediction*, or *hedged / uncertain*. Each branch leads to a follow-up — a *mechanism probe* (\"Why does that happen?\"), a *counterfactual probe* (\"What would change if...?\"), and a *boundary probe* (\"When would this not apply?\"). Leaves are diagnostic labels: *runnable correct model*, *verbal rule without model*, *stable misconception*, *fragile partial model*, *no model*. Each leaf links to a recommended next instructional move (more retrieval practice, a worked example, a dissonance-producing counterexample, or a direct conceptual-change intervention).\n\nImplementation: Mermaid `flowchart TD` with `classDef` styling to distinguish prompts (blue), diagnostic labels (orange), and recommended moves (green). Embedded directly in chapter markdown."
+}

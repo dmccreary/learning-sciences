@@ -1,0 +1,14 @@
+{
+  "sim_id": "learning-sciences-confluence",
+  "diagram_name": "Parent Disciplines of Learning Sciences",
+  "chapter_number": 1,
+  "chapter_title": "Foundations of Learning Sciences",
+  "chapter_dir": "01-foundations",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: diagram\n**sim-id:** learning-sciences-confluence<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA top-down flowchart rendered with Mermaid showing four parent disciplines converging on Learning Sciences, which in turn feeds Intelligent Textbook Design. Three research disciplines (Cognitive Science, Educational Psychology, Neuroscience in Learning) sit on the top row with colored nodes; Instructional Design sits on a second row as the \"translation layer\" with a distinct color; Learning Sciences sits on the third row as the convergence node; Intelligent Textbook Design sits on the bottom row as the output. Each arrow from a parent discipline is labeled with the primary contribution (e.g., Cognitive Science → Learning Sciences labeled \"memory and attention\"; Educational Psychology → Learning Sciences labeled \"motivation and development\"; Neuroscience in Learning → Learning Sciences labeled \"mechanism and constraint\"; Instructional Design → Learning Sciences labeled \"translation to practice\"). Node colors use a blue palette on a white background; node width resizes with the container using Mermaid's responsive rendering.\n\nImplementation: Mermaid flowchart (`flowchart TD`) embedded directly in the chapter markdown via the `pymdownx.superfences` mermaid fence already configured in `mkdocs.yml`. Responsive sizing is native to Mermaid when rendered in MkDocs Material."
+}

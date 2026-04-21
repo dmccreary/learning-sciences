@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path Depth for the Mascot Image src</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: white; }
+        .mermaid { max-width: 100%; }
+        h2 { color: #333; }
+    </style>
+</head>
+<body>
+    <h2>Path Depth for the Mascot Image src</h2>
+    <div class="mermaid">
+flowchart TD
+    RULE{Count URL depth:\none ../ per path\nsegment after site root}:::amber
+
+    P1[Top-level page\ndocs/index.md\nRenders at: /]:::page --> RULE
+    P2[Learning-graph page\ndocs/learning-graph/mascot-test.md\nRenders at: /learning-graph/mascot-test/]:::page --> RULE
+    P3[Chapter page\ndocs/chapters/12-mascots/index.md\nRenders at: /chapters/12-mascots/]:::page --> RULE
+    P4[MicroSim page\ndocs/sims/bloom-poses-gallery/index.md\nRenders at: /sims/bloom-poses-gallery/]:::page --> RULE
+
+    RULE --> R1[img/mascot/tip.png\nZero ../]:::green
+    RULE --> R2[../../img/mascot/tip.png\nTwo ../]:::green
+
+    P1 -.-> R1
+    P2 -.-> R2
+    P3 -.-> R2
+    P4 -.-> R2
+
+    FAIL[Failure mode:\nToo few ../ produces\na broken image with\nno build-log warning]:::fail
+
+    classDef page fill:#BBDEFB,stroke:#1565C0,color:#333
+    classDef amber fill:#FFB300,stroke:#FF8F00,color:#333
+    classDef green fill:#66BB6A,stroke:#2E7D32,color:#fff
+    classDef fail fill:#FFCDD2,stroke:#E53935,color:#B71C1C
+    </div>
+    <script>mermaid.initialize({startOnLoad: true, theme: 'default', securityLevel: 'loose'});</script>
+    <br/>
+    <a href=".">Back to Documentation</a>
+</body>
+</html>

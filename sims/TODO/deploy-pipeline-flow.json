@@ -1,0 +1,14 @@
+{
+  "sim_id": "deploy-pipeline-flow",
+  "diagram_name": "The Deploy Pipeline from Source to Live Site",
+  "chapter_number": 15,
+  "chapter_title": "Capstone and Deployment",
+  "chapter_dir": "15-capstone-deployment",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: diagram\n**sim-id:** deploy-pipeline-flow<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA Mermaid `flowchart LR` diagram with five stages from left to right, each a named node with an inline status color, and three failure-mode callouts drawn as side nodes attached to the stage where they most often originate.\n\nMain path (left to right):\n\n1. **Markdown source** (`docs/`, `mkdocs.yml`) — author's working tree.\n2. **MkDocs build** (`mkdocs build`) — produces `site/` HTML.\n3. **Git commit and push** to `main` — triggers the publishing workflow.\n4. **`mkdocs gh-deploy`** — rebuilds and pushes built output to the `gh-pages` branch.\n5. **GitHub Pages** — serves the `gh-pages` branch at the project's public URL.\n\nFailure callouts (drawn as red-bordered side nodes):\n\n- **F1 — Build error** attached to stage 2. Missing plugin, malformed front matter, unresolved reference. Caught by the `mkdocs build` console output.\n- **F2 — Broken link** attached to stage 2. Relative path mismatch, chapter renamed without link update. Caught by the link-check plugin if configured; otherwise silent.\n- **F3 — Deploy cache drift** attached to stages 4 and 5. Browser serves a stale asset because the CDN TTL hasn't expired or a hashed filename wasn't bumped. Caught by a hard refresh and a second check in a private window.\n\nA dashed feedback arrow runs from stage 5 back to stage 1 labeled \"reader feedback\" to signal that deployment is not the end — it is the start of the next iteration.\n\nVisual treatment: main path in cool blue; failure callouts in warm red with a red border; feedback arrow in dashed orange. Nodes labeled with both the command and the artifact produced. Every edge labeled with the carrying artifact.\n\nImplementation: Mermaid `flowchart LR` with `classDef` per stage category. Embedded directly in the chapter markdown."
+}

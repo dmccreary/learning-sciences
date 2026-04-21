@@ -1,0 +1,14 @@
+{
+  "sim_id": "arcs-four-pillars",
+  "diagram_name": "ARCS as a Four-Pillar Design Audit",
+  "chapter_number": 3,
+  "chapter_title": "Motivation and Engagement",
+  "chapter_dir": "03-motivation-engagement",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: interactive-infographic\n**sim-id:** arcs-four-pillars<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive infographic overlay built with the `interactive-infographic-overlay` skill. Base image: four vertical pillars of equal height labeled Attention, Relevance, Confidence, and Satisfaction, supporting a horizontal beam labeled \"Motivated Learning.\" Each pillar rendered in a distinct color from the project's blue-green-warm palette on a white background. The base image is annotation-free; pillar labels come from overlay markers in `data.json`.\n\nModes (standard for this skill):\n\n- **Explore mode:** Hovering any pillar reveals a tooltip with (a) the pillar's name, (b) two audit questions the author should ask of their own chapter, and (c) one concrete design move that strengthens the pillar.\n- **Audit mode:** The student reads a sample chapter excerpt and rates each pillar on a 1–5 scale by clicking the pillar at the appropriate height. The beam visibly tilts if any pillar is under-rated, illustrating that the weakest pillar limits the whole.\n- **Edit mode (authors only):** Drag markers to recalibrate pillar positions on the base image; export updated `data.json`.\n\nLearning objective (Bloom level: Evaluate): *Given a chapter excerpt, audit it against all four ARCS pillars and identify the weakest.*\n\nResponsive: canvas width adapts to container via `updateCanvasSize()` as the first line of `setup()`; pillar anchors scale proportionally.\n\nImplementation: Generated with the `interactive-infographic-overlay` skill. Directory `/docs/sims/arcs-four-pillars/` contains `image-prompt.md`, `data.json`, `main.html`, `index.md`, and the annotation-free base image."
+}

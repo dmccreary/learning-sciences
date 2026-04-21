@@ -1,0 +1,14 @@
+{
+  "sim_id": "retrieval-vs-storage-strength",
+  "diagram_name": "Retrieval Strength vs. Storage Strength",
+  "chapter_number": 5,
+  "chapter_title": "Knowledge Retention",
+  "chapter_dir": "05-knowledge-retention",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: interactive-infographic\n**sim-id:** retrieval-vs-storage-strength<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive infographic built with the `interactive-infographic-overlay` skill. Base image: a 2D plot with \"Retrieval Strength\" on the x-axis (low to high) and \"Storage Strength\" on the y-axis (low to high), divided into four labeled quadrants — \"fleeting\" (high RS, low SS), \"durable but dormant\" (low RS, high SS), \"unlearned\" (low RS, low SS), and \"well-learned\" (high RS, high SS). The base image is annotation-free; item dots are placed by the overlay layer.\n\nModes (standard for this skill):\n\n- **Explore mode:** Hovering each pre-placed dot (a looked-up phone number, a childhood address, a word studied last week, an overlearned multiplication fact, a novel technical term seen once) reveals its RS and SS rationale and the instructional move appropriate to that quadrant.\n- **Quiz mode:** A short scenario is described (\"you crammed this for a test yesterday and aced it; the retest is in a month\"); the student clicks the matching quadrant.\n- **Edit mode (authors only):** Drag dots to recalibrate positions; export updated `data.json`.\n\nLearning objective (Bloom level: Analyze): *Given a description of a learner's relationship to a piece of material, classify its retrieval and storage strengths and propose the appropriate next instructional move.*\n\nResponsive via `updateCanvasSize()` as first line of `setup()`; marker anchors preserved on resize.\n\nImplementation: Generated with the `interactive-infographic-overlay` skill. Directory `/docs/sims/retrieval-vs-storage-strength/` contains the standard five files."
+}

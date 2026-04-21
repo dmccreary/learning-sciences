@@ -1,0 +1,14 @@
+{
+  "sim_id": "analogical-mapping-explorer",
+  "diagram_name": "Analogical Mapping Explorer",
+  "chapter_number": 6,
+  "chapter_title": "Application and Transfer",
+  "chapter_dir": "06-application-transfer",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: microsim\n**sim-id:** analogical-mapping-explorer<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive p5.js MicroSim that visualizes structure mapping between a source and a target domain. The canvas is divided left-right: the left panel shows a source domain (e.g., the solar system) with labeled entities (sun, planet, gravitational force, orbit); the right panel shows a target domain (e.g., the Bohr atom) with labeled entities (nucleus, electron, electrostatic force, shell). The learner drags connections between elements of the left and right panels. The system scores each mapping as *relational match* (green), *surface match without relational support* (amber), or *contradictory* (red), and computes an overall alignment score using the similarity function above.\n\nControls (using built-in p5.js controls per project convention):\n\n- **Domain pair dropdown** — choose from: solar system / atom, plumbing / electric circuit, predator-prey / business competition, immune system / cyber defense.\n- **Show-structure toggle** — reveal or hide the relational structure on each side; learners who toggle it on finish faster but retain less, demonstrating the scaffold-dependence effect.\n- **Surface-distractor slider** — increase the number of surface-only features on each side, forcing the learner to select relations rather than appearance.\n- **Score display** — live computation of structural-alignment score and surface-only-match count.\n- **Reset button** — clear all mappings.\n\nLearning objective (Bloom level: Analyze): *Given a source and target domain, identify which elements map on structural grounds, which map only on surface features, and which do not map at all.*\n\nCanvas responsive via `updateCanvasSize()` as first line of `setup()`; parented to the standard `<main></main>` element.\n\nImplementation: p5.js sketch in `/docs/sims/analogical-mapping-explorer/` with `main.html`, `script.js`, `local.css`, and `index.md`. Generated via the `microsim-generator` skill."
+}

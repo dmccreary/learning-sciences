@@ -1,0 +1,14 @@
+{
+  "sim_id": "twelve-panel-arc-map",
+  "diagram_name": "The Twelve-Panel Story Arc Map",
+  "chapter_number": 13,
+  "chapter_title": "Graphic Novels and Short-Form Stories",
+  "chapter_dir": "13-graphic-novels",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: interactive-infographic\n**sim-id:** twelve-panel-arc-map<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive infographic overlay built with the `interactive-infographic-overlay` skill. Base image: a four-by-three grid (four columns, three rows) of panel placeholders on a cream background, each placeholder a lightly sketched comic-panel rectangle with panel number in the upper-left corner. The top row (panels 1–4) is tinted setup-blue; the middle row (panels 5–8, shifted slightly for rising-action pacing) is tinted rising-action amber; panels 9–10 are tinted climax-red; panels 11–12 are tinted resolution-green. The base image is annotation-free — all labels are delivered by overlay markers positioned via `data.json`.\n\nModes (standard for this skill):\n\n- **Explore mode:** Hovering any panel reveals a tooltip with (a) the panel number, (b) the arc stage, (c) the job the panel does, (d) a one-sentence example of that job drawn from a canonical story such as Ada Lovelace's Note G.\n- **Quiz mode:** A panel job description appears (for example, *\"The moment the conceptual turn crystallizes — the insight\"*) and the reader clicks the panel position it belongs in. Correct answers highlight green; incorrect answers reveal the correct panel and a one-sentence explanation.\n- **Edit mode (authors only):** Drag markers to recalibrate positions on the base image; export updated `data.json`.\n\nLearning objective (Bloom level: Apply): *Given a beat description from a historical-figure story, identify the panel number where it belongs in the twelve-panel arc.*\n\nResponsive: canvas width adapts to container via `updateCanvasSize()` as the first line of `setup()`; marker anchor ratios preserved on resize.\n\nImplementation: Generated with the `interactive-infographic-overlay` skill. Directory `/docs/sims/twelve-panel-arc-map/` contains `image-prompt.md`, `data.json`, `main.html`, `index.md`, and the annotation-free base image."
+}

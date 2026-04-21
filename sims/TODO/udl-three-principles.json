@@ -1,0 +1,14 @@
+{
+  "sim_id": "udl-three-principles",
+  "diagram_name": "UDL Three Principles with Checkable Representation Examples",
+  "chapter_number": 9,
+  "chapter_title": "Learning Conditions and Environment",
+  "chapter_dir": "09-learning-conditions",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: interactive-infographic\n**sim-id:** udl-three-principles<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive infographic overlay using the `interactive-infographic-overlay` skill. Base image: three pillars side by side, labeled *Engagement (Why)*, *Representation (What)*, and *Action & Expression (How)*, each rendered in a distinct color from the warm blue-to-orange palette. Each pillar contains three sub-sections representing the Provide Options / Build / Internalize levels of UDL Guidelines 3.0. The base image is annotation-free.\n\nModes:\n\n- **Explore mode:** Hovering over any pillar section shows the UDL checkpoint name, a plain-English description, and two intelligent-textbook examples (e.g., Representation → Offer Alternatives for Auditory Information → \"transcript provided for every narrated MicroSim; captions on every embedded video\").\n- **Quiz mode:** An intelligent-textbook feature is described (e.g., \"We added a keyboard-only navigation path through every MicroSim control\"); the learner clicks the pillar and section that the feature most directly serves.\n- **Edit mode (authors only):** drag markers to recalibrate positions; export updated `data.json`.\n\nLearning objective (Bloom level: Apply): *Given an intelligent-textbook feature, identify which UDL principle and checkpoint it most directly serves.*\n\nCanvas responsive via `updateCanvasSize()` as the first line of `setup()`; marker anchors preserved on resize.\n\nImplementation: Generated with the `interactive-infographic-overlay` skill. The directory `/docs/sims/udl-three-principles/` will contain `image-prompt.md`, `data.json`, `main.html`, `index.md`, and the pillar base image."
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "iteration-flywheel",
+  "diagram_name": "The Iteration Flywheel",
+  "chapter_number": 15,
+  "chapter_title": "Capstone and Deployment",
+  "chapter_dir": "15-capstone-deployment",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: causal-loop-diagram\n**sim-id:** iteration-flywheel<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA causal loop diagram rendered with Mermaid `flowchart LR` showing seven variable-nodes and one reinforcing loop plus one balancing anti-pattern. All nodes are noun phrases naming variables that can go up or down.\n\nNodes: *ship cadence*, *reader feedback volume*, *peer review turnaround*, *revision rate*, *chapter quality*, *reader trust*, *ship-and-forget frequency*.\n\nEdges and polarities for **R1 — Iteration flywheel (reinforcing):**\n\n- ship cadence → reader feedback volume (+) — shipping produces readers, readers produce feedback\n- peer review turnaround → revision rate (+) — faster reviews mean faster revisions\n- reader feedback volume → revision rate (+) — feedback seeds revision\n- revision rate → chapter quality (+, with delay ⧚) — revisions compound into quality\n- chapter quality → reader trust (+) — good chapters build trust\n- reader trust → ship cadence (+) — trusted authors ship more confidently\n- peer review turnaround → ship cadence (+) — fast reviews enable faster releases\n\nEdges for **B1 — Ship-and-forget brake (balancing anti-pattern):**\n\n- ship cadence → ship-and-forget frequency (+) — shipping without a feedback gate tempts \"ship and move on\"\n- ship-and-forget frequency → reader feedback volume (−) — no feedback mechanism, no feedback\n- ship-and-forget frequency → revision rate (−) — revisions never happen if feedback isn't collected\n\nLoop labels at each loop's geometric center:\n\n- **R1 — Iteration flywheel (reinforcing, productive).** Ship → feedback → revise → quality → trust → more ship. Peer review accelerates the inner portion of the loop.\n- **B1 — Ship-and-forget brake (balancing, corrosive).** Shipping without a feedback gate starves the flywheel.\n\nVisual treatment: R1 nodes in cool blue; the B1 anti-pattern in warm orange; delay marker ⧚ on the revision-rate-to-chapter-quality edge; every edge labeled with `+` or `−`.\n\nImplementation: Mermaid `flowchart LR` with `linkStyle` declarations for polarity coloring and `classDef` for loop grouping."
+}

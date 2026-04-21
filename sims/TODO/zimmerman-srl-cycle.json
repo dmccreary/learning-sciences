@@ -1,0 +1,14 @@
+{
+  "sim_id": "zimmerman-srl-cycle",
+  "diagram_name": "Zimmerman's Self-Regulated Learning Cycle",
+  "chapter_number": 8,
+  "chapter_title": "Measurement and Feedback",
+  "chapter_dir": "08-measurement-feedback",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: interactive-infographic\n**sim-id:** zimmerman-srl-cycle<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive infographic overlay using the `interactive-infographic-overlay` skill. Base image: a three-sector circular cycle with arrows showing clockwise flow from *Forethought* (top) to *Performance* (lower right) to *Self-Reflection* (lower left) and back to Forethought. Each sector is a different color on a warm blue-to-orange gradient. The base image is annotation-free; all phase labels, sub-processes, and example prompts are delivered by overlay markers.\n\nModes (standard for this skill):\n\n- **Explore mode:** Hovering over a sector shows a tooltip containing the phase name, one-sentence definition, the three classic sub-processes (e.g., Forethought: goal-setting, strategic planning, self-efficacy activation), and a sample metacognitive prompt the learner can run on themselves at that phase.\n- **Quiz mode:** A short description of a learner's behavior appears at the top (e.g., \"Before starting the problem set, she wrote down what strategy she would try first and predicted how long it would take\"); the learner clicks the SRL phase the behavior illustrates. Correct answers highlight the sector green; incorrect answers reveal the correct phase and a one-sentence explanation of the sub-process at play.\n- **Edit mode (authors only):** Drag markers to recalibrate positions on the base image; export updated `data.json`.\n\nLearning objective (Bloom level: Analyze): *Given a description of a learner's behavior, identify which SRL phase it illustrates and name the sub-process at play.*\n\nCanvas responsive via `updateCanvasSize()` as the first line of `setup()`; marker anchors preserved on resize.\n\nImplementation: Generated with the `interactive-infographic-overlay` skill. The directory `/docs/sims/zimmerman-srl-cycle/` will contain `image-prompt.md`, `data.json`, `main.html`, `index.md`, and the cycle base image."
+}

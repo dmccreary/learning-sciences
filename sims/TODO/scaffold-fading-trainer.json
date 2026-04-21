@@ -1,0 +1,14 @@
+{
+  "sim_id": "scaffold-fading-trainer",
+  "diagram_name": "Scaffold Fading Progression",
+  "chapter_number": 6,
+  "chapter_title": "Application and Transfer",
+  "chapter_dir": "06-application-transfer",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: microsim\n**sim-id:** scaffold-fading-trainer<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive p5.js MicroSim that implements the six-stage fading progression from the table above for a chosen concept (default: Bayes' rule). The canvas shows a problem statement on the left and a solution workspace on the right. The top of the canvas shows a stage indicator (1 through 6) with the current scaffold level highlighted, and a mini cognitive-load meter that reflects the extraneous-load reduction at each stage.\n\nControls (using built-in p5.js controls per project convention):\n\n- **Stage stepper buttons** — previous / next to move through the six stages on the same structural problem.\n- **Concept dropdown** — Bayes' rule, *t*-test selection, conditional probability, analogical mapping. Each concept has an authored sequence of six problems with matched structure and varied surface.\n- **Self-explain prompt toggle** — turns on or off the \"explain why this step works\" prompt after each step; data is logged so the learner can compare their own performance with and without self-explanation.\n- **Surface-variety slider** — 1 to 5; higher values swap more surface features between stages, exposing the underlying structure more aggressively.\n- **Reset button** — restart the sequence.\n\nLearning objective (Bloom level: Apply): *Given a target concept and a learner profile, choose the appropriate stage in the fading progression and justify the choice in cognitive-load terms.*\n\nCanvas responsive via `updateCanvasSize()` as first line of `setup()`; parented to the standard `<main></main>` element.\n\nImplementation: p5.js sketch in `/docs/sims/scaffold-fading-trainer/` with `main.html`, `script.js`, `local.css`, and `index.md`. Generated via the `microsim-generator` skill."
+}

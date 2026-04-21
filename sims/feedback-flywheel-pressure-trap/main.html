@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Dynamics -- Formative Flywheel vs. Summative Pressure Trap</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: white; }
+        .mermaid { max-width: 100%; }
+        h2 { color: #333; }
+    </style>
+</head>
+<body>
+    <h2>Feedback Dynamics -- Formative Flywheel vs. Summative Pressure Trap</h2>
+    <div class="mermaid">
+graph LR
+    FAF["Formative Assessment Frequency"]:::r1 -->|"+"| DSQ["Diagnostic Signal Quality"]:::shared
+    DSQ -->|"+"| IA["Instructional Adjustment"]:::r1
+    IA -->|"+ with delay"| LP["Learner Performance"]:::r1
+    LP -->|"+"| MC["Metacognitive Calibration"]:::r1
+    MC -->|"+"| FAF
+
+    SS["Summative Stakes"]:::r2 -->|"+"| PTP["Perceived Test Pressure"]:::r2
+    PTP -->|"+"| TWB["Test-Wise Behavior"]:::r2
+    TWB -->|"−"| EGL["Effort on Genuine Learning"]:::r2
+    EGL -->|"+"| LP
+    TWB -->|"−"| SNR["Signal-to-Noise Ratio of Scores"]:::r2
+    SNR -->|"+"| DSQ
+    SS -->|"−"| FAF
+
+    R1[" R1: Formative Flywheel -- reinforcing, productive "]:::looplabel
+    R2[" R2: Summative Pressure Trap -- reinforcing, corrosive "]:::looplabel
+
+    classDef r1 fill:#4A90D9,stroke:#2C5F8A,color:#fff
+    classDef r2 fill:#E8795A,stroke:#C0392B,color:#fff
+    classDef shared fill:#7B8D8E,stroke:#4A6163,color:#fff
+    classDef looplabel fill:none,stroke:none,color:#555,font-size:12px
+    </div>
+    <script>mermaid.initialize({startOnLoad: true, theme: 'default', securityLevel: 'loose'});</script>
+    <br/>
+    <a href=".">Back to Documentation</a>
+</body>
+</html>

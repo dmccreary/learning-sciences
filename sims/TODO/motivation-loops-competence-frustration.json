@@ -1,0 +1,14 @@
+{
+  "sim_id": "motivation-loops-competence-frustration",
+  "diagram_name": "The Competence Flywheel and the Frustration Brake",
+  "chapter_number": 3,
+  "chapter_title": "Motivation and Engagement",
+  "chapter_dir": "03-motivation-engagement",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: causal-loop-diagram\n**sim-id:** motivation-loops-competence-frustration<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA causal loop diagram rendered with Mermaid `flowchart LR` showing seven variable-nodes connected by polarity-labeled edges. Nodes, written as noun phrases: \"perceived competence\", \"effort invested\", \"skill growth\", \"task difficulty match\", \"frustration\", \"avoidance\", \"skill gap\".\n\nEdges and polarities:\n\n- perceived competence → effort invested (+) — confidence fuels effort\n- effort invested → skill growth (+, with delay marker ⧚) — effort takes time to become skill\n- skill growth → perceived competence (+) — visible growth raises felt competence\n- task difficulty match → perceived competence (+) — flow-channel tasks produce competence evidence\n- frustration → avoidance (+) — unpleasant states predict withdrawal\n- avoidance → skill gap (+) — skipped practice widens the gap\n- skill gap → task difficulty match (−) — a larger gap makes the next task feel harder\n- task difficulty match → frustration (−) — well-matched tasks suppress frustration\n- perceived competence → frustration (−) — confidence dampens frustration response\n\nLoop labels placed at each loop's geometric center:\n\n- **R1 — Competence flywheel (reinforcing).** perceived competence → effort → skill growth → perceived competence. When this loop spins, motivation compounds.\n- **R2 — Frustration brake (reinforcing, corrosive).** frustration → avoidance → skill gap → worse difficulty match → more frustration. When this loop spins, motivation collapses.\n\nVisual treatment: R1 nodes in cool blue; R2 nodes in warm red-orange; the shared node \"perceived competence\" drawn in a neutral tone with dual borders to signal it belongs to both loops. Delay marker ⧚ on the effort → skill growth edge. Every edge labeled with `+` or `−`.\n\nImplementation: Mermaid `flowchart LR` with `linkStyle` declarations for polarity coloring and `classDef` for loop grouping. A one-paragraph walkthrough of loop R1 in plain English accompanies the diagram in the prose that follows."
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "leitner-box-simulator",
+  "diagram_name": "Leitner Box Simulator",
+  "chapter_number": 5,
+  "chapter_title": "Knowledge Retention",
+  "chapter_dir": "05-knowledge-retention",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: microsim\n**sim-id:** leitner-box-simulator<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive p5.js MicroSim that visualizes a five-box Leitner system over many simulated review sessions. The canvas shows five labeled boxes from left to right with their review intervals (1d, 2d, 4d, 8d, 16d), a deck of cards drawn as stacked rectangles with the fraction in each box, and a time cursor that advances by day. On each review day, the cards due from that box are drawn; for each card a per-card \"true retention probability\" (set by a slider) determines correct/incorrect, which promotes or demotes it accordingly.\n\nControls (using built-in p5.js controls per project convention):\n\n- **Deck size slider** — 20 to 500 cards.\n- **Baseline retention slider** — per-review probability a card in Box \\( k \\) is answered correctly; defaults to rise with box index to approximate mastery.\n- **Forgetting-rate slider** — probability per day that a card in a high box decays enough to fail at next review.\n- **Speed slider** — simulation days per second.\n- **Play / Pause / Reset buttons**.\n- **Show-histogram checkbox** — toggles a live histogram of the card population across boxes over time.\n\nLearning objective (Bloom level: Apply): *Given a Leitner configuration, predict the steady-state distribution of cards across boxes.*\n\nCanvas responsive via `updateCanvasSize()` as first line of `setup()`; parented to the standard `<main></main>` element.\n\nImplementation: p5.js sketch in `/docs/sims/leitner-box-simulator/` with `main.html`, `script.js`, `local.css`, and `index.md`. Generated via the `microsim-generator` skill."
+}

@@ -1,0 +1,14 @@
+{
+  "sim_id": "chunking-board-recall",
+  "diagram_name": "Chunking — Novice vs. Expert Board Recall",
+  "chapter_number": 7,
+  "chapter_title": "Expertise and Mastery",
+  "chapter_dir": "07-expertise-mastery",
+  "library": "p5.js",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: microsim\n**sim-id:** chunking-board-recall<br/>\n**Library:** p5.js<br/>\n**Status:** Specified\n\nAn interactive p5.js MicroSim that lets the learner re-run a simplified version of Chase and Simon (1973) on themselves. The canvas shows an 8x8 grid; at trial start, a configuration of pieces is displayed for five seconds, then hidden, and the learner attempts to place the pieces from memory on an empty grid. The system scores correct placements per trial and plots the learner's running recall curve under two conditions.\n\nControls (using built-in p5.js controls per project convention):\n\n- **Condition dropdown** — *Meaningful position* (drawn from an authored bank of plausible mid-game configurations) or *Random position* (same piece set, positions shuffled uniformly at random).\n- **Pieces-on-board slider** — 8 to 24, so the learner can feel the point at which the meaningful-vs-random gap opens up (typically around 12–16 pieces).\n- **Show-time slider** — 2 to 10 seconds, defaulting to 5.\n- **Start trial button** — reveals the position for the show-time duration.\n- **Submit button** — scores the attempt.\n- **Reset button** — clears the running curve.\n\nAfter each trial, the MicroSim plots a small line graph of score-by-trial with a separate line per condition, making the meaningful-vs-random gap visible over roughly ten trials. A short explanatory caption names the finding — *\"Expertise recalls structure, not pieces\"* — and links back to the novice/expert table in the chapter.\n\nLearning objective (Bloom level: Analyze): *Given personal performance on meaningful and random configurations, explain why the gap between conditions diagnoses chunking capacity rather than raw memory capacity.*\n\nCanvas responsive via `updateCanvasSize()` as first line of `setup()`; parented to the standard `<main></main>` element.\n\nImplementation: p5.js sketch in `/docs/sims/chunking-board-recall/` with `main.html`, `script.js`, `local.css`, and `index.md`. Generated via the `microsim-generator` skill. The piece-set can be re-themed (chess, checkers, abstract shapes) without changing the underlying experiment structure, making the sim reusable across chapters."
+}

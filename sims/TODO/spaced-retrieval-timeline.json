@@ -1,0 +1,14 @@
+{
+  "sim_id": "spaced-retrieval-timeline",
+  "diagram_name": "Spaced Retrieval Schedule Timeline",
+  "chapter_number": 5,
+  "chapter_title": "Knowledge Retention",
+  "chapter_dir": "05-knowledge-retention",
+  "library": "Mermaid",
+  "bloom_level": null,
+  "bloom_verb": null,
+  "learning_objective": null,
+  "completion_status": "specified",
+  "extracted_date": "2026-04-20",
+  "specification": "Type: diagram\n**sim-id:** spaced-retrieval-timeline<br/>\n**Library:** Mermaid<br/>\n**Status:** Specified\n\nA horizontal Mermaid timeline (using the `gantt` or custom `flowchart LR` layout) showing a single flashcard's review schedule across a 60-day window. Initial encoding at day 0, first review at day 1, then day 3, then day 7, then day 14, then day 30, then day 60 — the classic SM-2 expanding interval pattern. Each review event is marked by a colored tick; successful reviews extend the next interval by the SM-2 ease factor, while a failed review resets the card to day-1 interval (shown as a dashed secondary track).\n\nAnnotations on each interval call out the ratio to the previous interval (1 day → 3 days is 3×; 3 → 7 is ~2.3×; 7 → 14 is 2×; 14 → 30 is ~2.1×) and the observation that the ratio approaches a constant as the schedule matures. A small inset shows the alternative Leitner-box schedule (1, 2, 4, 8, 16 days) for comparison, with each box labeled by its promotion rule.\n\nImplementation: Mermaid `flowchart LR` with custom `linkStyle` for the failure-reset track, embedded in the chapter markdown. Responsive via MkDocs Material's native Mermaid rendering."
+}
