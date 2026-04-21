@@ -1,56 +1,26 @@
 ---
 title: Zimmerman's Self-Regulated Learning Cycle
-description: Zimmerman's Self-Regulated Learning Cycle
-status: scaffold
+description: Interactive circular diagram of Zimmerman's three-phase self-regulated learning cycle with Explore and Quiz modes.
+status: implemented
 library: p5.js
-bloom_level: TBD
+bloom_level: Analyze
 ---
 
 # Zimmerman's Self-Regulated Learning Cycle
 
-!!! warning "Scaffold"
-    This MicroSim has been scaffolded from its specification. The interactive
-    implementation has not been built yet.
+<iframe src="main.html" height="620px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
-## Learning Objective
+[Run the Zimmerman SRL Cycle Fullscreen](./main.html){ .md-button .md-button--primary }
 
-TBD
+## About This MicroSim
 
-- **Bloom Level:** TBD
-- **Bloom Verb:** TBD
-- **Library:** p5.js
+An interactive circular diagram showing Zimmerman's three-phase self-regulated learning cycle: **Forethought** (planning and goal-setting), **Performance** (executing and monitoring), and **Self-Reflection** (evaluating and adapting). Each phase is color-coded and connected by curved arrows showing the clockwise flow.
 
-## Preview
+**Explore Mode:** Hover over any phase to see its definition, three classic sub-processes, and a sample metacognitive prompt learners can use at that phase.
 
-<iframe src="main.html" width="100%" height="600"></iframe>
+**Quiz Mode:** A description of a learner's behavior appears at the top. Click the SRL phase the behavior illustrates. Correct answers are confirmed with an explanation of the sub-process at play.
 
-[Run MicroSim in Fullscreen](main.html){ .md-button .md-button--primary }
-
-## Specification
-
-The full specification below is extracted from
-[Chapter 8: Measurement and Feedback](../../chapters/08-measurement-feedback/index.md).
-
-```text
-Type: interactive-infographic
-**sim-id:** zimmerman-srl-cycle<br/>
-**Library:** p5.js<br/>
-**Status:** Specified
-
-An interactive infographic overlay using the `interactive-infographic-overlay` skill. Base image: a three-sector circular cycle with arrows showing clockwise flow from *Forethought* (top) to *Performance* (lower right) to *Self-Reflection* (lower left) and back to Forethought. Each sector is a different color on a warm blue-to-orange gradient. The base image is annotation-free; all phase labels, sub-processes, and example prompts are delivered by overlay markers.
-
-Modes (standard for this skill):
-
-- **Explore mode:** Hovering over a sector shows a tooltip containing the phase name, one-sentence definition, the three classic sub-processes (e.g., Forethought: goal-setting, strategic planning, self-efficacy activation), and a sample metacognitive prompt the learner can run on themselves at that phase.
-- **Quiz mode:** A short description of a learner's behavior appears at the top (e.g., "Before starting the problem set, she wrote down what strategy she would try first and predicted how long it would take"); the learner clicks the SRL phase the behavior illustrates. Correct answers highlight the sector green; incorrect answers reveal the correct phase and a one-sentence explanation of the sub-process at play.
-- **Edit mode (authors only):** Drag markers to recalibrate positions on the base image; export updated `data.json`.
-
-Learning objective (Bloom level: Analyze): *Given a description of a learner's behavior, identify which SRL phase it illustrates and name the sub-process at play.*
-
-Canvas responsive via `updateCanvasSize()` as the first line of `setup()`; marker anchors preserved on resize.
-
-Implementation: Generated with the `interactive-infographic-overlay` skill. The directory `/docs/sims/zimmerman-srl-cycle/` will contain `image-prompt.md`, `data.json`, `main.html`, `index.md`, and the cycle base image.
-```
+**Learning Objective** (Bloom level: Analyze): *Given a description of a learner's behavior, identify which SRL phase it illustrates and name the sub-process at play.*
 
 ## Related Resources
 

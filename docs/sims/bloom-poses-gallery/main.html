@@ -3,107 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Seven Bloom Poses and When to Use Each</title>
+    <title>Bloom Poses Gallery</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.js"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #212529;
-        }
-        #container {
-            width: 100%;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-        }
-        h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #1a3a6c;
-        }
-        .placeholder {
-            border: 2px dashed #adb5bd;
-            border-radius: 8px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #6c757d;
-            margin: 20px 0;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .placeholder .badge {
-            display: inline-block;
-            background: #ffc107;
-            color: #212529;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .placeholder h2 {
-            font-size: 18px;
-            color: #495057;
-            margin-bottom: 8px;
-        }
-        .placeholder p {
-            font-size: 14px;
-            max-width: 480px;
-        }
-        .meta {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            padding-top: 12px;
-        }
-        .meta strong { color: #495057; }
+        body { margin: 0px; padding: 0px; font-family: Arial, Helvetica, sans-serif; }
     </style>
+    <script src="bloom-poses-gallery.js"></script>
 </head>
 <body>
-    <div id="container">
-        <h1>The Seven Bloom Poses and When to Use Each</h1>
-        <div class="placeholder">
-            <span class="badge">SCAFFOLD</span>
-            <h2>MicroSim Not Yet Implemented</h2>
-            <p>This MicroSim has been scaffolded from its specification but the
-            interactive content has not been built yet. See the chapter source
-            and the <code>index.md</code> in this directory for the full spec.</p>
-        </div>
-        <div class="meta">
-            <p><strong>Sim ID:</strong> bloom-poses-gallery</p>
-            <p><strong>Library:</strong> p5.js</p>
-            <p><strong>Bloom Level:</strong> TBD</p>
-            <p><strong>Learning Objective:</strong> TBD</p>
-        </div>
-    </div>
-
-    <!--
-    SPECIFICATION (from chapter index.md):
-
-    Type: interactive-infographic
-    **sim-id:** bloom-poses-gallery<br/>
-    **Library:** p5.js<br/>
-    **Status:** Specified
-    
-    An interactive infographic overlay built with the `interactive-infographic-overlay` skill. Base image: a three-by-three grid of cream-backgrounded cells (the last two cells empty) showing the seven Bloom poses — neutral, welcome, thinking, tip, warning, encouraging, celebration — in a consistent drawing style with transparent per-cell backgrounds. Each cell has a labeled border in the admonition color corresponding to the pose (primary blue for welcome, warm brown for thinking, teal for tip, red for warning, deep purple for celebration, accent orange for encourage, slate gray for neutral). The base image is annotation-free; pose names, use-cases, and admonition-type pairings come from overlay markers positioned via `data.json`.
-    
-    Modes (standard for this skill):
-    
-    - **Explore mode:** Hovering any pose reveals a tooltip with (a) the pose name, (b) the admonition type it pairs with, (c) one concrete learning moment where it fits best, and (d) the reason — in SDT or cognitive-load terms — that it's the right pose for that moment.
-    - **Quiz mode:** A short scenario appears (for example, *"The reader has just encountered a claim that contradicts their intuition and may feel defensive"*) and the reader clicks the pose that best fits. Correct answers highlight green; incorrect answers reveal the correct pose and a one-sentence explanation.
-    - **Edit mode (authors only):** Drag markers to recalibrate positions on the base image; export updated `data.json`.
-    
-    Learning objective (Bloom level: Apply): *Given a learning moment in a chapter, select the mascot pose whose pedagogical function fits best.*
-    
-    Responsive: canvas width adapts to container via `updateCanvasSize()` as the first line of `setup()`; marker anchor ratios preserved on resize.
-    
-    Implementation: Generated with the `interactive-infographic-overlay` skill. Directory `/docs/sims/bloom-poses-gallery/` contains `image-prompt.md`, `data.json`, `main.html`, `index.md`, and the annotation-free base image.
-    -->
+    <main></main>
+    <br/>
+    <a href=".">Back to Documentation</a>
 </body>
 </html>
