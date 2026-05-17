@@ -1,0 +1,3079 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A causal-loop analysis of how prior knowledge, integration, confidence, and multimedia design interact to create self-reinforcing learning dynamics. Includes three interactive feedback-loop diagrams and a full-system view.">
+      
+      
+        <meta name="author" content="Dan McCreary">
+      
+      
+        <link rel="canonical" href="https://dmccreary.github.io/learning-sciences/sims/learning-flywheel/">
+      
+      
+        <link rel="prev" href="../iteration-flywheel/">
+      
+      
+        <link rel="next" href="../learning-environment-nested-layers/">
+      
+      
+      <link rel="icon" href="../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>The Learning Flywheel — A Systems View - Learning Sciences</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/mascot.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-QGVN7X4GZQ"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-QGVN7X4GZQ",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-QGVN7X4GZQ",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta property="og:type" content="website">
+      
+        <meta property="og:title" content="The Learning Flywheel — A Systems View - Learning Sciences">
+      
+        <meta property="og:description" content="A causal-loop analysis of how prior knowledge, integration, confidence, and multimedia design interact to create self-reinforcing learning dynamics. Includes three interactive feedback-loop diagrams and a full-system view.">
+      
+        <meta property="og:image" content="https://dmccreary.github.io/learning-sciences/assets/images/social/sims/learning-flywheel/index.png">
+      
+        <meta property="og:image:type" content="image/png">
+      
+        <meta property="og:image:width" content="1200">
+      
+        <meta property="og:image:height" content="630">
+      
+        <meta property="og:url" content="https://dmccreary.github.io/learning-sciences/sims/learning-flywheel/">
+      
+        <meta name="twitter:card" content="summary_large_image">
+      
+        <meta name="twitter:title" content="The Learning Flywheel — A Systems View - Learning Sciences">
+      
+        <meta name="twitter:description" content="A causal-loop analysis of how prior knowledge, integration, confidence, and multimedia design interact to create self-reinforcing learning dynamics. Includes three interactive feedback-loop diagrams and a full-system view.">
+      
+        <meta name="twitter:image" content="https://dmccreary.github.io/learning-sciences/assets/images/social/sims/learning-flywheel/index.png">
+      
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-learning-flywheel-a-systems-view" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Learning Sciences" class="md-header__button md-logo" aria-label="Learning Sciences" data-md-component="logo">
+      
+  <img src="../../img/mascot/neutral.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learning Sciences
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The Learning Flywheel — A Systems View
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/dmccreary/learning-sciences.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Learning Sciences" class="md-nav__button md-logo" aria-label="Learning Sciences" data-md-component="logo">
+      
+  <img src="../../img/mascot/neutral.png" alt="logo">
+
+    </a>
+    Learning Sciences
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/dmccreary/learning-sciences.git" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub Repo
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-description/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Course Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../chapters/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Chapters
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    MicroSims
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            MicroSims
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aggregate-quality-dashboard/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aggregate Quality Dashboard
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analogical-mapping-explorer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Analogical Mapping Explorer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arcs-four-pillars/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ARCS Four Pillars
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authoring-pipeline-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authoring Pipeline Architecture
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authoring-pipeline-dynamics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authoring Pipeline Dynamics
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authoring-pipeline-walkthrough/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Authoring Pipeline Walkthrough
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../baddeley-working-memory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Baddeley Working Memory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../barnett-ceci-transfer-taxonomy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Barnett-Ceci Transfer Taxonomy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bjork-storage-dynamics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bjork Storage Dynamics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bloom-poses-gallery/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bloom Poses Gallery
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bloom-taxonomy-pyramid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bloom Taxonomy Pyramid
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../capstone-rubric-board/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Capstone Rubric Board
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chunking-board-recall/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chunking Board Recall
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chunking-demonstration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chunking Demonstration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cognitive-load-budget/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cognitive Load Budget
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dag-topological-reduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DAG Topological Reduction
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy-pipeline-flow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deploy Pipeline Flow
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dreyfus-skill-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dreyfus Skill Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../evidence-loop-authoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evidence Loop Authoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expertise-flywheel-plateau/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expertise Flywheel Plateau
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feedback-flywheel-pressure-trap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feedback Flywheel Pressure Trap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flow-channel-explorer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flow Channel Explorer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forgetting-curve-simulator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Forgetting Curve Simulator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graph-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graph Viewer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphic-novel-pipeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graphic Novel Pipeline
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intelligent-textbook-architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intelligent Textbook Architecture
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intelligent-textbook-components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intelligent Textbook Components
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../irt-ability-difficulty-explorer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IRT Ability-Difficulty Explorer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iteration-flywheel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Iteration Flywheel
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Learning Flywheel
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Learning Flywheel
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-core-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      The core question
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-we-start-the-schema-activation-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where we start: the schema activation chain
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r1-the-learning-flywheel" class="md-nav__link">
+    <span class="md-ellipsis">
+      R1 — The Learning Flywheel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r2-the-confidence-flywheel" class="md-nav__link">
+    <span class="md-ellipsis">
+      R2 — The Confidence Flywheel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b1-the-knowledge-gap-regulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      B1 — The Knowledge Gap Regulator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status-of-all-three-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Status of all three loops
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-the-full-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together: the full system
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leverage-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leverage points
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classroom-signals-to-watch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classroom signals to watch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval prompts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion-where-might-this-model-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion: where might this model fail?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning-environment-nested-layers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Environment Nested Layers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learning-sciences-confluence/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Sciences Confluence
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../leitner-box-simulator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leitner Box Simulator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../library-decision-tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Library Decision Tree
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../load-dynamics-loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Load Dynamics Loops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mascot-design-pipeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mascot Design Pipeline
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mascot-path-depth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mascot Path Depth
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mascot-voice-consistency-loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mascot Voice Consistency Loops
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mental-model-probe-interview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mental Model Probe Interview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../microsim-control-complexity-loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MicroSim Control Complexity Loops
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../motivation-loops-competence-frustration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Motivation Loops Competence Frustration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../power-law-learning-curve/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Power Law Learning Curve
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../psychological-safety-dynamics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Psychological Safety Dynamics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../retrieval-vs-storage-strength/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Retrieval vs Storage Strength
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rubric-analytic-vs-holistic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rubric Analytic vs Holistic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scaffold-fading-trainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scaffold Fading Trainer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sdt-three-needs-venn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SDT Three Needs Venn
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../seven-domains-coupling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Seven Domains Coupling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../seven-domains-wheel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Seven Domains Wheel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skill-dependency-graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Skill Dependency Graph
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skill-quality-flywheel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Skill Quality Flywheel
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slide-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slide Viewer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spaced-retrieval-timeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spaced Retrieval Timeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../talk-moves-decision-tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Talk Moves Decision Tree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../textbook-production-pipeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Textbook Production Pipeline
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../three-stage-memory-model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Three Stage Memory Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../token-budget-explorer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Token Budget Explorer
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transfer-dynamics-flywheel-trap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transfer Dynamics Flywheel Trap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transportation-dynamics-loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transportation Dynamics Loops
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../twelve-panel-arc-map/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Twelve Panel Arc Map
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../udl-three-principles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UDL Three Principles
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zimmerman-srl-cycle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zimmerman SRL Cycle
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zpd-three-zones/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ZPD Three Zones
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--implemented"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cld-viewer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CLD Viewer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../learning-graph/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Learning Graph
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../appendices/ctml/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Appendices
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature-checklist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feature Checklist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-core-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      The core question
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-we-start-the-schema-activation-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where we start: the schema activation chain
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r1-the-learning-flywheel" class="md-nav__link">
+    <span class="md-ellipsis">
+      R1 — The Learning Flywheel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r2-the-confidence-flywheel" class="md-nav__link">
+    <span class="md-ellipsis">
+      R2 — The Confidence Flywheel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b1-the-knowledge-gap-regulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      B1 — The Knowledge Gap Regulator
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status-of-all-three-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Status of all three loops
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-it-all-together-the-full-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Putting It All Together: the full system
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leverage-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leverage points
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classroom-signals-to-watch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classroom signals to watch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Retrieval prompts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion-where-might-this-model-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion: where might this model fail?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/dmccreary/learning-sciences.git/blob/master/docs/sims/learning-flywheel/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+    </a>
+  
+  
+
+
+<h1 id="the-learning-flywheel-a-systems-view">The Learning Flywheel — A Systems View<a class="headerlink" href="#the-learning-flywheel-a-systems-view" title="Permanent link">¶</a></h1>
+<div class="admonition mascot-thinking">
+<p class="admonition-title">Why does learning sometimes feel exponential?</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/thinking.png" data-desc-position="bottom"><img src="../../img/mascot/thinking.png" class="mascot-admonition-img" alt="Bloom thinking"></a>
+Some students seem to accelerate — each lesson snapping into place faster than the last. That's not talent. It's a flywheel. Let's build the mental model that explains it.</p>
+</div>
+<h2 id="the-core-question">The core question<a class="headerlink" href="#the-core-question" title="Permanent link">¶</a></h2>
+<p>Have you noticed that learning about a topic you already know something about feels different from starting from scratch? A biologist reading a new paper on gene regulation moves faster than a first-year student reading the same text. An experienced programmer picks up a new language in days, not months. Something is compounding.</p>
+<p>That something is <em>prior knowledge</em> — but not as a static reservoir of facts. Prior knowledge operates as a <strong>system variable</strong> that interacts with schema activation, organization, and integration in a tight feedback loop. Get the loop spinning and learning accelerates. Stall it and each lesson feels as hard as the first.</p>
+<p>This page builds that system model piece by piece. We'll trace three interconnected feedback loops and then assemble the full picture, including the single external lever — multimedia quality — that determines whether the flywheel starts spinning or stays stuck.</p>
+<hr>
+<h2 id="where-we-start-the-schema-activation-chain">Where we start: the schema activation chain<a class="headerlink" href="#where-we-start-the-schema-activation-chain" title="Permanent link">¶</a></h2>
+<p>Before any loop closes, there is a linear chain that Mayer's <em>Cognitive Theory of Multimedia Learning</em> (CTML) describes as the standard path of learning:</p>
+<ol>
+<li><strong>Select</strong> — attention filters incoming sensory information.</li>
+<li><strong>Organize</strong> — the learner structures selected information into a coherent mental representation.</li>
+<li><strong>Integrate</strong> — the organized representation is connected to existing prior knowledge in long-term memory.</li>
+</ol>
+<p>What CTML doesn't emphasize — but systems thinking reveals — is that step 3 feeds back into step 1. Every successful integration enriches the prior knowledge that makes the next round of selection, organization, and integration faster and richer. That is the feedback structure we're about to trace.</p>
+<hr>
+<h2 id="r1-the-learning-flywheel">R1 — The Learning Flywheel<a class="headerlink" href="#r1-the-learning-flywheel" title="Permanent link">¶</a></h2>
+<p>The first and most fundamental loop in the system.</p>
+<div class="cld-inline" data-src="../cld-viewer/examples/learning-flywheel-r1-cld.json" data-cld="learning-flywheel-r1-cld" style="height:520px"></div>
+
+<p><a class="md-button" href="../cld-viewer/main.html?file=learning-flywheel-r1-cld&amp;menu=true">Open R1: The Learning Flywheel Fullscreen</a></p>
+<p><strong>Prior knowledge</strong> feeds <strong>schema activation</strong> — the process of retrieving relevant frameworks from long-term memory and making them available in working memory as incoming content arrives. The more you already know about a topic, the more quickly and completely you recognize its structure. An ornithologist doesn't just see "bird" — they see a genus, feeding strategy, and migratory pattern, all activated automatically.</p>
+<p>Activated schemas guide <strong>organization quality</strong>. A learner who has activated a relevant framework can slot new ideas into it rather than treating them as isolated facts. Organization produces a coherent internal structure — the prerequisite for what comes next.</p>
+<p>Good organization enables <strong>integration depth</strong>: the richness of connections between new material and existing schemas. Deep integration is what produces durable, transferable knowledge. Shallow integration produces fragile recall that evaporates under novel conditions.</p>
+<p>Successful deep integration enriches prior knowledge — adding new nodes, new links, and refined schemas to long-term memory. With a delay (consolidation requires sleep and spaced retrieval), the loop closes: the learner enters the next lesson with richer prior knowledge than they had before, and the cycle accelerates.</p>
+<p>This is the productive flywheel. Once spinning, it is self-sustaining. The challenge for instructional design is that it doesn't start itself.</p>
+<hr>
+<h2 id="r2-the-confidence-flywheel">R2 — The Confidence Flywheel<a class="headerlink" href="#r2-the-confidence-flywheel" title="Permanent link">¶</a></h2>
+<p>The cognitive flywheel has a motivational companion that compounds its effect.</p>
+<div class="cld-inline" data-src="../cld-viewer/examples/learning-flywheel-r2-cld.json" data-cld="learning-flywheel-r2-cld" style="height:520px"></div>
+
+<p><a class="md-button" href="../cld-viewer/main.html?file=learning-flywheel-r2-cld&amp;menu=true">Open R2: The Confidence Flywheel Fullscreen</a></p>
+<p><strong>Integration success</strong> — the felt experience of understanding something — updates the learner's <strong>perceived competence</strong>. This is Bandura's self-efficacy in action: mastery experience is the strongest source of efficacy information, and efficacy is domain-specific, meaning it updates with every integration event.</p>
+<p>Higher perceived competence drives <strong>learning engagement</strong> — the depth and persistence of cognitive effort. Learners who believe they can succeed choose harder problems, generate more self-explanations, and stay with difficulty long enough for integration to complete. Low perceived competence produces the opposite: surface processing, avoidance, and early exit.</p>
+<p>Deeper engagement produces more successful integration — closing the loop. R2 is the motivational amplifier of R1. When both loops are running, a learner who integrates something new gets a double payoff: richer prior knowledge <em>and</em> higher confidence, both of which make the next lesson easier to sustain.</p>
+<p>The flip side is equally true. R2 runs just as smoothly in the destructive direction. Early failure in a unit reduces perceived competence, which reduces engagement, which produces more failure. This is the vicious cycle that turns a small prerequisite gap into a full motivational collapse.</p>
+<hr>
+<h2 id="b1-the-knowledge-gap-regulator">B1 — The Knowledge Gap Regulator<a class="headerlink" href="#b1-the-knowledge-gap-regulator" title="Permanent link">¶</a></h2>
+<p>Not all learning dynamics are reinforcing. This balancing loop is the system's self-correction mechanism.</p>
+<div class="cld-inline" data-src="../cld-viewer/examples/learning-flywheel-b1-cld.json" data-cld="learning-flywheel-b1-cld" style="height:520px"></div>
+
+<p><a class="md-button" href="../cld-viewer/main.html?file=learning-flywheel-b1-cld&amp;menu=true">Open B1: The Knowledge Gap Regulator Fullscreen</a></p>
+<p>When a learner perceives a <strong>knowledge gap</strong> — a distance between current understanding and the learning goal — <strong>study effort</strong> rises. The relationship holds within a productive zone: a gap large enough to motivate but small enough not to overwhelm.</p>
+<p>Study effort drives <strong>integration quality</strong>. Note that quality matters here more than quantity: passive re-reading fills the "study effort" box without meaningfully improving integration. Retrieval practice, self-explanation, and interleaving are the strategies that actually move the needle on quality.</p>
+<p>High-quality integration produces <strong>knowledge gain</strong> — new nodes, corrected misconceptions, refined schemas in long-term memory. And knowledge gain closes the loop with the only negative edge in the diagram: more knowledge means a smaller gap. The loop is goal-seeking and self-correcting.</p>
+<p>B1 is why motivated learners eventually master material even in poorly-designed courses: the balancing loop pulls toward closure as long as engagement holds. But it has a failure mode at both ends. A gap perceived as insurmountable triggers overwhelm and withdrawal rather than effort. A gap perceived as nonexistent triggers boredom. Both break the loop at the same edge: knowledge_gap → study_effort.</p>
+<hr>
+<h2 id="status-of-all-three-loops">Status of all three loops<a class="headerlink" href="#status-of-all-three-loops" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Loop</th>
+<th>Type</th>
+<th>Status under good instruction</th>
+<th>Status under poor instruction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R1 — Learning Flywheel</td>
+<td>Reinforcing</td>
+<td><strong>Strong, accelerating</strong> — prior knowledge builds across lessons</td>
+<td><strong>Stuck</strong> — prerequisite gaps prevent schema activation</td>
+</tr>
+<tr>
+<td>R2 — Confidence Flywheel</td>
+<td>Reinforcing</td>
+<td><strong>Strong</strong> — early success launches motivation</td>
+<td><strong>Vicious cycle</strong> — early failure produces avoidance</td>
+</tr>
+<tr>
+<td>B1 — Knowledge Gap Regulator</td>
+<td>Balancing</td>
+<td><strong>Active</strong> — effort proportional to perceived gap</td>
+<td><strong>Broken</strong> — gap too large (overwhelm) or too small (boredom)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="putting-it-all-together-the-full-system">Putting It All Together: the full system<a class="headerlink" href="#putting-it-all-together-the-full-system" title="Permanent link">¶</a></h2>
+<p>The three loops don't operate in isolation. Prior Knowledge and Integration Depth are the system's two shared hubs — every loop passes through at least one of them.</p>
+<div class="cld-inline" data-src="../cld-viewer/examples/learning-flywheel-full-cld.json" data-cld="learning-flywheel-full-cld" style="height:720px"></div>
+
+<p><a class="md-button md-button--primary" href="../cld-viewer/main.html?file=learning-flywheel-full-cld&amp;menu=true">Open Full System Fullscreen</a></p>
+<p>The diagram adds the <strong>multimedia quality</strong> lever. Multimedia quality sits outside all three loops — it is not part of any feedback cycle. But it feeds directly into Integration Depth via Extraneous Load, which makes it the most efficient point of instructional investment.</p>
+<p>Here is the causal chain from a poorly-designed slide to a stalled flywheel:</p>
+<blockquote>
+<p>Poor multimedia design → high extraneous load → less working memory available for integration → shallower integration depth → weaker schema enrichment (R1 slows) → less perceived competence (R2 weakens) → reduced engagement → still shallower integration.</p>
+</blockquote>
+<p>And in reverse:</p>
+<blockquote>
+<p>Well-designed instruction (coherent, signaled, spatially contiguous) → low extraneous load → more capacity for germane processing → deeper integration → stronger prior knowledge (R1 spinning) → integration success → higher perceived competence (R2 spinning) → more engagement → still deeper integration.</p>
+</blockquote>
+<p>The multimedia quality lever doesn't just "make the lesson clearer." It changes the operating point of two reinforcing loops simultaneously.</p>
+<hr>
+<h2 id="leverage-points">Leverage points<a class="headerlink" href="#leverage-points" title="Permanent link">¶</a></h2>
+<p>The system has several places to intervene. Ranked from most to least structural:</p>
+<ol>
+<li>
+<p><strong>Instructional design quality</strong> (Multimedia Quality node, leverage level 9). A one-time design investment reduces extraneous load for every learner, every time. Removing a decorative animation or aligning related text and diagram spatially has compounding returns.</p>
+</li>
+<li>
+<p><strong>Prior knowledge activation</strong> (Pre-lesson retrieval or advance organizer, leverage level 8). Explicitly surfacing relevant schemas before new material arrives amplifies the first edge in R1. This doesn't require new content — it requires deliberate sequencing.</p>
+</li>
+<li>
+<p><strong>Strategy substitution</strong> (edge: study_effort → integration_quality, leverage level 8). Replacing passive re-reading with retrieval practice, self-explanation, or interleaved practice changes the efficiency of B1's main action edge. Same effort, much higher integration quality.</p>
+</li>
+<li>
+<p><strong>Early success sequencing</strong> (Integration Success node in R2, leverage level 9). The R2 loop is exquisitely sensitive to its starting conditions. Instructional sequences that guarantee early integration success launch the confidence flywheel from a standing start.</p>
+</li>
+<li>
+<p><strong>Spaced retrieval</strong> (edge: integration_depth → prior_knowledge, leverage level 8). The delay in the R1 loop's closing edge is the main speed limit on the flywheel. Spaced retrieval accelerates consolidation, shortening the delay and tightening the loop.</p>
+</li>
+</ol>
+<hr>
+<h2 id="classroom-signals-to-watch">Classroom signals to watch<a class="headerlink" href="#classroom-signals-to-watch" title="Permanent link">¶</a></h2>
+<p>These observable indicators tell you which loops are running:</p>
+<ol>
+<li>
+<p><strong>Does each lesson feel easier than the last?</strong> If yes, R1 is spinning. If plateau or regression, look for a prerequisite gap in schema_activation.</p>
+</li>
+<li>
+<p><strong>Are learners choosing harder problems voluntarily?</strong> Voluntary challenge-seeking signals that R2 is running. Avoidance signals the vicious-cycle direction.</p>
+</li>
+<li>
+<p><strong>Is study time translating into integration?</strong> If students report studying a lot but test poorly, look for passive strategy use on the study_effort → integration_quality edge — the footgun of effort without quality.</p>
+</li>
+</ol>
+<hr>
+<h2 id="retrieval-prompts">Retrieval prompts<a class="headerlink" href="#retrieval-prompts" title="Permanent link">¶</a></h2>
+<p><em>Close this page and try to answer each of these before looking back.</em></p>
+<ol>
+<li>Trace the path from a poorly-designed slide to stalled prior knowledge growth. Name every node and edge along the way.</li>
+<li>R1 and R2 share one node. Which node is it, and why does that make it the most critical variable in the system?</li>
+<li>B1 is a balancing loop with one negative edge. Which edge is it, and what happens to the loop when a learner perceives the knowledge gap as insurmountable?</li>
+<li>Multimedia quality is not part of any feedback loop, yet it is the highest-leverage entry point in the system. Explain why in two sentences.</li>
+</ol>
+<hr>
+<h2 id="discussion-where-might-this-model-fail">Discussion: where might this model fail?<a class="headerlink" href="#discussion-where-might-this-model-fail" title="Permanent link">¶</a></h2>
+<p>The model above assumes that learners perceive their knowledge gap accurately — that metacognitive calibration is reasonable. That assumption fails in two well-studied ways:</p>
+<ul>
+<li><strong>The Dunning-Kruger region</strong>: novices don't know what they don't know. Their knowledge_gap signal is artificially small, so study_effort stays low despite a large actual gap. The B1 loop stalls not because the gap is insurmountable but because it is invisible.</li>
+<li><strong>Impostor syndrome</strong>: high-performing learners systematically underestimate their own prior_knowledge, perceiving a gap larger than exists. This over-drives B1 (unnecessary effort, anxiety) while the R2 loop runs weakly because integration_success never feels real.</li>
+</ul>
+<p>Both failures are metacognitive failures — errors in the knowledge_gap signal, not in the rest of the loop. Formative assessment that provides accurate external gap calibration (not just grade feedback) is the structural fix for both failure modes.</p>
+<div class="admonition mascot-warning">
+<p class="admonition-title">The passive study trap</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/warning.png" data-desc-position="bottom"><img src="../../img/mascot/warning.png" class="mascot-admonition-img" alt="Bloom warning"></a>
+Re-reading and highlighting can fill B1's study_effort node for hours without meaningfully improving integration_quality. That is not the loop working — it's the loop's action edge being bypassed. Retrieve, don't re-read.</p>
+</div>
+<hr>
+<h2 id="related-resources">Related resources<a class="headerlink" href="#related-resources" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../cognitive-load-budget/">Cognitive Load Budget MicroSim</a> — visualize how extraneous, intrinsic, and germane load trade off against working memory capacity.</li>
+<li><a href="../bjork-storage-dynamics/">Bjork Storage–Retrieval Strength Dynamics</a> — the memory model behind the R1 flywheel's closing delay.</li>
+<li><a href="../expertise-flywheel-plateau/">Expertise Flywheel and Plateau</a> — how R1 eventually generates its own balancing loop at expert levels.</li>
+<li><a href="../motivation-loops-competence-frustration/">Motivation Loops: Competence-Frustration</a> — the destructive direction of R2 in detail.</li>
+<li><a href="../baddeley-working-memory/">Baddeley Working Memory Model</a> — the cognitive architecture that the extraneous_load node competes against.</li>
+</ul>
+<div class="admonition mascot-celebration">
+<p class="admonition-title">The flywheel is yours to start</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../../img/mascot/celebration.png" data-desc-position="bottom"><img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Bloom celebrating"></a>
+The learning flywheel isn't magic — it's a system. And systems can be designed. Every instructional choice either adds friction or reduces it. Now you know which levers to pull.</p>
+</div>
+<style>
+  .cld-inline {
+    position: relative;
+    width: 100%;
+    background: aliceblue;
+    border: 2px solid blue;
+    margin-bottom: 1em;
+    overflow: hidden;
+  }
+  .cld-inline-title {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font: 24px Arial, Helvetica, sans-serif;
+    color: black;
+    pointer-events: none;
+    z-index: 10;
+  }
+</style>
+
+<script src="../cld-inline.js"></script>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../iteration-flywheel/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Iteration Flywheel">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Iteration Flywheel
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../learning-environment-nested-layers/" class="md-footer__link md-footer__link--next" aria-label="Next: Learning Environment Nested Layers">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Learning Environment Nested Layers
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Dan McCreary. All rights reserved.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.expand", "navigation.path", "navigation.prune", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "content.action.edit", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

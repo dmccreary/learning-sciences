@@ -1,0 +1,269 @@
+{
+  "metadata": {
+    "id": "learning-flywheel-full-cld",
+    "title": "Full System: The Learning Flywheel",
+    "archetype": "reinforcing-loop",
+    "description": "The complete system combining R1 (the cognitive flywheel), R2 (the confidence flywheel), and B1 (the knowledge gap regulator), plus the multimedia quality lever. Prior Knowledge and Integration Depth are the two shared hubs. Well-designed multimedia reduces extraneous cognitive load, freeing capacity for integration and getting both flywheels spinning.",
+    "version": "1.0.0",
+    "created_date": "2026-05-17",
+    "author": "Learning Sciences Textbook",
+    "tags": ["CTML", "Mayer", "self-efficacy", "self-regulation", "multimedia design", "schema theory"]
+  },
+  "nodes": [
+    {
+      "id": "prior_knowledge",
+      "label": "Prior\nKnowledge",
+      "position": {"x": 0, "y": 0},
+      "type": "stock",
+      "description": "The accumulated schemas and frameworks in long-term memory. The central hub of the system: it feeds R1 directly and is enriched by integration across both R1 and B1."
+    },
+    {
+      "id": "schema_activation",
+      "label": "Schema\nActivation",
+      "position": {"x": 220, "y": -190},
+      "type": "variable",
+      "description": "The degree to which relevant schemas are surfaced in working memory when new material arrives. Acts as the first amplifier in R1."
+    },
+    {
+      "id": "organization_quality",
+      "label": "Organization\nQuality",
+      "position": {"x": 360, "y": 20},
+      "type": "variable",
+      "description": "How well the learner structures incoming material using activated schemas as scaffolding. The bridge between schema activation and integration in R1."
+    },
+    {
+      "id": "integration_depth",
+      "label": "Integration\nDepth",
+      "position": {"x": 180, "y": 220},
+      "type": "stock",
+      "description": "The richness of new connections formed between incoming material and existing schemas. The second hub of the system: shared by R1, R2, and B1, and the target of the multimedia lever."
+    },
+    {
+      "id": "perceived_competence",
+      "label": "Perceived\nCompetence",
+      "position": {"x": -80, "y": 310},
+      "type": "variable",
+      "description": "The learner's self-efficacy in the domain. Driven by integration success (R2 input) and drives learning engagement (R2 output)."
+    },
+    {
+      "id": "learning_engagement",
+      "label": "Learning\nEngagement",
+      "position": {"x": -290, "y": 140},
+      "type": "variable",
+      "description": "The depth and persistence of cognitive effort. In R2 it feeds integration depth; in B1 it reflects study effort."
+    },
+    {
+      "id": "knowledge_gap",
+      "label": "Knowledge\nGap",
+      "position": {"x": -60, "y": -310},
+      "type": "variable",
+      "description": "Perceived distance between current and target understanding. Drives study effort in B1 and is closed by knowledge gain."
+    },
+    {
+      "id": "study_effort",
+      "label": "Study\nEffort",
+      "position": {"x": 260, "y": -280},
+      "type": "variable",
+      "description": "The quantity and quality of cognitive work invested in a study session. In B1 it is driven by knowledge gap and drives integration depth."
+    },
+    {
+      "id": "multimedia_quality",
+      "label": "Multimedia\nQuality",
+      "position": {"x": -310, "y": -200},
+      "type": "variable",
+      "description": "The instructional design quality of learning materials — adherence to CTML principles like coherence, signaling, spatial contiguity, and temporal contiguity. The key external lever that starts the flywheel."
+    },
+    {
+      "id": "extraneous_load",
+      "label": "Extraneous\nLoad",
+      "position": {"x": -140, "y": -80},
+      "type": "variable",
+      "description": "Cognitive load imposed by poor instructional design — split attention, redundancy, unnecessary decoration. Consumes working memory capacity that would otherwise be available for germane integration processing."
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_pk_sa",
+      "source": "prior_knowledge",
+      "target": "schema_activation",
+      "polarity": "positive",
+      "description": "More prior knowledge means more schemas are available for activation when new material arrives.",
+      "strength": "strong"
+    },
+    {
+      "id": "e_sa_oq",
+      "source": "schema_activation",
+      "target": "organization_quality",
+      "polarity": "positive",
+      "description": "Activated schemas scaffold the organization of incoming material.",
+      "strength": "strong"
+    },
+    {
+      "id": "e_oq_id",
+      "source": "organization_quality",
+      "target": "integration_depth",
+      "polarity": "positive",
+      "description": "Well-organized material is more easily connected to existing schemas.",
+      "strength": "strong"
+    },
+    {
+      "id": "e_id_pk",
+      "source": "integration_depth",
+      "target": "prior_knowledge",
+      "polarity": "positive",
+      "description": "Deep integration enriches long-term memory schemas (with consolidation delay).",
+      "strength": "strong",
+      "delay": {
+        "present": true,
+        "duration": "hours to days",
+        "description": "Consolidation via sleep and spaced retrieval"
+      }
+    },
+    {
+      "id": "e_id_pc",
+      "source": "integration_depth",
+      "target": "perceived_competence",
+      "polarity": "positive",
+      "description": "Successful deep integration produces a felt sense of understanding that updates self-efficacy.",
+      "strength": "strong"
+    },
+    {
+      "id": "e_pc_le",
+      "source": "perceived_competence",
+      "target": "learning_engagement",
+      "polarity": "positive",
+      "description": "Learners who believe they can succeed invest deeper cognitive effort.",
+      "strength": "strong"
+    },
+    {
+      "id": "e_le_id",
+      "source": "learning_engagement",
+      "target": "integration_depth",
+      "polarity": "positive",
+      "description": "Deeply engaged learners generate more self-explanations and stay with difficulty long enough for integration to complete.",
+      "strength": "strong"
+    },
+    {
+      "id": "e_kg_se",
+      "source": "knowledge_gap",
+      "target": "study_effort",
+      "polarity": "positive",
+      "description": "A salient knowledge gap motivates investment of study effort (within the productive zone).",
+      "strength": "moderate"
+    },
+    {
+      "id": "e_se_id",
+      "source": "study_effort",
+      "target": "integration_depth",
+      "polarity": "positive",
+      "description": "High-quality study effort (retrieval practice, elaboration, interleaving) drives deeper integration.",
+      "strength": "strong"
+    },
+    {
+      "id": "e_pk_kg",
+      "source": "prior_knowledge",
+      "target": "knowledge_gap",
+      "polarity": "negative",
+      "description": "As prior knowledge grows, the perceived gap between current and target understanding shrinks — closing the B1 loop.",
+      "strength": "strong"
+    },
+    {
+      "id": "e_mq_el",
+      "source": "multimedia_quality",
+      "target": "extraneous_load",
+      "polarity": "negative",
+      "description": "Well-designed multimedia (coherent, signaled, spatially and temporally contiguous) reduces extraneous cognitive load imposed on the learner.",
+      "strength": "strong"
+    },
+    {
+      "id": "e_el_id",
+      "source": "extraneous_load",
+      "target": "integration_depth",
+      "polarity": "negative",
+      "description": "High extraneous load consumes working memory capacity that would otherwise be available for germane integration processing.",
+      "strength": "strong"
+    }
+  ],
+  "loops": [
+    {
+      "id": "R1",
+      "type": "reinforcing",
+      "label": "R1: The Learning Flywheel",
+      "description": "The core cognitive flywheel: prior knowledge → schema activation → organization quality → integration depth → prior knowledge. Accelerates with each successful lesson.",
+      "path": ["prior_knowledge", "schema_activation", "organization_quality", "integration_depth", "prior_knowledge"],
+      "behavior_pattern": "Compounding: each lesson makes the next lesson faster.",
+      "position": {"x": 200, "y": 30},
+      "is_primary": true
+    },
+    {
+      "id": "R2",
+      "type": "reinforcing",
+      "label": "R2: The Confidence Flywheel",
+      "description": "The motivational flywheel: integration depth → perceived competence → learning engagement → integration depth. Compounds the effect of R1 by keeping learners engaged.",
+      "path": ["integration_depth", "perceived_competence", "learning_engagement", "integration_depth"],
+      "behavior_pattern": "Virtuous or vicious cycle based on early success or failure.",
+      "position": {"x": -90, "y": 210},
+      "is_primary": false
+    },
+    {
+      "id": "B1",
+      "type": "balancing",
+      "label": "B1: Knowledge Gap Regulator",
+      "description": "The self-regulation loop: knowledge gap → study effort → integration depth → prior knowledge → knowledge gap (−). Goal-seeking; decelerates as mastery approaches.",
+      "path": ["knowledge_gap", "study_effort", "integration_depth", "prior_knowledge", "knowledge_gap"],
+      "behavior_pattern": "Goal-seeking: effort is proportional to gap; decelerates as gap closes.",
+      "position": {"x": 100, "y": -150},
+      "is_primary": false
+    }
+  ],
+  "leverage_points": [
+    {
+      "target_type": "node",
+      "target_id": "multimedia_quality",
+      "leverage_level": 9,
+      "title": "Invest in Instructional Design Quality",
+      "description": "Multimedia quality is the primary external lever. It doesn't just reduce extraneous load — it shifts working memory capacity from managing poorly-designed material toward germane integration processing. A one-time design investment pays dividends every time the material is used.",
+      "intervention_strategies": [
+        "Apply CTML principles: coherence, signaling, spatial and temporal contiguity, personalization",
+        "Remove decorative elements that contribute extraneous load without adding meaning",
+        "Narrate diagrams instead of adding on-screen text (split-attention effect)"
+      ]
+    },
+    {
+      "target_type": "node",
+      "target_id": "prior_knowledge",
+      "leverage_level": 8,
+      "title": "Pre-Activate Relevant Schemas",
+      "description": "Explicit prior-knowledge activation before new instruction accelerates the R1 flywheel from its first rotation.",
+      "intervention_strategies": [
+        "Pre-lesson retrieval quiz",
+        "Advance organizer connecting new content to known frameworks",
+        "Analogical bridging from a familiar domain"
+      ]
+    }
+  ],
+  "educational_content": {
+    "discussion_questions": [
+      "The multimedia quality lever affects R1 and R2 indirectly by reducing extraneous_load. Trace the full causal path from a poorly-designed slide to the eventual impact on prior_knowledge two lessons later.",
+      "Both R1 and R2 converge on integration_depth. If integration_depth collapses (e.g., a learner hits a prerequisite gap), which loop fails first — and why?",
+      "B1 has a productive zone: gap large enough to motivate but small enough not to overwhelm. Name two instructional design choices that help keep a learner's knowledge_gap in that zone.",
+      "The R2 loop can run destructively: low integration_depth → low perceived_competence → low engagement → even lower integration_depth. What is the earliest intervention point to break that spiral?"
+    ],
+    "key_insights": [
+      "Prior Knowledge and Integration Depth are the system's two hubs — improving either one accelerates every loop simultaneously.",
+      "The multimedia quality lever is unusual: it is outside all three loops but feeds into the most influential hub (integration_depth) in both R1 and R2.",
+      "R1 and R2 are mutually reinforcing: the cognitive flywheel produces integration success that fuels the confidence flywheel, which in turn keeps the learner engaged enough to keep R1 spinning.",
+      "B1 is the system's self-correction mechanism: even without teacher intervention, a motivated learner with accurate metacognition will drive toward gap closure."
+    ],
+    "common_misconceptions": [
+      {
+        "misconception": "Adding more content (more nodes, more text, more examples) improves learning.",
+        "correction": "Adding content increases extraneous load unless the added material is directly germane to the learning goal. The CTML coherence principle — remove rather than add — is counterintuitive but empirically well-supported."
+      },
+      {
+        "misconception": "The two flywheels (R1 and R2) are independent and can be addressed separately.",
+        "correction": "R1 and R2 share the integration node. A learner who is failing cognitively (R1 not spinning) will also see R2 fail, producing both cognitive and motivational collapse simultaneously. Fixing only motivation without addressing the cognitive bottleneck rarely works."
+      }
+    ]
+  }
+}

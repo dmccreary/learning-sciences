@@ -1,0 +1,132 @@
+{
+  "metadata": {
+    "id": "learning-flywheel-b1-cld",
+    "title": "B1: The Knowledge Gap Regulator",
+    "archetype": "limits-to-growth",
+    "description": "When a learner perceives a gap between what they know and what they need to know, study effort rises. Effort drives integration quality, which produces knowledge gain. As knowledge gain accumulates, the perceived gap shrinks — closing the loop. This is a goal-seeking, self-correcting dynamic: the bigger the gap, the stronger the pull toward closing it, provided the learner stays engaged.",
+    "version": "1.0.0",
+    "created_date": "2026-05-17",
+    "author": "Learning Sciences Textbook",
+    "tags": ["self-regulation", "metacognition", "goal-setting", "desirable difficulty"]
+  },
+  "nodes": [
+    {
+      "id": "knowledge_gap",
+      "label": "Knowledge Gap",
+      "position": {"x": 300, "y": 150},
+      "type": "stock",
+      "description": "The learner's perceived distance between current understanding and the learning goal. A meaningful gap is the engine of self-regulation; a gap perceived as insurmountable triggers disengagement."
+    },
+    {
+      "id": "study_effort",
+      "label": "Study Effort",
+      "position": {"x": 450, "y": 300},
+      "type": "variable",
+      "description": "The quantity and quality of cognitive work the learner invests — time on task, use of active strategies (retrieval, elaboration, interleaving), and willingness to engage with difficult material."
+    },
+    {
+      "id": "integration_quality",
+      "label": "Integration\nQuality",
+      "position": {"x": 300, "y": 450},
+      "type": "variable",
+      "description": "The richness and durability of the connections formed between new material and existing schemas during a study session. High quality produces transferable understanding; low quality produces fragile, context-bound recall."
+    },
+    {
+      "id": "knowledge_gain",
+      "label": "Knowledge Gain",
+      "position": {"x": 150, "y": 300},
+      "type": "variable",
+      "description": "The net addition to long-term memory schemas from a study session — new nodes, new links, corrected misconceptions, and refined existing schemas."
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_kg_se",
+      "source": "knowledge_gap",
+      "target": "study_effort",
+      "polarity": "positive",
+      "description": "A salient knowledge gap motivates effort. The relationship holds up to a threshold: a gap perceived as too large triggers anxiety and withdrawal rather than sustained effort.",
+      "strength": "strong"
+    },
+    {
+      "id": "e_se_iq",
+      "source": "study_effort",
+      "target": "integration_quality",
+      "polarity": "positive",
+      "description": "Greater cognitive effort — especially through retrieval practice, self-explanation, and interleaving — produces deeper, more transferable integration than passive re-reading.",
+      "strength": "moderate"
+    },
+    {
+      "id": "e_iq_kg2",
+      "source": "integration_quality",
+      "target": "knowledge_gain",
+      "polarity": "positive",
+      "description": "High-quality integration directly produces durable knowledge gains that persist beyond the study session.",
+      "strength": "strong"
+    },
+    {
+      "id": "e_kg2_kg",
+      "source": "knowledge_gain",
+      "target": "knowledge_gap",
+      "polarity": "negative",
+      "description": "As knowledge accumulates, the learner's perceived gap shrinks — closing the balancing loop. This is the self-correcting mechanism: learning is its own reward signal.",
+      "strength": "strong"
+    }
+  ],
+  "loops": [
+    {
+      "id": "B1",
+      "type": "balancing",
+      "label": "B1: The Knowledge Gap Regulator",
+      "description": "A self-correcting loop: perceived gap drives effort, effort drives integration quality and knowledge gain, and knowledge gain closes the gap. The loop is goal-seeking — it decelerates naturally as mastery approaches. Breakdowns occur when the gap is too large (overwhelm) or too small (boredom).",
+      "path": ["knowledge_gap", "study_effort", "integration_quality", "knowledge_gain", "knowledge_gap"],
+      "behavior_pattern": "Goal-seeking: effort is proportional to perceived gap; the loop drives toward gap closure.",
+      "position": {"x": 300, "y": 300},
+      "is_primary": true
+    }
+  ],
+  "leverage_points": [
+    {
+      "target_type": "node",
+      "target_id": "knowledge_gap",
+      "leverage_level": 7,
+      "title": "Calibrate Gap Size",
+      "description": "The B1 loop requires a gap large enough to motivate effort but small enough to avoid overwhelm. Formative assessment and scaffolding are the tools that keep the gap in the productive zone.",
+      "intervention_strategies": [
+        "Use pre-assessments to surface misconceptions and calibrate starting difficulty",
+        "Scaffold with worked examples when the gap seems overwhelming",
+        "Fade scaffolds as knowledge gain closes the gap (Vygotsky ZPD)"
+      ]
+    },
+    {
+      "target_type": "edge",
+      "target_id": "e_se_iq",
+      "leverage_level": 8,
+      "title": "Replace Passive Strategies with Active Ones",
+      "description": "Re-reading and highlighting produce effort but low integration quality. Switching learners to retrieval practice, self-explanation, or elaborative interrogation dramatically increases the efficiency of the study_effort → integration_quality link.",
+      "intervention_strategies": [
+        "Replace re-reading with low-stakes retrieval quizzes",
+        "Require students to explain material in their own words before looking back",
+        "Use interleaving to force more complete retrieval on each attempt"
+      ]
+    }
+  ],
+  "educational_content": {
+    "discussion_questions": [
+      "The B1 loop assumes learners accurately perceive their knowledge gap. What happens when metacognitive calibration is poor (the Dunning-Kruger region)? Which edge in the loop breaks down first?",
+      "Both B1 and R1 share the integration node. How do the two loops interact when both are active?",
+      "The e_kg_se edge breaks down when the gap is perceived as insurmountable. What structural intervention addresses that breakage without reducing the actual gap size?"
+    ],
+    "key_insights": [
+      "Desirable difficulty lives in this loop: increasing integration_quality by making study_effort harder produces more durable knowledge_gain at the cost of slower perceived progress.",
+      "The loop is self-regulating only when metacognition is accurate — learners must be able to perceive the gap correctly for the loop to function.",
+      "B1 interacts with the R1 flywheel: as knowledge_gain feeds prior_knowledge (via R1), the same effort produces increasing integration_quality over time."
+    ],
+    "common_misconceptions": [
+      {
+        "misconception": "More study time is always better.",
+        "correction": "The loop's efficiency depends on the quality of effort, not its quantity. Passive re-reading can fill many hours on the study_effort node without meaningfully improving integration_quality."
+      }
+    ]
+  }
+}

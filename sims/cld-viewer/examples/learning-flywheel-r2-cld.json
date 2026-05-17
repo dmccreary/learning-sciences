@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "id": "learning-flywheel-r2-cld",
+    "title": "R2: The Confidence Flywheel",
+    "archetype": "reinforcing-loop",
+    "description": "Successful integration produces a felt sense of competence. Perceived competence raises motivation and willingness to engage with challenging material. Sustained engagement, in turn, produces more successful integration — closing a second, companionable flywheel that amplifies the primary learning loop.",
+    "version": "1.0.0",
+    "created_date": "2026-05-17",
+    "author": "Learning Sciences Textbook",
+    "tags": ["self-efficacy", "motivation", "engagement", "Bandura", "expectancy-value"]
+  },
+  "nodes": [
+    {
+      "id": "integration_success",
+      "label": "Integration\nSuccess",
+      "position": {"x": 300, "y": 120},
+      "type": "variable",
+      "description": "The learner's experienced and perceived success at connecting new material to prior knowledge. Success here is phenomenological — the learner feels understanding click, not just recalls a correct answer."
+    },
+    {
+      "id": "perceived_competence",
+      "label": "Perceived\nCompetence",
+      "position": {"x": 480, "y": 420},
+      "type": "variable",
+      "description": "The learner's belief in their ability to understand and succeed in the domain. Rooted in Bandura's concept of self-efficacy: not a fixed trait but a contextual judgment updated by experience."
+    },
+    {
+      "id": "learning_engagement",
+      "label": "Learning\nEngagement",
+      "position": {"x": 120, "y": 420},
+      "type": "variable",
+      "description": "The depth and persistence of cognitive effort the learner brings to a task — attending to difficult parts, generating self-explanations, seeking challenging problems rather than easy ones."
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_is_pc",
+      "source": "integration_success",
+      "target": "perceived_competence",
+      "polarity": "positive",
+      "description": "Each experience of understanding something fully updates the learner's self-efficacy upward. Success is the most reliable source of efficacy information, according to Bandura.",
+      "strength": "strong"
+    },
+    {
+      "id": "e_pc_le",
+      "source": "perceived_competence",
+      "target": "learning_engagement",
+      "polarity": "positive",
+      "description": "Learners who believe they can succeed invest more effort and choose more challenging tasks. Perceived incompetence produces avoidance, surface processing, and early exit from difficulty.",
+      "strength": "strong"
+    },
+    {
+      "id": "e_le_is",
+      "source": "learning_engagement",
+      "target": "integration_success",
+      "polarity": "positive",
+      "description": "Deeply engaged learners generate more self-explanations, catch their own misunderstandings, and stay with hard material long enough for integration to complete.",
+      "strength": "strong"
+    }
+  ],
+  "loops": [
+    {
+      "id": "R2",
+      "type": "reinforcing",
+      "label": "R2: The Confidence Flywheel",
+      "description": "A motivational reinforcing loop: successful integration builds perceived competence, which drives deeper engagement, which produces more successful integration. When R1 (the cognitive flywheel) is running, R2 compounds its effect by keeping the learner in the game.",
+      "path": ["integration_success", "perceived_competence", "learning_engagement", "integration_success"],
+      "behavior_pattern": "Virtuous or vicious cycle: early success launches escalating engagement; early failure launches escalating avoidance.",
+      "position": {"x": 300, "y": 320},
+      "is_primary": true
+    }
+  ],
+  "leverage_points": [
+    {
+      "target_type": "node",
+      "target_id": "integration_success",
+      "leverage_level": 9,
+      "title": "Engineer Early Wins",
+      "description": "The R2 flywheel is exquisitely sensitive to its starting conditions. A well-sequenced lesson that guarantees early integration success can launch the confidence loop from a standing start.",
+      "intervention_strategies": [
+        "Begin with a concept the learner can master quickly to provide a success experience",
+        "Show a worked example before asking the learner to solve independently",
+        "Use formative assessment to catch near-misses and correct them immediately"
+      ]
+    }
+  ],
+  "educational_content": {
+    "discussion_questions": [
+      "R2 can run in reverse: failure → low perceived competence → low engagement → more failure. What is the instructional intervention that breaks that negative spiral at the lowest cost?",
+      "How does the R2 flywheel interact with R1? Draw the connection between integration_depth (R1) and integration_success (R2).",
+      "Self-efficacy is domain-specific. A learner with high math self-efficacy may have low writing self-efficacy. What does this imply for transfer of the R2 flywheel across subjects?"
+    ],
+    "key_insights": [
+      "R2 is a motivational amplifier for R1: the two flywheels share the integration node and compound each other when both are running.",
+      "The loop runs equally well in the destructive direction: repeated failure is self-perpetuating.",
+      "Instructional design that sequences difficulty to guarantee early success is not coddling — it is launching the R2 flywheel."
+    ],
+    "common_misconceptions": [
+      {
+        "misconception": "Praise builds self-efficacy.",
+        "correction": "Generic praise ('you're so smart') is weakly correlated with self-efficacy and can backfire by making failure more threatening. Mastery experience — actually succeeding at a task — is the strongest driver of perceived competence."
+      }
+    ]
+  }
+}
