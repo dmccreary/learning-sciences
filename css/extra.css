@@ -438,24 +438,43 @@ iframe {
    Three-state review status for MicroSims and other pages.
    Configured in mkdocs.yml under extra.status.
 
-   - scaffold  (red)    : Specification and scaffold only
-   - generated (orange) : JavaScript generated, awaiting review
-   - approved  (green)  : Approved by Rick or another team member
+   - scaffold  (red)    : Placeholder, not yet implemented
+   - built     (orange) : Implementation complete, awaiting review
+   - approved  (green)  : Tested and approved
 
-   The default mkdocs-material .md-status icon is an info circle
-   rendered via a mask-image. We replace that mask with a solid
-   filled circle and tint it with background-color so each status
-   shows up as a colored dot in the navigation.
-*/
+   Material Community renders <span class="md-status md-status--<name>"> via
+   a CSS mask-image. We define our own --md-status--* custom properties with
+   SVG data URLs and paint them in :after, because theme.icon.status is a
+   Material Insiders-only feature and is silently ignored on community builds.
 
-.md-status--scaffold,
-.md-status--generated,
-.md-status--approved {
-    /* Solid filled circle SVG used as the icon mask */
-    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/></svg>');
-            mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/></svg>');
+   Footgun: do NOT add theme.icon.status to mkdocs.yml — it is silently
+   ignored on community Material and leaves icons as generic "i in a circle". */
+:root {
+  /* Filled circle */
+  --md-status--scaffold: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"/></svg>');
+  --md-status--built:    url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"/></svg>');
+  /* Check-circle */
+  --md-status--approved: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,16.5L18,9.5L16.59,8.09L11,13.67L7.91,10.59L6.5,12L11,16.5Z"/></svg>');
 }
 
-.md-status--scaffold  { background-color: #e53935; } /* red    */
-.md-status--generated { background-color: #fb8c00; } /* orange */
-.md-status--approved  { background-color: #43a047; } /* green  */
+.md-status--scaffold:after {
+  background-color: #d32f2f; /* red — scaffold, not yet implemented */
+  -webkit-mask-image: var(--md-status--scaffold);
+          mask-image: var(--md-status--scaffold);
+}
+.md-status--built:after {
+  background-color: #f57c00; /* orange — built, awaiting review */
+  -webkit-mask-image: var(--md-status--built);
+          mask-image: var(--md-status--built);
+}
+.md-status--approved:after {
+  background-color: #388e3c; /* green — approved */
+  -webkit-mask-image: var(--md-status--approved);
+          mask-image: var(--md-status--approved);
+}
+
+/* Pin hover color to a darker shade so Material's default hover rule
+   (which sets background to currentcolor) doesn't erase the status color. */
+.md-status--scaffold:hover:after { background-color: #b71c1c; }
+.md-status--built:hover:after    { background-color: #ef6c00; }
+.md-status--approved:hover:after { background-color: #1b5e20; }

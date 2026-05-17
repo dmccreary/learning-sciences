@@ -1,0 +1,25 @@
+{
+  "title": "Bjork's Storage Dynamics — Flywheel and Ease Trap (vis-network)",
+  "description": "Interactive vis-network causal loop diagram of Bjork's storage and retrieval strength dynamics — the productive Storage Flywheel (R1) and the corrosive Ease Trap (R2).",
+  "creator": "Learning Sciences Textbook",
+  "date": "2026-05-17",
+  "subject": [
+    "memory",
+    "desirable-difficulties",
+    "spaced-practice",
+    "retrieval-strength",
+    "storage-strength"
+  ],
+  "type": "Interactive Simulation",
+  "format": "text/html",
+  "language": "en-US",
+  "rights": "CC BY 4.0",
+  "identifier": "bjork-storage-dynamics-vis",
+  "library": "vis-network",
+  "bloomLevel": "Analyze",
+  "bloomVerb": "Model",
+  "completion_status": "complete",
+  "chapter_number": 5,
+  "chapter_title": "Knowledge Retention",
+  "chapter_dir": "05-knowledge-retention"
+}
