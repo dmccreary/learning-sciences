@@ -8,8 +8,6 @@ version: 0.07
 
 # Foundations of Learning Sciences
 
-[Slides](slides/){ .md-button } [Slides in Viewer](../../sims/slide-viewer/main.html?src=../../chapters/01-foundations/slides/){ .md-button .md-button--primary }
-
 !!! mascot-welcome "Welcome — Let's Build a Mental Model"
     <img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Bloom the elephant waving welcome">
     Hi — I'm Bloom, and I'll be walking through this book with you. You'll see me at the start of every chapter to introduce what we're about to cover and the question we're chasing. Along the way I'll drop in with **tips** when there's a small move that makes a big difference, **think out loud** with you when a concept has a subtle twist, and **flag pitfalls** before you step into them. When the material gets genuinely hard — and some of it will — I'll offer **encouragement** and remind you that the struggle is where the learning lives. And at the end of each chapter, I'll show up to **celebrate** what you've built so far, because noticing progress is itself a learning-science intervention. Our first job, right here, is to map the territory: what Learning Sciences actually *is*, and what tools we'll use to build intelligent textbooks with it. Let's build a mental model.
@@ -340,3 +338,11 @@ We now have the territory (Learning Sciences and its parent disciplines), the vo
 !!! mascot-celebration "One Foundation Down"
     <img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Bloom the elephant celebrating with trunk raised">
     You now have the working mental map we'll build on for the rest of the book. Next up: the Seven Domains — the framework that will let us say *exactly* which part of learning each later chapter is about. See you there.
+
+---
+
+## Slides for this chapter
+
+If you would prefer the slide-deck view of this chapter, or want to present it in a class or workshop:
+
+[Slides](slides.md){ .md-button } [Slides in Viewer](../../sims/slide-viewer/main.html?src=../../chapters/01-foundations/slides/){ .md-button .md-button--primary }

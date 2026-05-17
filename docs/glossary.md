@@ -256,6 +256,14 @@ Cognitive load theory is the single most actionable framework in this textbook. 
 
 **Example:** The expertise reversal effect — where instructional scaffolding that helps novices actually hinders experts — predicted and explained by cognitive load theory.
 
+#### Cognitive Theory of Multimedia Learning (CTML)
+
+A theoretical framework developed by Richard Mayer that explains how people learn more deeply from words and pictures presented together than from words alone — provided the presentation respects the brain's limited-capacity dual-channel architecture. CTML is grounded in three cognitive assumptions (dual-channel, limited-capacity, and active-processing) and derives twelve empirically-tested design principles for instructional multimedia.
+
+CTML is the bridge between cognitive architecture and instructional design. It takes the channel model from Dual Coding Theory and the capacity constraint from Cognitive Load Theory, then translates both into a concrete checklist of dos and don'ts that any textbook designer can apply.
+
+**Example:** Placing a diagram's explanatory caption directly beside the element it describes (spatial contiguity principle) rather than in a footnote at the bottom of the page, reducing the eye-travel that otherwise wastes working-memory capacity.
+
 #### Cognitive Science
 
 The scientific study of mental processes including perception, attention, memory, language, reasoning, and problem solving, drawing on psychology, neuroscience, linguistics, and artificial intelligence.

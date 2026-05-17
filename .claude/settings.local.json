@@ -33,7 +33,12 @@
       "Bash(md5 -q /Users/dan/Documents/ws/learning-sciences/docs/sims/graph-viewer/local.css ~/.claude/skills/book-installer/references/assets/local.css)",
       "Bash(md5 -q /Users/dan/Documents/ws/learning-sciences/docs/sims/graph-viewer/index.md ~/.claude/skills/book-installer/references/assets/index.md)",
       "Bash(python ~/.claude/skills/book-installer/scripts/generate-feature-checklist.py .)",
-      "Bash(python3 -c \"import json; json.load\\(open\\('/Users/dan/.claude/settings.json'\\)\\)\")"
+      "Bash(python3 -c \"import json; json.load\\(open\\('/Users/dan/.claude/settings.json'\\)\\)\")",
+      "WebFetch(domain:docs.claude.com)",
+      "WebFetch(domain:www.anthropic.com)",
+      "Bash(/Users/dan/Documents/ws/claude-skills/src/image-generation/generate-cover.sh --local-prompt)",
+      "Bash(python /Users/dan/Documents/ws/claude-skills/src/image-generation/generate-cover-openai.py --help)",
+      "Bash(mkdocs build *)"
     ]
   }
 }

@@ -1,4 +1,4 @@
-[Content](../){ .md-button } [Slides in Viewer](../../../sims/slide-viewer/main.html?src=../../chapters/03-motivation-engagement/slides/){ .md-button .md-button--primary }
+[Content](../index.md){ .md-button } [Slides in Viewer](../../sims/slide-viewer/main.html?src=../../chapters/03-motivation-engagement/slides/){ .md-button .md-button--primary }
 
 # Motivation and Engagement
 

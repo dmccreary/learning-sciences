@@ -8,8 +8,6 @@ version: 0.07
 
 # The Seven Domains Framework
 
-[Slides](slides/){ .md-button } [Slides in Viewer](../../sims/slide-viewer/main.html?src=../../chapters/02-seven-domains/slides/){ .md-button .md-button--primary }
-
 !!! mascot-welcome "Welcome — The Spine of the Whole Book"
     <img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Bloom the elephant waving welcome">
     This chapter is short on purpose. Our job here is to install one mental model — the Seven Domains — that every later chapter will hang off of. Once you can see the whole system at a glance, the rest of the book will feel less like a list of findings and more like a map.
@@ -222,3 +220,11 @@ We now have the spine. Every domain after this one is a pass through that spine 
 !!! mascot-celebration "Framework Installed"
     <img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Bloom the elephant celebrating">
     You now have the map. From here on, every chapter fits somewhere on it. On to Motivation — the domain that decides whether any of the others get a chance.
+
+---
+
+## Slides for this chapter
+
+If you would prefer the slide-deck view of this chapter, or want to present it in a class or workshop:
+
+[Slides](slides.md){ .md-button } [Slides in Viewer](../../sims/slide-viewer/main.html?src=../../chapters/02-seven-domains/slides/){ .md-button .md-button--primary }

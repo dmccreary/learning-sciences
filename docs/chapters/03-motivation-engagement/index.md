@@ -8,8 +8,6 @@ version: 0.07
 
 # Motivation and Engagement
 
-[Slides](slides/){ .md-button } [Slides in Viewer](../../sims/slide-viewer/main.html?src=../../chapters/03-motivation-engagement/slides/){ .md-button .md-button--primary }
-
 !!! mascot-welcome "Welcome — The Gate Before Every Other Gate"
     <img src="../../img/mascot/welcome.png" class="mascot-admonition-img" alt="Bloom the elephant waving welcome">
     Every chapter that follows this one assumes a learner who has already decided to show up and try. That decision is not automatic — it is the outcome of a small, quiet cluster of processes that the learning sciences have studied for half a century. In this chapter we map that cluster. By the end you will know the levers a textbook author can pull to earn the learner's engagement, and the footguns that make motivation evaporate without anyone noticing. Let's build a mental model.
@@ -371,3 +369,11 @@ Motivation opens the gate. What comes through the gate next is information — a
 !!! mascot-celebration "Gate Open — On to the Architecture"
     <img src="../../img/mascot/celebration.png" class="mascot-admonition-img" alt="Bloom the elephant celebrating with trunk raised">
     You now have the motivation toolkit — SDT, flow, mindsets, self-efficacy, curiosity, and ARCS as the design synthesis — and a set of textbook moves that pull on all of them at once. Next up: the cognitive architecture that everything we've motivated the learner to engage with has to fit inside. See you in Chapter 4.
+
+---
+
+## Slides for this chapter
+
+If you would prefer the slide-deck view of this chapter, or want to present it in a class or workshop:
+
+[Slides](slides.md){ .md-button } [Slides in Viewer](../../sims/slide-viewer/main.html?src=../../chapters/03-motivation-engagement/slides/){ .md-button .md-button--primary }

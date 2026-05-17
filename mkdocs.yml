@@ -10,6 +10,7 @@ edit_uri: 'blob/master/docs'
 # Files excluded from the build (MkDocs 1.6+)
 exclude_docs: |
   img/mascot/image-prompts.md
+  img/cover-prompt.md
   course-description-notes.md
 
 nav:
@@ -21,24 +22,51 @@ nav:
       - 1. Foundations of Learning Sciences:
           - Content: chapters/01-foundations/index.md
           - Slides: chapters/01-foundations/slides.md
+          - Quiz: chapters/01-foundations/quiz.md
       - 2. The Seven Domains Framework:
           - Content: chapters/02-seven-domains/index.md
           - Slides: chapters/02-seven-domains/slides.md
+          - Quiz: chapters/02-seven-domains/quiz.md
       - 3. Motivation and Engagement:
           - Content: chapters/03-motivation-engagement/index.md
           - Slides: chapters/03-motivation-engagement/slides.md
-      - 4. Cognitive Architecture and Load: chapters/04-cognitive-architecture/index.md
-      - 5. Knowledge Retention: chapters/05-knowledge-retention/index.md
-      - 6. Application and Transfer: chapters/06-application-transfer/index.md
-      - 7. Expertise and Mastery: chapters/07-expertise-mastery/index.md
-      - 8. Measurement and Feedback: chapters/08-measurement-feedback/index.md
-      - 9. Learning Conditions and Environment: chapters/09-learning-conditions/index.md
-      - 10. Intelligent Textbook Architecture and AI Tooling: chapters/10-textbook-architecture/index.md
-      - 11. MicroSims and Interactive Visualizations: chapters/11-microsims/index.md
-      - 12. Pedagogical Mascots and Admonitions: chapters/12-mascots-admonitions/index.md
-      - 13. Graphic Novels and Short-Form Stories: chapters/13-graphic-novels/index.md
-      - 14. AI Agent Skills for Textbook Generation: chapters/14-agent-skills/index.md
-      - 15. Capstone and Deployment: chapters/15-capstone-deployment/index.md
+          - Quiz: chapters/03-motivation-engagement/quiz.md
+      - 4. Cognitive Architecture and Load:
+          - Content: chapters/04-cognitive-architecture/index.md
+          - Quiz: chapters/04-cognitive-architecture/quiz.md
+      - 5. Knowledge Retention:
+          - Content: chapters/05-knowledge-retention/index.md
+          - Quiz: chapters/05-knowledge-retention/quiz.md
+      - 6. Application and Transfer:
+          - Content: chapters/06-application-transfer/index.md
+          - Quiz: chapters/06-application-transfer/quiz.md
+      - 7. Expertise and Mastery:
+          - Content: chapters/07-expertise-mastery/index.md
+          - Quiz: chapters/07-expertise-mastery/quiz.md
+      - 8. Measurement and Feedback:
+          - Content: chapters/08-measurement-feedback/index.md
+          - Quiz: chapters/08-measurement-feedback/quiz.md
+      - 9. Learning Conditions and Environment:
+          - Content: chapters/09-learning-conditions/index.md
+          - Quiz: chapters/09-learning-conditions/quiz.md
+      - 10. Intelligent Textbook Architecture and AI Tooling:
+          - Content: chapters/10-textbook-architecture/index.md
+          - Quiz: chapters/10-textbook-architecture/quiz.md
+      - 11. MicroSims and Interactive Visualizations:
+          - Content: chapters/11-microsims/index.md
+          - Quiz: chapters/11-microsims/quiz.md
+      - 12. Pedagogical Mascots and Admonitions:
+          - Content: chapters/12-mascots-admonitions/index.md
+          - Quiz: chapters/12-mascots-admonitions/quiz.md
+      - 13. Graphic Novels and Short-Form Stories:
+          - Content: chapters/13-graphic-novels/index.md
+          - Quiz: chapters/13-graphic-novels/quiz.md
+      - 14. AI Agent Skills for Textbook Generation:
+          - Content: chapters/14-agent-skills/index.md
+          - Quiz: chapters/14-agent-skills/quiz.md
+      - 15. Capstone and Deployment:
+          - Content: chapters/15-capstone-deployment/index.md
+          - Quiz: chapters/15-capstone-deployment/quiz.md
   
   # Interactive Simulations and Visualizations (MicroSims), Inforgraphics and Interactive Diagrams
   - MicroSims:
@@ -115,7 +143,12 @@ nav:
       - Quality Metrics: learning-graph/quality-metrics.md
       - Taxonomy Distribution: learning-graph/taxonomy-distribution.md
       - Mascot Style Guide: learning-graph/mascot-test.md
+      - Quiz Generation Report: learning-graph/quiz-generation-report.md
   
+  # Appendices
+  - Appendices:
+      - A. Cognitive Theory of Multimedia Learning: appendices/ctml.md
+
   # Supplementary Pages
   - FAQ: faq.md
   - Glossary: glossary.md
@@ -251,8 +284,8 @@ extra:
     generated: JavaScript generated, awaiting review
     approved: Approved by Dan or another team member
 
-# Google Analytics Configuration 
-  # analytics:
-    #provider: google
-    #property: 
+# Google Analytics Configuration ID G-QGVN7X4GZQ
+  analytics:
+    provider: google
+    property: G-QGVN7X4GZQ
 
