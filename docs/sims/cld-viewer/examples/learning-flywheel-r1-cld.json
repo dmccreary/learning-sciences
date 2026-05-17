@@ -1,0 +1,141 @@
+{
+  "metadata": {
+    "id": "learning-flywheel-r1-cld",
+    "title": "R1: The Learning Flywheel",
+    "archetype": "reinforcing-loop",
+    "description": "Better prior knowledge makes schema activation faster and more complete. Richer schema activation guides organization of incoming material into coherent structures. Good organization enables deeper integration — connecting new representations to what is already known. Successful integration, in turn, enriches prior knowledge for the next lesson, completing the flywheel.",
+    "version": "1.0.0",
+    "created_date": "2026-05-17",
+    "author": "Learning Sciences Textbook",
+    "tags": ["CTML", "prior knowledge", "schema theory", "integration", "multimedia learning"]
+  },
+  "nodes": [
+    {
+      "id": "prior_knowledge",
+      "label": "Prior Knowledge",
+      "position": {"x": 300, "y": 150},
+      "type": "stock",
+      "description": "The accumulated schemas, facts, and conceptual frameworks already held in long-term memory. Prior knowledge is the raw material that makes new learning possible."
+    },
+    {
+      "id": "schema_activation",
+      "label": "Schema Activation",
+      "position": {"x": 450, "y": 300},
+      "type": "variable",
+      "description": "The degree to which relevant existing schemas are retrieved and made available in working memory when new material arrives. High activation means the learner can quickly pattern-match new content to familiar structures."
+    },
+    {
+      "id": "organization_quality",
+      "label": "Organization Quality",
+      "position": {"x": 300, "y": 450},
+      "type": "variable",
+      "description": "How well the learner structures incoming information into a coherent internal representation — grouping related ideas, identifying hierarchies, and building a mental outline before integration begins."
+    },
+    {
+      "id": "integration_depth",
+      "label": "Integration Depth",
+      "position": {"x": 150, "y": 300},
+      "type": "variable",
+      "description": "The richness of connections formed between the new organized representation and the learner's existing schemas. Deep integration produces durable, transferable knowledge; shallow integration produces fragile, context-bound recall."
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_pk_sa",
+      "source": "prior_knowledge",
+      "target": "schema_activation",
+      "polarity": "positive",
+      "description": "Richer prior knowledge supplies more schemas that can be activated when new material arrives — the more you already know about a topic, the faster and more completely you recognize its structure.",
+      "strength": "strong"
+    },
+    {
+      "id": "e_sa_oq",
+      "source": "schema_activation",
+      "target": "organization_quality",
+      "polarity": "positive",
+      "description": "Activated schemas act as scaffolding for organizing new information — a learner who has activated a relevant framework can slot incoming ideas into it rather than treating them as isolated facts.",
+      "strength": "strong"
+    },
+    {
+      "id": "e_oq_id",
+      "source": "organization_quality",
+      "target": "integration_depth",
+      "polarity": "positive",
+      "description": "Well-organized new material is easier to connect to existing schemas. Disorganized input overwhelms working memory before integration can begin.",
+      "strength": "strong"
+    },
+    {
+      "id": "e_id_pk",
+      "source": "integration_depth",
+      "target": "prior_knowledge",
+      "polarity": "positive",
+      "description": "Successful deep integration adds new nodes and links to long-term memory schemas, making prior knowledge richer and more nuanced for future learning.",
+      "strength": "strong",
+      "delay": {
+        "present": true,
+        "duration": "hours to days",
+        "description": "Consolidation takes time — the newly integrated material stabilizes in long-term memory through sleep and spaced retrieval before it fully strengthens prior knowledge."
+      }
+    }
+  ],
+  "loops": [
+    {
+      "id": "R1",
+      "type": "reinforcing",
+      "label": "R1: The Learning Flywheel",
+      "description": "A productive reinforcing loop: stronger prior knowledge activates better schemas, which support better organization, which enables deeper integration, which enriches prior knowledge further. Once spinning, this flywheel accelerates. Well-designed multimedia instruction is the push that gets it started.",
+      "path": ["prior_knowledge", "schema_activation", "organization_quality", "integration_depth", "prior_knowledge"],
+      "behavior_pattern": "Compounding knowledge growth — each successful lesson makes the next lesson easier to learn.",
+      "position": {"x": 300, "y": 300},
+      "is_primary": true
+    }
+  ],
+  "leverage_points": [
+    {
+      "target_type": "node",
+      "target_id": "schema_activation",
+      "leverage_level": 7,
+      "title": "Activate Prior Knowledge Deliberately",
+      "description": "Before presenting new material, use advance organizers, concept maps, or brief retrieval prompts to surface relevant schemas. This amplifies the positive effect of whatever prior knowledge exists.",
+      "intervention_strategies": [
+        "Pre-lesson retrieval quiz covering prerequisite concepts",
+        "Advance organizer that maps new content onto a familiar structure",
+        "Worked example from a domain the learner already knows well"
+      ]
+    },
+    {
+      "target_type": "edge",
+      "target_id": "e_id_pk",
+      "leverage_level": 8,
+      "title": "Accelerate Consolidation",
+      "description": "The delay between integration and durable prior-knowledge enrichment is the main speed limit on the flywheel. Spaced retrieval practice accelerates it.",
+      "intervention_strategies": [
+        "Spaced retrieval sessions 1 day, 3 days, and 1 week after initial learning",
+        "Interleaved practice with prior-topic material",
+        "Sleep before the next lesson to allow overnight consolidation"
+      ]
+    }
+  ],
+  "educational_content": {
+    "discussion_questions": [
+      "Where does the flywheel break down for a novice learner with almost no prior knowledge? What does that imply for instructional sequencing?",
+      "If a learner has strong prior knowledge but it is incorrect (a misconception), how does that change the polarity of the schema_activation → organization_quality edge?",
+      "What is the smallest intervention that could start the flywheel spinning for a learner who has arrived at a lesson with no relevant prior knowledge?"
+    ],
+    "key_insights": [
+      "The flywheel is self-amplifying: early investment in prior knowledge pays compounding returns across lessons.",
+      "Organization is the bottleneck: even strong prior knowledge fails to drive deep integration if incoming material is disorganized.",
+      "The delay on the integration → prior_knowledge edge means spaced practice is the mechanism that closes the loop."
+    ],
+    "common_misconceptions": [
+      {
+        "misconception": "Reading and re-reading builds prior knowledge.",
+        "correction": "Re-reading feels productive but rarely adds durable links to long-term memory. Retrieval practice (recalling without looking) is what closes the integration → prior-knowledge edge and keeps the flywheel turning."
+      },
+      {
+        "misconception": "Strong prior knowledge just means knowing more facts.",
+        "correction": "Prior knowledge is structural: it is the richness and interconnectedness of schemas, not the raw count of stored facts. Two learners can recall the same number of facts but differ dramatically in how well those facts are organized for transfer."
+      }
+    ]
+  }
+}

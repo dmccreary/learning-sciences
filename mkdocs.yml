@@ -100,6 +100,7 @@ nav:
       - Intelligent Textbook Components: sims/intelligent-textbook-components/index.md
       - IRT Ability-Difficulty Explorer: sims/irt-ability-difficulty-explorer/index.md
       - Iteration Flywheel: sims/iteration-flywheel/index.md
+      - Learning Flywheel: sims/learning-flywheel/index.md
       - Learning Environment Nested Layers: sims/learning-environment-nested-layers/index.md
       - Learning Sciences Confluence: sims/learning-sciences-confluence/index.md
       - Leitner Box Simulator: sims/leitner-box-simulator/index.md
@@ -133,6 +134,7 @@ nav:
       - UDL Three Principles: sims/udl-three-principles/index.md
       - Zimmerman SRL Cycle: sims/zimmerman-srl-cycle/index.md
       - ZPD Three Zones: sims/zpd-three-zones/index.md
+      - CLD Viewer: sims/cld-viewer/index.md
   
   # Content Related to the Learning Graph and Content Generation
   - Learning Graph:
