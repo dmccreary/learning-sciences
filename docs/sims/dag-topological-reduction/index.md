@@ -1,7 +1,7 @@
 ---
 title: DAG Topological Ordering and Transitive Reduction
 description: Side-by-side comparison of a full learning graph and its transitive reduction, showing how redundant edges are removed while preserving reachability.
-status: implemented
+status: built
 library: Mermaid
 ---
 

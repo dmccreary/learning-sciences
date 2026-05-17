@@ -1,7 +1,7 @@
 ---
 title: Which Library Should I Use for This Visualization?
 description: A decision tree that routes visualization needs to the correct JavaScript library based on data type and interaction requirements.
-status: implemented
+status: built
 library: Mermaid
 ---
 

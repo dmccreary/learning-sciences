@@ -1,7 +1,7 @@
 ---
 title: Path Depth for the Mascot Image src
 description: A diagram showing how to count URL depth segments to determine the correct relative path for mascot images in MkDocs pages.
-status: implemented
+status: built
 library: Mermaid
 ---
 

@@ -80,6 +80,7 @@ nav:
       - Baddeley Working Memory: sims/baddeley-working-memory/index.md
       - Barnett-Ceci Transfer Taxonomy: sims/barnett-ceci-transfer-taxonomy/index.md
       - Bjork Storage Dynamics: sims/bjork-storage-dynamics/index.md
+      - Bjork Storage Dynamics (vis-network): sims/bjork-storage-dynamics-vis/index.md
       - Bloom Poses Gallery: sims/bloom-poses-gallery/index.md
       - Bloom Taxonomy Pyramid: sims/bloom-taxonomy-pyramid/index.md
       - Capstone Rubric Board: sims/capstone-rubric-board/index.md
@@ -150,6 +151,20 @@ nav:
   # Appendices
   - Appendices:
       - A. Cognitive Theory of Multimedia Learning: appendices/ctml.md
+
+  # Stories
+  - Stories:
+      - Overview: stories/index.md
+      - Story Ideas: stories/story-ideas.md
+      - Hermann Ebbinghaus: stories/ebbinghaus/index.md
+      - Maria Montessori: stories/montessori/index.md
+      - Lev Vygotsky: stories/vygotsky/index.md
+      - B. F. Skinner: stories/skinner/index.md
+      - Paulo Freire: stories/freire/index.md
+      - Seymour Papert: stories/papert/index.md
+      - Jaime Escalante: stories/escalante/index.md
+      - Alan Kay: stories/alan-kay/index.md
+      - Sofia's Reckoning: stories/sofia/index.md
 
   # Supplementary Pages
   - FAQ: faq.md
@@ -281,10 +296,12 @@ extra:
 
   # Page status indicators (rendered as colored dots in the left nav)
   # See docs/css/extra.css for the dot colors.
+  # Note: theme.icon.status is a Material Insiders feature — the CSS variable
+  # approach in extra.css is the load-bearing piece on community Material.
   status:
-    scaffold: Specification and scaffold only
-    generated: JavaScript generated, awaiting review
-    approved: Approved by Dan or another team member
+    scaffold: Scaffold — placeholder, not yet implemented
+    built: Built — implementation complete, awaiting review
+    approved: Approved — tested and approved
 
 # Google Analytics Configuration ID G-QGVN7X4GZQ
   analytics:

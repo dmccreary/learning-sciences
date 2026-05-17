@@ -1,14 +1,14 @@
 ---
-title: Bloom Poses Gallery
-description: Gallery of seven Bloom the Elephant mascot poses with descriptions of when and why to use each.
-status: implemented
+title: Mascot Poses Gallery
+description: Gallery of seven poses for Bloom the Elephant mascot poses with descriptions of when and why to use each.
+status: approved
 library: p5.js
 bloom_level: Apply
 ---
 
 # Bloom Poses Gallery
 
-<iframe src="main.html" height="680px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
+<iframe src="main.html" height="560px" width="100%" scrolling="no" style="border: 1px solid #ddd;"></iframe>
 
 [Run the Bloom Poses Gallery Fullscreen](./main.html){ .md-button .md-button--primary }
 

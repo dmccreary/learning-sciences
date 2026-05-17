@@ -1,7 +1,7 @@
 ---
 title: Authoring Pipeline Dynamics
 description: A causal loop diagram showing the Graph-Quality Flywheel and Token-Pressure Trap that govern authoring pipeline behavior.
-status: implemented
+status: built
 library: Mermaid
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Transportation Dynamics
 description: A causal loop diagram showing the Identification Flywheel and Accuracy-Erosion Trap that govern graphic novel effectiveness.
-status: implemented
+status: built
 library: Mermaid
 ---
 

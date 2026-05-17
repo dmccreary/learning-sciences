@@ -1,7 +1,7 @@
 ---
 title: Capstone Rubric Board
 description: Interactive rubric with 20 criteria across 5 categories for evaluating intelligent textbook chapter readiness.
-status: implemented
+status: built
 library: p5.js
 bloom_level: Evaluate
 ---

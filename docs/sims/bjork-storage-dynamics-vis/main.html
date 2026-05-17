@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bjork's Storage Dynamics — Flywheel and Ease Trap</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        #network {
+            flex: 1;
+            min-height: 0;
+            background: aliceblue;
+            position: relative;
+        }
+        /* Title overlay is appended by JS after vis-network init (pitfall #2:
+           vis wipes container.innerHTML on init, so HTML-placed overlays vanish). */
+        .diagram-title-overlay {
+            position: absolute;
+            top: 10px; left: 0; right: 0;
+            text-align: center;
+            font: bold 15px Arial, sans-serif;
+            color: #222;
+            pointer-events: none;
+            z-index: 10;
+        }
+        #details {
+            padding: 10px 14px;
+            border-top: 1px solid #ccc;
+            font-size: 13px;
+            line-height: 1.5;
+            min-height: 80px;
+            max-height: 150px;
+            overflow-y: auto;
+            background: #fafafa;
+        }
+        #details h4 { margin: 0 0 4px; font-size: 14px; }
+        #details p  { margin: 2px 0; }
+        .lbl { font-weight: bold; color: #555; }
+        .loop-box {
+            margin: 4px 0;
+            padding: 6px 8px;
+            border-radius: 3px;
+        }
+        .loop-r { border-left: 4px solid #dc3545; background: #fff5f5; }
+        .loop-b { border-left: 4px solid #28a745; background: #f5fff7; }
+        /* vis-network overrides its tooltip's white-space; reset so text wraps. */
+        .vis-tooltip {
+            max-width: 260px !important;
+            white-space: normal !important;
+            word-wrap: break-word !important;
+            line-height: 1.5 !important;
+            font-size: 13px !important;
+        }
+        a.back {
+            display: block;
+            text-align: center;
+            padding: 5px;
+            font-size: 12px;
+            color: #555;
+            border-top: 1px solid #eee;
+            text-decoration: none;
+        }
+        a.back:hover { background: #f0f0f0; }
+    </style>
+</head>
+<body>
+    <div id="network"></div>
+    <div id="details">Click a node, edge, or loop symbol to see details.</div>
+    <a class="back" href=".">&#8592; Back to Documentation</a>
+
+<script>
+// ─── CLD Data ─────────────────────────────────────────────────────────────────
+const CLD_DATA = {
+  "metadata": {
+    "id": "bjork-storage-dynamics-cld",
+    "title": "Bjork's Storage Dynamics — Flywheel and Ease Trap",
+    "archetype": "reinforcing-loops",
+    "description": "Two interacting loops from Bjork's theory of desirable difficulties. R1 (Storage Flywheel) is productive: effortful retrieval drives storage gains that compound into durable memory. R2 (Ease Trap) is corrosive: high retrieval strength breeds perceived fluency that reduces effort and starves storage growth. Retrieval Effort at Study is the shared pivot.",
+    "version": "1.0.0",
+    "created_date": "2026-05-17",
+    "author": "Learning Sciences Textbook",
+    "tags": ["memory", "desirable-difficulties", "spaced-practice", "retrieval-strength", "storage-strength"]
+  },
+  "nodes": [
+    {
+      "id": "retrieval_effort",
+      "label": "Retrieval Effort at Study",
+      "position": {"x": 300, "y": 280},
+      "type": "variable",
+      "description": "The degree of cognitive effort expended when attempting to retrieve information during a study session. High effort signals weak retrieval — and produces large storage gains."
+    },
+    {
+      "id": "storage_gain",
+      "label": "Storage Gain per Study Event",
+      "position": {"x": 490, "y": 110},
+      "type": "variable",
+      "description": "The increment in long-term storage strength produced by a single retrieval attempt. Larger gains occur when retrieval is effortful — the core desirable-difficulty mechanism."
+    },
+    {
+      "id": "storage_strength",
+      "label": "Storage Strength",
+      "position": {"x": 610, "y": 280},
+      "type": "stock",
+      "description": "The accumulated durability of a memory trace. Unlike retrieval strength, storage strength cannot decrease — it only grows with successful retrieval practice."
+    },
+    {
+      "id": "durability_memory",
+      "label": "Durability of Memory",
+      "position": {"x": 490, "y": 450},
+      "type": "variable",
+      "description": "How long a memory survives between study sessions before becoming inaccessible. High storage strength translates to high durability."
+    },
+    {
+      "id": "retrieval_strength",
+      "label": "Retrieval Strength at Next Study",
+      "position": {"x": 80, "y": 110},
+      "type": "variable",
+      "description": "How easily the memory can be retrieved at the next study opportunity. High retrieval strength makes the item feel easy, which reduces effort and suppresses storage gains."
+    },
+    {
+      "id": "perceived_fluency",
+      "label": "Perceived Fluency",
+      "position": {"x": 80, "y": 280},
+      "type": "variable",
+      "description": "The subjective feeling that material is already well-learned. Often a poor indicator of actual storage strength — high fluency can mask shallow encoding."
+    },
+    {
+      "id": "restudy_frequency",
+      "label": "Restudy Frequency",
+      "position": {"x": 80, "y": 450},
+      "type": "variable",
+      "description": "How often a learner chooses to revisit an item. High perceived fluency reduces restudy frequency, so the item is not re-encountered often enough to maintain storage."
+    }
+  ],
+  "edges": [
+    {
+      "id": "re_to_sge",
+      "source": "retrieval_effort",
+      "target": "storage_gain",
+      "polarity": "positive",
+      "strength": "strong",
+      "description": "More effortful retrieval produces larger storage gains per study event — the core desirable-difficulty mechanism."
+    },
+    {
+      "id": "sge_to_ss",
+      "source": "storage_gain",
+      "target": "storage_strength",
+      "polarity": "positive",
+      "strength": "strong",
+      "description": "Each storage gain accumulates into total storage strength."
+    },
+    {
+      "id": "ss_to_dm",
+      "source": "storage_strength",
+      "target": "durability_memory",
+      "polarity": "positive",
+      "strength": "strong",
+      "description": "Higher storage strength translates directly to more durable memory traces.",
+      "delay": {
+        "present": true,
+        "duration": "days to weeks",
+        "description": "Consolidation takes time — the full durability benefit of a study session is not immediate."
+      }
+    },
+    {
+      "id": "dm_to_re",
+      "source": "durability_memory",
+      "target": "retrieval_effort",
+      "polarity": "positive",
+      "strength": "moderate",
+      "description": "More durable memory means the learner encounters the item after a longer gap, requiring real retrieval effort — feeding the flywheel on the next review."
+    },
+    {
+      "id": "rs_to_pf",
+      "source": "retrieval_strength",
+      "target": "perceived_fluency",
+      "polarity": "positive",
+      "strength": "strong",
+      "description": "High retrieval strength makes recall feel easy, generating a sense of fluency."
+    },
+    {
+      "id": "pf_to_rsf",
+      "source": "perceived_fluency",
+      "target": "restudy_frequency",
+      "polarity": "negative",
+      "strength": "strong",
+      "description": "Perceived fluency reduces the learner's motivation to restudy — if it feels known, why revisit it?"
+    },
+    {
+      "id": "pf_to_re",
+      "source": "perceived_fluency",
+      "target": "retrieval_effort",
+      "polarity": "negative",
+      "strength": "strong",
+      "description": "High fluency leads the learner to reduce study effort — triggering shallow processing and small storage gains."
+    },
+    {
+      "id": "rs_to_sge",
+      "source": "retrieval_strength",
+      "target": "storage_gain",
+      "polarity": "negative",
+      "strength": "strong",
+      "description": "High retrieval strength (easy recall) directly suppresses storage gain — easy retrieval produces minimal long-term benefit."
+    }
+  ],
+  "loops": [
+    {
+      "id": "R1",
+      "type": "reinforcing",
+      "label": "R1: Storage Flywheel",
+      "description": "Productive reinforcing loop. Effortful retrieval → large storage gains → strong storage → durable memory → effortful retrieval at the next session. The flywheel rewards struggle.",
+      "path": ["retrieval_effort", "storage_gain", "storage_strength", "durability_memory", "retrieval_effort"],
+      "behavior_pattern": "Compounding memory durability for items reviewed after meaningful delays.",
+      "position": {"x": 465, "y": 280},
+      "is_primary": true
+    },
+    {
+      "id": "R2",
+      "type": "reinforcing",
+      "label": "R2: Ease Trap",
+      "description": "Corrosive reinforcing loop. High retrieval strength → perceived fluency → reduced retrieval effort → small storage gains. The item stays easy but durability stagnates.",
+      "path": ["retrieval_strength", "perceived_fluency", "retrieval_effort", "storage_gain"],
+      "behavior_pattern": "Persistent high fluency that masks shallow encoding and slowly decaying storage.",
+      "position": {"x": 80, "y": 195}
+    }
+  ]
+};
+
+// ─── Utilities ────────────────────────────────────────────────────────────────
+
+function wrapText(text, maxLen) {
+    if (text.length <= maxLen) return text;
+    const words = text.split(' ');
+    const lines = [];
+    let cur = '';
+    for (const w of words) {
+        if ((cur + ' ' + w).length <= maxLen) { cur += (cur ? ' ' : '') + w; }
+        else { if (cur) lines.push(cur); cur = w; }
+    }
+    if (cur) lines.push(cur);
+    return lines.join('\n');
+}
+
+// Returns a DOM element for tooltips. Passing a node (not a string) bypasses
+// vis-network's internal white-space override so text wraps correctly.
+function makeTooltip(text) {
+    if (!text) return undefined;
+    const d = document.createElement('div');
+    d.style.cssText = 'max-width:260px;white-space:normal;word-wrap:break-word;line-height:1.5;font-size:13px;padding:2px 0';
+    d.textContent = text;
+    return d;
+}
+
+// Flip tooltips that land in the title-safe zone (top 60px) down below the node.
+function attachTooltipRepositioner(container) {
+    const SAFE = 60;
+    new MutationObserver(() => {
+        const tip = container.querySelector('.vis-tooltip');
+        if (!tip) return;
+        const top = parseFloat(tip.style.top) || 0;
+        if (top < SAFE) tip.style.top = (top + (tip.offsetHeight || 80) + 16) + 'px';
+    }).observe(container, { subtree: true, attributes: true, attributeFilter: ['style'] });
+}
+
+// Custom zoom: vertical scroll passes through to the page; horizontal scroll
+// and pinch (ctrlKey) zoom. Caps per-event magnitude to prevent trackpad blowup.
+function attachCustomZoom(container) {
+    const ZOOM_PER_TICK = 0.04, MIN_SCALE = 0.1, MAX_SCALE = 5;
+    container.addEventListener('wheel', e => {
+        if (!network) return;
+        const isPinch = e.ctrlKey;
+        const isHoriz = Math.abs(e.deltaX) > Math.abs(e.deltaY) && e.deltaX !== 0;
+        if (!isPinch && !isHoriz) return;
+        e.preventDefault();
+        let delta = isPinch ? e.deltaY : e.deltaX;
+        if (e.deltaMode === 1) delta *= 16;
+        else if (e.deltaMode === 2) delta *= 400;
+        if (!delta) return;
+        const dir = delta < 0 ? 1 : -1;
+        const mag = Math.min(Math.abs(delta), 60) / 60;
+        const factor = 1 + dir * ZOOM_PER_TICK * mag;
+        const oldScale = network.getScale();
+        const newScale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, oldScale * factor));
+        if (newScale === oldScale) return;
+        const rect = container.getBoundingClientRect();
+        const ptr = network.DOMtoCanvas({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+        const view = network.getViewPosition();
+        network.moveTo({
+            scale: newScale,
+            position: {
+                x: ptr.x - (ptr.x - view.x) * (oldScale / newScale),
+                y: ptr.y - (ptr.y - view.y) * (oldScale / newScale)
+            },
+            animation: false
+        });
+    }, { passive: false });
+}
+
+// Poll with rAF until the container has real dimensions before calling cb.
+// An iframe loaded off-screen can have clientWidth=0; vis-network silently
+// fails to paint if initialized against a 0×0 container.
+function whenSized(el, cb, n) {
+    n = n || 0;
+    if (el.clientWidth > 0 && el.clientHeight > 0) { cb(); return; }
+    if (n > 600) { cb(); return; }
+    requestAnimationFrame(() => whenSized(el, cb, n + 1));
+}
+
+// ─── Node / Edge Builders ─────────────────────────────────────────────────────
+
+const NODE_COLORS = {
+    retrieval_effort:   { background: '#7B8D8E', border: '#4A6163' },
+    storage_gain:       { background: '#4A90D9', border: '#2C5F8A' },
+    storage_strength:   { background: '#4A90D9', border: '#2C5F8A' },
+    durability_memory:  { background: '#4A90D9', border: '#2C5F8A' },
+    retrieval_strength: { background: '#E8795A', border: '#C0392B' },
+    perceived_fluency:  { background: '#E8795A', border: '#C0392B' },
+    restudy_frequency:  { background: '#E8795A', border: '#C0392B' }
+};
+
+function buildVisNodes() {
+    const items = CLD_DATA.nodes.map(n => ({
+        id: n.id,
+        label: wrapText(n.label, 18),
+        x: n.position.x,
+        y: n.position.y,
+        color: {
+            background: (NODE_COLORS[n.id] || {}).background || '#ccc',
+            border:     (NODE_COLORS[n.id] || {}).border     || '#999',
+            highlight:  { background: '#fffde7', border: '#f57f17' }
+        },
+        font: { color: '#fff', size: 14, face: 'Arial' },
+        shape: 'box',
+        margin: 10,
+        borderWidth: 2,
+        shadow: true,
+        title: makeTooltip(n.description),
+        originalData: n
+    }));
+
+    // Loop annotation circles
+    CLD_DATA.loops.forEach(loop => {
+        if (!loop.position) return;
+        items.push({
+            id: 'loop_' + loop.id,
+            label: loop.id,
+            x: loop.position.x,
+            y: loop.position.y,
+            shape: 'ellipse',
+            size: 28,
+            color: {
+                background: loop.type === 'reinforcing' ? '#dc3545' : '#28a745',
+                border: '#222',
+                highlight: { background: '#fff3cd', border: '#856404' }
+            },
+            font: { color: '#fff', size: 14, face: 'Arial', bold: true },
+            title: makeTooltip(
+                (loop.type === 'reinforcing' ? 'Reinforcing Loop: ' : 'Balancing Loop: ') +
+                (loop.label || loop.id) + '\n' + (loop.description || '')
+            ),
+            isLoop: true,
+            originalData: loop
+        });
+    });
+
+    return items;
+}
+
+function buildVisEdges() {
+    return CLD_DATA.edges.map(e => ({
+        id: e.id,
+        from: e.source,
+        to: e.target,
+        label: e.polarity === 'positive' ? '+' : '−',
+        color: {
+            color:     e.polarity === 'positive' ? '#28a745' : '#dc3545',
+            highlight: 'blue'
+        },
+        font: { size: 42, strokeWidth: 2, strokeColor: 'white' },
+        arrows: { to: { enabled: true, scaleFactor: 1.2 } },
+        width: 2,
+        smooth: { type: 'curvedCW', roundness: 0.4 },
+        title: makeTooltip(
+            e.description +
+            (e.delay && e.delay.present ? '\nDelay: ' + e.delay.description : '')
+        ),
+        originalData: e
+    }));
+}
+
+// ─── Details Panel ────────────────────────────────────────────────────────────
+
+function showDetails(html) {
+    document.getElementById('details').innerHTML = html;
+}
+
+function showDefaultDetails() {
+    let html = '<p>Click a node, edge, or loop symbol to see details.</p>';
+    html += '<div style="display:flex;gap:10px;flex-wrap:wrap;">';
+    CLD_DATA.loops.forEach(loop => {
+        const isR = loop.type === 'reinforcing';
+        html += `<div class="loop-box ${isR ? 'loop-r' : 'loop-b'}" style="flex:1;min-width:200px">
+            <strong>${loop.label || loop.id}</strong><br>
+            <small>${loop.description}</small>
+        </div>`;
+    });
+    html += '</div>';
+    showDetails(html);
+}
+
+// ─── Network Init ─────────────────────────────────────────────────────────────
+
+let network = null, visNodes = null, visEdges = null;
+
+function initVis() {
+    const container = document.getElementById('network');
+
+    const options = {
+        layout:    { improvedLayout: false },
+        physics:   { enabled: false },
+        interaction: {
+            selectConnectedEdges: false,
+            zoomView: false,  // disabled — custom handler below handles zoom
+            dragView: true
+        },
+        nodes: {
+            shape: 'box', margin: 10,
+            font: { size: 14, face: 'Arial' },
+            borderWidth: 2, shadow: true
+        },
+        edges: {
+            arrows: { to: { enabled: true, scaleFactor: 1.2 } },
+            width: 2,
+            smooth: { type: 'curvedCW', roundness: 0.4 },
+            font: { size: 42, strokeWidth: 2, strokeColor: 'white' }
+        }
+    };
+
+    whenSized(container, () => {
+        visNodes = new vis.DataSet(buildVisNodes());
+        visEdges = new vis.DataSet(buildVisEdges());
+
+        network = new vis.Network(container, { nodes: visNodes, edges: visEdges }, options);
+
+        // Title overlay must be added AFTER new vis.Network() — vis wipes the
+        // container's innerHTML on init (pitfall #2).
+        const overlay = document.createElement('div');
+        overlay.className = 'diagram-title-overlay';
+        overlay.textContent = CLD_DATA.metadata.title;
+        container.appendChild(overlay);
+
+        attachCustomZoom(container);
+        attachTooltipRepositioner(container);
+
+        // Responsive redraw on container resize.
+        if (window.ResizeObserver) {
+            let lastW = 0, lastH = 0, fitted = false;
+            new ResizeObserver(entries => {
+                if (!network) return;
+                const r = entries[0].contentRect;
+                if (r.width <= 0 || r.height <= 0) return;
+                if (r.width === lastW && r.height === lastH) return;
+                lastW = r.width; lastH = r.height;
+                network.setSize(r.width + 'px', r.height + 'px');
+                network.redraw();
+                if (!fitted) { network.fit({ animation: false }); fitted = true; }
+            }).observe(container);
+        }
+
+        network.fit({ animation: { duration: 400, easingFunction: 'easeInOutQuad' } });
+
+        network.on('click', params => {
+            if (params.nodes.length) {
+                const nd = visNodes.get(params.nodes[0]);
+                if (nd.isLoop) {
+                    const loop = nd.originalData;
+                    const isR = loop.type === 'reinforcing';
+                    showDetails(`<div class="loop-box ${isR ? 'loop-r' : 'loop-b'}">
+                        <h4>${loop.label || loop.id}</h4>
+                        <p><span class="lbl">Type:</span> ${isR ? 'Reinforcing (R)' : 'Balancing (B)'}</p>
+                        <p><span class="lbl">Description:</span> ${loop.description}</p>
+                        ${loop.behavior_pattern ? `<p><span class="lbl">Behavior:</span> ${loop.behavior_pattern}</p>` : ''}
+                        ${loop.path ? `<p><span class="lbl">Path:</span> ${loop.path.join(' → ')}</p>` : ''}
+                    </div>`);
+                } else {
+                    const n = nd.originalData;
+                    showDetails(`<h4>${n.label}</h4>
+                        <p><span class="lbl">Type:</span> ${n.type}</p>
+                        <p><span class="lbl">Description:</span> ${n.description}</p>`);
+                }
+            } else if (params.edges.length) {
+                const ed = visEdges.get(params.edges[0]);
+                const e = ed.originalData;
+                const src = CLD_DATA.nodes.find(n => n.id === e.source);
+                const tgt = CLD_DATA.nodes.find(n => n.id === e.target);
+                showDetails(`<h4>Causal Link</h4>
+                    <p><span class="lbl">From:</span> ${src ? src.label : e.source}</p>
+                    <p><span class="lbl">To:</span> ${tgt ? tgt.label : e.target}</p>
+                    <p><span class="lbl">Polarity:</span> ${e.polarity === 'positive'
+                        ? 'Positive (+) — when source rises, target rises'
+                        : 'Negative (−) — when source rises, target falls'}</p>
+                    <p><span class="lbl">Description:</span> ${e.description}</p>
+                    ${e.delay && e.delay.present
+                        ? `<p><span class="lbl">Delay:</span> ${e.delay.description}</p>`
+                        : ''}
+                `);
+            } else {
+                showDefaultDetails();
+            }
+        });
+
+        showDefaultDetails();
+    });
+}
+
+window.addEventListener('load', initVis);
+</script>
+</body>
+</html>

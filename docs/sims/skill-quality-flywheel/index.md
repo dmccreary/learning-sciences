@@ -1,7 +1,7 @@
 ---
 title: The Skill-Quality Flywheel
 description: A causal loop diagram showing how skill invocation, edge cases, description precision, trigger accuracy, and author trust form a reinforcing flywheel, with maintenance burden as the drag variable.
-status: implemented
+status: built
 library: Mermaid
 ---
 

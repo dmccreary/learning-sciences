@@ -1,7 +1,7 @@
 ---
 title: UDL Three Principles
 description: Interactive display of Universal Design for Learning's three principles with checkable examples and quiz mode.
-status: implemented
+status: built
 library: p5.js
 bloom_level: Apply
 ---

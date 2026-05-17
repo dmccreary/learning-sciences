@@ -1,7 +1,7 @@
 ---
 title: The Iteration Flywheel
 description: A causal loop diagram showing how ship cadence, reader feedback, peer review, revision rate, chapter quality, and reader trust form a reinforcing flywheel, with the ship-and-forget brake as the anti-pattern.
-status: implemented
+status: built
 library: Mermaid
 ---
 

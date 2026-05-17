@@ -1,7 +1,7 @@
 ---
 title: The Textbook Production Pipeline
 description: A five-band flowchart showing how fourteen agent skills are organized from structural foundation through content authoring, derived artifacts, engagement artifacts, to audit and publication.
-status: implemented
+status: built
 library: Mermaid
 ---
 

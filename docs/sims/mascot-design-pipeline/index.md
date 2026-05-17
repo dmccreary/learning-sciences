@@ -1,7 +1,7 @@
 ---
 title: The Mascot Design Pipeline
 description: A six-step pipeline diagram showing how to design a pedagogical mascot from persona one-pager through consistency audit, with artifact labels and an audit feedback loop.
-status: implemented
+status: built
 library: Mermaid
 ---
 

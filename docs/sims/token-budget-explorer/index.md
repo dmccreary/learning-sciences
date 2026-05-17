@@ -1,7 +1,7 @@
 ---
 title: Token Budget Explorer
 description: Interactive budget calculator showing token costs, context window usage, and prompt cache timing.
-status: implemented
+status: built
 library: p5.js
 bloom_level: Apply
 ---

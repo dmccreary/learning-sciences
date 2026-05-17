@@ -1,7 +1,7 @@
 ---
 title: Intelligent Textbook Architecture
 description: Layered architecture diagram showing the components of an intelligent textbook from learning graph to deployment.
-status: implemented
+status: built
 library: p5.js
 bloom_level: Apply
 ---

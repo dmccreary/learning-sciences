@@ -1,7 +1,7 @@
 ---
 title: The Authoring Pipeline - Prompt to Published Site
 description: A flowchart showing the six stages of the authoring pipeline from author prompt through IDE harness, agent skill, markdown files, MkDocs build, to deployed site, with control surfaces labeled.
-status: implemented
+status: built
 library: Mermaid
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Voice-Consistency Dynamics
 description: A causal loop diagram showing the Voice-Consistency Flywheel and Voice-Drift Trap that govern mascot effectiveness across chapters.
-status: implemented
+status: built
 library: Mermaid
 ---
 

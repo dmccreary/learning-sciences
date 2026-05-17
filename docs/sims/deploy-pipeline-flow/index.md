@@ -1,7 +1,7 @@
 ---
 title: The Deploy Pipeline from Source to Live Site
 description: A five-stage deployment flowchart from markdown source through MkDocs build, git push, gh-deploy, to GitHub Pages, with three failure-mode callouts.
-status: implemented
+status: built
 library: Mermaid
 ---
 

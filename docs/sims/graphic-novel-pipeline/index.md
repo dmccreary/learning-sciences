@@ -1,7 +1,7 @@
 ---
 title: The Graphic Novel Production Pipeline
 description: A five-step pipeline diagram showing how to produce a graphic novel chapter from historical figure selection through accuracy check and assembly.
-status: implemented
+status: built
 library: Mermaid
 ---
 

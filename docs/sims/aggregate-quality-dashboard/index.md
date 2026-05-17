@@ -1,7 +1,7 @@
 ---
 title: Aggregate Quality-Metrics Dashboard
 description: Chart.js dashboard with four panels showing synthetic quality metrics across chapters.
-status: implemented
+status: built
 library: Chart.js
 bloom_level: Analyze
 ---

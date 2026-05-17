@@ -1,7 +1,7 @@
 ---
 title: Zone of Proximal Development
 description: Three concentric circles representing Vygotsky's ZPD with a scaffolding slider and quiz mode.
-status: implemented
+status: built
 library: p5.js
 bloom_level: Apply
 ---

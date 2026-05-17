@@ -162,7 +162,7 @@ function draw() {
   textSize(16);
   textAlign(CENTER, TOP);
   textStyle(BOLD);
-  text('The Seven Bloom Poses', canvasWidth / 2, 10);
+  text('The Seven Poses for the Bloom the Elephant Mascot', canvasWidth / 2, 10);
   textStyle(NORMAL);
   textSize(11);
   fill('#666');

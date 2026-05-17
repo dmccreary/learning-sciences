@@ -1,7 +1,7 @@
 ---
 title: Zimmerman's Self-Regulated Learning Cycle
 description: Interactive circular diagram of Zimmerman's three-phase self-regulated learning cycle with Explore and Quiz modes.
-status: implemented
+status: built
 library: p5.js
 bloom_level: Analyze
 ---

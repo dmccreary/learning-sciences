@@ -1,7 +1,7 @@
 ---
 title: Skill Dependency Graph
 description: A flowchart showing all fourteen agent skills as nodes with edges where one skill's output is a required input of another, centered on the learning-graph-generator hub.
-status: implemented
+status: built
 library: Mermaid
 ---
 

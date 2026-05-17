@@ -1,7 +1,7 @@
 ---
 title: Twelve-Panel Story Arc Map
 description: Interactive 4x3 grid showing the 12-panel story arc structure for graphic novel narratives.
-status: implemented
+status: built
 library: p5.js
 bloom_level: Apply
 ---

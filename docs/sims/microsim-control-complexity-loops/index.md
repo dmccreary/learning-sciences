@@ -1,7 +1,7 @@
 ---
 title: Control Complexity Dynamics
 description: A causal loop diagram showing the Scaffolded-Exploration Flywheel and Cognitive-Overload Trap that govern MicroSim control design.
-status: implemented
+status: built
 library: Mermaid
 ---
 

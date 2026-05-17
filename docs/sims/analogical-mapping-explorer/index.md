@@ -1,6 +1,7 @@
 ---
 title: Analogical Mapping Explorer
 description: Interactive structure-mapping visualization where learners drag connections between source and target domain elements and receive feedback on relational vs. surface matches.
+status: approved
 ---
 
 # Analogical Mapping Explorer
