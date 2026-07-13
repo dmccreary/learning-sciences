@@ -1,0 +1,563 @@
+{
+  "project": {
+    "title": "Learning Sciences",
+    "subtitle": "Auto-scanned intelligent textbook",
+    "author": "Dan McCreary",
+    "costPerMTokens": 15,
+    "sessionBudget": {
+      "pro": 900000,
+      "max": 3500000
+    }
+  },
+  "sections": {
+    "scaffold": {
+      "status": "published",
+      "tokensTarget": 2000,
+      "tokensDone": 2000
+    },
+    "course-description": {
+      "status": "published",
+      "tokensTarget": 4000,
+      "tokensDone": 2749
+    },
+    "learning-graph": {
+      "status": "published",
+      "tokensTarget": 20000,
+      "tokensDone": 20000
+    },
+    "chapter-structure": {
+      "status": "published",
+      "tokensTarget": 15000,
+      "tokensDone": 15000
+    },
+    "chapter-content": {
+      "countLabel": "15 chapters",
+      "children": [
+        {
+          "n": 1,
+          "title": "Foundations of Learning Sciences",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 2,
+          "title": "The Seven Domains Framework",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 3,
+          "title": "Motivation and Engagement",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 4,
+          "title": "Cognitive Architecture and Load",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 5,
+          "title": "Knowledge Retention",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 6,
+          "title": "Application and Transfer",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 7,
+          "title": "Expertise and Mastery",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 8,
+          "title": "Measurement and Feedback",
+          "status": "reviewed",
+          "tokens": 12497
+        },
+        {
+          "n": 9,
+          "title": "Learning Conditions and Environment",
+          "status": "reviewed",
+          "tokens": 12014
+        },
+        {
+          "n": 10,
+          "title": "Intelligent Textbook Architecture and AI Tooling",
+          "status": "reviewed",
+          "tokens": 15129
+        },
+        {
+          "n": 11,
+          "title": "MicroSims and Interactive Visualizations",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 12,
+          "title": "Pedagogical Mascots and Admonitions",
+          "status": "reviewed",
+          "tokens": 10506
+        },
+        {
+          "n": 13,
+          "title": "Graphic Novels and Short-Form Stories",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 14,
+          "title": "AI Agent Skills for Textbook Generation",
+          "status": "reviewed",
+          "tokens": 10000
+        },
+        {
+          "n": 15,
+          "title": "Capstone and Deployment",
+          "status": "reviewed",
+          "tokens": 10000
+        }
+      ]
+    },
+    "chapter-images": {
+      "status": "published",
+      "tokensTarget": 8000,
+      "tokensDone": 8000
+    },
+    "microsims": {
+      "countLabel": "64 simulations",
+      "children": [
+        {
+          "n": 1,
+          "title": "Aggregate Quality-Metrics Dashboard (Synthetic)",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 2,
+          "title": "Analogical Mapping Explorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 3,
+          "title": "ARCS as a Four-Pillar Design Audit",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 4,
+          "title": "The Authoring Pipeline \u2014 Prompt to Published Site",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 5,
+          "title": "Authoring Pipeline Dynamics \u2014 Graph-Quality Flywheel vs. Token-Pressure Trap",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 6,
+          "title": "The Authoring Pipeline in Motion",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 7,
+          "title": "Baddeley's Working-Memory Components",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 8,
+          "title": "The Barnett and Ceci Transfer Taxonomy",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 9,
+          "title": "Bjork's Storage Dynamics \u2014 Flywheel and Ease Trap",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 10,
+          "title": "Bjork's Storage Dynamics \u2014 Flywheel and Ease Trap (vis-network)",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 11,
+          "title": "The Seven Bloom Poses and When to Use Each",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 12,
+          "title": "Interactive Bloom's Taxonomy Pyramid",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 13,
+          "title": "The Interactive Capstone Rubric",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 14,
+          "title": "Chunking \u2014 Novice vs. Expert Board Recall",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 15,
+          "title": "Chunking Demonstration",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 16,
+          "title": "Cld Viewer",
+          "status": "drafted",
+          "tokens": 5000
+        },
+        {
+          "n": 17,
+          "title": "The Cognitive Load Budget",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 18,
+          "title": "A Small Learning Graph, Its Topological Ordering, and Its Transitive Reduction",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 19,
+          "title": "The Deploy Pipeline from Source to Live Site",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 20,
+          "title": "Interactive Dreyfus Five-Stage Skill Model",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 21,
+          "title": "The Evidence Loop That Disciplines AI-Generated Content",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 22,
+          "title": "Expertise Dynamics \u2014 Practice Flywheel and Automaticity Plateau",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 23,
+          "title": "Feedback Dynamics \u2014 Formative Flywheel vs. Summative Pressure Trap",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 24,
+          "title": "The Flow Channel \u2014 Challenge vs. Skill",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 25,
+          "title": "The Forgetting Curve Simulator",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 26,
+          "title": "Graph Viewer",
+          "status": "drafted",
+          "tokens": 5000
+        },
+        {
+          "n": 27,
+          "title": "The Graphic Novel Production Pipeline",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 28,
+          "title": "Intelligent Textbook Component Architecture (Level 2)",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 29,
+          "title": "Components of an Intelligent Textbook",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 30,
+          "title": "IRT Ability-vs-Difficulty Explorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 31,
+          "title": "The Iteration Flywheel",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 32,
+          "title": "Three Nested Layers of a Learning Environment",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 33,
+          "title": "Parent Disciplines of Learning Sciences",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 34,
+          "title": "Leitner Box Simulator",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 35,
+          "title": "Which Library Should I Use for This Visualization?",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 36,
+          "title": "Load Dynamics \u2014 The Extraneous Brake and the Germane Flywheel",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 37,
+          "title": "The Mascot Design Pipeline",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 38,
+          "title": "Path Depth for the Mascot Image `src`",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 39,
+          "title": "Voice-Consistency Dynamics \u2014 Flywheel and Drift Trap",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 40,
+          "title": "Mental-Model Probe Interview Flow",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 41,
+          "title": "Control Complexity Dynamics \u2014 The Scaffolded-Exploration Flywheel and the Cognitive-Overload Trap",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 42,
+          "title": "The Competence Flywheel and the Frustration Brake",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 43,
+          "title": "The Power-Law Learning Curve",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 44,
+          "title": "Psychological Safety Dynamics \u2014 Two Opposed Loops",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 45,
+          "title": "Retrieval Strength vs. Storage Strength",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 46,
+          "title": "Analytic vs. Holistic Rubric \u2014 Structure and Signal",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 47,
+          "title": "Scaffold Fading Progression",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 48,
+          "title": "Self-Determination Theory \u2014 Three Needs as a Venn Overlay",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 49,
+          "title": "The Seven Domains as a Coupled System",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 50,
+          "title": "The Seven Domains Wheel",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 51,
+          "title": "Skill Dependency Graph",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 52,
+          "title": "The Skill-Quality Flywheel",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 53,
+          "title": "Slide Viewer",
+          "status": "drafted",
+          "tokens": 5000
+        },
+        {
+          "n": 54,
+          "title": "Spaced Retrieval Schedule Timeline",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 55,
+          "title": "Talk-Moves Decision Tree for Classroom Discourse",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 56,
+          "title": "The Textbook Production Pipeline",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 57,
+          "title": "The Three-Stage Memory Model",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 58,
+          "title": "Token Budget Explorer",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 59,
+          "title": "Transfer Dynamics \u2014 Schema Flywheel and Surface-Match Trap",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 60,
+          "title": "Transportation Dynamics \u2014 Identification Flywheel and Accuracy-Erosion Trap",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 61,
+          "title": "The Twelve-Panel Story Arc Map",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 62,
+          "title": "UDL Three Principles with Checkable Representation Examples",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 63,
+          "title": "Zimmerman's Self-Regulated Learning Cycle",
+          "status": "published",
+          "tokens": 5000
+        },
+        {
+          "n": 64,
+          "title": "The Zone of Proximal Development as Three Concentric Zones",
+          "status": "published",
+          "tokens": 5000
+        }
+      ]
+    },
+    "glossary": {
+      "status": "published",
+      "tokensTarget": 24471,
+      "tokensDone": 24471
+    },
+    "faq": {
+      "status": "published",
+      "tokensTarget": 14896,
+      "tokensDone": 14896
+    },
+    "quiz": {
+      "status": "published",
+      "tokensTarget": 30000,
+      "tokensDone": 29115
+    },
+    "reference": {
+      "status": "not-started",
+      "tokensTarget": 20000,
+      "tokensDone": 0
+    },
+    "teachers-guide": {
+      "status": "not-started",
+      "tokensTarget": 15000,
+      "tokensDone": 0
+    },
+    "book-metrics": {
+      "status": "published",
+      "tokensTarget": 2000,
+      "tokensDone": 2000
+    },
+    "publish": {
+      "status": "published",
+      "tokensTarget": 10000,
+      "tokensDone": 10000
+    },
+    "stories": {
+      "status": "drafted",
+      "tokensTarget": 30000,
+      "tokensDone": 3212
+    }
+  }
+}
