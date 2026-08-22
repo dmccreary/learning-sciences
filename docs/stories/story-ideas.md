@@ -56,7 +56,7 @@ Vygotsky produced a decade of landmark work on language, thought, and social lea
 
 ### 3. What Is Learning For? *(Cross-linked — already generated)*
 
-> **Note:** This story already exists in the [Automating Instructional Design](https://dmccreary.github.io/automating-instructional-design/stories/bloom/) textbook. The `docs/stories/index.md` links there rather than duplicating the 8 panel images. See the [story-generator skill](https://dmccreary.github.io/claude-skills/skills/story-generator/) for the cross-linking workflow.
+> **Note:** This story already exists in the [Automating Instructional Design](https://dmccreary.github.io/automating-instructional-design/stories/bloom/) textbook. The `docs/stories/index.md` links there rather than duplicating the 8 panel images. See the [story-generator skill](https://dmccreary.github.io/ibook-skills/skills/story-generator/) for the cross-linking workflow.
 
 | | |
 |---|---|
@@ -194,4 +194,4 @@ Provide the story title and optionally `--panels N` to override the suggested co
 | 10 | 11 | ~$0.43 |
 | 12 | 13 | ~$0.51 |
 
-See the [story-generator skill](https://dmccreary.github.io/claude-skills/skills/story-generator/) documentation for full setup instructions and API key requirements.
+See the [story-generator skill](https://dmccreary.github.io/ibook-skills/skills/story-generator/) documentation for full setup instructions and API key requirements.

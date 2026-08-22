@@ -77,7 +77,7 @@ Pick the workflow that matches your resources:
 1. **OpenAI API (fully automated).** Set `OPENAI_API_KEY` with active billing, then run:
    ```
    cd /Users/dan/Documents/ws/learning-sciences
-   ~/Documents/ws/claude-skills/src/image-generation/generate-cover.sh
+   ~/Documents/ws/ibook-skills/src/image-generation/generate-cover.sh
    ```
    Output: `docs/img/cover.png` at 1200x630.
 

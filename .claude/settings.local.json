@@ -18,7 +18,7 @@
       "Bash(tee -a /Users/dan/Documents/ws/learning-sciences/logs/ch-02-content-generation.md)",
       "Bash(awk '/^---$/{f=!f;next} !f' docs/chapters/06-application-transfer/index.md)",
       "Read(//Users/dan/.claude/skills/**)",
-      "Read(//Users/dan/Documents/ws/claude-skills/skills/**)",
+      "Read(//Users/dan/Documents/ws/ibook-skills/skills/**)",
       "Skill(update-config)",
       "Skill(update-config:*)",
       "Write(/Users/dan/Documents/ws/learning-sciences/**)",
@@ -36,8 +36,8 @@
       "Bash(python3 -c \"import json; json.load\\(open\\('/Users/dan/.claude/settings.json'\\)\\)\")",
       "WebFetch(domain:docs.claude.com)",
       "WebFetch(domain:www.anthropic.com)",
-      "Bash(/Users/dan/Documents/ws/claude-skills/src/image-generation/generate-cover.sh --local-prompt)",
-      "Bash(python /Users/dan/Documents/ws/claude-skills/src/image-generation/generate-cover-openai.py --help)",
+      "Bash(/Users/dan/Documents/ws/ibook-skills/src/image-generation/generate-cover.sh --local-prompt)",
+      "Bash(python /Users/dan/Documents/ws/ibook-skills/src/image-generation/generate-cover-openai.py --help)",
       "Bash(mkdocs build *)"
     ]
   }
