@@ -5,7 +5,7 @@ site_author: 'Dan McCreary'
 repo_name: 'GitHub Repo'
 site_url: 'https://dmccreary.github.io/learning-sciences/'
 repo_url: 'https://github.com/dmccreary/learning-sciences.git'
-edit_uri: 'blob/master/docs'
+edit_uri: 'blob/main/docs'
 
 # Files excluded from the build (MkDocs 1.6+)
 exclude_docs: |
